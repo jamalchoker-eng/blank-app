@@ -481,7 +481,7 @@
         the matching suburbs — ranked by development score (opportunity + profit potential) by default</p>
       <div class="dev-filters">
         <div class="preset-row">
-          <span class="preset-label">Quick search:</span>
+          <span class="preset-label">Quick search (combine as many as you like):</span>
           <button type="button" class="preset-btn" data-preset="top" title="Overall score ≥ 7.5">Top opportunities</button>
           <button type="button" class="preset-btn" data-preset="growth" title="Growth score ≥ 7.5, no other minimums">High growth</button>
           <button type="button" class="preset-btn" data-preset="profit" title="Profit potential ≥ 7.5 (median price × 5yr growth, i.e. estimated dollar uplift)">Best profit potential</button>
@@ -1602,18 +1602,26 @@
     balanced: { score: 6, growth: 5, profit: 5, location: 5, affordability: 5, turnover: 5, resilience: 0 },
     resilient: { score: 0, growth: 0, profit: 0, location: 0, affordability: 0, turnover: 0, resilience: 7.5 }
   };
+  // Presets are multi-select: each active preset contributes its minimums,
+  // and combining several takes the max threshold per slider (so a suburb
+  // must clear every active preset's bar at once - stacking presets narrows
+  // the results, it doesn't switch between them).
+  function applyActivePresets() {
+    var active = Array.from(document.querySelectorAll(".preset-btn.active")).map(function (b) { return b.dataset.preset; });
+    var combined = { score: 0, growth: 0, profit: 0, location: 0, affordability: 0, turnover: 0, resilience: 0 };
+    active.forEach(function (key) {
+      var preset = DEV_PRESETS[key];
+      Object.keys(combined).forEach(function (field) {
+        combined[field] = Math.max(combined[field], preset[field]);
+      });
+    });
+    setSliderValues(combined);
+    runDevSearch();
+  }
   document.querySelectorAll(".preset-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      var wasActive = btn.classList.contains("active");
-      clearPresetHighlight();
-      if (wasActive) {
-        setSliderValues({ score: 0, growth: 0, profit: 0, location: 0, affordability: 0, turnover: 0, resilience: 0 });
-        runDevSearch();
-        return;
-      }
-      btn.classList.add("active");
-      setSliderValues(DEV_PRESETS[btn.dataset.preset]);
-      runDevSearch();
+      btn.classList.toggle("active");
+      applyActivePresets();
     });
   });
 
