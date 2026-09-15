@@ -146,6 +146,14 @@
   }
   .reset-btn:hover { color: var(--text-primary); }
 
+  .search-btn {
+    background: var(--series-price); border: 1px solid var(--series-price); color: #fff;
+    border-radius: 7px; padding: 7px 16px; font-size: 12.5px; font-weight: 650; cursor: pointer;
+  }
+  .search-btn:hover { filter: brightness(1.08); }
+  .search-btn.dirty { box-shadow: 0 0 0 3px color-mix(in srgb, var(--series-price) 30%, transparent); }
+  .dirty-hint { font-size: 12px; color: var(--critical); margin: 10px 0 0; }
+
   .preset-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .preset-label { font-size: 12.5px; color: var(--text-secondary); font-weight: 600; margin-right: 2px; }
   .preset-btn {
@@ -469,8 +477,8 @@
   <div id="tab-devsearch" hidden>
     <div class="card" style="margin-bottom:22px;">
       <h2>Search by development potential</h2>
-      <p class="cap">Filter all 867 suburbs by the modeled 0–10 development score and its five components, plus a
-        separate market resilience score — ranked by development score (opportunity + profit potential) by default</p>
+      <p class="cap">Pick a quick preset or set your own criteria below, then press <strong>Search</strong> to see
+        the matching suburbs — ranked by development score (opportunity + profit potential) by default</p>
       <div class="dev-filters">
         <div class="preset-row">
           <span class="preset-label">Quick search:</span>
@@ -489,6 +497,7 @@
             <input id="dev-distance" type="range" min="1" max="60" value="60" step="1">
             <span class="range-val" id="dev-distance-val">60 km</span>
           </div>
+          <button type="button" id="dev-search-btn" class="search-btn">Search</button>
           <button type="button" id="dev-reset" class="reset-btn">Reset filters</button>
         </div>
         <div class="slider-grid">
@@ -530,6 +539,7 @@
             <span class="range-val" id="min-resilience-val">0.0</span>
           </div>
         </div>
+        <p class="dirty-hint" id="dev-dirty-hint" hidden>Filters changed — press <strong>Search</strong> to update the results below.</p>
       </div>
     </div>
 
@@ -1329,7 +1339,7 @@
       document.querySelectorAll(".tab-btn").forEach(function (b) { b.classList.toggle("active", b === btn); });
       document.getElementById("tab-overview").hidden = btn.dataset.tab !== "overview";
       document.getElementById("tab-devsearch").hidden = btn.dataset.tab !== "devsearch";
-      if (btn.dataset.tab === "devsearch") { renderDevHistogram(); renderDevTable(); }
+      if (btn.dataset.tab === "devsearch") runDevSearch();
     });
   });
 
@@ -1517,7 +1527,7 @@
   }
 
   function setSliderValues(values) {
-    // values: { score, growth, location, affordability, turnover } - any omitted key stays unchanged
+    // values: { score, growth, location, affordability, turnover, resilience } - any omitted key stays unchanged
     Object.keys(SLIDER_IDS).forEach(function (key) {
       if (!(key in values)) return;
       devFilters[key] = values[key];
@@ -1525,20 +1535,39 @@
       document.getElementById(id).value = values[key];
       document.getElementById(id + "-val").textContent = values[key].toFixed(1);
     });
+  }
+
+  // Adjusting a filter only stages it (updates the label, moves the score
+  // marker on the histogram for live feedback) - the results table only
+  // updates when the Search button is pressed, Enter is hit in the search
+  // box, a preset is clicked, or Reset is pressed. markDirty() surfaces
+  // that staged changes haven't been applied to the visible results yet.
+  var devDirty = false;
+  function markDirty() {
+    devDirty = true;
+    clearPresetHighlight();
+    document.getElementById("dev-search-btn").classList.add("dirty");
+    document.getElementById("dev-dirty-hint").hidden = false;
+  }
+  function runDevSearch() {
+    devDirty = false;
+    document.getElementById("dev-search-btn").classList.remove("dirty");
+    document.getElementById("dev-dirty-hint").hidden = true;
     renderDevHistogram();
     renderDevTable();
   }
 
   document.getElementById("dev-search").addEventListener("input", function (e) {
     devFilters.search = e.target.value.trim();
-    clearPresetHighlight();
-    renderDevTable();
+    markDirty();
+  });
+  document.getElementById("dev-search").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") runDevSearch();
   });
   document.getElementById("dev-distance").addEventListener("input", function (e) {
     devFilters.distance = Number(e.target.value);
     document.getElementById("dev-distance-val").textContent = devFilters.distance + " km";
-    clearPresetHighlight();
-    renderDevTable();
+    markDirty();
   });
   Object.keys(SLIDER_IDS).forEach(function (key) {
     var id = SLIDER_IDS[key];
@@ -1547,11 +1576,11 @@
     input.addEventListener("input", function () {
       devFilters[key] = Number(input.value);
       valEl.textContent = Number(input.value).toFixed(1);
-      clearPresetHighlight();
-      renderDevTable();
-      if (key === "score") renderDevHistogram();
+      markDirty();
+      if (key === "score") renderDevHistogram(); // live marker only, not the results table
     });
   });
+  document.getElementById("dev-search-btn").addEventListener("click", runDevSearch);
   document.getElementById("dev-reset").addEventListener("click", function () {
     devFilters.search = "";
     devFilters.distance = 60;
@@ -1560,6 +1589,7 @@
     document.getElementById("dev-distance-val").textContent = "60 km";
     clearPresetHighlight();
     setSliderValues({ score: 0, growth: 0, profit: 0, location: 0, affordability: 0, turnover: 0, resilience: 0 });
+    runDevSearch();
   });
 
   // ---- Quick-search presets ----
@@ -1578,10 +1608,12 @@
       clearPresetHighlight();
       if (wasActive) {
         setSliderValues({ score: 0, growth: 0, profit: 0, location: 0, affordability: 0, turnover: 0, resilience: 0 });
+        runDevSearch();
         return;
       }
       btn.classList.add("active");
       setSliderValues(DEV_PRESETS[btn.dataset.preset]);
+      runDevSearch();
     });
   });
 
