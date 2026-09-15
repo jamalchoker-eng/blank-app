@@ -12,9 +12,33 @@ It exists to give `dashboard.html` full, realistic-looking coverage while
 `nsw_sales_pipeline.py` can't be run against the actual NSW Valuer General
 (no outbound access to nsw.gov.au from this environment). Suburb names,
 their ABS SA3 "region", and their distance from the CBD are real. Median
-price, g1 (1yr growth) and g5 (5yr growth) are NOT — they're synthetic
-placeholders for laying out the dashboard, and should be replaced by
+price, g1 (1yr growth), g5 (5yr growth), the "recent sales" feed, and the
+development favourability score are NOT — they're synthetic placeholders
+for laying out the dashboard, and should be replaced by
 `nsw_sales_pipeline.py`'s real output as soon as that can run.
+
+DEVELOPMENT FAVOURABILITY SCORE (0-10)
+---------------------------------------
+A transparent, documented heuristic — NOT a real planning/zoning
+assessment. It has no access to actual LEP zoning, floor-space ratios,
+lot sizes, heritage overlays, flood/bushfire mapping, or council DA
+approval rates, none of which are available from this environment. It
+combines four proxy signals, each scored 0-10 and weighted:
+
+  * growth (35%)       — trailing 5yr price growth, clamped/scaled
+  * location (30%)     — a bell curve peaking ~18km from the CBD, on the
+                          premise that middle-ring, transit-linked suburbs
+                          are the more common rezoning/redevelopment
+                          target vs. built-out inner suburbs or
+                          infrastructure-light fringe growth areas
+  * affordability (20%) — cheaper entry price relative to the priciest
+                          suburb in the set, as a rough margin proxy for
+                          knockdown-rebuild/townhouse economics
+  * turnover (15%)      — trailing-12mo sales volume, as a liquidity proxy
+
+This is a reasonable starting shape for a real score, but every weight and
+curve here is a guess. Do not use it for actual investment or development
+decisions without professional and council verification.
 
 USAGE
 -----
@@ -139,6 +163,54 @@ def synthesize_metrics(name_raw: str, distance_km: float) -> dict:
     }
 
 
+def synthesize_recent_sales(name_raw: str, median: float, count: int = 6) -> list[dict]:
+    """A short illustrative list of "recent sales" for a suburb: date offset,
+    price, and bedroom count only — no addresses, agents, or vendor details,
+    since these are not real transactions."""
+    seed = str_hash(name_raw.upper())
+    sales = []
+    for i in range(count):
+        days_ago = int(3 + pseudo_rand(seed, 100 + i) * 115)  # within ~last 4 months
+        price = round(median * (0.82 + pseudo_rand(seed, 200 + i) * 0.42) / 5000) * 5000
+        beds = 2 + int(pseudo_rand(seed, 300 + i) * 4)  # 2-5 bedrooms
+        sales.append({"days_ago": days_ago, "price": int(price), "beds": beds})
+    sales.sort(key=lambda s: s["days_ago"])
+    return sales
+
+
+def synthesize_dev_score(distance_km: float, median: int, g5: float, sample_size: int,
+                          min_median: int, max_median: int) -> dict:
+    """See the DEVELOPMENT FAVOURABILITY SCORE note at the top of this file —
+    a documented, weighted heuristic over four 0-10 proxy signals. Not a real
+    planning/zoning assessment."""
+    growth = max(0.0, min(10.0, (g5 + 10) / 70 * 10))
+
+    peak_km, sigma_km = 18.0, 12.0
+    location = 10.0 * math.exp(-((distance_km - peak_km) ** 2) / (2 * sigma_km ** 2))
+
+    span = max(1, max_median - min_median)
+    affordability = max(0.0, min(10.0, (max_median - median) / span * 10))
+
+    turnover = max(0.0, min(10.0, sample_size / 80 * 10))
+
+    weights = {"growth": 0.35, "location": 0.30, "affordability": 0.20, "turnover": 0.15}
+    total = (
+        weights["growth"] * growth
+        + weights["location"] * location
+        + weights["affordability"] * affordability
+        + weights["turnover"] * turnover
+    )
+    return {
+        "score": round(max(0.0, min(10.0, total)), 1),
+        "breakdown": {
+            "growth": round(growth, 1),
+            "location": round(location, 1),
+            "affordability": round(affordability, 1),
+            "turnover": round(turnover, 1),
+        },
+    }
+
+
 def main():
     localities = fetch_nsw_localities()
 
@@ -150,7 +222,16 @@ def main():
             "distance_km": round(distance_km, 1),
         }
         record.update(synthesize_metrics(name_raw, distance_km))
+        record["recent_sales"] = synthesize_recent_sales(name_raw, record["median"])
         records.append(record)
+
+    medians = [r["median"] for r in records]
+    min_median, max_median = min(medians), max(medians)
+    for r in records:
+        dev = synthesize_dev_score(r["distance_km"], r["median"], r["g5"], r["sample_size"],
+                                    min_median, max_median)
+        r["dev_score"] = dev["score"]
+        r["dev_breakdown"] = dev["breakdown"]
 
     records.sort(key=lambda r: r["distance_km"])
 
