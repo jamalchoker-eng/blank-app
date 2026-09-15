@@ -640,6 +640,58 @@
     return filterBeds === 0 ? "all " + noun : beds.l + " " + noun;
   }
 
+  // ---- Search, with a typo-tolerant fallback ----
+  // Australian suburb names are full of easy-to-miss doubled letters
+  // (Woolooware vs "Woollooware", Cammeray vs "Camerray", Berowra vs
+  // "Burowra") - an exact substring search on a slightly-misspelled name
+  // returns nothing and reads as "that suburb isn't in here" even when it
+  // is. Only used as a fallback when the exact search finds zero results,
+  // so normal searches are unaffected.
+  function levenshtein(a, b) {
+    var m = a.length, n = b.length;
+    if (m === 0) return n;
+    if (n === 0) return m;
+    var prev = new Array(n + 1), curr = new Array(n + 1);
+    for (var j = 0; j <= n; j++) prev[j] = j;
+    for (var i = 1; i <= m; i++) {
+      curr[0] = i;
+      for (var j2 = 1; j2 <= n; j2++) {
+        var cost = a.charAt(i - 1) === b.charAt(j2 - 1) ? 0 : 1;
+        curr[j2] = Math.min(prev[j2] + 1, curr[j2 - 1] + 1, prev[j2 - 1] + cost);
+      }
+      var tmp = prev; prev = curr; curr = tmp;
+    }
+    return prev[n];
+  }
+  function fuzzySearchMatches(term) {
+    var t = term.toLowerCase().trim();
+    if (t.length < 4) return null;
+    var maxDist = t.length <= 6 ? 1 : (t.length <= 10 ? 2 : 3);
+    var hits = [];
+    SUBURBS.forEach(function (d) {
+      var name = d.name.toLowerCase();
+      var dist = levenshtein(name, t);
+      if (dist > maxDist) {
+        name.split(" ").forEach(function (w) {
+          if (levenshtein(w, t) <= maxDist) dist = Math.min(dist, maxDist);
+        });
+      }
+      if (dist <= maxDist) hits.push(d.name);
+    });
+    return hits.length ? { names: new Set(hits), example: hits[0] } : null;
+  }
+  // Returns { names: Set|null (null = no search filter active), fuzzy: bool }
+  function computeSearchMatches(term) {
+    if (!term) return { names: null, fuzzy: false };
+    var t = term.toLowerCase();
+    var exact = SUBURBS.filter(function (d) {
+      return d.name.toLowerCase().indexOf(t) !== -1 || d.region.toLowerCase().indexOf(t) !== -1;
+    });
+    if (exact.length > 0) return { names: new Set(exact.map(function (d) { return d.name; })), fuzzy: false };
+    var fuzzy = fuzzySearchMatches(term);
+    return fuzzy ? { names: fuzzy.names, fuzzy: true } : { names: new Set(), fuzzy: false };
+  }
+
   var css = getComputedStyle(document.documentElement);
   function cv(name) { return css.getPropertyValue(name).trim(); }
 
@@ -1160,11 +1212,11 @@
   function renderTable() {
     document.getElementById("median-th").firstChild.textContent = "Median (" + typeLabel() + ")";
     var tbody = document.getElementById("tbody");
+    var search = computeSearchMatches(searchTerm);
     var rows = SUBURBS.filter(function (d) {
       if (d.distance > maxDistance) return false;
-      if (!searchTerm) return true;
-      var t = searchTerm.toLowerCase();
-      return d.name.toLowerCase().indexOf(t) !== -1 || d.region.toLowerCase().indexOf(t) !== -1;
+      if (search.names === null) return true;
+      return search.names.has(d.name);
     }).map(function (d) { return { d: d, stat: getStat(d), dom: getDom(d) }; });
 
     rows.sort(function (a, b) {
@@ -1175,7 +1227,9 @@
       return (av - bv) * sortDir;
     });
 
-    document.getElementById("count").textContent = rows.length + " of " + SUBURBS.length + " suburbs";
+    var countText = rows.length + " of " + SUBURBS.length + " suburbs";
+    if (search.fuzzy) countText += " — no exact match for “" + searchTerm + "”, showing closest suburb names";
+    document.getElementById("count").textContent = countText;
 
     tbody.innerHTML = "";
     if (rows.length === 0) {
@@ -1368,12 +1422,9 @@
     resilience: "Min resilience"
   };
 
-  function matchesSearchDistance(d) {
+  function matchesSearchDistance(d, search) {
     if (d.distance > devFilters.distance) return false;
-    if (devFilters.search) {
-      var t = devFilters.search.toLowerCase();
-      if (d.name.toLowerCase().indexOf(t) === -1 && d.region.toLowerCase().indexOf(t) === -1) return false;
-    }
+    if (search.names !== null && !search.names.has(d.name)) return false;
     return true;
   }
   function activeThresholdKeys() {
@@ -1533,7 +1584,9 @@
 
   function renderDevTable() {
     var tbody = document.getElementById("dev-tbody");
-    var base = SUBURBS.filter(matchesSearchDistance);
+    var search = computeSearchMatches(devFilters.search);
+    var fuzzyNote = search.fuzzy ? " — no exact match for “" + devFilters.search + "”, showing closest suburb names" : "";
+    var base = SUBURBS.filter(function (d) { return matchesSearchDistance(d, search); });
     var active = activeThresholdKeys();
     var rows = base.filter(function (d) { return passesThresholds(d, active); });
 
@@ -1546,7 +1599,7 @@
     tbody.innerHTML = "";
 
     if (rows.length > 0) {
-      document.getElementById("dev-count").textContent = rows.length + " of " + SUBURBS.length + " suburbs match";
+      document.getElementById("dev-count").textContent = rows.length + " of " + SUBURBS.length + " suburbs match" + fuzzyNote;
       var frag = document.createDocumentFragment();
       rows.forEach(function (d) { frag.appendChild(buildDevRow(d)); });
       tbody.appendChild(frag);
@@ -1564,7 +1617,7 @@
       trEmpty.className = "empty-row";
       var tdEmpty = document.createElement("td");
       tdEmpty.colSpan = 10;
-      tdEmpty.textContent = "No suburbs within " + devFilters.distance + " km match “" + devFilters.search + "”. Try a broader search or distance.";
+      tdEmpty.textContent = "No suburbs within " + devFilters.distance + " km match “" + devFilters.search + "”, even allowing for a possible typo. Try a broader search or distance.";
       trEmpty.appendChild(tdEmpty);
       tbody.appendChild(trEmpty);
       return;
@@ -1576,7 +1629,7 @@
       return;
     }
 
-    document.getElementById("dev-count").textContent = "0 of " + SUBURBS.length + " suburbs match exactly";
+    document.getElementById("dev-count").textContent = "0 of " + SUBURBS.length + " suburbs match exactly" + fuzzyNote;
 
     var noteTr = document.createElement("tr");
     noteTr.className = "empty-row";
