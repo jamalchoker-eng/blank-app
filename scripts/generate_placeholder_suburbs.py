@@ -212,7 +212,15 @@ def is_residential_locality(name_raw: str) -> bool:
 def fetch_nsw_localities() -> dict[str, tuple[str, float, str]]:
     """Returns {UPPERCASE_NAME: (display_name, distance_km, region)} for NSW
     localities within RADIUS_KM of the CBD, deduped to the nearest postcode
-    entry per locality."""
+    entry per locality.
+
+    region prefers the ABS SA4 name ("Sydney - Sutherland") over SA3
+    ("Cronulla - Miranda - Caringbah"). SA3 names are frequently a hyphenated
+    list of that region's own constituent suburbs, which displayed right
+    under an unrelated suburb's name (e.g. Lilli Pilli's SA3 region reads as
+    "Cronulla - Miranda - Caringbah") reads exactly like several suburbs
+    bunched into one row. SA4 is coarser (~14 values across the whole
+    dataset vs ~46 for SA3) but reads as a single place, not a list."""
     resp = requests.get(POSTCODE_CSV_URL, timeout=60)
     resp.raise_for_status()
 
@@ -233,7 +241,7 @@ def fetch_nsw_localities() -> dict[str, tuple[str, float, str]]:
         distance = haversine_km(CBD_LAT, CBD_LON, lat, lon)
         if distance > RADIUS_KM:
             continue
-        region = row.get("sa3name", "").strip() or row.get("sa4name", "").strip() or "Greater Sydney"
+        region = row.get("sa4name", "").strip() or row.get("sa3name", "").strip() or "Greater Sydney"
         key = name_raw.upper()
         if key not in best or distance < best[key][1]:
             best[key] = (name_raw, distance, region)

@@ -1,7 +1,7 @@
 [
  {
   "name": "Barangaroo",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 1.2,
   "houses": {
    "overall": {
@@ -154,7 +154,7 @@
  },
  {
   "name": "Elizabeth Bay",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 1.3,
   "houses": {
    "overall": {
@@ -307,7 +307,7 @@
  },
  {
   "name": "Kings Cross",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 1.3,
   "houses": {
    "overall": {
@@ -460,7 +460,7 @@
  },
  {
   "name": "Potts Point",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 1.3,
   "houses": {
    "overall": {
@@ -613,7 +613,7 @@
  },
  {
   "name": "Rushcutters Bay",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 1.3,
   "houses": {
    "overall": {
@@ -766,7 +766,7 @@
  },
  {
   "name": "Woolloomooloo",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 1.3,
   "houses": {
    "overall": {
@@ -919,7 +919,7 @@
  },
  {
   "name": "Pyrmont",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 1.5,
   "houses": {
    "overall": {
@@ -1072,7 +1072,7 @@
  },
  {
   "name": "Darlinghurst",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 1.7,
   "houses": {
    "overall": {
@@ -1225,7 +1225,7 @@
  },
  {
   "name": "Surry Hills",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 1.7,
   "houses": {
    "overall": {
@@ -1378,7 +1378,7 @@
  },
  {
   "name": "Taylor Square",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 1.7,
   "houses": {
    "overall": {
@@ -1531,7 +1531,7 @@
  },
  {
   "name": "Broadway",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 2.0,
   "houses": {
    "overall": {
@@ -1684,7 +1684,7 @@
  },
  {
   "name": "Ultimo",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 2.0,
   "houses": {
    "overall": {
@@ -1837,7 +1837,7 @@
  },
  {
   "name": "Kirribilli",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 2.2,
   "houses": {
    "overall": {
@@ -1990,7 +1990,7 @@
  },
  {
   "name": "Milsons Point",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 2.2,
   "houses": {
    "overall": {
@@ -2143,7 +2143,7 @@
  },
  {
   "name": "Forest Lodge",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 2.6,
   "houses": {
    "overall": {
@@ -2296,7 +2296,7 @@
  },
  {
   "name": "Glebe",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 2.6,
   "houses": {
    "overall": {
@@ -2449,7 +2449,7 @@
  },
  {
   "name": "Chippendale",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 2.9,
   "houses": {
    "overall": {
@@ -2602,7 +2602,7 @@
  },
  {
   "name": "Darlington",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 2.9,
   "houses": {
    "overall": {
@@ -2755,7 +2755,7 @@
  },
  {
   "name": "Golden Grove",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 2.9,
   "houses": {
    "overall": {
@@ -2908,7 +2908,7 @@
  },
  {
   "name": "Redfern",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 2.9,
   "houses": {
    "overall": {
@@ -3061,7 +3061,7 @@
  },
  {
   "name": "Balmain",
-  "region": "Leichhardt",
+  "region": "Sydney - Inner West",
   "distance_km": 2.9,
   "houses": {
    "overall": {
@@ -3214,7 +3214,7 @@
  },
  {
   "name": "Balmain East",
-  "region": "Leichhardt",
+  "region": "Sydney - Inner West",
   "distance_km": 2.9,
   "houses": {
    "overall": {
@@ -3367,7 +3367,7 @@
  },
  {
   "name": "Birchgrove",
-  "region": "Leichhardt",
+  "region": "Sydney - Inner West",
   "distance_km": 2.9,
   "houses": {
    "overall": {
@@ -3520,7 +3520,7 @@
  },
  {
   "name": "The University Of Sydney",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 3.1,
   "houses": {
    "overall": {
@@ -3673,7 +3673,7 @@
  },
  {
   "name": "Double Bay",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 3.1,
   "houses": {
    "overall": {
@@ -3826,7 +3826,7 @@
  },
  {
   "name": "North Sydney",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 3.2,
   "houses": {
    "overall": {
@@ -3979,7 +3979,7 @@
  },
  {
   "name": "Lavender Bay",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 3.2,
   "houses": {
    "overall": {
@@ -4132,7 +4132,7 @@
  },
  {
   "name": "McMahons Point",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 3.2,
   "houses": {
    "overall": {
@@ -4285,7 +4285,7 @@
  },
  {
   "name": "North Sydney Shoppingworld",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 3.2,
   "houses": {
    "overall": {
@@ -4438,7 +4438,7 @@
  },
  {
   "name": "Waverton",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 3.2,
   "houses": {
    "overall": {
@@ -4591,7 +4591,7 @@
  },
  {
   "name": "Kurraba Point",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 3.3,
   "houses": {
    "overall": {
@@ -4744,7 +4744,7 @@
  },
  {
   "name": "Centennial Park",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 3.4,
   "houses": {
    "overall": {
@@ -4897,7 +4897,7 @@
  },
  {
   "name": "Moore Park",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 3.4,
   "houses": {
    "overall": {
@@ -5050,7 +5050,7 @@
  },
  {
   "name": "Paddington",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 3.4,
   "houses": {
    "overall": {
@@ -5203,7 +5203,7 @@
  },
  {
   "name": "Rozelle",
-  "region": "Leichhardt",
+  "region": "Sydney - Inner West",
   "distance_km": 3.5,
   "houses": {
    "overall": {
@@ -5356,7 +5356,7 @@
  },
  {
   "name": "Neutral Bay",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 3.5,
   "houses": {
    "overall": {
@@ -5509,7 +5509,7 @@
  },
  {
   "name": "Neutral Bay Junction",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 3.5,
   "houses": {
    "overall": {
@@ -5662,7 +5662,7 @@
  },
  {
   "name": "Woollahra",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 3.6,
   "houses": {
    "overall": {
@@ -5815,7 +5815,7 @@
  },
  {
   "name": "Darling Point",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 3.8,
   "houses": {
    "overall": {
@@ -5968,7 +5968,7 @@
  },
  {
   "name": "Edgecliff",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 3.8,
   "houses": {
    "overall": {
@@ -6121,7 +6121,7 @@
  },
  {
   "name": "Point Piper",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 3.8,
   "houses": {
    "overall": {
@@ -6274,7 +6274,7 @@
  },
  {
   "name": "Waterloo",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 3.9,
   "houses": {
    "overall": {
@@ -6427,7 +6427,7 @@
  },
  {
   "name": "Zetland",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 3.9,
   "houses": {
    "overall": {
@@ -6580,7 +6580,7 @@
  },
  {
   "name": "Annandale",
-  "region": "Leichhardt",
+  "region": "Sydney - Inner West",
   "distance_km": 3.9,
   "houses": {
    "overall": {
@@ -6733,7 +6733,7 @@
  },
  {
   "name": "Camperdown",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 3.9,
   "houses": {
    "overall": {
@@ -6886,7 +6886,7 @@
  },
  {
   "name": "Missenden Road",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 3.9,
   "houses": {
    "overall": {
@@ -7039,7 +7039,7 @@
  },
  {
   "name": "Drummoyne",
-  "region": "Canada Bay",
+  "region": "Sydney - Inner West",
   "distance_km": 4.3,
   "houses": {
    "overall": {
@@ -7192,7 +7192,7 @@
  },
  {
   "name": "Darling Harbour",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 4.5,
   "houses": {
    "overall": {
@@ -7345,7 +7345,7 @@
  },
  {
   "name": "Dawes Point",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 4.5,
   "houses": {
    "overall": {
@@ -7498,7 +7498,7 @@
  },
  {
   "name": "Haymarket",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 4.5,
   "houses": {
    "overall": {
@@ -7651,7 +7651,7 @@
  },
  {
   "name": "Millers Point",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 4.5,
   "houses": {
    "overall": {
@@ -7804,7 +7804,7 @@
  },
  {
   "name": "Parliament House",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 4.5,
   "houses": {
    "overall": {
@@ -7957,7 +7957,7 @@
  },
  {
   "name": "Sydney",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 4.5,
   "houses": {
    "overall": {
@@ -8110,7 +8110,7 @@
  },
  {
   "name": "Sydney South",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 4.5,
   "houses": {
    "overall": {
@@ -8263,7 +8263,7 @@
  },
  {
   "name": "The Rocks",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 4.5,
   "houses": {
    "overall": {
@@ -8416,7 +8416,7 @@
  },
  {
   "name": "Bondi Junction",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 4.5,
   "houses": {
    "overall": {
@@ -8569,7 +8569,7 @@
  },
  {
   "name": "Bondi Junction Plaza",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 4.5,
   "houses": {
    "overall": {
@@ -8722,7 +8722,7 @@
  },
  {
   "name": "Queens Park",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 4.5,
   "houses": {
    "overall": {
@@ -8875,7 +8875,7 @@
  },
  {
   "name": "Erskineville",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 4.5,
   "houses": {
    "overall": {
@@ -9028,7 +9028,7 @@
  },
  {
   "name": "Cremorne",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 4.6,
   "houses": {
    "overall": {
@@ -9181,7 +9181,7 @@
  },
  {
   "name": "Cremorne Junction",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 4.6,
   "houses": {
    "overall": {
@@ -9334,7 +9334,7 @@
  },
  {
   "name": "Cremorne Point",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 4.6,
   "houses": {
    "overall": {
@@ -9487,7 +9487,7 @@
  },
  {
   "name": "Bellevue Hill",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 4.7,
   "houses": {
    "overall": {
@@ -9640,7 +9640,7 @@
  },
  {
   "name": "Enmore",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 4.7,
   "houses": {
    "overall": {
@@ -9793,7 +9793,7 @@
  },
  {
   "name": "Newtown",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 4.7,
   "houses": {
    "overall": {
@@ -9946,7 +9946,7 @@
  },
  {
   "name": "Alexandria",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 4.8,
   "houses": {
    "overall": {
@@ -10099,7 +10099,7 @@
  },
  {
   "name": "Beaconsfield",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 4.8,
   "houses": {
    "overall": {
@@ -10252,7 +10252,7 @@
  },
  {
   "name": "Eveleigh",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 4.8,
   "houses": {
    "overall": {
@@ -10405,7 +10405,7 @@
  },
  {
   "name": "Kensington",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 4.8,
   "houses": {
    "overall": {
@@ -10558,7 +10558,7 @@
  },
  {
   "name": "Crows Nest",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 4.8,
   "houses": {
    "overall": {
@@ -10711,7 +10711,7 @@
  },
  {
   "name": "Gore Hill",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 4.8,
   "houses": {
    "overall": {
@@ -10864,7 +10864,7 @@
  },
  {
   "name": "Greenwich",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 4.8,
   "houses": {
    "overall": {
@@ -11017,7 +11017,7 @@
  },
  {
   "name": "Naremburn",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 4.8,
   "houses": {
    "overall": {
@@ -11170,7 +11170,7 @@
  },
  {
   "name": "Royal North Shore Hospital",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 4.8,
   "houses": {
    "overall": {
@@ -11323,7 +11323,7 @@
  },
  {
   "name": "St Leonards",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 4.8,
   "houses": {
    "overall": {
@@ -11476,7 +11476,7 @@
  },
  {
   "name": "Wollstonecraft",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 4.8,
   "houses": {
    "overall": {
@@ -11629,7 +11629,7 @@
  },
  {
   "name": "Stanmore",
-  "region": "Leichhardt",
+  "region": "Sydney - Inner West",
   "distance_km": 4.9,
   "houses": {
    "overall": {
@@ -11782,7 +11782,7 @@
  },
  {
   "name": "Westgate",
-  "region": "Leichhardt",
+  "region": "Sydney - Inner West",
   "distance_km": 4.9,
   "houses": {
    "overall": {
@@ -11935,7 +11935,7 @@
  },
  {
   "name": "Leichhardt",
-  "region": "Leichhardt",
+  "region": "Sydney - Inner West",
   "distance_km": 5.0,
   "houses": {
    "overall": {
@@ -12088,7 +12088,7 @@
  },
  {
   "name": "Lilyfield",
-  "region": "Leichhardt",
+  "region": "Sydney - Inner West",
   "distance_km": 5.0,
   "houses": {
    "overall": {
@@ -12241,7 +12241,7 @@
  },
  {
   "name": "Cammeray",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 5.1,
   "houses": {
    "overall": {
@@ -12394,7 +12394,7 @@
  },
  {
   "name": "Mosman",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 5.3,
   "houses": {
    "overall": {
@@ -12547,7 +12547,7 @@
  },
  {
   "name": "Spit Junction",
-  "region": "North Sydney - Mosman",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 5.3,
   "houses": {
    "overall": {
@@ -12700,7 +12700,7 @@
  },
  {
   "name": "Rose Bay",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 5.4,
   "houses": {
    "overall": {
@@ -12853,7 +12853,7 @@
  },
  {
   "name": "Clovelly",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 5.8,
   "houses": {
    "overall": {
@@ -13006,7 +13006,7 @@
  },
  {
   "name": "Clovelly West",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 5.8,
   "houses": {
    "overall": {
@@ -13159,7 +13159,7 @@
  },
  {
   "name": "Randwick",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 5.8,
   "houses": {
    "overall": {
@@ -13312,7 +13312,7 @@
  },
  {
   "name": "St Pauls",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 5.8,
   "houses": {
    "overall": {
@@ -13465,7 +13465,7 @@
  },
  {
   "name": "Ben Buckler",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 6.0,
   "houses": {
    "overall": {
@@ -13618,7 +13618,7 @@
  },
  {
   "name": "Bondi",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 6.0,
   "houses": {
    "overall": {
@@ -13771,7 +13771,7 @@
  },
  {
   "name": "Bondi Beach",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 6.0,
   "houses": {
    "overall": {
@@ -13924,7 +13924,7 @@
  },
  {
   "name": "North Bondi",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 6.0,
   "houses": {
    "overall": {
@@ -14077,7 +14077,7 @@
  },
  {
   "name": "Tamarama",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 6.0,
   "houses": {
    "overall": {
@@ -14230,7 +14230,7 @@
  },
  {
   "name": "Eastlakes",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 6.1,
   "houses": {
    "overall": {
@@ -14383,7 +14383,7 @@
  },
  {
   "name": "Rosebery",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 6.1,
   "houses": {
    "overall": {
@@ -14536,7 +14536,7 @@
  },
  {
   "name": "Bronte",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 6.1,
   "houses": {
    "overall": {
@@ -14689,7 +14689,7 @@
  },
  {
   "name": "Charing Cross",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 6.1,
   "houses": {
    "overall": {
@@ -14842,7 +14842,7 @@
  },
  {
   "name": "Waverley",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 6.1,
   "houses": {
    "overall": {
@@ -14995,7 +14995,7 @@
  },
  {
   "name": "Diamond Bay",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 6.3,
   "houses": {
    "overall": {
@@ -15148,7 +15148,7 @@
  },
  {
   "name": "Dover Heights",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 6.3,
   "houses": {
    "overall": {
@@ -15301,7 +15301,7 @@
  },
  {
   "name": "Rose Bay North",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 6.3,
   "houses": {
    "overall": {
@@ -15454,7 +15454,7 @@
  },
  {
   "name": "Vaucluse",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 6.3,
   "houses": {
    "overall": {
@@ -15607,7 +15607,7 @@
  },
  {
   "name": "Watsons Bay",
-  "region": "Eastern Suburbs - North",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 6.3,
   "houses": {
    "overall": {
@@ -15760,7 +15760,7 @@
  },
  {
   "name": "Lewisham",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 6.3,
   "houses": {
    "overall": {
@@ -15913,7 +15913,7 @@
  },
  {
   "name": "Petersham",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 6.3,
   "houses": {
    "overall": {
@@ -16066,7 +16066,7 @@
  },
  {
   "name": "Petersham North",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 6.3,
   "houses": {
    "overall": {
@@ -16219,7 +16219,7 @@
  },
  {
   "name": "Northbridge",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 6.3,
   "houses": {
    "overall": {
@@ -16372,7 +16372,7 @@
  },
  {
   "name": "Haberfield",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 6.6,
   "houses": {
    "overall": {
@@ -16525,7 +16525,7 @@
  },
  {
   "name": "Artarmon",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 6.6,
   "houses": {
    "overall": {
@@ -16678,7 +16678,7 @@
  },
  {
   "name": "Hunters Hill",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 6.6,
   "houses": {
    "overall": {
@@ -16831,7 +16831,7 @@
  },
  {
   "name": "Hunters Hill West",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 6.6,
   "houses": {
    "overall": {
@@ -16984,7 +16984,7 @@
  },
  {
   "name": "Woolwich",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 6.6,
   "houses": {
    "overall": {
@@ -17137,7 +17137,7 @@
  },
  {
   "name": "St Peters",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 6.8,
   "houses": {
    "overall": {
@@ -17290,7 +17290,7 @@
  },
  {
   "name": "Sydenham",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 6.8,
   "houses": {
    "overall": {
@@ -17443,7 +17443,7 @@
  },
  {
   "name": "Tempe",
-  "region": "Sydney Inner City",
+  "region": "Sydney - City and Inner South",
   "distance_km": 6.8,
   "houses": {
    "overall": {
@@ -17596,7 +17596,7 @@
  },
  {
   "name": "Marrickville",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 6.9,
   "houses": {
    "overall": {
@@ -17749,7 +17749,7 @@
  },
  {
   "name": "Marrickville Metro",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 6.9,
   "houses": {
    "overall": {
@@ -17902,7 +17902,7 @@
  },
  {
   "name": "Marrickville South",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 6.9,
   "houses": {
    "overall": {
@@ -18055,7 +18055,7 @@
  },
  {
   "name": "Daceyville",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 7.0,
   "houses": {
    "overall": {
@@ -18208,7 +18208,7 @@
  },
  {
   "name": "Kingsford",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 7.0,
   "houses": {
    "overall": {
@@ -18361,7 +18361,7 @@
  },
  {
   "name": "Abbotsford",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 7.0,
   "houses": {
    "overall": {
@@ -18514,7 +18514,7 @@
  },
  {
   "name": "Canada Bay",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 7.0,
   "houses": {
    "overall": {
@@ -18667,7 +18667,7 @@
  },
  {
   "name": "Chiswick",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 7.0,
   "houses": {
    "overall": {
@@ -18820,7 +18820,7 @@
  },
  {
   "name": "Five Dock",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 7.0,
   "houses": {
    "overall": {
@@ -18973,7 +18973,7 @@
  },
  {
   "name": "Rodd Point",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 7.0,
   "houses": {
    "overall": {
@@ -19126,7 +19126,7 @@
  },
  {
   "name": "Russell Lea",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 7.0,
   "houses": {
    "overall": {
@@ -19279,7 +19279,7 @@
  },
  {
   "name": "Wareemba",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 7.0,
   "houses": {
    "overall": {
@@ -19432,7 +19432,7 @@
  },
  {
   "name": "Lane Cove",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 7.1,
   "houses": {
    "overall": {
@@ -19585,7 +19585,7 @@
  },
  {
   "name": "Lane Cove North",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 7.1,
   "houses": {
    "overall": {
@@ -19738,7 +19738,7 @@
  },
  {
   "name": "Lane Cove West",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 7.1,
   "houses": {
    "overall": {
@@ -19891,7 +19891,7 @@
  },
  {
   "name": "Linley Point",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 7.1,
   "houses": {
    "overall": {
@@ -20044,7 +20044,7 @@
  },
  {
   "name": "Longueville",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 7.1,
   "houses": {
    "overall": {
@@ -20197,7 +20197,7 @@
  },
  {
   "name": "Northwood",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 7.1,
   "houses": {
    "overall": {
@@ -20350,7 +20350,7 @@
  },
  {
   "name": "Osborne Park",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 7.1,
   "houses": {
    "overall": {
@@ -20503,7 +20503,7 @@
  },
  {
   "name": "Riverview",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 7.1,
   "houses": {
    "overall": {
@@ -20656,7 +20656,7 @@
  },
  {
   "name": "Summer Hill",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 7.3,
   "houses": {
    "overall": {
@@ -20809,7 +20809,7 @@
  },
  {
   "name": "Castlecrag",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 7.6,
   "houses": {
    "overall": {
@@ -20962,7 +20962,7 @@
  },
  {
   "name": "Middle Cove",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 7.6,
   "houses": {
    "overall": {
@@ -21115,7 +21115,7 @@
  },
  {
   "name": "Willoughby",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 7.6,
   "houses": {
    "overall": {
@@ -21268,7 +21268,7 @@
  },
  {
   "name": "Willoughby North",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 7.6,
   "houses": {
    "overall": {
@@ -21421,7 +21421,7 @@
  },
  {
   "name": "Dulwich Hill",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 7.6,
   "houses": {
    "overall": {
@@ -21574,7 +21574,7 @@
  },
  {
   "name": "Coogee",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 7.8,
   "houses": {
    "overall": {
@@ -21727,7 +21727,7 @@
  },
  {
   "name": "South Coogee",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 7.8,
   "houses": {
    "overall": {
@@ -21880,7 +21880,7 @@
  },
  {
   "name": "Willoughby East",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 7.8,
   "houses": {
    "overall": {
@@ -22033,7 +22033,7 @@
  },
  {
   "name": "Mascot",
-  "region": "Marrickville - Sydenham - Petersham",
+  "region": "Sydney - City and Inner South",
   "distance_km": 8.1,
   "houses": {
    "overall": {
@@ -22186,7 +22186,7 @@
  },
  {
   "name": "North Willoughby",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 8.1,
   "houses": {
    "overall": {
@@ -22339,7 +22339,7 @@
  },
  {
   "name": "Ashfield",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 8.1,
   "houses": {
    "overall": {
@@ -22492,7 +22492,7 @@
  },
  {
   "name": "Chatswood",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 8.4,
   "houses": {
    "overall": {
@@ -22645,7 +22645,7 @@
  },
  {
   "name": "Chatswood West",
-  "region": "Chatswood - Lane Cove",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 8.4,
   "houses": {
    "overall": {
@@ -22798,7 +22798,7 @@
  },
  {
   "name": "Seaforth",
-  "region": "Manly",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 8.6,
   "houses": {
    "overall": {
@@ -22951,7 +22951,7 @@
  },
  {
   "name": "Banksmeadow",
-  "region": "Botany",
+  "region": "Sydney - City and Inner South",
   "distance_km": 8.7,
   "houses": {
    "overall": {
@@ -23104,7 +23104,7 @@
  },
  {
   "name": "Botany",
-  "region": "Botany",
+  "region": "Sydney - City and Inner South",
   "distance_km": 8.7,
   "houses": {
    "overall": {
@@ -23257,7 +23257,7 @@
  },
  {
   "name": "Boronia Park",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 8.9,
   "houses": {
    "overall": {
@@ -23410,7 +23410,7 @@
  },
  {
   "name": "Gladesville",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 8.9,
   "houses": {
    "overall": {
@@ -23563,7 +23563,7 @@
  },
  {
   "name": "Henley",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 8.9,
   "houses": {
    "overall": {
@@ -23716,7 +23716,7 @@
  },
  {
   "name": "Huntleys Cove",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 8.9,
   "houses": {
    "overall": {
@@ -23869,7 +23869,7 @@
  },
  {
   "name": "Huntleys Point",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 8.9,
   "houses": {
    "overall": {
@@ -24022,7 +24022,7 @@
  },
  {
   "name": "Monash Park",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 8.9,
   "houses": {
    "overall": {
@@ -24175,7 +24175,7 @@
  },
  {
   "name": "Tennyson Point",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 8.9,
   "houses": {
    "overall": {
@@ -24328,7 +24328,7 @@
  },
  {
   "name": "Maroubra",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 9.0,
   "houses": {
    "overall": {
@@ -24481,7 +24481,7 @@
  },
  {
   "name": "Maroubra South",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 9.0,
   "houses": {
    "overall": {
@@ -24634,7 +24634,7 @@
  },
  {
   "name": "Pagewood",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 9.0,
   "houses": {
    "overall": {
@@ -24787,7 +24787,7 @@
  },
  {
   "name": "Croydon",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 9.0,
   "houses": {
    "overall": {
@@ -24940,7 +24940,7 @@
  },
  {
   "name": "Ashbury",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 9.4,
   "houses": {
    "overall": {
@@ -25093,7 +25093,7 @@
  },
  {
   "name": "Canterbury",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 9.4,
   "houses": {
    "overall": {
@@ -25246,7 +25246,7 @@
  },
  {
   "name": "Hurlstone Park",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 9.4,
   "houses": {
    "overall": {
@@ -25399,7 +25399,7 @@
  },
  {
   "name": "Balgowlah",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 9.5,
   "houses": {
    "overall": {
@@ -25552,7 +25552,7 @@
  },
  {
   "name": "Balgowlah Heights",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 9.5,
   "houses": {
    "overall": {
@@ -25705,7 +25705,7 @@
  },
  {
   "name": "Clontarf",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 9.5,
   "houses": {
    "overall": {
@@ -25858,7 +25858,7 @@
  },
  {
   "name": "Manly Vale",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 9.5,
   "houses": {
    "overall": {
@@ -26011,7 +26011,7 @@
  },
  {
   "name": "North Balgowlah",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 9.5,
   "houses": {
    "overall": {
@@ -26164,7 +26164,7 @@
  },
  {
   "name": "Arncliffe",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 9.5,
   "houses": {
    "overall": {
@@ -26317,7 +26317,7 @@
  },
  {
   "name": "Turrella",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 9.5,
   "houses": {
    "overall": {
@@ -26470,7 +26470,7 @@
  },
  {
   "name": "Wolli Creek",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 9.5,
   "houses": {
    "overall": {
@@ -26623,7 +26623,7 @@
  },
  {
   "name": "Breakfast Point",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 9.8,
   "houses": {
    "overall": {
@@ -26776,7 +26776,7 @@
  },
  {
   "name": "Cabarita",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 9.8,
   "houses": {
    "overall": {
@@ -26929,7 +26929,7 @@
  },
  {
   "name": "Concord",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 9.8,
   "houses": {
    "overall": {
@@ -27082,7 +27082,7 @@
  },
  {
   "name": "Mortlake",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 9.8,
   "houses": {
    "overall": {
@@ -27235,7 +27235,7 @@
  },
  {
   "name": "North Strathfield",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 9.8,
   "houses": {
    "overall": {
@@ -27388,7 +27388,7 @@
  },
  {
   "name": "Castle Cove",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 9.9,
   "houses": {
    "overall": {
@@ -27541,7 +27541,7 @@
  },
  {
   "name": "Roseville",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 9.9,
   "houses": {
    "overall": {
@@ -27694,7 +27694,7 @@
  },
  {
   "name": "Roseville Chase",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 9.9,
   "houses": {
    "overall": {
@@ -27847,7 +27847,7 @@
  },
  {
   "name": "Manly",
-  "region": "Manly",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 9.9,
   "houses": {
    "overall": {
@@ -28000,7 +28000,7 @@
  },
  {
   "name": "Manly East",
-  "region": "Manly",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 9.9,
   "houses": {
    "overall": {
@@ -28153,7 +28153,7 @@
  },
  {
   "name": "Burwood",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 10.0,
   "houses": {
    "overall": {
@@ -28306,7 +28306,7 @@
  },
  {
   "name": "Burwood North",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 10.0,
   "houses": {
    "overall": {
@@ -28459,7 +28459,7 @@
  },
  {
   "name": "Fairlight",
-  "region": "Manly",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 10.1,
   "houses": {
    "overall": {
@@ -28612,7 +28612,7 @@
  },
  {
   "name": "Clemton Park",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 10.2,
   "houses": {
    "overall": {
@@ -28765,7 +28765,7 @@
  },
  {
   "name": "Earlwood",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 10.2,
   "houses": {
    "overall": {
@@ -28918,7 +28918,7 @@
  },
  {
   "name": "Undercliffe",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 10.2,
   "houses": {
    "overall": {
@@ -29071,7 +29071,7 @@
  },
  {
   "name": "Croydon Park",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 10.4,
   "houses": {
    "overall": {
@@ -29224,7 +29224,7 @@
  },
  {
   "name": "Enfield South",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 10.4,
   "houses": {
    "overall": {
@@ -29377,7 +29377,7 @@
  },
  {
   "name": "East Lindfield",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 10.8,
   "houses": {
    "overall": {
@@ -29530,7 +29530,7 @@
  },
  {
   "name": "Lindfield",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 10.8,
   "houses": {
    "overall": {
@@ -29683,7 +29683,7 @@
  },
  {
   "name": "Lindfield West",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 10.8,
   "houses": {
    "overall": {
@@ -29836,7 +29836,7 @@
  },
  {
   "name": "Denistone East",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 11.0,
   "houses": {
    "overall": {
@@ -29989,7 +29989,7 @@
  },
  {
   "name": "Putney",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 11.0,
   "houses": {
    "overall": {
@@ -30142,7 +30142,7 @@
  },
  {
   "name": "Ryde",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 11.0,
   "houses": {
    "overall": {
@@ -30295,7 +30295,7 @@
  },
  {
   "name": "Blenheim Road",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 11.1,
   "houses": {
    "overall": {
@@ -30448,7 +30448,7 @@
  },
  {
   "name": "East Ryde",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 11.1,
   "houses": {
    "overall": {
@@ -30601,7 +30601,7 @@
  },
  {
   "name": "Macquarie Centre",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 11.1,
   "houses": {
    "overall": {
@@ -30754,7 +30754,7 @@
  },
  {
   "name": "Macquarie Park",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 11.1,
   "houses": {
    "overall": {
@@ -30907,7 +30907,7 @@
  },
  {
   "name": "North Ryde",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 11.1,
   "houses": {
    "overall": {
@@ -31060,7 +31060,7 @@
  },
  {
   "name": "Banksia",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 11.2,
   "houses": {
    "overall": {
@@ -31213,7 +31213,7 @@
  },
  {
   "name": "Brighton-Le-Sands",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 11.2,
   "houses": {
    "overall": {
@@ -31366,7 +31366,7 @@
  },
  {
   "name": "Kyeemagh",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 11.2,
   "houses": {
    "overall": {
@@ -31519,7 +31519,7 @@
  },
  {
   "name": "Rockdale",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 11.2,
   "houses": {
    "overall": {
@@ -31672,7 +31672,7 @@
  },
  {
   "name": "Campsie",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 11.3,
   "houses": {
    "overall": {
@@ -31825,7 +31825,7 @@
  },
  {
   "name": "Brighton Le Sands",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 11.3,
   "houses": {
    "overall": {
@@ -31978,7 +31978,7 @@
  },
  {
   "name": "Forestville",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 11.4,
   "houses": {
    "overall": {
@@ -32131,7 +32131,7 @@
  },
  {
   "name": "Killarney Heights",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 11.4,
   "houses": {
    "overall": {
@@ -32284,7 +32284,7 @@
  },
  {
   "name": "Chifley",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 11.5,
   "houses": {
    "overall": {
@@ -32437,7 +32437,7 @@
  },
  {
   "name": "Eastgardens",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 11.5,
   "houses": {
    "overall": {
@@ -32590,7 +32590,7 @@
  },
  {
   "name": "Hillsdale",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 11.5,
   "houses": {
    "overall": {
@@ -32743,7 +32743,7 @@
  },
  {
   "name": "La Perouse",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 11.5,
   "houses": {
    "overall": {
@@ -32896,7 +32896,7 @@
  },
  {
   "name": "Little Bay",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 11.5,
   "houses": {
    "overall": {
@@ -33049,7 +33049,7 @@
  },
  {
   "name": "Malabar",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 11.5,
   "houses": {
    "overall": {
@@ -33202,7 +33202,7 @@
  },
  {
   "name": "Matraville",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 11.5,
   "houses": {
    "overall": {
@@ -33355,7 +33355,7 @@
  },
  {
   "name": "Phillip Bay",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 11.5,
   "houses": {
    "overall": {
@@ -33508,7 +33508,7 @@
  },
  {
   "name": "Port Botany",
-  "region": "Eastern Suburbs - South",
+  "region": "Sydney - Eastern Suburbs",
   "distance_km": 11.5,
   "houses": {
    "overall": {
@@ -33661,7 +33661,7 @@
  },
  {
   "name": "Burwood Heights",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 11.5,
   "houses": {
    "overall": {
@@ -33814,7 +33814,7 @@
  },
  {
   "name": "Enfield",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 11.5,
   "houses": {
    "overall": {
@@ -33967,7 +33967,7 @@
  },
  {
   "name": "Strathfield South",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 11.5,
   "houses": {
    "overall": {
@@ -34120,7 +34120,7 @@
  },
  {
   "name": "Strathfield",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 11.6,
   "houses": {
    "overall": {
@@ -34273,7 +34273,7 @@
  },
  {
   "name": "Concord West",
-  "region": "Canada Bay",
+  "region": "Sydney - Inner West",
   "distance_km": 11.7,
   "houses": {
    "overall": {
@@ -34426,7 +34426,7 @@
  },
  {
   "name": "Liberty Grove",
-  "region": "Canada Bay",
+  "region": "Sydney - Inner West",
   "distance_km": 11.7,
   "houses": {
    "overall": {
@@ -34579,7 +34579,7 @@
  },
  {
   "name": "Rhodes",
-  "region": "Canada Bay",
+  "region": "Sydney - Inner West",
   "distance_km": 11.7,
   "houses": {
    "overall": {
@@ -34732,7 +34732,7 @@
  },
  {
   "name": "Allambie",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 12.2,
   "houses": {
    "overall": {
@@ -34885,7 +34885,7 @@
  },
  {
   "name": "Allambie Heights",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 12.2,
   "houses": {
    "overall": {
@@ -35038,7 +35038,7 @@
  },
  {
   "name": "Beacon Hill",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 12.2,
   "houses": {
    "overall": {
@@ -35191,7 +35191,7 @@
  },
  {
   "name": "Brookvale",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 12.2,
   "houses": {
    "overall": {
@@ -35344,7 +35344,7 @@
  },
  {
   "name": "North Manly",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 12.2,
   "houses": {
    "overall": {
@@ -35497,7 +35497,7 @@
  },
  {
   "name": "Oxford Falls",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 12.2,
   "houses": {
    "overall": {
@@ -35650,7 +35650,7 @@
  },
  {
   "name": "Warringah Mall",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 12.2,
   "houses": {
    "overall": {
@@ -35803,7 +35803,7 @@
  },
  {
   "name": "Belfield",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 12.2,
   "houses": {
    "overall": {
@@ -35956,7 +35956,7 @@
  },
  {
   "name": "Bardwell Park",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 12.2,
   "houses": {
    "overall": {
@@ -36109,7 +36109,7 @@
  },
  {
   "name": "Bardwell Valley",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 12.2,
   "houses": {
    "overall": {
@@ -36262,7 +36262,7 @@
  },
  {
   "name": "Bexley",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 12.2,
   "houses": {
    "overall": {
@@ -36415,7 +36415,7 @@
  },
  {
   "name": "Bexley North",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 12.2,
   "houses": {
    "overall": {
@@ -36568,7 +36568,7 @@
  },
  {
   "name": "Bexley South",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 12.2,
   "houses": {
    "overall": {
@@ -36721,7 +36721,7 @@
  },
  {
   "name": "Killara",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 12.4,
   "houses": {
    "overall": {
@@ -36874,7 +36874,7 @@
  },
  {
   "name": "Curl Curl",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 12.4,
   "houses": {
    "overall": {
@@ -37027,7 +37027,7 @@
  },
  {
   "name": "Harbord",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 12.4,
   "houses": {
    "overall": {
@@ -37180,7 +37180,7 @@
  },
  {
   "name": "Queenscliff",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 12.4,
   "houses": {
    "overall": {
@@ -37333,7 +37333,7 @@
  },
  {
   "name": "Homebush Bay",
-  "region": "Auburn",
+  "region": "Sydney - Parramatta",
   "distance_km": 12.4,
   "houses": {
    "overall": {
@@ -37486,7 +37486,7 @@
  },
  {
   "name": "Newington",
-  "region": "Auburn",
+  "region": "Sydney - Parramatta",
   "distance_km": 12.4,
   "houses": {
    "overall": {
@@ -37639,7 +37639,7 @@
  },
  {
   "name": "Freshwater",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 12.5,
   "houses": {
    "overall": {
@@ -37792,7 +37792,7 @@
  },
  {
   "name": "Belmore",
-  "region": "Canterbury",
+  "region": "Sydney - Inner South West",
   "distance_km": 12.5,
   "houses": {
    "overall": {
@@ -37945,7 +37945,7 @@
  },
  {
   "name": "East Killara",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 12.9,
   "houses": {
    "overall": {
@@ -38098,7 +38098,7 @@
  },
  {
   "name": "Wentworth Point",
-  "region": "Auburn",
+  "region": "Sydney - Parramatta",
   "distance_km": 13.0,
   "houses": {
    "overall": {
@@ -38251,7 +38251,7 @@
  },
  {
   "name": "Frenchs Forest",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 13.1,
   "houses": {
    "overall": {
@@ -38404,7 +38404,7 @@
  },
  {
   "name": "Frenchs Forest East",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 13.1,
   "houses": {
    "overall": {
@@ -38557,7 +38557,7 @@
  },
  {
   "name": "Kingsgrove",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 13.1,
   "houses": {
    "overall": {
@@ -38710,7 +38710,7 @@
  },
  {
   "name": "Kingsway West",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 13.1,
   "houses": {
    "overall": {
@@ -38863,7 +38863,7 @@
  },
  {
   "name": "Denistone",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 13.2,
   "houses": {
    "overall": {
@@ -39016,7 +39016,7 @@
  },
  {
   "name": "Denistone West",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 13.2,
   "houses": {
    "overall": {
@@ -39169,7 +39169,7 @@
  },
  {
   "name": "Meadowbank",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 13.2,
   "houses": {
    "overall": {
@@ -39322,7 +39322,7 @@
  },
  {
   "name": "Melrose Park",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 13.2,
   "houses": {
    "overall": {
@@ -39475,7 +39475,7 @@
  },
  {
   "name": "West Ryde",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 13.2,
   "houses": {
    "overall": {
@@ -39628,7 +39628,7 @@
  },
  {
   "name": "Homebush",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 13.3,
   "houses": {
    "overall": {
@@ -39781,7 +39781,7 @@
  },
  {
   "name": "Homebush South",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 13.3,
   "houses": {
    "overall": {
@@ -39934,7 +39934,7 @@
  },
  {
   "name": "Homebush West",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 13.3,
   "houses": {
    "overall": {
@@ -40087,7 +40087,7 @@
  },
  {
   "name": "Sydney Olympic Park",
-  "region": "Auburn",
+  "region": "Sydney - Parramatta",
   "distance_km": 13.4,
   "houses": {
    "overall": {
@@ -40240,7 +40240,7 @@
  },
  {
   "name": "Beverley Park",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 13.4,
   "houses": {
    "overall": {
@@ -40393,7 +40393,7 @@
  },
  {
   "name": "Kogarah",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 13.4,
   "houses": {
    "overall": {
@@ -40546,7 +40546,7 @@
  },
  {
   "name": "Kogarah Bay",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 13.4,
   "houses": {
    "overall": {
@@ -40699,7 +40699,7 @@
  },
  {
   "name": "Monterey",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 13.4,
   "houses": {
    "overall": {
@@ -40852,7 +40852,7 @@
  },
  {
   "name": "Ramsgate",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 13.4,
   "houses": {
    "overall": {
@@ -41005,7 +41005,7 @@
  },
  {
   "name": "Ramsgate Beach",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 13.4,
   "houses": {
    "overall": {
@@ -41158,7 +41158,7 @@
  },
  {
   "name": "Gordon",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 13.7,
   "houses": {
    "overall": {
@@ -41311,7 +41311,7 @@
  },
  {
   "name": "Lakemba",
-  "region": "Canterbury",
+  "region": "Sydney - Inner South West",
   "distance_km": 13.7,
   "houses": {
    "overall": {
@@ -41464,7 +41464,7 @@
  },
  {
   "name": "Wiley Park",
-  "region": "Canterbury",
+  "region": "Sydney - Inner South West",
   "distance_km": 13.7,
   "houses": {
    "overall": {
@@ -41617,7 +41617,7 @@
  },
  {
   "name": "Eastwood",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 13.8,
   "houses": {
    "overall": {
@@ -41770,7 +41770,7 @@
  },
  {
   "name": "Marsfield",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 13.8,
   "houses": {
    "overall": {
@@ -41923,7 +41923,7 @@
  },
  {
   "name": "Pymble",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 14.4,
   "houses": {
    "overall": {
@@ -42076,7 +42076,7 @@
  },
  {
   "name": "West Pymble",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 14.4,
   "houses": {
    "overall": {
@@ -42229,7 +42229,7 @@
  },
  {
   "name": "Allawah",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 14.4,
   "houses": {
    "overall": {
@@ -42382,7 +42382,7 @@
  },
  {
   "name": "Carlton",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 14.4,
   "houses": {
    "overall": {
@@ -42535,7 +42535,7 @@
  },
  {
   "name": "Hurstville",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 14.7,
   "houses": {
    "overall": {
@@ -42688,7 +42688,7 @@
  },
  {
   "name": "Hurstville Grove",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 14.7,
   "houses": {
    "overall": {
@@ -42841,7 +42841,7 @@
  },
  {
   "name": "Hurstville Westfield",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 14.7,
   "houses": {
    "overall": {
@@ -42994,7 +42994,7 @@
  },
  {
   "name": "Cromer",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 14.8,
   "houses": {
    "overall": {
@@ -43147,7 +43147,7 @@
  },
  {
   "name": "Cromer Heights",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 14.8,
   "houses": {
    "overall": {
@@ -43300,7 +43300,7 @@
  },
  {
   "name": "Dee Why",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 14.8,
   "houses": {
    "overall": {
@@ -43453,7 +43453,7 @@
  },
  {
   "name": "Dee Why Beach",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 14.8,
   "houses": {
    "overall": {
@@ -43606,7 +43606,7 @@
  },
  {
   "name": "Narraweena",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 14.8,
   "houses": {
    "overall": {
@@ -43759,7 +43759,7 @@
  },
  {
   "name": "North Curl Curl",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 14.8,
   "houses": {
    "overall": {
@@ -43912,7 +43912,7 @@
  },
  {
   "name": "Wingala",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 14.8,
   "houses": {
    "overall": {
@@ -44065,7 +44065,7 @@
  },
  {
   "name": "Greenacre",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 14.8,
   "houses": {
    "overall": {
@@ -44218,7 +44218,7 @@
  },
  {
   "name": "Mount Lewis",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 14.8,
   "houses": {
    "overall": {
@@ -44371,7 +44371,7 @@
  },
  {
   "name": "Ermington",
-  "region": "Carlingford",
+  "region": "Sydney - Parramatta",
   "distance_km": 15.1,
   "houses": {
    "overall": {
@@ -44524,7 +44524,7 @@
  },
  {
   "name": "Chullora",
-  "region": "Strathfield - Burwood - Ashfield",
+  "region": "Sydney - Inner West",
   "distance_km": 15.1,
   "houses": {
    "overall": {
@@ -44677,7 +44677,7 @@
  },
  {
   "name": "Berala",
-  "region": "Auburn",
+  "region": "Sydney - Parramatta",
   "distance_km": 15.2,
   "houses": {
    "overall": {
@@ -44830,7 +44830,7 @@
  },
  {
   "name": "Lidcombe",
-  "region": "Auburn",
+  "region": "Sydney - Parramatta",
   "distance_km": 15.2,
   "houses": {
    "overall": {
@@ -44983,7 +44983,7 @@
  },
  {
   "name": "Lidcombe North",
-  "region": "Auburn",
+  "region": "Sydney - Parramatta",
   "distance_km": 15.2,
   "houses": {
    "overall": {
@@ -45136,7 +45136,7 @@
  },
  {
   "name": "Rookwood",
-  "region": "Auburn",
+  "region": "Sydney - Parramatta",
   "distance_km": 15.2,
   "houses": {
    "overall": {
@@ -45289,7 +45289,7 @@
  },
  {
   "name": "Beverly Hills",
-  "region": "Hurstville",
+  "region": "Sydney - Inner South West",
   "distance_km": 15.3,
   "houses": {
    "overall": {
@@ -45442,7 +45442,7 @@
  },
  {
   "name": "Narwee",
-  "region": "Hurstville",
+  "region": "Sydney - Inner South West",
   "distance_km": 15.3,
   "houses": {
    "overall": {
@@ -45595,7 +45595,7 @@
  },
  {
   "name": "Silverwater",
-  "region": "Auburn",
+  "region": "Sydney - Parramatta",
   "distance_km": 15.4,
   "houses": {
    "overall": {
@@ -45748,7 +45748,7 @@
  },
  {
   "name": "Belrose",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 15.6,
   "houses": {
    "overall": {
@@ -45901,7 +45901,7 @@
  },
  {
   "name": "Belrose West",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 15.6,
   "houses": {
    "overall": {
@@ -46054,7 +46054,7 @@
  },
  {
   "name": "Davidson",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 15.6,
   "houses": {
    "overall": {
@@ -46207,7 +46207,7 @@
  },
  {
   "name": "Punchbowl",
-  "region": "Canterbury",
+  "region": "Sydney - Inner South West",
   "distance_km": 15.6,
   "houses": {
    "overall": {
@@ -46360,7 +46360,7 @@
  },
  {
   "name": "Roselands",
-  "region": "Canterbury",
+  "region": "Sydney - Inner South West",
   "distance_km": 15.6,
   "houses": {
    "overall": {
@@ -46513,7 +46513,7 @@
  },
  {
   "name": "Penshurst",
-  "region": "Hurstville",
+  "region": "Sydney - Inner South West",
   "distance_km": 15.7,
   "houses": {
    "overall": {
@@ -46666,7 +46666,7 @@
  },
  {
   "name": "Epping",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 15.9,
   "houses": {
    "overall": {
@@ -46819,7 +46819,7 @@
  },
  {
   "name": "North Epping",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 15.9,
   "houses": {
    "overall": {
@@ -46972,7 +46972,7 @@
  },
  {
   "name": "Dolls Point",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 15.9,
   "houses": {
    "overall": {
@@ -47125,7 +47125,7 @@
  },
  {
   "name": "Sandringham",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 15.9,
   "houses": {
    "overall": {
@@ -47278,7 +47278,7 @@
  },
  {
   "name": "Sans Souci",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 15.9,
   "houses": {
    "overall": {
@@ -47431,7 +47431,7 @@
  },
  {
   "name": "Collaroy",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 16.5,
   "houses": {
    "overall": {
@@ -47584,7 +47584,7 @@
  },
  {
   "name": "Collaroy Beach",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 16.5,
   "houses": {
    "overall": {
@@ -47737,7 +47737,7 @@
  },
  {
   "name": "Collaroy Plateau West",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 16.5,
   "houses": {
    "overall": {
@@ -47890,7 +47890,7 @@
  },
  {
   "name": "Long Reef",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 16.5,
   "houses": {
    "overall": {
@@ -48043,7 +48043,7 @@
  },
  {
   "name": "Wheeler Heights",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 16.5,
   "houses": {
    "overall": {
@@ -48196,7 +48196,7 @@
  },
  {
   "name": "North St Ives",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 16.6,
   "houses": {
    "overall": {
@@ -48349,7 +48349,7 @@
  },
  {
   "name": "St Ives",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 16.6,
   "houses": {
    "overall": {
@@ -48502,7 +48502,7 @@
  },
  {
   "name": "St Ives Chase",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 16.6,
   "houses": {
    "overall": {
@@ -48655,7 +48655,7 @@
  },
  {
   "name": "Blakehurst",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 16.7,
   "houses": {
    "overall": {
@@ -48808,7 +48808,7 @@
  },
  {
   "name": "Carss Park",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 16.7,
   "houses": {
    "overall": {
@@ -48961,7 +48961,7 @@
  },
  {
   "name": "Connells Point",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 16.7,
   "houses": {
    "overall": {
@@ -49114,7 +49114,7 @@
  },
  {
   "name": "Kyle Bay",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 16.7,
   "houses": {
    "overall": {
@@ -49267,7 +49267,7 @@
  },
  {
   "name": "South Hurstville",
-  "region": "Kogarah - Rockdale",
+  "region": "Sydney - Inner South West",
   "distance_km": 16.7,
   "houses": {
    "overall": {
@@ -49420,7 +49420,7 @@
  },
  {
   "name": "Bobbin Head",
-  "region": "Pennant Hills - Epping",
+  "region": "Sydney - Ryde",
   "distance_km": 16.8,
   "houses": {
    "overall": {
@@ -49573,7 +49573,7 @@
  },
  {
   "name": "North Turramurra",
-  "region": "Pennant Hills - Epping",
+  "region": "Sydney - Ryde",
   "distance_km": 16.8,
   "houses": {
    "overall": {
@@ -49726,7 +49726,7 @@
  },
  {
   "name": "South Turramurra",
-  "region": "Pennant Hills - Epping",
+  "region": "Sydney - Ryde",
   "distance_km": 16.8,
   "houses": {
    "overall": {
@@ -49879,7 +49879,7 @@
  },
  {
   "name": "Turramurra",
-  "region": "Pennant Hills - Epping",
+  "region": "Sydney - Ryde",
   "distance_km": 16.8,
   "houses": {
    "overall": {
@@ -50032,7 +50032,7 @@
  },
  {
   "name": "Warrawee",
-  "region": "Pennant Hills - Epping",
+  "region": "Sydney - Ryde",
   "distance_km": 16.8,
   "houses": {
    "overall": {
@@ -50185,7 +50185,7 @@
  },
  {
   "name": "Rydalmere",
-  "region": "Carlingford",
+  "region": "Sydney - Parramatta",
   "distance_km": 17.0,
   "houses": {
    "overall": {
@@ -50338,7 +50338,7 @@
  },
  {
   "name": "Auburn",
-  "region": "Auburn",
+  "region": "Sydney - Parramatta",
   "distance_km": 17.0,
   "houses": {
    "overall": {
@@ -50491,7 +50491,7 @@
  },
  {
   "name": "Auburn South",
-  "region": "Auburn",
+  "region": "Sydney - Parramatta",
   "distance_km": 17.0,
   "houses": {
    "overall": {
@@ -50644,7 +50644,7 @@
  },
  {
   "name": "Collaroy Plateau",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 17.1,
   "houses": {
    "overall": {
@@ -50797,7 +50797,7 @@
  },
  {
   "name": "Dundas",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 17.4,
   "houses": {
    "overall": {
@@ -50950,7 +50950,7 @@
  },
  {
   "name": "Dundas Valley",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 17.4,
   "houses": {
    "overall": {
@@ -51103,7 +51103,7 @@
  },
  {
   "name": "Oatlands",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 17.4,
   "houses": {
    "overall": {
@@ -51256,7 +51256,7 @@
  },
  {
   "name": "Telopea",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 17.4,
   "houses": {
    "overall": {
@@ -51409,7 +51409,7 @@
  },
  {
   "name": "Birrong",
-  "region": "Auburn",
+  "region": "Sydney - Parramatta",
   "distance_km": 17.4,
   "houses": {
    "overall": {
@@ -51562,7 +51562,7 @@
  },
  {
   "name": "Potts Hill",
-  "region": "Auburn",
+  "region": "Sydney - Parramatta",
   "distance_km": 17.4,
   "houses": {
    "overall": {
@@ -51715,7 +51715,7 @@
  },
  {
   "name": "Regents Park",
-  "region": "Auburn",
+  "region": "Sydney - Parramatta",
   "distance_km": 17.4,
   "houses": {
    "overall": {
@@ -51868,7 +51868,7 @@
  },
  {
   "name": "Lugarno",
-  "region": "Hurstville",
+  "region": "Sydney - Inner South West",
   "distance_km": 17.5,
   "houses": {
    "overall": {
@@ -52021,7 +52021,7 @@
  },
  {
   "name": "Peakhurst",
-  "region": "Hurstville",
+  "region": "Sydney - Inner South West",
   "distance_km": 17.5,
   "houses": {
    "overall": {
@@ -52174,7 +52174,7 @@
  },
  {
   "name": "Peakhurst Heights",
-  "region": "Hurstville",
+  "region": "Sydney - Inner South West",
   "distance_km": 17.5,
   "houses": {
    "overall": {
@@ -52327,7 +52327,7 @@
  },
  {
   "name": "Riverwood",
-  "region": "Hurstville",
+  "region": "Sydney - Inner South West",
   "distance_km": 17.5,
   "houses": {
    "overall": {
@@ -52480,7 +52480,7 @@
  },
  {
   "name": "Clyde",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 17.7,
   "houses": {
    "overall": {
@@ -52633,7 +52633,7 @@
  },
  {
   "name": "Yagoona",
-  "region": "Bankstown",
+  "region": "Sydney - Inner South West",
   "distance_km": 17.7,
   "houses": {
    "overall": {
@@ -52786,7 +52786,7 @@
  },
  {
   "name": "Yagoona West",
-  "region": "Bankstown",
+  "region": "Sydney - Inner South West",
   "distance_km": 17.7,
   "houses": {
    "overall": {
@@ -52939,7 +52939,7 @@
  },
  {
   "name": "Mortdale",
-  "region": "Hurstville",
+  "region": "Sydney - Inner South West",
   "distance_km": 17.7,
   "houses": {
    "overall": {
@@ -53092,7 +53092,7 @@
  },
  {
   "name": "Oatley",
-  "region": "Hurstville",
+  "region": "Sydney - Inner South West",
   "distance_km": 17.7,
   "houses": {
    "overall": {
@@ -53245,7 +53245,7 @@
  },
  {
   "name": "Kurnell",
-  "region": "Cronulla - Miranda - Caringbah",
+  "region": "Sydney - Sutherland",
   "distance_km": 18.0,
   "houses": {
    "overall": {
@@ -53398,7 +53398,7 @@
  },
  {
   "name": "Caravan Head",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 18.2,
   "houses": {
    "overall": {
@@ -53551,7 +53551,7 @@
  },
  {
   "name": "Oyster Bay",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 18.2,
   "houses": {
    "overall": {
@@ -53704,7 +53704,7 @@
  },
  {
   "name": "Beecroft",
-  "region": "Pennant Hills - Epping",
+  "region": "Sydney - Ryde",
   "distance_km": 18.4,
   "houses": {
    "overall": {
@@ -53857,7 +53857,7 @@
  },
  {
   "name": "Cheltenham",
-  "region": "Pennant Hills - Epping",
+  "region": "Sydney - Ryde",
   "distance_km": 18.4,
   "houses": {
    "overall": {
@@ -54010,7 +54010,7 @@
  },
  {
   "name": "Blaxcell",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 18.4,
   "houses": {
    "overall": {
@@ -54163,7 +54163,7 @@
  },
  {
   "name": "Camellia",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 18.4,
   "houses": {
    "overall": {
@@ -54316,7 +54316,7 @@
  },
  {
   "name": "Granville",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 18.4,
   "houses": {
    "overall": {
@@ -54469,7 +54469,7 @@
  },
  {
   "name": "Holroyd",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 18.4,
   "houses": {
    "overall": {
@@ -54622,7 +54622,7 @@
  },
  {
   "name": "Rosehill",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 18.4,
   "houses": {
    "overall": {
@@ -54775,7 +54775,7 @@
  },
  {
   "name": "South Granville",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 18.4,
   "houses": {
    "overall": {
@@ -54928,7 +54928,7 @@
  },
  {
   "name": "Carlingford",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 18.5,
   "houses": {
    "overall": {
@@ -55081,7 +55081,7 @@
  },
  {
   "name": "Carlingford Court",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 18.5,
   "houses": {
    "overall": {
@@ -55234,7 +55234,7 @@
  },
  {
   "name": "Carlingford North",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 18.5,
   "houses": {
    "overall": {
@@ -55387,7 +55387,7 @@
  },
  {
   "name": "Kingsdene",
-  "region": "Ryde - Hunters Hill",
+  "region": "Sydney - Ryde",
   "distance_km": 18.5,
   "houses": {
    "overall": {
@@ -55540,7 +55540,7 @@
  },
  {
   "name": "Normanhurst",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 18.7,
   "houses": {
    "overall": {
@@ -55693,7 +55693,7 @@
  },
  {
   "name": "Wahroonga",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 18.7,
   "houses": {
    "overall": {
@@ -55846,7 +55846,7 @@
  },
  {
   "name": "Elanora Heights",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 18.9,
   "houses": {
    "overall": {
@@ -55999,7 +55999,7 @@
  },
  {
   "name": "Ingleside",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 18.9,
   "houses": {
    "overall": {
@@ -56152,7 +56152,7 @@
  },
  {
   "name": "Narrabeen",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 18.9,
   "houses": {
    "overall": {
@@ -56305,7 +56305,7 @@
  },
  {
   "name": "Narrabeen Peninsula",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 18.9,
   "houses": {
    "overall": {
@@ -56458,7 +56458,7 @@
  },
  {
   "name": "North Narrabeen",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 18.9,
   "houses": {
    "overall": {
@@ -56611,7 +56611,7 @@
  },
  {
   "name": "Kangaroo Point",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 18.9,
   "houses": {
    "overall": {
@@ -56764,7 +56764,7 @@
  },
  {
   "name": "Sylvania",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 18.9,
   "houses": {
    "overall": {
@@ -56917,7 +56917,7 @@
  },
  {
   "name": "Sylvania Southgate",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 18.9,
   "houses": {
    "overall": {
@@ -57070,7 +57070,7 @@
  },
  {
   "name": "Sylvania Waters",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 18.9,
   "houses": {
    "overall": {
@@ -57223,7 +57223,7 @@
  },
  {
   "name": "Chester Hill",
-  "region": "Merrylands - Guildford",
+  "region": "Sydney - Parramatta",
   "distance_km": 19.0,
   "houses": {
    "overall": {
@@ -57376,7 +57376,7 @@
  },
  {
   "name": "Sefton",
-  "region": "Merrylands - Guildford",
+  "region": "Sydney - Parramatta",
   "distance_km": 19.0,
   "houses": {
    "overall": {
@@ -57529,7 +57529,7 @@
  },
  {
   "name": "Bankstown",
-  "region": "Canterbury",
+  "region": "Sydney - Inner South West",
   "distance_km": 19.1,
   "houses": {
    "overall": {
@@ -57682,7 +57682,7 @@
  },
  {
   "name": "Bankstown North",
-  "region": "Canterbury",
+  "region": "Sydney - Inner South West",
   "distance_km": 19.1,
   "houses": {
    "overall": {
@@ -57835,7 +57835,7 @@
  },
  {
   "name": "Bankstown Square",
-  "region": "Canterbury",
+  "region": "Sydney - Inner South West",
   "distance_km": 19.1,
   "houses": {
    "overall": {
@@ -57988,7 +57988,7 @@
  },
  {
   "name": "Condell Park",
-  "region": "Canterbury",
+  "region": "Sydney - Inner South West",
   "distance_km": 19.1,
   "houses": {
    "overall": {
@@ -58141,7 +58141,7 @@
  },
  {
   "name": "Manahan",
-  "region": "Canterbury",
+  "region": "Sydney - Inner South West",
   "distance_km": 19.1,
   "houses": {
    "overall": {
@@ -58294,7 +58294,7 @@
  },
  {
   "name": "Greenhills Beach",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 19.1,
   "houses": {
    "overall": {
@@ -58447,7 +58447,7 @@
  },
  {
   "name": "Padstow",
-  "region": "Canterbury",
+  "region": "Sydney - Inner South West",
   "distance_km": 19.3,
   "houses": {
    "overall": {
@@ -58600,7 +58600,7 @@
  },
  {
   "name": "Padstow Heights",
-  "region": "Canterbury",
+  "region": "Sydney - Inner South West",
   "distance_km": 19.3,
   "houses": {
    "overall": {
@@ -58753,7 +58753,7 @@
  },
  {
   "name": "Harris Park",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 19.7,
   "houses": {
    "overall": {
@@ -58906,7 +58906,7 @@
  },
  {
   "name": "Parramatta",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 19.7,
   "houses": {
    "overall": {
@@ -59059,7 +59059,7 @@
  },
  {
   "name": "Parramatta Westfield",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 19.7,
   "houses": {
    "overall": {
@@ -59212,7 +59212,7 @@
  },
  {
   "name": "Pennant Hills",
-  "region": "Pennant Hills - Epping",
+  "region": "Sydney - Ryde",
   "distance_km": 19.8,
   "houses": {
    "overall": {
@@ -59365,7 +59365,7 @@
  },
  {
   "name": "Thornleigh",
-  "region": "Pennant Hills - Epping",
+  "region": "Sydney - Ryde",
   "distance_km": 19.8,
   "houses": {
    "overall": {
@@ -59518,7 +59518,7 @@
  },
  {
   "name": "Westleigh",
-  "region": "Pennant Hills - Epping",
+  "region": "Sydney - Ryde",
   "distance_km": 19.8,
   "houses": {
    "overall": {
@@ -59671,7 +59671,7 @@
  },
  {
   "name": "Bass Hill",
-  "region": "Merrylands - Guildford",
+  "region": "Sydney - Parramatta",
   "distance_km": 19.8,
   "houses": {
    "overall": {
@@ -59824,7 +59824,7 @@
  },
  {
   "name": "Revesby",
-  "region": "Bankstown",
+  "region": "Sydney - Inner South West",
   "distance_km": 20.0,
   "houses": {
    "overall": {
@@ -59977,7 +59977,7 @@
  },
  {
   "name": "Revesby Heights",
-  "region": "Bankstown",
+  "region": "Sydney - Inner South West",
   "distance_km": 20.0,
   "houses": {
    "overall": {
@@ -60130,7 +60130,7 @@
  },
  {
   "name": "Revesby North",
-  "region": "Bankstown",
+  "region": "Sydney - Inner South West",
   "distance_km": 20.0,
   "houses": {
    "overall": {
@@ -60283,7 +60283,7 @@
  },
  {
   "name": "North Wahroonga",
-  "region": "Ku-ring-gai",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 20.3,
   "houses": {
    "overall": {
@@ -60436,7 +60436,7 @@
  },
  {
   "name": "North Parramatta",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 20.3,
   "houses": {
    "overall": {
@@ -60589,7 +60589,7 @@
  },
  {
   "name": "North Rocks",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 20.3,
   "houses": {
    "overall": {
@@ -60742,7 +60742,7 @@
  },
  {
   "name": "Bonnet Bay",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 20.6,
   "houses": {
    "overall": {
@@ -60895,7 +60895,7 @@
  },
  {
   "name": "Como",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 20.6,
   "houses": {
    "overall": {
@@ -61048,7 +61048,7 @@
  },
  {
   "name": "Jannali",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 20.6,
   "houses": {
    "overall": {
@@ -61201,7 +61201,7 @@
  },
  {
   "name": "West Pennant Hills",
-  "region": "Pennant Hills - Epping",
+  "region": "Sydney - Ryde",
   "distance_km": 20.9,
   "houses": {
    "overall": {
@@ -61354,7 +61354,7 @@
  },
  {
   "name": "Guildford",
-  "region": "Merrylands - Guildford",
+  "region": "Sydney - Parramatta",
   "distance_km": 20.9,
   "houses": {
    "overall": {
@@ -61507,7 +61507,7 @@
  },
  {
   "name": "Guildford West",
-  "region": "Merrylands - Guildford",
+  "region": "Sydney - Parramatta",
   "distance_km": 20.9,
   "houses": {
    "overall": {
@@ -61660,7 +61660,7 @@
  },
  {
   "name": "Old Guildford",
-  "region": "Merrylands - Guildford",
+  "region": "Sydney - Parramatta",
   "distance_km": 20.9,
   "houses": {
    "overall": {
@@ -61813,7 +61813,7 @@
  },
  {
   "name": "Yennora",
-  "region": "Merrylands - Guildford",
+  "region": "Sydney - Parramatta",
   "distance_km": 20.9,
   "houses": {
    "overall": {
@@ -61966,7 +61966,7 @@
  },
  {
   "name": "Georges Hall",
-  "region": "Bankstown",
+  "region": "Sydney - Inner South West",
   "distance_km": 21.1,
   "houses": {
    "overall": {
@@ -62119,7 +62119,7 @@
  },
  {
   "name": "Bankstown Aerodrome",
-  "region": "Canterbury",
+  "region": "Sydney - Inner South West",
   "distance_km": 21.2,
   "houses": {
    "overall": {
@@ -62272,7 +62272,7 @@
  },
  {
   "name": "Miranda",
-  "region": "Cronulla - Miranda - Caringbah",
+  "region": "Sydney - Sutherland",
   "distance_km": 21.2,
   "houses": {
    "overall": {
@@ -62425,7 +62425,7 @@
  },
  {
   "name": "Yowie Bay",
-  "region": "Cronulla - Miranda - Caringbah",
+  "region": "Sydney - Sutherland",
   "distance_km": 21.2,
   "houses": {
    "overall": {
@@ -62578,7 +62578,7 @@
  },
  {
   "name": "Warriewood",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 21.3,
   "houses": {
    "overall": {
@@ -62731,7 +62731,7 @@
  },
  {
   "name": "Warriewood Shopping Square",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 21.3,
   "houses": {
    "overall": {
@@ -62884,7 +62884,7 @@
  },
  {
   "name": "Carramar",
-  "region": "Merrylands - Guildford",
+  "region": "Sydney - Parramatta",
   "distance_km": 21.3,
   "houses": {
    "overall": {
@@ -63037,7 +63037,7 @@
  },
  {
   "name": "Lansdowne",
-  "region": "Merrylands - Guildford",
+  "region": "Sydney - Parramatta",
   "distance_km": 21.3,
   "houses": {
    "overall": {
@@ -63190,7 +63190,7 @@
  },
  {
   "name": "Villawood",
-  "region": "Merrylands - Guildford",
+  "region": "Sydney - Parramatta",
   "distance_km": 21.3,
   "houses": {
    "overall": {
@@ -63343,7 +63343,7 @@
  },
  {
   "name": "Merrylands",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 21.8,
   "houses": {
    "overall": {
@@ -63496,7 +63496,7 @@
  },
  {
   "name": "Merrylands West",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 21.8,
   "houses": {
    "overall": {
@@ -63649,7 +63649,7 @@
  },
  {
   "name": "Northmead",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 21.9,
   "houses": {
    "overall": {
@@ -63802,7 +63802,7 @@
  },
  {
   "name": "Cherrybrook",
-  "region": "Pennant Hills - Epping",
+  "region": "Sydney - Ryde",
   "distance_km": 22.1,
   "houses": {
    "overall": {
@@ -63955,7 +63955,7 @@
  },
  {
   "name": "Asquith",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 22.2,
   "houses": {
    "overall": {
@@ -64108,7 +64108,7 @@
  },
  {
   "name": "Hornsby",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 22.2,
   "houses": {
    "overall": {
@@ -64261,7 +64261,7 @@
  },
  {
   "name": "Hornsby Heights",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 22.2,
   "houses": {
    "overall": {
@@ -64414,7 +64414,7 @@
  },
  {
   "name": "Waitara",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 22.2,
   "houses": {
    "overall": {
@@ -64567,7 +64567,7 @@
  },
  {
   "name": "East Hills",
-  "region": "Bankstown",
+  "region": "Sydney - Inner South West",
   "distance_km": 22.2,
   "houses": {
    "overall": {
@@ -64720,7 +64720,7 @@
  },
  {
   "name": "Panania",
-  "region": "Bankstown",
+  "region": "Sydney - Inner South West",
   "distance_km": 22.2,
   "houses": {
    "overall": {
@@ -64873,7 +64873,7 @@
  },
  {
   "name": "Picnic Point",
-  "region": "Bankstown",
+  "region": "Sydney - Inner South West",
   "distance_km": 22.2,
   "houses": {
    "overall": {
@@ -65026,7 +65026,7 @@
  },
  {
   "name": "Caringbah",
-  "region": "Cronulla - Miranda - Caringbah",
+  "region": "Sydney - Sutherland",
   "distance_km": 22.3,
   "houses": {
    "overall": {
@@ -65179,7 +65179,7 @@
  },
  {
   "name": "Caringbah South",
-  "region": "Cronulla - Miranda - Caringbah",
+  "region": "Sydney - Sutherland",
   "distance_km": 22.3,
   "houses": {
    "overall": {
@@ -65332,7 +65332,7 @@
  },
  {
   "name": "Dolans Bay",
-  "region": "Cronulla - Miranda - Caringbah",
+  "region": "Sydney - Sutherland",
   "distance_km": 22.3,
   "houses": {
    "overall": {
@@ -65485,7 +65485,7 @@
  },
  {
   "name": "Lilli Pilli",
-  "region": "Cronulla - Miranda - Caringbah",
+  "region": "Sydney - Sutherland",
   "distance_km": 22.3,
   "houses": {
    "overall": {
@@ -65638,7 +65638,7 @@
  },
  {
   "name": "Port Hacking",
-  "region": "Cronulla - Miranda - Caringbah",
+  "region": "Sydney - Sutherland",
   "distance_km": 22.3,
   "houses": {
    "overall": {
@@ -65791,7 +65791,7 @@
  },
  {
   "name": "Taren Point",
-  "region": "Cronulla - Miranda - Caringbah",
+  "region": "Sydney - Sutherland",
   "distance_km": 22.3,
   "houses": {
    "overall": {
@@ -65944,7 +65944,7 @@
  },
  {
   "name": "Warumbul",
-  "region": "Cronulla - Miranda - Caringbah",
+  "region": "Sydney - Sutherland",
   "distance_km": 22.3,
   "houses": {
    "overall": {
@@ -66097,7 +66097,7 @@
  },
  {
   "name": "Milperra",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 22.5,
   "houses": {
    "overall": {
@@ -66250,7 +66250,7 @@
  },
  {
   "name": "Mona Vale",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 22.8,
   "houses": {
    "overall": {
@@ -66403,7 +66403,7 @@
  },
  {
   "name": "Constitution Hill",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 23.2,
   "houses": {
    "overall": {
@@ -66556,7 +66556,7 @@
  },
  {
   "name": "Gymea",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 23.2,
   "houses": {
    "overall": {
@@ -66709,7 +66709,7 @@
  },
  {
   "name": "Gymea Bay",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 23.2,
   "houses": {
    "overall": {
@@ -66862,7 +66862,7 @@
  },
  {
   "name": "Norwest",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 23.4,
   "houses": {
    "overall": {
@@ -67015,7 +67015,7 @@
  },
  {
   "name": "Bayview",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 23.9,
   "houses": {
    "overall": {
@@ -67168,7 +67168,7 @@
  },
  {
   "name": "Girraween",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 24.1,
   "houses": {
    "overall": {
@@ -67321,7 +67321,7 @@
  },
  {
   "name": "Greystanes",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 24.1,
   "houses": {
    "overall": {
@@ -67474,7 +67474,7 @@
  },
  {
   "name": "Mays Hill",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 24.1,
   "houses": {
    "overall": {
@@ -67627,7 +67627,7 @@
  },
  {
   "name": "Pemulwuy",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 24.1,
   "houses": {
    "overall": {
@@ -67780,7 +67780,7 @@
  },
  {
   "name": "Pendle Hill",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 24.1,
   "houses": {
    "overall": {
@@ -67933,7 +67933,7 @@
  },
  {
   "name": "South Wentworthville",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 24.1,
   "houses": {
    "overall": {
@@ -68086,7 +68086,7 @@
  },
  {
   "name": "Wentworthville",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 24.1,
   "houses": {
    "overall": {
@@ -68239,7 +68239,7 @@
  },
  {
   "name": "Westmead",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 24.1,
   "houses": {
    "overall": {
@@ -68392,7 +68392,7 @@
  },
  {
   "name": "Mount Colah",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 24.2,
   "houses": {
    "overall": {
@@ -68545,7 +68545,7 @@
  },
  {
   "name": "Mount Kuring-Gai",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 24.2,
   "houses": {
    "overall": {
@@ -68698,7 +68698,7 @@
  },
  {
   "name": "Akuna Bay",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 24.2,
   "houses": {
    "overall": {
@@ -68851,7 +68851,7 @@
  },
  {
   "name": "Cottage Point",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 24.2,
   "houses": {
    "overall": {
@@ -69004,7 +69004,7 @@
  },
  {
   "name": "Duffys Forest",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 24.2,
   "houses": {
    "overall": {
@@ -69157,7 +69157,7 @@
  },
  {
   "name": "Terrey Hills",
-  "region": "Warringah",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 24.2,
   "houses": {
    "overall": {
@@ -69310,7 +69310,7 @@
  },
  {
   "name": "Fairfield",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 24.2,
   "houses": {
    "overall": {
@@ -69463,7 +69463,7 @@
  },
  {
   "name": "Fairfield East",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 24.2,
   "houses": {
    "overall": {
@@ -69616,7 +69616,7 @@
  },
  {
   "name": "Fairfield Heights",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 24.2,
   "houses": {
    "overall": {
@@ -69769,7 +69769,7 @@
  },
  {
   "name": "Fairfield West",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 24.2,
   "houses": {
    "overall": {
@@ -69922,7 +69922,7 @@
  },
  {
   "name": "Cecil Hills",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 24.2,
   "houses": {
    "overall": {
@@ -70075,7 +70075,7 @@
  },
  {
   "name": "Horningsea Park",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 24.2,
   "houses": {
    "overall": {
@@ -70228,7 +70228,7 @@
  },
  {
   "name": "Hoxton Park",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 24.2,
   "houses": {
    "overall": {
@@ -70381,7 +70381,7 @@
  },
  {
   "name": "West Hoxton",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 24.2,
   "houses": {
    "overall": {
@@ -70534,7 +70534,7 @@
  },
  {
   "name": "Castle Hill",
-  "region": "Baulkham Hills",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 24.5,
   "houses": {
    "overall": {
@@ -70687,7 +70687,7 @@
  },
  {
   "name": "Old Toongabbie",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 24.7,
   "houses": {
    "overall": {
@@ -70840,7 +70840,7 @@
  },
  {
   "name": "Toongabbie",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 24.7,
   "houses": {
    "overall": {
@@ -70993,7 +70993,7 @@
  },
  {
   "name": "Toongabbie East",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 24.7,
   "houses": {
    "overall": {
@@ -71146,7 +71146,7 @@
  },
  {
   "name": "Newport",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 25.1,
   "houses": {
    "overall": {
@@ -71299,7 +71299,7 @@
  },
  {
   "name": "Newport Beach",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 25.1,
   "houses": {
    "overall": {
@@ -71452,7 +71452,7 @@
  },
  {
   "name": "Dural",
-  "region": "Dural - Wisemans Ferry",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 25.3,
   "houses": {
    "overall": {
@@ -71605,7 +71605,7 @@
  },
  {
   "name": "Middle Dural",
-  "region": "Dural - Wisemans Ferry",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 25.3,
   "houses": {
    "overall": {
@@ -71758,7 +71758,7 @@
  },
  {
   "name": "Round Corner",
-  "region": "Dural - Wisemans Ferry",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 25.3,
   "houses": {
    "overall": {
@@ -71911,7 +71911,7 @@
  },
  {
   "name": "Audley",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.3,
   "houses": {
    "overall": {
@@ -72064,7 +72064,7 @@
  },
  {
   "name": "Garie",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.3,
   "houses": {
    "overall": {
@@ -72217,7 +72217,7 @@
  },
  {
   "name": "Grays Point",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.3,
   "houses": {
    "overall": {
@@ -72370,7 +72370,7 @@
  },
  {
   "name": "Kareela",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.3,
   "houses": {
    "overall": {
@@ -72523,7 +72523,7 @@
  },
  {
   "name": "Kirrawee",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.3,
   "houses": {
    "overall": {
@@ -72676,7 +72676,7 @@
  },
  {
   "name": "Loftus",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.3,
   "houses": {
    "overall": {
@@ -72829,7 +72829,7 @@
  },
  {
   "name": "Sutherland",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.3,
   "houses": {
    "overall": {
@@ -72982,7 +72982,7 @@
  },
  {
   "name": "Woronora",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.3,
   "houses": {
    "overall": {
@@ -73135,7 +73135,7 @@
  },
  {
   "name": "Alfords Point",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.4,
   "houses": {
    "overall": {
@@ -73288,7 +73288,7 @@
  },
  {
   "name": "Bangor",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.4,
   "houses": {
    "overall": {
@@ -73441,7 +73441,7 @@
  },
  {
   "name": "Barden Ridge",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.4,
   "houses": {
    "overall": {
@@ -73594,7 +73594,7 @@
  },
  {
   "name": "Illawong",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.4,
   "houses": {
    "overall": {
@@ -73747,7 +73747,7 @@
  },
  {
   "name": "Lucas Heights",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.4,
   "houses": {
    "overall": {
@@ -73900,7 +73900,7 @@
  },
  {
   "name": "Menai",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.4,
   "houses": {
    "overall": {
@@ -74053,7 +74053,7 @@
  },
  {
   "name": "Menai Central",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.4,
   "houses": {
    "overall": {
@@ -74206,7 +74206,7 @@
  },
  {
   "name": "Bonnie Vale",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.6,
   "houses": {
    "overall": {
@@ -74359,7 +74359,7 @@
  },
  {
   "name": "Jibbon",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.7,
   "houses": {
    "overall": {
@@ -74512,7 +74512,7 @@
  },
  {
   "name": "McCarrs Creek",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 25.8,
   "houses": {
    "overall": {
@@ -74665,7 +74665,7 @@
  },
  {
   "name": "Moorebank",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 25.8,
   "houses": {
    "overall": {
@@ -74818,7 +74818,7 @@
  },
  {
   "name": "Bundeena",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.8,
   "houses": {
    "overall": {
@@ -74971,7 +74971,7 @@
  },
  {
   "name": "Burraneer",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.8,
   "houses": {
    "overall": {
@@ -75124,7 +75124,7 @@
  },
  {
   "name": "Cronulla",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.8,
   "houses": {
    "overall": {
@@ -75277,7 +75277,7 @@
  },
  {
   "name": "Maianbar",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.8,
   "houses": {
    "overall": {
@@ -75430,7 +75430,7 @@
  },
  {
   "name": "Woolooware",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 25.8,
   "houses": {
    "overall": {
@@ -75583,7 +75583,7 @@
  },
  {
   "name": "Church Point",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 26.0,
   "houses": {
    "overall": {
@@ -75736,7 +75736,7 @@
  },
  {
   "name": "Elvina Bay",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 26.0,
   "houses": {
    "overall": {
@@ -75889,7 +75889,7 @@
  },
  {
   "name": "Lovett Bay",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 26.0,
   "houses": {
    "overall": {
@@ -76042,7 +76042,7 @@
  },
  {
   "name": "Scotland Island",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 26.0,
   "houses": {
    "overall": {
@@ -76195,7 +76195,7 @@
  },
  {
   "name": "Cabramatta",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 26.0,
   "houses": {
    "overall": {
@@ -76348,7 +76348,7 @@
  },
  {
   "name": "Cabramatta West",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 26.0,
   "houses": {
    "overall": {
@@ -76501,7 +76501,7 @@
  },
  {
   "name": "Canley Heights",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 26.0,
   "houses": {
    "overall": {
@@ -76654,7 +76654,7 @@
  },
  {
   "name": "Canley Vale",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 26.0,
   "houses": {
    "overall": {
@@ -76807,7 +76807,7 @@
  },
  {
   "name": "Lansvale",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 26.0,
   "houses": {
    "overall": {
@@ -76960,7 +76960,7 @@
  },
  {
   "name": "Casula",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 27.4,
   "houses": {
    "overall": {
@@ -77113,7 +77113,7 @@
  },
  {
   "name": "Casula Mall",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 27.4,
   "houses": {
    "overall": {
@@ -77266,7 +77266,7 @@
  },
  {
   "name": "Chipping Norton",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 27.4,
   "houses": {
    "overall": {
@@ -77419,7 +77419,7 @@
  },
  {
   "name": "Hammondville",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 27.4,
   "houses": {
    "overall": {
@@ -77572,7 +77572,7 @@
  },
  {
   "name": "Liverpool",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 27.4,
   "houses": {
    "overall": {
@@ -77725,7 +77725,7 @@
  },
  {
   "name": "Liverpool South",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 27.4,
   "houses": {
    "overall": {
@@ -77878,7 +77878,7 @@
  },
  {
   "name": "Liverpool Westfield",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 27.4,
   "houses": {
    "overall": {
@@ -78031,7 +78031,7 @@
  },
  {
   "name": "Lurnea",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 27.4,
   "houses": {
    "overall": {
@@ -78184,7 +78184,7 @@
  },
  {
   "name": "Mount Pritchard",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 27.4,
   "houses": {
    "overall": {
@@ -78337,7 +78337,7 @@
  },
  {
   "name": "Prestons",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 27.4,
   "houses": {
    "overall": {
@@ -78490,7 +78490,7 @@
  },
  {
   "name": "Warwick Farm",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 27.4,
   "houses": {
    "overall": {
@@ -78643,7 +78643,7 @@
  },
  {
   "name": "Kings Langley",
-  "region": "Blacktown",
+  "region": "Sydney - Blacktown",
   "distance_km": 27.7,
   "houses": {
    "overall": {
@@ -78796,7 +78796,7 @@
  },
  {
   "name": "Lalor Park",
-  "region": "Blacktown",
+  "region": "Sydney - Blacktown",
   "distance_km": 27.7,
   "houses": {
    "overall": {
@@ -78949,7 +78949,7 @@
  },
  {
   "name": "Seven Hills",
-  "region": "Blacktown",
+  "region": "Sydney - Blacktown",
   "distance_km": 27.7,
   "houses": {
    "overall": {
@@ -79102,7 +79102,7 @@
  },
  {
   "name": "Seven Hills West",
-  "region": "Blacktown",
+  "region": "Sydney - Blacktown",
   "distance_km": 27.7,
   "houses": {
    "overall": {
@@ -79255,7 +79255,7 @@
  },
  {
   "name": "Baulkham Hills",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 27.9,
   "houses": {
    "overall": {
@@ -79408,7 +79408,7 @@
  },
  {
   "name": "Bella Vista",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 27.9,
   "houses": {
    "overall": {
@@ -79561,7 +79561,7 @@
  },
  {
   "name": "Crestwood",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 27.9,
   "houses": {
    "overall": {
@@ -79714,7 +79714,7 @@
  },
  {
   "name": "Winston Hills",
-  "region": "Parramatta",
+  "region": "Sydney - Parramatta",
   "distance_km": 27.9,
   "houses": {
    "overall": {
@@ -79867,7 +79867,7 @@
  },
  {
   "name": "Morning Bay",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 28.0,
   "houses": {
    "overall": {
@@ -80020,7 +80020,7 @@
  },
  {
   "name": "Avalon",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 28.1,
   "houses": {
    "overall": {
@@ -80173,7 +80173,7 @@
  },
  {
   "name": "Avalon Beach",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 28.1,
   "houses": {
    "overall": {
@@ -80326,7 +80326,7 @@
  },
  {
   "name": "Bilgola",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 28.1,
   "houses": {
    "overall": {
@@ -80479,7 +80479,7 @@
  },
  {
   "name": "Bilgola Beach",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 28.1,
   "houses": {
    "overall": {
@@ -80632,7 +80632,7 @@
  },
  {
   "name": "Bilgola Plateau",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 28.1,
   "houses": {
    "overall": {
@@ -80785,7 +80785,7 @@
  },
  {
   "name": "Careel Bay",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 28.1,
   "houses": {
    "overall": {
@@ -80938,7 +80938,7 @@
  },
  {
   "name": "Clareville",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 28.1,
   "houses": {
    "overall": {
@@ -81091,7 +81091,7 @@
  },
  {
   "name": "Paradise Beach",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 28.1,
   "houses": {
    "overall": {
@@ -81244,7 +81244,7 @@
  },
  {
   "name": "Taylors Point",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 28.1,
   "houses": {
    "overall": {
@@ -81397,7 +81397,7 @@
  },
  {
   "name": "Whale Beach",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 28.1,
   "houses": {
    "overall": {
@@ -81550,7 +81550,7 @@
  },
  {
   "name": "Berowra",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 28.2,
   "houses": {
    "overall": {
@@ -81703,7 +81703,7 @@
  },
  {
   "name": "Cowan",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 28.2,
   "houses": {
    "overall": {
@@ -81856,7 +81856,7 @@
  },
  {
   "name": "Marley",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 28.3,
   "houses": {
    "overall": {
@@ -82009,7 +82009,7 @@
  },
  {
   "name": "Yenabilli",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 28.3,
   "houses": {
    "overall": {
@@ -82162,7 +82162,7 @@
  },
  {
   "name": "Pleasure Point",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 28.4,
   "houses": {
    "overall": {
@@ -82315,7 +82315,7 @@
  },
  {
   "name": "Sandy Point",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 28.4,
   "houses": {
    "overall": {
@@ -82468,7 +82468,7 @@
  },
  {
   "name": "Voyager Point",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 28.4,
   "houses": {
    "overall": {
@@ -82621,7 +82621,7 @@
  },
  {
   "name": "Goarra",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 28.7,
   "houses": {
    "overall": {
@@ -82774,7 +82774,7 @@
  },
  {
   "name": "Beaumont Hills",
-  "region": "Blacktown - North",
+  "region": "Sydney - Blacktown",
   "distance_km": 29.9,
   "houses": {
    "overall": {
@@ -82927,7 +82927,7 @@
  },
  {
   "name": "Kellyville",
-  "region": "Blacktown - North",
+  "region": "Sydney - Blacktown",
   "distance_km": 29.9,
   "houses": {
    "overall": {
@@ -83080,7 +83080,7 @@
  },
  {
   "name": "Kellyville Ridge",
-  "region": "Blacktown - North",
+  "region": "Sydney - Blacktown",
   "distance_km": 29.9,
   "houses": {
    "overall": {
@@ -83233,7 +83233,7 @@
  },
  {
   "name": "Rouse Hill",
-  "region": "Blacktown - North",
+  "region": "Sydney - Blacktown",
   "distance_km": 29.9,
   "houses": {
    "overall": {
@@ -83386,7 +83386,7 @@
  },
  {
   "name": "Abbotsbury",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 29.9,
   "houses": {
    "overall": {
@@ -83539,7 +83539,7 @@
  },
  {
   "name": "Bossley Park",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 29.9,
   "houses": {
    "overall": {
@@ -83692,7 +83692,7 @@
  },
  {
   "name": "Edensor Park",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 29.9,
   "houses": {
    "overall": {
@@ -83845,7 +83845,7 @@
  },
  {
   "name": "Greenfield Park",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 29.9,
   "houses": {
    "overall": {
@@ -83998,7 +83998,7 @@
  },
  {
   "name": "Prairiewood",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 29.9,
   "houses": {
    "overall": {
@@ -84151,7 +84151,7 @@
  },
  {
   "name": "St Johns Park",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 29.9,
   "houses": {
    "overall": {
@@ -84304,7 +84304,7 @@
  },
  {
   "name": "Wakeley",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 29.9,
   "houses": {
    "overall": {
@@ -84457,7 +84457,7 @@
  },
  {
   "name": "Wentworth Port",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 29.9,
   "houses": {
    "overall": {
@@ -84610,7 +84610,7 @@
  },
  {
   "name": "Arndell Park",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 30.0,
   "houses": {
    "overall": {
@@ -84763,7 +84763,7 @@
  },
  {
   "name": "Blacktown",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 30.0,
   "houses": {
    "overall": {
@@ -84916,7 +84916,7 @@
  },
  {
   "name": "Blacktown Westpoint",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 30.0,
   "houses": {
    "overall": {
@@ -85069,7 +85069,7 @@
  },
  {
   "name": "Huntingwood",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 30.0,
   "houses": {
    "overall": {
@@ -85222,7 +85222,7 @@
  },
  {
   "name": "Kings Park",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 30.0,
   "houses": {
    "overall": {
@@ -85375,7 +85375,7 @@
  },
  {
   "name": "Marayong",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 30.0,
   "houses": {
    "overall": {
@@ -85528,7 +85528,7 @@
  },
  {
   "name": "Prospect",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 30.0,
   "houses": {
    "overall": {
@@ -85681,7 +85681,7 @@
  },
  {
   "name": "Glenwood",
-  "region": "Blacktown - North",
+  "region": "Sydney - Blacktown",
   "distance_km": 30.2,
   "houses": {
    "overall": {
@@ -85834,7 +85834,7 @@
  },
  {
   "name": "Parklea",
-  "region": "Blacktown - North",
+  "region": "Sydney - Blacktown",
   "distance_km": 30.2,
   "houses": {
    "overall": {
@@ -85987,7 +85987,7 @@
  },
  {
   "name": "Stanhope Gardens",
-  "region": "Blacktown - North",
+  "region": "Sydney - Blacktown",
   "distance_km": 30.2,
   "houses": {
    "overall": {
@@ -86140,7 +86140,7 @@
  },
  {
   "name": "Bonnyrigg",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 30.6,
   "houses": {
    "overall": {
@@ -86293,7 +86293,7 @@
  },
  {
   "name": "Bonnyrigg Heights",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 30.6,
   "houses": {
    "overall": {
@@ -86446,7 +86446,7 @@
  },
  {
   "name": "Smithfield",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 31.0,
   "houses": {
    "overall": {
@@ -86599,7 +86599,7 @@
  },
  {
   "name": "Smithfield West",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 31.0,
   "houses": {
    "overall": {
@@ -86752,7 +86752,7 @@
  },
  {
   "name": "Wetherill Park",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 31.0,
   "houses": {
    "overall": {
@@ -86905,7 +86905,7 @@
  },
  {
   "name": "Woodpark",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 31.0,
   "houses": {
    "overall": {
@@ -87058,7 +87058,7 @@
  },
  {
   "name": "Wattamolla",
-  "region": "Shoalhaven",
+  "region": "Southern Highlands and Shoalhaven",
   "distance_km": 31.0,
   "houses": {
    "overall": {
@@ -87211,7 +87211,7 @@
  },
  {
   "name": "Coasters Retreat",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 31.3,
   "houses": {
    "overall": {
@@ -87364,7 +87364,7 @@
  },
  {
   "name": "Currawong Beach",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 31.3,
   "houses": {
    "overall": {
@@ -87517,7 +87517,7 @@
  },
  {
   "name": "Great Mackerel Beach",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 31.3,
   "houses": {
    "overall": {
@@ -87670,7 +87670,7 @@
  },
  {
   "name": "Palm Beach",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 31.3,
   "houses": {
    "overall": {
@@ -87823,7 +87823,7 @@
  },
  {
   "name": "The Basin",
-  "region": "Pittwater",
+  "region": "Sydney - Northern Beaches",
   "distance_km": 31.3,
   "houses": {
    "overall": {
@@ -87976,7 +87976,7 @@
  },
  {
   "name": "North Kellyville",
-  "region": "Blacktown - North",
+  "region": "Sydney - Blacktown",
   "distance_km": 31.3,
   "houses": {
    "overall": {
@@ -88129,7 +88129,7 @@
  },
  {
   "name": "Ashcroft",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 31.3,
   "houses": {
    "overall": {
@@ -88282,7 +88282,7 @@
  },
  {
   "name": "Busby",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 31.3,
   "houses": {
    "overall": {
@@ -88435,7 +88435,7 @@
  },
  {
   "name": "Cartwright",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 31.3,
   "houses": {
    "overall": {
@@ -88588,7 +88588,7 @@
  },
  {
   "name": "Green Valley",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 31.3,
   "houses": {
    "overall": {
@@ -88741,7 +88741,7 @@
  },
  {
   "name": "Heckenberg",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 31.3,
   "houses": {
    "overall": {
@@ -88894,7 +88894,7 @@
  },
  {
   "name": "Hinchinbrook",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 31.3,
   "houses": {
    "overall": {
@@ -89047,7 +89047,7 @@
  },
  {
   "name": "Miller",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 31.3,
   "houses": {
    "overall": {
@@ -89200,7 +89200,7 @@
  },
  {
   "name": "Sadleir",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 31.3,
   "houses": {
    "overall": {
@@ -89353,7 +89353,7 @@
  },
  {
   "name": "Glenfield",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 31.6,
   "houses": {
    "overall": {
@@ -89506,7 +89506,7 @@
  },
  {
   "name": "Palona",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 31.8,
   "houses": {
    "overall": {
@@ -89659,7 +89659,7 @@
  },
  {
   "name": "Nirimba Fields",
-  "region": "Blacktown - North",
+  "region": "Sydney - Blacktown",
   "distance_km": 31.9,
   "houses": {
    "overall": {
@@ -89812,7 +89812,7 @@
  },
  {
   "name": "Annangrove",
-  "region": "Dural - Wisemans Ferry",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 32.0,
   "houses": {
    "overall": {
@@ -89965,7 +89965,7 @@
  },
  {
   "name": "Glenhaven",
-  "region": "Dural - Wisemans Ferry",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 32.0,
   "houses": {
    "overall": {
@@ -90118,7 +90118,7 @@
  },
  {
   "name": "Kenthurst",
-  "region": "Dural - Wisemans Ferry",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 32.0,
   "houses": {
    "overall": {
@@ -90271,7 +90271,7 @@
  },
  {
   "name": "Engadine",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 32.0,
   "houses": {
    "overall": {
@@ -90424,7 +90424,7 @@
  },
  {
   "name": "Heathcote",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 32.0,
   "houses": {
    "overall": {
@@ -90577,7 +90577,7 @@
  },
  {
   "name": "Waterfall",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 32.0,
   "houses": {
    "overall": {
@@ -90730,7 +90730,7 @@
  },
  {
   "name": "Woronora Heights",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 32.0,
   "houses": {
    "overall": {
@@ -90883,7 +90883,7 @@
  },
  {
   "name": "Yarrawarrah",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 32.0,
   "houses": {
    "overall": {
@@ -91036,7 +91036,7 @@
  },
  {
   "name": "Glenquarie",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 32.4,
   "houses": {
    "overall": {
@@ -91189,7 +91189,7 @@
  },
  {
   "name": "Long Point",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 32.4,
   "houses": {
    "overall": {
@@ -91342,7 +91342,7 @@
  },
  {
   "name": "Macquarie Fields",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 32.4,
   "houses": {
    "overall": {
@@ -91495,7 +91495,7 @@
  },
  {
   "name": "Uloola",
-  "region": "Sutherland - Menai - Heathcote",
+  "region": "Sydney - Sutherland",
   "distance_km": 33.0,
   "houses": {
    "overall": {
@@ -91648,7 +91648,7 @@
  },
  {
   "name": "Acacia Gardens",
-  "region": "Blacktown - North",
+  "region": "Sydney - Blacktown",
   "distance_km": 33.1,
   "houses": {
    "overall": {
@@ -91801,7 +91801,7 @@
  },
  {
   "name": "Quakers Hill",
-  "region": "Blacktown - North",
+  "region": "Sydney - Blacktown",
   "distance_km": 33.1,
   "houses": {
    "overall": {
@@ -91954,7 +91954,7 @@
  },
  {
   "name": "Len Waters Estate",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 33.3,
   "houses": {
    "overall": {
@@ -92107,7 +92107,7 @@
  },
  {
   "name": "Bungarribee",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 33.3,
   "houses": {
    "overall": {
@@ -92260,7 +92260,7 @@
  },
  {
   "name": "Doonside",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 33.3,
   "houses": {
    "overall": {
@@ -92413,7 +92413,7 @@
  },
  {
   "name": "Woodcroft",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 33.3,
   "houses": {
    "overall": {
@@ -92566,7 +92566,7 @@
  },
  {
   "name": "Horsley Park",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 33.4,
   "houses": {
    "overall": {
@@ -92719,7 +92719,7 @@
  },
  {
   "name": "The Ponds",
-  "region": "Blacktown - North",
+  "region": "Sydney - Blacktown",
   "distance_km": 33.4,
   "houses": {
    "overall": {
@@ -92872,7 +92872,7 @@
  },
  {
   "name": "Elizabeth Hills",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 33.5,
   "houses": {
    "overall": {
@@ -93025,7 +93025,7 @@
  },
  {
   "name": "Eastern Creek",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 33.7,
   "houses": {
    "overall": {
@@ -93178,7 +93178,7 @@
  },
  {
   "name": "Rooty Hill",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 33.7,
   "houses": {
    "overall": {
@@ -93331,7 +93331,7 @@
  },
  {
   "name": "Carnes Hill",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 34.1,
   "houses": {
    "overall": {
@@ -93484,7 +93484,7 @@
  },
  {
   "name": "Middleton Grange",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 34.2,
   "houses": {
    "overall": {
@@ -93637,7 +93637,7 @@
  },
  {
   "name": "Bardia",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 34.2,
   "houses": {
    "overall": {
@@ -93790,7 +93790,7 @@
  },
  {
   "name": "Berowra Heights",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 34.3,
   "houses": {
    "overall": {
@@ -93943,7 +93943,7 @@
  },
  {
   "name": "Berowra Waters",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 34.3,
   "houses": {
    "overall": {
@@ -94096,7 +94096,7 @@
  },
  {
   "name": "Cecil Park",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 34.3,
   "houses": {
    "overall": {
@@ -94249,7 +94249,7 @@
  },
  {
   "name": "Kemps Creek",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 34.3,
   "houses": {
    "overall": {
@@ -94402,7 +94402,7 @@
  },
  {
   "name": "Mount Vernon",
-  "region": "Fairfield",
+  "region": "Sydney - South West",
   "distance_km": 34.3,
   "houses": {
    "overall": {
@@ -94555,7 +94555,7 @@
  },
  {
   "name": "Holsworthy",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 35.2,
   "houses": {
    "overall": {
@@ -94708,7 +94708,7 @@
  },
  {
   "name": "Wattle Grove",
-  "region": "Liverpool",
+  "region": "Sydney - South West",
   "distance_km": 35.2,
   "houses": {
    "overall": {
@@ -94861,7 +94861,7 @@
  },
  {
   "name": "Tallawong",
-  "region": "Blacktown - North",
+  "region": "Sydney - Blacktown",
   "distance_km": 35.3,
   "houses": {
    "overall": {
@@ -95014,7 +95014,7 @@
  },
  {
   "name": "Schofields",
-  "region": "Blacktown - North",
+  "region": "Sydney - Blacktown",
   "distance_km": 35.7,
   "houses": {
    "overall": {
@@ -95167,7 +95167,7 @@
  },
  {
   "name": "Canoelands",
-  "region": "Dural - Wisemans Ferry",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 35.9,
   "houses": {
    "overall": {
@@ -95320,7 +95320,7 @@
  },
  {
   "name": "Forest Glen",
-  "region": "Dural - Wisemans Ferry",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 35.9,
   "houses": {
    "overall": {
@@ -95473,7 +95473,7 @@
  },
  {
   "name": "Glenorie",
-  "region": "Dural - Wisemans Ferry",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 35.9,
   "houses": {
    "overall": {
@@ -95626,7 +95626,7 @@
  },
  {
   "name": "Hillside",
-  "region": "Dural - Wisemans Ferry",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 35.9,
   "houses": {
    "overall": {
@@ -95779,7 +95779,7 @@
  },
  {
   "name": "Colebee",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 36.3,
   "houses": {
    "overall": {
@@ -95932,7 +95932,7 @@
  },
  {
   "name": "Dean Park",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 36.3,
   "houses": {
    "overall": {
@@ -96085,7 +96085,7 @@
  },
  {
   "name": "Glendenning",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 36.3,
   "houses": {
    "overall": {
@@ -96238,7 +96238,7 @@
  },
  {
   "name": "Hassall Grove",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 36.3,
   "houses": {
    "overall": {
@@ -96391,7 +96391,7 @@
  },
  {
   "name": "Oakhurst",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 36.3,
   "houses": {
    "overall": {
@@ -96544,7 +96544,7 @@
  },
  {
   "name": "Plumpton",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 36.3,
   "houses": {
    "overall": {
@@ -96697,7 +96697,7 @@
  },
  {
   "name": "Berowra Creek",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 36.5,
   "houses": {
    "overall": {
@@ -96850,7 +96850,7 @@
  },
  {
   "name": "Denham Court",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 36.6,
   "houses": {
    "overall": {
@@ -97003,7 +97003,7 @@
  },
  {
   "name": "Ingleburn",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 36.6,
   "houses": {
    "overall": {
@@ -97156,7 +97156,7 @@
  },
  {
   "name": "Macquarie Links",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 36.6,
   "houses": {
    "overall": {
@@ -97309,7 +97309,7 @@
  },
  {
   "name": "Austral",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 37.4,
   "houses": {
    "overall": {
@@ -97462,7 +97462,7 @@
  },
  {
   "name": "Leppington",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 37.4,
   "houses": {
    "overall": {
@@ -97615,7 +97615,7 @@
  },
  {
   "name": "Bar Point",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 38.2,
   "houses": {
    "overall": {
@@ -97768,7 +97768,7 @@
  },
  {
   "name": "Brooklyn",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 38.2,
   "houses": {
    "overall": {
@@ -97921,7 +97921,7 @@
  },
  {
   "name": "Cogra Bay",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 38.2,
   "houses": {
    "overall": {
@@ -98074,7 +98074,7 @@
  },
  {
   "name": "Dangar Island",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 38.2,
   "houses": {
    "overall": {
@@ -98227,7 +98227,7 @@
  },
  {
   "name": "Milsons Passage",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 38.2,
   "houses": {
    "overall": {
@@ -98380,7 +98380,7 @@
  },
  {
   "name": "Mooney Mooney",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 38.2,
   "houses": {
    "overall": {
@@ -98533,7 +98533,7 @@
  },
  {
   "name": "Bow Bowing",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 38.2,
   "houses": {
    "overall": {
@@ -98686,7 +98686,7 @@
  },
  {
   "name": "Minto",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 38.2,
   "houses": {
    "overall": {
@@ -98839,7 +98839,7 @@
  },
  {
   "name": "Minto Heights",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 38.2,
   "houses": {
    "overall": {
@@ -98992,7 +98992,7 @@
  },
  {
   "name": "Raby",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 38.2,
   "houses": {
    "overall": {
@@ -99145,7 +99145,7 @@
  },
  {
   "name": "St Andrews",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 38.2,
   "houses": {
    "overall": {
@@ -99298,7 +99298,7 @@
  },
  {
   "name": "Varroville",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 38.2,
   "houses": {
    "overall": {
@@ -99451,7 +99451,7 @@
  },
  {
   "name": "Arcadia",
-  "region": "Dural - Wisemans Ferry",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 38.4,
   "houses": {
    "overall": {
@@ -99604,7 +99604,7 @@
  },
  {
   "name": "Berrilee",
-  "region": "Dural - Wisemans Ferry",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 38.4,
   "houses": {
    "overall": {
@@ -99757,7 +99757,7 @@
  },
  {
   "name": "Fiddletown",
-  "region": "Dural - Wisemans Ferry",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 38.4,
   "houses": {
    "overall": {
@@ -99910,7 +99910,7 @@
  },
  {
   "name": "Galston",
-  "region": "Dural - Wisemans Ferry",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 38.4,
   "houses": {
    "overall": {
@@ -100063,7 +100063,7 @@
  },
  {
   "name": "Bidwill",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 38.9,
   "houses": {
    "overall": {
@@ -100216,7 +100216,7 @@
  },
  {
   "name": "Blackett",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 38.9,
   "houses": {
    "overall": {
@@ -100369,7 +100369,7 @@
  },
  {
   "name": "Dharruk",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 38.9,
   "houses": {
    "overall": {
@@ -100522,7 +100522,7 @@
  },
  {
   "name": "Emerton",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 38.9,
   "houses": {
    "overall": {
@@ -100675,7 +100675,7 @@
  },
  {
   "name": "Hebersham",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 38.9,
   "houses": {
    "overall": {
@@ -100828,7 +100828,7 @@
  },
  {
   "name": "Lethbridge Park",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 38.9,
   "houses": {
    "overall": {
@@ -100981,7 +100981,7 @@
  },
  {
   "name": "Minchinbury",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 38.9,
   "houses": {
    "overall": {
@@ -101134,7 +101134,7 @@
  },
  {
   "name": "Mount Druitt",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 38.9,
   "houses": {
    "overall": {
@@ -101287,7 +101287,7 @@
  },
  {
   "name": "Mount Druitt Village",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 38.9,
   "houses": {
    "overall": {
@@ -101440,7 +101440,7 @@
  },
  {
   "name": "Shalvey",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 38.9,
   "houses": {
    "overall": {
@@ -101593,7 +101593,7 @@
  },
  {
   "name": "Tregear",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 38.9,
   "houses": {
    "overall": {
@@ -101746,7 +101746,7 @@
  },
  {
   "name": "Whalan",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 38.9,
   "houses": {
    "overall": {
@@ -101899,7 +101899,7 @@
  },
  {
   "name": "Willmot",
-  "region": "Mount Druitt",
+  "region": "Sydney - Blacktown",
   "distance_km": 38.9,
   "houses": {
    "overall": {
@@ -102052,7 +102052,7 @@
  },
  {
   "name": "Berkshire Park",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 39.6,
   "houses": {
    "overall": {
@@ -102205,7 +102205,7 @@
  },
  {
   "name": "Box Hill",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 39.6,
   "houses": {
    "overall": {
@@ -102358,7 +102358,7 @@
  },
  {
   "name": "Maraylya",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 39.6,
   "houses": {
    "overall": {
@@ -102511,7 +102511,7 @@
  },
  {
   "name": "Marsden Park",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 39.6,
   "houses": {
    "overall": {
@@ -102664,7 +102664,7 @@
  },
  {
   "name": "Nelson",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 39.6,
   "houses": {
    "overall": {
@@ -102817,7 +102817,7 @@
  },
  {
   "name": "Oakville",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 39.6,
   "houses": {
    "overall": {
@@ -102970,7 +102970,7 @@
  },
  {
   "name": "Riverstone",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 39.6,
   "houses": {
    "overall": {
@@ -103123,7 +103123,7 @@
  },
  {
   "name": "Vineyard",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 39.6,
   "houses": {
    "overall": {
@@ -103276,7 +103276,7 @@
  },
  {
   "name": "Erskine Park",
-  "region": "St Marys",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 39.8,
   "houses": {
    "overall": {
@@ -103429,7 +103429,7 @@
  },
  {
   "name": "St Clair",
-  "region": "St Marys",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 39.8,
   "houses": {
    "overall": {
@@ -103582,7 +103582,7 @@
  },
  {
   "name": "Cheero Point",
-  "region": "Hornsby",
+  "region": "Sydney - North Sydney and Hornsby",
   "distance_km": 39.9,
   "houses": {
    "overall": {
@@ -103735,7 +103735,7 @@
  },
  {
   "name": "Woronora Dam",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 41.3,
   "houses": {
    "overall": {
@@ -103888,7 +103888,7 @@
  },
  {
   "name": "Colyton",
-  "region": "St Marys",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 41.3,
   "houses": {
    "overall": {
@@ -104041,7 +104041,7 @@
  },
  {
   "name": "North St Marys",
-  "region": "St Marys",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 41.3,
   "houses": {
    "overall": {
@@ -104194,7 +104194,7 @@
  },
  {
   "name": "Oxley Park",
-  "region": "St Marys",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 41.3,
   "houses": {
    "overall": {
@@ -104347,7 +104347,7 @@
  },
  {
   "name": "St Marys",
-  "region": "St Marys",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 41.3,
   "houses": {
    "overall": {
@@ -104500,7 +104500,7 @@
  },
  {
   "name": "St Marys East",
-  "region": "St Marys",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 41.3,
   "houses": {
    "overall": {
@@ -104653,7 +104653,7 @@
  },
  {
   "name": "St Marys South",
-  "region": "St Marys",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 41.3,
   "houses": {
    "overall": {
@@ -104806,7 +104806,7 @@
  },
  {
   "name": "Booker Bay",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 41.6,
   "houses": {
    "overall": {
@@ -104959,7 +104959,7 @@
  },
  {
   "name": "Box Head",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 41.6,
   "houses": {
    "overall": {
@@ -105112,7 +105112,7 @@
  },
  {
   "name": "Daleys Point",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 41.6,
   "houses": {
    "overall": {
@@ -105265,7 +105265,7 @@
  },
  {
   "name": "Empire Bay",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 41.6,
   "houses": {
    "overall": {
@@ -105418,7 +105418,7 @@
  },
  {
   "name": "Ettalong Beach",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 41.6,
   "houses": {
    "overall": {
@@ -105571,7 +105571,7 @@
  },
  {
   "name": "Hardys Bay",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 41.6,
   "houses": {
    "overall": {
@@ -105724,7 +105724,7 @@
  },
  {
   "name": "Killcare",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 41.6,
   "houses": {
    "overall": {
@@ -105877,7 +105877,7 @@
  },
  {
   "name": "Killcare Heights",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 41.6,
   "houses": {
    "overall": {
@@ -106030,7 +106030,7 @@
  },
  {
   "name": "Pretty Beach",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 41.6,
   "houses": {
    "overall": {
@@ -106183,7 +106183,7 @@
  },
  {
   "name": "St Huberts Island",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 41.6,
   "houses": {
    "overall": {
@@ -106336,7 +106336,7 @@
  },
  {
   "name": "Umina Beach",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 41.6,
   "houses": {
    "overall": {
@@ -106489,7 +106489,7 @@
  },
  {
   "name": "Wagstaffe",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 41.6,
   "houses": {
    "overall": {
@@ -106642,7 +106642,7 @@
  },
  {
   "name": "Eagle Vale",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 41.9,
   "houses": {
    "overall": {
@@ -106795,7 +106795,7 @@
  },
  {
   "name": "Eschol Park",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 41.9,
   "houses": {
    "overall": {
@@ -106948,7 +106948,7 @@
  },
  {
   "name": "Kearns",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 41.9,
   "houses": {
    "overall": {
@@ -107101,7 +107101,7 @@
  },
  {
   "name": "Catherine Field",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 42.4,
   "houses": {
    "overall": {
@@ -107254,7 +107254,7 @@
  },
  {
   "name": "Gregory Hills",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 42.4,
   "houses": {
    "overall": {
@@ -107407,7 +107407,7 @@
  },
  {
   "name": "Rossmore",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 42.4,
   "houses": {
    "overall": {
@@ -107560,7 +107560,7 @@
  },
  {
   "name": "Gledswood Hills",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 42.6,
   "houses": {
    "overall": {
@@ -107713,7 +107713,7 @@
  },
  {
   "name": "Ropes Crossing",
-  "region": "St Marys",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 42.6,
   "houses": {
    "overall": {
@@ -107866,7 +107866,7 @@
  },
  {
   "name": "Badgerys Creek",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 43.2,
   "houses": {
    "overall": {
@@ -108019,7 +108019,7 @@
  },
  {
   "name": "Blairmount",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 43.4,
   "houses": {
    "overall": {
@@ -108172,7 +108172,7 @@
  },
  {
   "name": "Claymore",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 43.4,
   "houses": {
    "overall": {
@@ -108325,7 +108325,7 @@
  },
  {
   "name": "Angus",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 44.0,
   "houses": {
    "overall": {
@@ -108478,7 +108478,7 @@
  },
  {
   "name": "Gables",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 44.0,
   "houses": {
    "overall": {
@@ -108631,7 +108631,7 @@
  },
  {
   "name": "Grantham Farm",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 44.0,
   "houses": {
    "overall": {
@@ -108784,7 +108784,7 @@
  },
  {
   "name": "Melonba",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 44.0,
   "houses": {
    "overall": {
@@ -108937,7 +108937,7 @@
  },
  {
   "name": "Richards",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 44.0,
   "houses": {
    "overall": {
@@ -109090,7 +109090,7 @@
  },
  {
   "name": "Bradfield",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 44.2,
   "houses": {
    "overall": {
@@ -109243,7 +109243,7 @@
  },
  {
   "name": "Blackwall",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 44.5,
   "houses": {
    "overall": {
@@ -109396,7 +109396,7 @@
  },
  {
   "name": "Horsfield Bay",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 44.5,
   "houses": {
    "overall": {
@@ -109549,7 +109549,7 @@
  },
  {
   "name": "Koolewong",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 44.5,
   "houses": {
    "overall": {
@@ -109702,7 +109702,7 @@
  },
  {
   "name": "Little Wobby",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 44.5,
   "houses": {
    "overall": {
@@ -109855,7 +109855,7 @@
  },
  {
   "name": "Patonga",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 44.5,
   "houses": {
    "overall": {
@@ -110008,7 +110008,7 @@
  },
  {
   "name": "Pearl Beach",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 44.5,
   "houses": {
    "overall": {
@@ -110161,7 +110161,7 @@
  },
  {
   "name": "Phegans Bay",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 44.5,
   "houses": {
    "overall": {
@@ -110314,7 +110314,7 @@
  },
  {
   "name": "Wondabyne",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 44.5,
   "houses": {
    "overall": {
@@ -110467,7 +110467,7 @@
  },
  {
   "name": "Woy Woy",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 44.5,
   "houses": {
    "overall": {
@@ -110620,7 +110620,7 @@
  },
  {
   "name": "Woy Woy Bay",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 44.5,
   "houses": {
    "overall": {
@@ -110773,7 +110773,7 @@
  },
  {
   "name": "Caddens",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 44.8,
   "houses": {
    "overall": {
@@ -110926,7 +110926,7 @@
  },
  {
   "name": "Orchard Hills",
-  "region": "St Marys",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 45.4,
   "houses": {
    "overall": {
@@ -111079,7 +111079,7 @@
  },
  {
   "name": "Bringelly",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 45.5,
   "houses": {
    "overall": {
@@ -111232,7 +111232,7 @@
  },
  {
   "name": "Singletons Mill",
-  "region": "Hawkesbury",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 45.6,
   "houses": {
    "overall": {
@@ -111385,7 +111385,7 @@
  },
  {
   "name": "Coalcliff",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 45.9,
   "houses": {
    "overall": {
@@ -111538,7 +111538,7 @@
  },
  {
   "name": "Darkes Forest",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 45.9,
   "houses": {
    "overall": {
@@ -111691,7 +111691,7 @@
  },
  {
   "name": "Helensburgh",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 45.9,
   "houses": {
    "overall": {
@@ -111844,7 +111844,7 @@
  },
  {
   "name": "Lilyvale",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 45.9,
   "houses": {
    "overall": {
@@ -111997,7 +111997,7 @@
  },
  {
   "name": "Maddens Plains",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 45.9,
   "houses": {
    "overall": {
@@ -112150,7 +112150,7 @@
  },
  {
   "name": "Otford",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 45.9,
   "houses": {
    "overall": {
@@ -112303,7 +112303,7 @@
  },
  {
   "name": "Stanwell Park",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 45.9,
   "houses": {
    "overall": {
@@ -112456,7 +112456,7 @@
  },
  {
   "name": "Stanwell Tops",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 45.9,
   "houses": {
    "overall": {
@@ -112609,7 +112609,7 @@
  },
  {
   "name": "Pitt Town Bottoms",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 46.0,
   "houses": {
    "overall": {
@@ -112762,7 +112762,7 @@
  },
  {
   "name": "Cambridge Gardens",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 46.4,
   "houses": {
    "overall": {
@@ -112915,7 +112915,7 @@
  },
  {
   "name": "Cambridge Park",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 46.4,
   "houses": {
    "overall": {
@@ -113068,7 +113068,7 @@
  },
  {
   "name": "Claremont Meadows",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 46.4,
   "houses": {
    "overall": {
@@ -113221,7 +113221,7 @@
  },
  {
   "name": "Kingswood",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 46.4,
   "houses": {
    "overall": {
@@ -113374,7 +113374,7 @@
  },
  {
   "name": "Llandilo",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 46.4,
   "houses": {
    "overall": {
@@ -113527,7 +113527,7 @@
  },
  {
   "name": "Shanes Park",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 46.4,
   "houses": {
    "overall": {
@@ -113680,7 +113680,7 @@
  },
  {
   "name": "Werrington",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 46.4,
   "houses": {
    "overall": {
@@ -113833,7 +113833,7 @@
  },
  {
   "name": "Werrington County",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 46.4,
   "houses": {
    "overall": {
@@ -113986,7 +113986,7 @@
  },
  {
   "name": "Werrington Downs",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 46.4,
   "houses": {
    "overall": {
@@ -114139,7 +114139,7 @@
  },
  {
   "name": "Avoca Beach",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 46.5,
   "houses": {
    "overall": {
@@ -114292,7 +114292,7 @@
  },
  {
   "name": "Bensville",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 46.5,
   "houses": {
    "overall": {
@@ -114445,7 +114445,7 @@
  },
  {
   "name": "Bouddi",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 46.5,
   "houses": {
    "overall": {
@@ -114598,7 +114598,7 @@
  },
  {
   "name": "Copacabana",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 46.5,
   "houses": {
    "overall": {
@@ -114751,7 +114751,7 @@
  },
  {
   "name": "Davistown",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 46.5,
   "houses": {
    "overall": {
@@ -114904,7 +114904,7 @@
  },
  {
   "name": "Green Point",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 46.5,
   "houses": {
    "overall": {
@@ -115057,7 +115057,7 @@
  },
  {
   "name": "Kincumber",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 46.5,
   "houses": {
    "overall": {
@@ -115210,7 +115210,7 @@
  },
  {
   "name": "Kincumber South",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 46.5,
   "houses": {
    "overall": {
@@ -115363,7 +115363,7 @@
  },
  {
   "name": "Macmasters Beach",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 46.5,
   "houses": {
    "overall": {
@@ -115516,7 +115516,7 @@
  },
  {
   "name": "Picketts Valley",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 46.5,
   "houses": {
    "overall": {
@@ -115669,7 +115669,7 @@
  },
  {
   "name": "Saratoga",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 46.5,
   "houses": {
    "overall": {
@@ -115822,7 +115822,7 @@
  },
  {
   "name": "Yattalunga",
-  "region": "Gosford",
+  "region": "Central Coast",
   "distance_km": 46.5,
   "houses": {
    "overall": {
@@ -115975,7 +115975,7 @@
  },
  {
   "name": "Currans Hill",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 46.6,
   "houses": {
    "overall": {
@@ -116128,7 +116128,7 @@
  },
  {
   "name": "Harrington Park",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 46.6,
   "houses": {
    "overall": {
@@ -116281,7 +116281,7 @@
  },
  {
   "name": "Mount Annan",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 46.6,
   "houses": {
    "overall": {
@@ -116434,7 +116434,7 @@
  },
  {
   "name": "Narellan",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 46.6,
   "houses": {
    "overall": {
@@ -116587,7 +116587,7 @@
  },
  {
   "name": "Narellan Vale",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 46.6,
   "houses": {
    "overall": {
@@ -116740,7 +116740,7 @@
  },
  {
   "name": "Smeaton Grange",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 46.6,
   "houses": {
    "overall": {
@@ -116893,7 +116893,7 @@
  },
  {
   "name": "Jordan Springs",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 47.4,
   "houses": {
    "overall": {
@@ -117046,7 +117046,7 @@
  },
  {
   "name": "Shane Park",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 47.4,
   "houses": {
    "overall": {
@@ -117199,7 +117199,7 @@
  },
  {
   "name": "Menangle Park",
-  "region": "Campbelltown (NSW)",
+  "region": "Sydney - Outer South West",
   "distance_km": 49.7,
   "houses": {
    "overall": {
@@ -117352,7 +117352,7 @@
  },
  {
   "name": "Glenmore Park",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 49.7,
   "houses": {
    "overall": {
@@ -117505,7 +117505,7 @@
  },
  {
   "name": "Greendale",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 49.7,
   "houses": {
    "overall": {
@@ -117658,7 +117658,7 @@
  },
  {
   "name": "Luddenham",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 49.7,
   "houses": {
    "overall": {
@@ -117811,7 +117811,7 @@
  },
  {
   "name": "Mulgoa",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 49.7,
   "houses": {
    "overall": {
@@ -117964,7 +117964,7 @@
  },
  {
   "name": "Regentville",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 49.7,
   "houses": {
    "overall": {
@@ -118117,7 +118117,7 @@
  },
  {
   "name": "Wallacia",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 49.7,
   "houses": {
    "overall": {
@@ -118270,7 +118270,7 @@
  },
  {
   "name": "Emu Heights",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 50.6,
   "houses": {
    "overall": {
@@ -118423,7 +118423,7 @@
  },
  {
   "name": "Emu Plains",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 50.6,
   "houses": {
    "overall": {
@@ -118576,7 +118576,7 @@
  },
  {
   "name": "Jamisontown",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 50.6,
   "houses": {
    "overall": {
@@ -118729,7 +118729,7 @@
  },
  {
   "name": "Leonay",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 50.6,
   "houses": {
    "overall": {
@@ -118882,7 +118882,7 @@
  },
  {
   "name": "Penrith",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 50.6,
   "houses": {
    "overall": {
@@ -119035,7 +119035,7 @@
  },
  {
   "name": "Penrith Plaza",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 50.6,
   "houses": {
    "overall": {
@@ -119188,7 +119188,7 @@
  },
  {
   "name": "Penrith South",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 50.6,
   "houses": {
    "overall": {
@@ -119341,7 +119341,7 @@
  },
  {
   "name": "South Penrith",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 50.6,
   "houses": {
    "overall": {
@@ -119494,7 +119494,7 @@
  },
  {
   "name": "West Gosford",
-  "region": "Hawkesbury",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 50.8,
   "houses": {
    "overall": {
@@ -119647,7 +119647,7 @@
  },
  {
   "name": "Castlereagh",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 51.7,
   "houses": {
    "overall": {
@@ -119800,7 +119800,7 @@
  },
  {
   "name": "Cranebrook",
-  "region": "Penrith",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 51.7,
   "houses": {
    "overall": {
@@ -119953,7 +119953,7 @@
  },
  {
   "name": "Richmond Lowlands",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.1,
   "houses": {
    "overall": {
@@ -120106,7 +120106,7 @@
  },
  {
   "name": "Cumberland Reach",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.5,
   "houses": {
    "overall": {
@@ -120259,7 +120259,7 @@
  },
  {
   "name": "Erina Heights",
-  "region": "Wyong",
+  "region": "Central Coast",
   "distance_km": 53.6,
   "houses": {
    "overall": {
@@ -120412,7 +120412,7 @@
  },
  {
   "name": "Forresters Beach",
-  "region": "Wyong",
+  "region": "Central Coast",
   "distance_km": 53.6,
   "houses": {
    "overall": {
@@ -120565,7 +120565,7 @@
  },
  {
   "name": "North Avoca",
-  "region": "Wyong",
+  "region": "Central Coast",
   "distance_km": 53.6,
   "houses": {
    "overall": {
@@ -120718,7 +120718,7 @@
  },
  {
   "name": "Terrigal",
-  "region": "Wyong",
+  "region": "Central Coast",
   "distance_km": 53.6,
   "houses": {
    "overall": {
@@ -120871,7 +120871,7 @@
  },
  {
   "name": "Wamberal",
-  "region": "Wyong",
+  "region": "Central Coast",
   "distance_km": 53.6,
   "houses": {
    "overall": {
@@ -121024,7 +121024,7 @@
  },
  {
   "name": "Bligh Park",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -121177,7 +121177,7 @@
  },
  {
   "name": "Cattai",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -121330,7 +121330,7 @@
  },
  {
   "name": "Central Colo",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -121483,7 +121483,7 @@
  },
  {
   "name": "Clarendon",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -121636,7 +121636,7 @@
  },
  {
   "name": "Colo",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -121789,7 +121789,7 @@
  },
  {
   "name": "Colo Heights",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -121942,7 +121942,7 @@
  },
  {
   "name": "Cornwallis",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -122095,7 +122095,7 @@
  },
  {
   "name": "Ebenezer",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -122248,7 +122248,7 @@
  },
  {
   "name": "Freemans Reach",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -122401,7 +122401,7 @@
  },
  {
   "name": "Glossodia",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -122554,7 +122554,7 @@
  },
  {
   "name": "Leets Vale",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -122707,7 +122707,7 @@
  },
  {
   "name": "Lower Portland",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -122860,7 +122860,7 @@
  },
  {
   "name": "Maroota",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -123013,7 +123013,7 @@
  },
  {
   "name": "McGraths Hill",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -123166,7 +123166,7 @@
  },
  {
   "name": "Mellong",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -123319,7 +123319,7 @@
  },
  {
   "name": "Mulgrave",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -123472,7 +123472,7 @@
  },
  {
   "name": "Pitt Town",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -123625,7 +123625,7 @@
  },
  {
   "name": "Sackville",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -123778,7 +123778,7 @@
  },
  {
   "name": "Sackville North",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -123931,7 +123931,7 @@
  },
  {
   "name": "Scheyville",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -124084,7 +124084,7 @@
  },
  {
   "name": "South Maroota",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -124237,7 +124237,7 @@
  },
  {
   "name": "South Windsor",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -124390,7 +124390,7 @@
  },
  {
   "name": "Upper Colo",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -124543,7 +124543,7 @@
  },
  {
   "name": "Wilberforce",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -124696,7 +124696,7 @@
  },
  {
   "name": "Windsor",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -124849,7 +124849,7 @@
  },
  {
   "name": "Windsor Downs",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 53.8,
   "houses": {
    "overall": {
@@ -125002,7 +125002,7 @@
  },
  {
   "name": "Hobartville",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 54.1,
   "houses": {
    "overall": {
@@ -125155,7 +125155,7 @@
  },
  {
   "name": "Austinmer",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -125308,7 +125308,7 @@
  },
  {
   "name": "Clifton",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -125461,7 +125461,7 @@
  },
  {
   "name": "Coledale",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -125614,7 +125614,7 @@
  },
  {
   "name": "Scarborough",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -125767,7 +125767,7 @@
  },
  {
   "name": "Thirroul",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -125920,7 +125920,7 @@
  },
  {
   "name": "Wombarra",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -126073,7 +126073,7 @@
  },
  {
   "name": "Airds",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -126226,7 +126226,7 @@
  },
  {
   "name": "Ambarvale",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -126379,7 +126379,7 @@
  },
  {
   "name": "Appin",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -126532,7 +126532,7 @@
  },
  {
   "name": "Blair Athol",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -126685,7 +126685,7 @@
  },
  {
   "name": "Bradbury",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -126838,7 +126838,7 @@
  },
  {
   "name": "Campbelltown",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -126991,7 +126991,7 @@
  },
  {
   "name": "Campbelltown North",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -127144,7 +127144,7 @@
  },
  {
   "name": "Englorie Park",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -127297,7 +127297,7 @@
  },
  {
   "name": "Gilead",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -127450,7 +127450,7 @@
  },
  {
   "name": "Glen Alpine",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -127603,7 +127603,7 @@
  },
  {
   "name": "Kentlyn",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -127756,7 +127756,7 @@
  },
  {
   "name": "Leumeah",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -127909,7 +127909,7 @@
  },
  {
   "name": "Macarthur Square",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -128062,7 +128062,7 @@
  },
  {
   "name": "Rosemeadow",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -128215,7 +128215,7 @@
  },
  {
   "name": "Ruse",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -128368,7 +128368,7 @@
  },
  {
   "name": "St Helens Park",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -128521,7 +128521,7 @@
  },
  {
   "name": "Wedderburn",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -128674,7 +128674,7 @@
  },
  {
   "name": "Woodbine",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.4,
   "houses": {
    "overall": {
@@ -128827,7 +128827,7 @@
  },
  {
   "name": "Menangle",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 54.9,
   "houses": {
    "overall": {
@@ -128980,7 +128980,7 @@
  },
  {
   "name": "Glenbrook",
-  "region": "Blue Mountains",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 54.9,
   "houses": {
    "overall": {
@@ -129133,7 +129133,7 @@
  },
  {
   "name": "Lapstone",
-  "region": "Blue Mountains",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 54.9,
   "houses": {
    "overall": {
@@ -129286,7 +129286,7 @@
  },
  {
   "name": "Blaxland",
-  "region": "Blue Mountains",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 55.7,
   "houses": {
    "overall": {
@@ -129439,7 +129439,7 @@
  },
  {
   "name": "Blaxland East",
-  "region": "Blue Mountains",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 55.7,
   "houses": {
    "overall": {
@@ -129592,7 +129592,7 @@
  },
  {
   "name": "Mount Riverview",
-  "region": "Blue Mountains",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 55.7,
   "houses": {
    "overall": {
@@ -129745,7 +129745,7 @@
  },
  {
   "name": "Warrimoo",
-  "region": "Blue Mountains",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 55.7,
   "houses": {
    "overall": {
@@ -129898,7 +129898,7 @@
  },
  {
   "name": "North Richmond",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 56.4,
   "houses": {
    "overall": {
@@ -130051,7 +130051,7 @@
  },
  {
   "name": "Tennyson",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 56.4,
   "houses": {
    "overall": {
@@ -130204,7 +130204,7 @@
  },
  {
   "name": "The Slopes",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 56.4,
   "houses": {
    "overall": {
@@ -130357,7 +130357,7 @@
  },
  {
   "name": "Silverdale",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 58.0,
   "houses": {
    "overall": {
@@ -130510,7 +130510,7 @@
  },
  {
   "name": "Warragamba",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 58.0,
   "houses": {
    "overall": {
@@ -130663,7 +130663,7 @@
  },
  {
   "name": "Brereton",
-  "region": "Bringelly - Green Valley",
+  "region": "Sydney - South West",
   "distance_km": 58.6,
   "houses": {
    "overall": {
@@ -130816,7 +130816,7 @@
  },
  {
   "name": "Bulli",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 58.7,
   "houses": {
    "overall": {
@@ -130969,7 +130969,7 @@
  },
  {
   "name": "Bulli Tops",
-  "region": "Wollongong",
+  "region": "Illawarra",
   "distance_km": 58.7,
   "houses": {
    "overall": {
@@ -131122,7 +131122,7 @@
  },
  {
   "name": "Douglas Park",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 58.7,
   "houses": {
    "overall": {
@@ -131275,7 +131275,7 @@
  },
  {
   "name": "Cataract",
-  "region": "Wollondilly",
+  "region": "Sydney - Outer South West",
   "distance_km": 59.0,
   "houses": {
    "overall": {
@@ -131428,7 +131428,7 @@
  },
  {
   "name": "Kurmond",
-  "region": "Hawkesbury",
+  "region": "Sydney - Baulkham Hills and Hawkesbury",
   "distance_km": 59.2,
   "houses": {
    "overall": {
@@ -131581,7 +131581,7 @@
  },
  {
   "name": "Agnes Banks",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 59.8,
   "houses": {
    "overall": {
@@ -131734,7 +131734,7 @@
  },
  {
   "name": "Bowen Mountain",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 59.8,
   "houses": {
    "overall": {
@@ -131887,7 +131887,7 @@
  },
  {
   "name": "Grose Vale",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 59.8,
   "houses": {
    "overall": {
@@ -132040,7 +132040,7 @@
  },
  {
   "name": "Grose Wold",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 59.8,
   "houses": {
    "overall": {
@@ -132193,7 +132193,7 @@
  },
  {
   "name": "Londonderry",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 59.8,
   "houses": {
    "overall": {
@@ -132346,7 +132346,7 @@
  },
  {
   "name": "Richmond",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 59.8,
   "houses": {
    "overall": {
@@ -132499,7 +132499,7 @@
  },
  {
   "name": "Yarramundi",
-  "region": "Richmond - Windsor",
+  "region": "Sydney - Outer West and Blue Mountains",
   "distance_km": 59.8,
   "houses": {
    "overall": {
