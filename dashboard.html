@@ -1,0 +1,651 @@
+<title>Sydney Suburbs</title>
+<style>
+  :root {
+    color-scheme: light;
+    --surface-0:      #f9f9f7;
+    --surface-1:      #fcfcfb;
+    --surface-2:      #ffffff;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --baseline:       #c3c2b7;
+    --border:         rgba(11,11,11,0.10);
+    --series-price:   #2a78d6;
+    --diverge-pos:    #2a78d6;
+    --diverge-neg:    #e34948;
+    --good:           #006300;
+    --critical:       #d03b3b;
+    --tooltip-bg:     #0b0b0b;
+    --tooltip-text:   #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --surface-0:      #0d0d0d;
+      --surface-1:      #1a1a19;
+      --surface-2:      #202020;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --gridline:       #2c2c2a;
+      --baseline:       #383835;
+      --border:         rgba(255,255,255,0.10);
+      --series-price:   #3987e5;
+      --diverge-pos:    #3987e5;
+      --diverge-neg:    #e66767;
+      --good:           #0ca30c;
+      --critical:       #e66767;
+      --tooltip-bg:     #ffffff;
+      --tooltip-text:   #0b0b0b;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --surface-0:      #0d0d0d;
+    --surface-1:      #1a1a19;
+    --surface-2:      #202020;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #898781;
+    --gridline:       #2c2c2a;
+    --baseline:       #383835;
+    --border:         rgba(255,255,255,0.10);
+    --series-price:   #3987e5;
+    --diverge-pos:    #3987e5;
+    --diverge-neg:    #e66767;
+    --good:           #0ca30c;
+    --critical:       #e66767;
+    --tooltip-bg:     #ffffff;
+    --tooltip-text:   #0b0b0b;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--surface-0);
+    color: var(--text-primary);
+    font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding-inline: 20px;
+  }
+  .wrap { max-width: 1160px; margin: 0 auto; padding-block: 28px 56px; }
+
+  h1 { font-size: 20px; font-weight: 650; margin: 0 0 4px; }
+  .sub { color: var(--text-secondary); font-size: 13px; margin: 0 0 18px; }
+
+  .banner {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--text-muted);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    margin-bottom: 22px;
+  }
+  .banner strong { color: var(--text-primary); }
+  .banner code {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 12px;
+  }
+
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  @media (max-width: 640px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+  .kpi {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .kpi .label { font-size: 12px; color: var(--text-secondary); margin-bottom: 6px; }
+  .kpi .value { font-size: 24px; font-weight: 650; }
+  .kpi .delta { font-size: 12.5px; margin-top: 4px; font-weight: 600; }
+  .kpi .delta.up { color: var(--good); }
+  .kpi .delta.down { color: var(--critical); }
+
+  .charts {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+  @media (max-width: 860px) { .charts { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px 12px;
+  }
+  .card h2 { font-size: 14px; font-weight: 650; margin: 0 0 2px; }
+  .card .cap { font-size: 12px; color: var(--text-muted); margin: 0 0 10px; }
+
+  svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .axis-label { fill: var(--text-muted); font-size: 10.5px; }
+  .grid-line { stroke: var(--gridline); stroke-width: 1; }
+  .base-line { stroke: var(--baseline); stroke-width: 1; }
+  .bar { cursor: pointer; }
+  .bar:hover { filter: brightness(1.08); }
+  .bar-label { fill: var(--text-secondary); font-size: 11px; font-weight: 600; }
+  .bar-name  { fill: var(--text-primary); font-size: 11.5px; }
+  .dot { fill: var(--series-price); }
+  .dot-hi { stroke: var(--surface-1); stroke-width: 2; }
+  .hit { fill: transparent; cursor: pointer; }
+  .crosshair-dot { fill: var(--series-price); stroke: var(--surface-1); stroke-width: 2; pointer-events: none; }
+
+  .tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: var(--tooltip-bg);
+    color: var(--tooltip-text);
+    font-size: 12px;
+    padding: 6px 9px;
+    border-radius: 6px;
+    line-height: 1.5;
+    z-index: 50;
+    opacity: 0;
+    transform: translate(-9999px, -9999px);
+    transition: opacity 0.08s ease;
+    white-space: nowrap;
+  }
+  .tooltip .tt-strong { font-weight: 700; }
+
+  .controls {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .controls input[type="search"], .controls select {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    border-radius: 7px;
+    padding: 7px 10px;
+    font-size: 13px;
+    font-family: inherit;
+  }
+  .controls input[type="search"] { flex: 1; min-width: 160px; }
+  .range-group { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--text-secondary); }
+  .range-group input[type="range"] { width: 140px; accent-color: var(--series-price); }
+  .range-group .range-val { font-variant-numeric: tabular-nums; color: var(--text-primary); font-weight: 600; min-width: 52px; }
+  .count { color: var(--text-muted); font-size: 12.5px; margin-left: auto; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    text-align: right;
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--gridline);
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+  thead th:first-child, tbody td:first-child { text-align: left; }
+  thead th .arrow { opacity: 0.4; font-size: 10px; margin-left: 3px; }
+  thead th.active .arrow { opacity: 1; }
+  tbody td {
+    padding: 8px 10px;
+    text-align: right;
+    border-bottom: 1px solid var(--gridline);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  tbody tr:hover td { background: var(--surface-2); }
+  tbody td.name { text-align: left; font-variant-numeric: normal; }
+  tbody td .region { display: block; color: var(--text-muted); font-size: 11px; }
+  .delta { font-weight: 600; }
+  .delta.up { color: var(--good); }
+  .delta.down { color: var(--critical); }
+  .table-wrap { overflow-x: auto; max-height: 560px; overflow-y: auto; }
+  thead { position: sticky; top: 0; background: var(--surface-1); }
+  .empty-row td { text-align: center; color: var(--text-muted); padding: 22px; }
+
+  footer { color: var(--text-muted); font-size: 11.5px; margin-top: 24px; }
+</style>
+
+<div class="wrap">
+  <h1>Sydney Suburbs — Property Sales Screener</h1>
+  <p class="sub">Median house price and 1yr / 5yr growth for every suburb within 60&nbsp;km of Sydney CBD.</p>
+
+  <div class="banner">
+    <strong>Suburb names, regions and distances are real</strong> (Australia Post / ABS locality data, straight-line
+    distance from Sydney CBD). <strong>Median price and 1yr/5yr growth are synthetic placeholder values</strong> —
+    modeled as a smooth curve of distance from the CBD plus random noise, not sourced from actual sales. Run
+    <code>nsw_sales_pipeline.py</code> and drop its <code>data/sydney_suburbs.json</code> output in to replace
+    <code>SUBURBS</code> below with live NSW Valuer General figures.
+  </div>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="charts">
+    <div class="card">
+      <h2>Top 12 by median price</h2>
+      <p class="cap">Across all suburbs within 60km, house sales only</p>
+      <svg id="chart-price" viewBox="0 0 560 360" preserveAspectRatio="xMinYMin meet"></svg>
+    </div>
+    <div class="card">
+      <h2>5-year growth: leaders &amp; laggards</h2>
+      <p class="cap">Top 6 gainers and bottom 6 by 5yr median growth</p>
+      <svg id="chart-growth" viewBox="0 0 480 360" preserveAspectRatio="xMinYMin meet"></svg>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:22px;">
+    <h2>Price vs. 5-year growth</h2>
+    <p class="cap" id="scatter-cap">Each point is one suburb — hover for the nearest match</p>
+    <svg id="chart-scatter" viewBox="0 0 1080 340" preserveAspectRatio="xMinYMin meet"></svg>
+  </div>
+
+  <div class="card">
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search suburb or region…" autocomplete="off">
+      <div class="range-group">
+        <label for="distance">Within</label>
+        <input id="distance" type="range" min="1" max="60" value="60" step="1">
+        <span class="range-val" id="distance-val">60 km</span>
+      </div>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="table-wrap">
+      <table id="table">
+        <thead>
+          <tr>
+            <th data-key="name" style="text-align:left">Suburb<span class="arrow">▾</span></th>
+            <th data-key="distance">Distance<span class="arrow">▾</span></th>
+            <th data-key="median">Median<span class="arrow">▾</span></th>
+            <th data-key="g1">1yr Δ<span class="arrow">▾</span></th>
+            <th data-key="g5">5yr Δ<span class="arrow">▾</span></th>
+            <th data-key="sample_size">Sales (12mo)<span class="arrow">▾</span></th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>Suburb names/regions/distances: Australia Post &amp; ABS postcode data. Price and growth: synthetic demo values, not real sales figures.</footer>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var RAW = [{n:"Barangaroo",r:"Sydney Inner City",d:1.2,m:3690000,g1:3.7,g5:18.6,s:26},{n:"Elizabeth Bay",r:"Sydney Inner City",d:1.3,m:3050000,g1:1.4,g5:24.3,s:20},{n:"Kings Cross",r:"Sydney Inner City",d:1.3,m:3635000,g1:2.4,g5:19.0,s:20},{n:"Potts Point",r:"Sydney Inner City",d:1.3,m:3815000,g1:-0.1,g5:10.2,s:8},{n:"Rushcutters Bay",r:"Sydney Inner City",d:1.3,m:3460000,g1:-0.1,g5:8.9,s:22},{n:"Woolloomooloo",r:"Sydney Inner City",d:1.3,m:3885000,g1:0.9,g5:7.9,s:8},{n:"Pyrmont",r:"Sydney Inner City",d:1.5,m:3845000,g1:2.7,g5:15.1,s:27},{n:"Darlinghurst",r:"Sydney Inner City",d:1.7,m:3535000,g1:1.9,g5:8.3,s:21},{n:"Surry Hills",r:"Sydney Inner City",d:1.7,m:3150000,g1:4.8,g5:27.7,s:38},{n:"Taylor Square",r:"Sydney Inner City",d:1.7,m:3120000,g1:3.7,g5:24.1,s:29},{n:"Broadway",r:"Sydney Inner City",d:2.0,m:3145000,g1:3.3,g5:22.4,s:44},{n:"Ultimo",r:"Sydney Inner City",d:2.0,m:3835000,g1:3.5,g5:17.3,s:26},{n:"Kirribilli",r:"North Sydney - Mosman",d:2.2,m:3225000,g1:3.6,g5:20.7,s:22},{n:"Milsons Point",r:"North Sydney - Mosman",d:2.2,m:3390000,g1:2.8,g5:15.0,s:22},{n:"Forest Lodge",r:"Sydney Inner City",d:2.6,m:3270000,g1:1.1,g5:19.6,s:28},{n:"Glebe",r:"Sydney Inner City",d:2.6,m:3125000,g1:0.0,g5:15.9,s:21},{n:"Chippendale",r:"Sydney Inner City",d:2.9,m:3620000,g1:0.2,g5:10.5,s:19},{n:"Darlington",r:"Sydney Inner City",d:2.9,m:3275000,g1:2.5,g5:20.7,s:30},{n:"Golden Grove",r:"Sydney Inner City",d:2.9,m:2855000,g1:4.4,g5:25.5,s:28},{n:"Redfern",r:"Sydney Inner City",d:2.9,m:2795000,g1:5.3,g5:29.7,s:36},{n:"Balmain",r:"Leichhardt",d:2.9,m:3210000,g1:0.7,g5:21.5,s:17},{n:"Balmain East",r:"Leichhardt",d:2.9,m:3665000,g1:1.5,g5:10.5,s:36},{n:"Birchgrove",r:"Leichhardt",d:2.9,m:3570000,g1:2.0,g5:21.7,s:35},{n:"The University Of Sydney",r:"Sydney Inner City",d:3.1,m:2870000,g1:0.7,g5:18.5,s:43},{n:"Double Bay",r:"Eastern Suburbs - North",d:3.1,m:2995000,g1:4.1,g5:23.3,s:23},{n:"North Sydney",r:"North Sydney - Mosman",d:3.2,m:3060000,g1:0.8,g5:22.9,s:22},{n:"Lavender Bay",r:"North Sydney - Mosman",d:3.2,m:3080000,g1:0.6,g5:18.3,s:42},{n:"McMahons Point",r:"North Sydney - Mosman",d:3.2,m:3335000,g1:0.5,g5:14.8,s:35},{n:"North Sydney Shoppingworld",r:"North Sydney - Mosman",d:3.2,m:3195000,g1:2.3,g5:17.2,s:43},{n:"Waverton",r:"North Sydney - Mosman",d:3.2,m:3325000,g1:2.5,g5:17.5,s:16},{n:"Kurraba Point",r:"North Sydney - Mosman",d:3.3,m:3680000,g1:2.5,g5:11.6,s:16},{n:"Centennial Park",r:"Eastern Suburbs - South",d:3.4,m:3160000,g1:4.7,g5:26.9,s:31},{n:"Moore Park",r:"Eastern Suburbs - South",d:3.4,m:3275000,g1:-0.1,g5:14.1,s:21},{n:"Paddington",r:"Eastern Suburbs - South",d:3.4,m:3315000,g1:3.1,g5:25.7,s:33},{n:"Rozelle",r:"Leichhardt",d:3.5,m:2860000,g1:0.2,g5:17.8,s:28},{n:"Neutral Bay",r:"North Sydney - Mosman",d:3.5,m:3010000,g1:1.5,g5:27.5,s:33},{n:"Neutral Bay Junction",r:"North Sydney - Mosman",d:3.5,m:2860000,g1:1.4,g5:26.4,s:31},{n:"Woollahra",r:"Eastern Suburbs - North",d:3.6,m:3395000,g1:3.4,g5:19.6,s:29},{n:"Darling Point",r:"Eastern Suburbs - North",d:3.8,m:3410000,g1:2.9,g5:24.2,s:13},{n:"Edgecliff",r:"Eastern Suburbs - North",d:3.8,m:2740000,g1:5.4,g5:31.7,s:52},{n:"Point Piper",r:"Eastern Suburbs - North",d:3.8,m:3220000,g1:2.2,g5:16.7,s:33},{n:"Waterloo",r:"Sydney Inner City",d:3.9,m:3200000,g1:4.4,g5:21.3,s:17},{n:"Zetland",r:"Sydney Inner City",d:3.9,m:3485000,g1:2.3,g5:23.9,s:23},{n:"Annandale",r:"Leichhardt",d:3.9,m:2945000,g1:3.8,g5:17.8,s:35},{n:"Camperdown",r:"Sydney Inner City",d:3.9,m:2940000,g1:2.8,g5:21.3,s:38},{n:"Missenden Road",r:"Sydney Inner City",d:3.9,m:3075000,g1:5.2,g5:27.4,s:30},{n:"Drummoyne",r:"Canada Bay",d:4.3,m:3300000,g1:1.7,g5:13.1,s:22},{n:"Darling Harbour",r:"Sydney Inner City",d:4.5,m:2775000,g1:4.1,g5:24.1,s:30},{n:"Dawes Point",r:"Sydney Inner City",d:4.5,m:2980000,g1:3.1,g5:29.1,s:24},{n:"Haymarket",r:"Sydney Inner City",d:4.5,m:2785000,g1:4.3,g5:21.6,s:39},{n:"Millers Point",r:"Sydney Inner City",d:4.5,m:3150000,g1:1.5,g5:13.8,s:16},{n:"Parliament House",r:"Sydney Inner City",d:4.5,m:2805000,g1:1.9,g5:32.4,s:45},{n:"Sydney",r:"Sydney Inner City",d:4.5,m:2715000,g1:4.4,g5:26.8,s:45},{n:"Sydney South",r:"Sydney Inner City",d:4.5,m:2680000,g1:3.3,g5:23.3,s:34},{n:"The Rocks",r:"Sydney Inner City",d:4.5,m:3265000,g1:0.8,g5:18.6,s:29},{n:"Bondi Junction",r:"Eastern Suburbs - North",d:4.5,m:2885000,g1:0.8,g5:19.6,s:32},{n:"Bondi Junction Plaza",r:"Eastern Suburbs - North",d:4.5,m:2655000,g1:0.6,g5:22.0,s:48},{n:"Queens Park",r:"Eastern Suburbs - North",d:4.5,m:2710000,g1:2.0,g5:32.2,s:33},{n:"Erskineville",r:"Sydney Inner City",d:4.5,m:2955000,g1:3.5,g5:18.7,s:38},{n:"Cremorne",r:"North Sydney - Mosman",d:4.6,m:2590000,g1:3.6,g5:24.4,s:41},{n:"Cremorne Junction",r:"North Sydney - Mosman",d:4.6,m:3400000,g1:1.7,g5:10.5,s:29},{n:"Cremorne Point",r:"North Sydney - Mosman",d:4.6,m:2715000,g1:0.5,g5:19.9,s:38},{n:"Bellevue Hill",r:"Eastern Suburbs - North",d:4.7,m:3180000,g1:3.9,g5:27.8,s:21},{n:"Enmore",r:"Sydney Inner City",d:4.7,m:2795000,g1:2.9,g5:18.0,s:35},{n:"Newtown",r:"Sydney Inner City",d:4.7,m:2985000,g1:2.1,g5:21.6,s:28},{n:"Alexandria",r:"Sydney Inner City",d:4.8,m:3045000,g1:4.0,g5:20.1,s:27},{n:"Beaconsfield",r:"Sydney Inner City",d:4.8,m:2760000,g1:3.0,g5:30.1,s:49},{n:"Eveleigh",r:"Sydney Inner City",d:4.8,m:2995000,g1:1.1,g5:17.9,s:21},{n:"Kensington",r:"Eastern Suburbs - South",d:4.8,m:3210000,g1:4.6,g5:26.7,s:39},{n:"Crows Nest",r:"North Sydney - Mosman",d:4.8,m:3020000,g1:4.9,g5:25.2,s:45},{n:"Gore Hill",r:"North Sydney - Mosman",d:4.8,m:2660000,g1:1.1,g5:21.8,s:53},{n:"Greenwich",r:"North Sydney - Mosman",d:4.8,m:2680000,g1:3.6,g5:26.4,s:50},{n:"Naremburn",r:"North Sydney - Mosman",d:4.8,m:2935000,g1:2.6,g5:20.0,s:24},{n:"Royal North Shore Hospital",r:"North Sydney - Mosman",d:4.8,m:3160000,g1:4.7,g5:25.6,s:32},{n:"St Leonards",r:"North Sydney - Mosman",d:4.8,m:3195000,g1:1.7,g5:13.2,s:43},{n:"Wollstonecraft",r:"North Sydney - Mosman",d:4.8,m:3270000,g1:1.1,g5:24.9,s:43},{n:"Stanmore",r:"Leichhardt",d:4.9,m:3215000,g1:3.9,g5:19.7,s:19},{n:"Westgate",r:"Leichhardt",d:4.9,m:3260000,g1:1.4,g5:15.0,s:15},{n:"Leichhardt",r:"Leichhardt",d:5.0,m:3285000,g1:0.9,g5:13.2,s:36},{n:"Lilyfield",r:"Leichhardt",d:5.0,m:2850000,g1:4.4,g5:30.4,s:25},{n:"Cammeray",r:"North Sydney - Mosman",d:5.1,m:2535000,g1:1.2,g5:23.7,s:28},{n:"Mosman",r:"North Sydney - Mosman",d:5.3,m:2885000,g1:2.7,g5:23.0,s:42},{n:"Spit Junction",r:"North Sydney - Mosman",d:5.3,m:3360000,g1:3.6,g5:16.8,s:20},{n:"Rose Bay",r:"Eastern Suburbs - North",d:5.4,m:3065000,g1:4.7,g5:28.5,s:21},{n:"Clovelly",r:"Eastern Suburbs - South",d:5.8,m:2800000,g1:2.6,g5:31.8,s:23},{n:"Clovelly West",r:"Eastern Suburbs - South",d:5.8,m:2550000,g1:5.5,g5:35.5,s:33},{n:"Randwick",r:"Eastern Suburbs - South",d:5.8,m:2885000,g1:2.1,g5:19.5,s:42},{n:"St Pauls",r:"Eastern Suburbs - South",d:5.8,m:2880000,g1:3.0,g5:19.4,s:36},{n:"Ben Buckler",r:"Eastern Suburbs - North",d:6.0,m:2470000,g1:2.3,g5:35.5,s:47},{n:"Bondi",r:"Eastern Suburbs - North",d:6.0,m:2780000,g1:2.1,g5:26.0,s:34},{n:"Bondi Beach",r:"Eastern Suburbs - North",d:6.0,m:2950000,g1:3.7,g5:29.8,s:23},{n:"North Bondi",r:"Eastern Suburbs - North",d:6.0,m:2435000,g1:2.3,g5:26.9,s:44},{n:"Tamarama",r:"Eastern Suburbs - North",d:6.0,m:2775000,g1:1.7,g5:27.9,s:41},{n:"Eastlakes",r:"Sydney Inner City",d:6.1,m:2565000,g1:4.3,g5:35.9,s:31},{n:"Rosebery",r:"Sydney Inner City",d:6.1,m:2535000,g1:3.9,g5:33.9,s:52},{n:"Bronte",r:"Eastern Suburbs - North",d:6.1,m:2450000,g1:5.0,g5:26.8,s:57},{n:"Charing Cross",r:"Eastern Suburbs - North",d:6.1,m:2645000,g1:2.8,g5:25.8,s:45},{n:"Waverley",r:"Eastern Suburbs - North",d:6.1,m:3095000,g1:4.5,g5:27.7,s:38},{n:"Diamond Bay",r:"Eastern Suburbs - North",d:6.3,m:2395000,g1:1.1,g5:23.2,s:55},{n:"Dover Heights",r:"Eastern Suburbs - North",d:6.3,m:2925000,g1:2.0,g5:21.4,s:20},{n:"Rose Bay North",r:"Eastern Suburbs - North",d:6.3,m:2405000,g1:5.3,g5:35.0,s:48},{n:"Vaucluse",r:"Eastern Suburbs - North",d:6.3,m:2525000,g1:3.8,g5:21.7,s:34},{n:"Watsons Bay",r:"Eastern Suburbs - North",d:6.3,m:2625000,g1:4.0,g5:29.4,s:41},{n:"Lewisham",r:"Strathfield - Burwood - Ashfield",d:6.3,m:2525000,g1:3.7,g5:34.5,s:27},{n:"Petersham",r:"Strathfield - Burwood - Ashfield",d:6.3,m:3065000,g1:1.7,g5:20.7,s:31},{n:"Petersham North",r:"Strathfield - Burwood - Ashfield",d:6.3,m:3210000,g1:2.9,g5:17.4,s:33},{n:"Northbridge",r:"Chatswood - Lane Cove",d:6.3,m:2405000,g1:3.1,g5:28.6,s:46},{n:"Haberfield",r:"Strathfield - Burwood - Ashfield",d:6.6,m:2490000,g1:4.2,g5:34.6,s:50},{n:"Artarmon",r:"Chatswood - Lane Cove",d:6.6,m:2970000,g1:2.3,g5:29.8,s:43},{n:"Hunters Hill",r:"Ryde - Hunters Hill",d:6.6,m:2985000,g1:4.0,g5:19.9,s:39},{n:"Hunters Hill West",r:"Ryde - Hunters Hill",d:6.6,m:3150000,g1:1.4,g5:17.8,s:36},{n:"Woolwich",r:"Ryde - Hunters Hill",d:6.6,m:2505000,g1:2.8,g5:24.2,s:50},{n:"St Peters",r:"Sydney Inner City",d:6.8,m:2435000,g1:5.3,g5:32.5,s:51},{n:"Sydenham",r:"Sydney Inner City",d:6.8,m:2425000,g1:4.7,g5:31.0,s:39},{n:"Tempe",r:"Sydney Inner City",d:6.8,m:2390000,g1:2.5,g5:37.7,s:35},{n:"Marrickville",r:"Strathfield - Burwood - Ashfield",d:6.9,m:3040000,g1:5.1,g5:28.6,s:42},{n:"Marrickville Metro",r:"Strathfield - Burwood - Ashfield",d:6.9,m:2970000,g1:3.9,g5:26.2,s:43},{n:"Marrickville South",r:"Strathfield - Burwood - Ashfield",d:6.9,m:2835000,g1:4.7,g5:24.1,s:44},{n:"Daceyville",r:"Eastern Suburbs - South",d:7.0,m:2805000,g1:2.5,g5:28.1,s:49},{n:"Kingsford",r:"Eastern Suburbs - South",d:7.0,m:3130000,g1:3.4,g5:20.9,s:18},{n:"Abbotsford",r:"Strathfield - Burwood - Ashfield",d:7.0,m:2460000,g1:2.5,g5:30.4,s:31},{n:"Canada Bay",r:"Strathfield - Burwood - Ashfield",d:7.0,m:2645000,g1:2.6,g5:32.5,s:44},{n:"Chiswick",r:"Strathfield - Burwood - Ashfield",d:7.0,m:2590000,g1:4.3,g5:27.6,s:52},{n:"Five Dock",r:"Strathfield - Burwood - Ashfield",d:7.0,m:2620000,g1:2.3,g5:20.8,s:50},{n:"Rodd Point",r:"Strathfield - Burwood - Ashfield",d:7.0,m:2875000,g1:4.5,g5:26.8,s:31},{n:"Russell Lea",r:"Strathfield - Burwood - Ashfield",d:7.0,m:2840000,g1:2.7,g5:31.0,s:35},{n:"Wareemba",r:"Strathfield - Burwood - Ashfield",d:7.0,m:2915000,g1:3.6,g5:25.0,s:31},{n:"Lane Cove",r:"Chatswood - Lane Cove",d:7.1,m:2895000,g1:3.4,g5:22.4,s:43},{n:"Lane Cove North",r:"Chatswood - Lane Cove",d:7.1,m:3075000,g1:2.5,g5:29.1,s:43},{n:"Lane Cove West",r:"Chatswood - Lane Cove",d:7.1,m:2970000,g1:2.0,g5:22.7,s:24},{n:"Linley Point",r:"Chatswood - Lane Cove",d:7.1,m:2920000,g1:4.5,g5:23.4,s:48},{n:"Longueville",r:"Chatswood - Lane Cove",d:7.1,m:2975000,g1:3.0,g5:29.7,s:41},{n:"Northwood",r:"Chatswood - Lane Cove",d:7.1,m:2590000,g1:2.0,g5:32.1,s:40},{n:"Osborne Park",r:"Chatswood - Lane Cove",d:7.1,m:2830000,g1:1.8,g5:22.7,s:24},{n:"Riverview",r:"Chatswood - Lane Cove",d:7.1,m:3065000,g1:2.6,g5:26.0,s:41},{n:"Summer Hill",r:"Strathfield - Burwood - Ashfield",d:7.3,m:2775000,g1:3.6,g5:25.2,s:25},{n:"Castlecrag",r:"Chatswood - Lane Cove",d:7.6,m:2795000,g1:2.4,g5:20.1,s:38},{n:"Middle Cove",r:"Chatswood - Lane Cove",d:7.6,m:2425000,g1:5.4,g5:36.3,s:56},{n:"Willoughby",r:"Chatswood - Lane Cove",d:7.6,m:3025000,g1:2.4,g5:30.0,s:20},{n:"Willoughby North",r:"Chatswood - Lane Cove",d:7.6,m:2835000,g1:4.4,g5:23.3,s:50},{n:"Dulwich Hill",r:"Strathfield - Burwood - Ashfield",d:7.6,m:2500000,g1:2.8,g5:35.8,s:46},{n:"Coogee",r:"Eastern Suburbs - South",d:7.8,m:2745000,g1:1.5,g5:22.8,s:48},{n:"South Coogee",r:"Eastern Suburbs - South",d:7.8,m:2795000,g1:2.5,g5:33.4,s:26},{n:"Willoughby East",r:"Chatswood - Lane Cove",d:7.8,m:2425000,g1:2.6,g5:36.3,s:51},{n:"Mascot",r:"Marrickville - Sydenham - Petersham",d:8.1,m:2805000,g1:4.1,g5:25.7,s:42},{n:"North Willoughby",r:"Chatswood - Lane Cove",d:8.1,m:2805000,g1:3.7,g5:28.3,s:36},{n:"Ashfield",r:"Strathfield - Burwood - Ashfield",d:8.1,m:2345000,g1:3.8,g5:29.7,s:44},{n:"Chatswood",r:"Chatswood - Lane Cove",d:8.4,m:2745000,g1:3.9,g5:32.6,s:25},{n:"Chatswood West",r:"Chatswood - Lane Cove",d:8.4,m:2210000,g1:5.0,g5:31.7,s:55},{n:"Seaforth",r:"Manly",d:8.6,m:2310000,g1:6.1,g5:38.7,s:38},{n:"Banksmeadow",r:"Botany",d:8.7,m:2855000,g1:2.6,g5:23.4,s:42},{n:"Botany",r:"Botany",d:8.7,m:2445000,g1:3.8,g5:37.3,s:51},{n:"Boronia Park",r:"Ryde - Hunters Hill",d:8.9,m:2540000,g1:3.8,g5:26.4,s:29},{n:"Gladesville",r:"Ryde - Hunters Hill",d:8.9,m:2855000,g1:1.2,g5:26.3,s:50},{n:"Henley",r:"Ryde - Hunters Hill",d:8.9,m:2850000,g1:0.5,g5:21.3,s:50},{n:"Huntleys Cove",r:"Ryde - Hunters Hill",d:8.9,m:2145000,g1:4.2,g5:33.0,s:56},{n:"Huntleys Point",r:"Ryde - Hunters Hill",d:8.9,m:2215000,g1:2.4,g5:29.5,s:44},{n:"Monash Park",r:"Ryde - Hunters Hill",d:8.9,m:2365000,g1:4.0,g5:35.1,s:30},{n:"Tennyson Point",r:"Ryde - Hunters Hill",d:8.9,m:2480000,g1:2.9,g5:34.8,s:39},{n:"Maroubra",r:"Eastern Suburbs - South",d:9.0,m:2800000,g1:5.4,g5:33.1,s:48},{n:"Maroubra South",r:"Eastern Suburbs - South",d:9.0,m:2305000,g1:3.9,g5:33.6,s:42},{n:"Pagewood",r:"Eastern Suburbs - South",d:9.0,m:2755000,g1:3.9,g5:25.1,s:25},{n:"Croydon",r:"Strathfield - Burwood - Ashfield",d:9.0,m:2790000,g1:2.3,g5:28.4,s:29},{n:"Ashbury",r:"Strathfield - Burwood - Ashfield",d:9.4,m:2750000,g1:1.6,g5:26.2,s:29},{n:"Canterbury",r:"Strathfield - Burwood - Ashfield",d:9.4,m:2570000,g1:3.0,g5:30.1,s:48},{n:"Hurlstone Park",r:"Strathfield - Burwood - Ashfield",d:9.4,m:2195000,g1:3.2,g5:38.7,s:36},{n:"Balgowlah",r:"Warringah",d:9.5,m:2265000,g1:5.4,g5:39.2,s:55},{n:"Balgowlah Heights",r:"Warringah",d:9.5,m:2600000,g1:5.2,g5:36.1,s:33},{n:"Clontarf",r:"Warringah",d:9.5,m:2500000,g1:4.6,g5:24.6,s:56},{n:"Manly Vale",r:"Warringah",d:9.5,m:2675000,g1:4.3,g5:26.5,s:35},{n:"North Balgowlah",r:"Warringah",d:9.5,m:2640000,g1:5.5,g5:30.8,s:41},{n:"Arncliffe",r:"Kogarah - Rockdale",d:9.5,m:2155000,g1:5.6,g5:38.2,s:54},{n:"Turrella",r:"Kogarah - Rockdale",d:9.5,m:2305000,g1:2.3,g5:27.1,s:34},{n:"Wolli Creek",r:"Kogarah - Rockdale",d:9.5,m:2485000,g1:4.7,g5:37.6,s:50},{n:"Breakfast Point",r:"Strathfield - Burwood - Ashfield",d:9.8,m:2095000,g1:4.5,g5:28.6,s:41},{n:"Cabarita",r:"Strathfield - Burwood - Ashfield",d:9.8,m:2625000,g1:2.6,g5:25.9,s:33},{n:"Concord",r:"Strathfield - Burwood - Ashfield",d:9.8,m:2260000,g1:4.3,g5:25.9,s:39},{n:"Mortlake",r:"Strathfield - Burwood - Ashfield",d:9.8,m:2050000,g1:4.2,g5:30.5,s:50},{n:"North Strathfield",r:"Strathfield - Burwood - Ashfield",d:9.8,m:2120000,g1:5.2,g5:29.6,s:47},{n:"Castle Cove",r:"Ku-ring-gai",d:9.9,m:2720000,g1:2.4,g5:24.5,s:28},{n:"Roseville",r:"Ku-ring-gai",d:9.9,m:2200000,g1:2.8,g5:40.6,s:44},{n:"Roseville Chase",r:"Ku-ring-gai",d:9.9,m:2475000,g1:5.9,g5:37.3,s:32},{n:"Manly",r:"Manly",d:9.9,m:2400000,g1:3.4,g5:30.7,s:52},{n:"Manly East",r:"Manly",d:9.9,m:2425000,g1:4.5,g5:37.7,s:49},{n:"Burwood",r:"Strathfield - Burwood - Ashfield",d:10.0,m:2205000,g1:5.9,g5:37.9,s:48},{n:"Burwood North",r:"Strathfield - Burwood - Ashfield",d:10.0,m:2090000,g1:4.2,g5:42.1,s:57},{n:"Fairlight",r:"Manly",d:10.1,m:2410000,g1:5.9,g5:33.3,s:40},{n:"Clemton Park",r:"Strathfield - Burwood - Ashfield",d:10.2,m:2430000,g1:4.3,g5:23.2,s:54},{n:"Earlwood",r:"Strathfield - Burwood - Ashfield",d:10.2,m:2630000,g1:5.2,g5:34.9,s:43},{n:"Undercliffe",r:"Strathfield - Burwood - Ashfield",d:10.2,m:2245000,g1:3.2,g5:26.7,s:56},{n:"Croydon Park",r:"Strathfield - Burwood - Ashfield",d:10.4,m:2015000,g1:4.3,g5:40.4,s:39},{n:"Enfield South",r:"Strathfield - Burwood - Ashfield",d:10.4,m:2555000,g1:3.2,g5:35.8,s:28},{n:"East Lindfield",r:"Ku-ring-gai",d:10.8,m:2025000,g1:3.3,g5:34.9,s:61},{n:"Lindfield",r:"Ku-ring-gai",d:10.8,m:2260000,g1:4.3,g5:25.3,s:51},{n:"Lindfield West",r:"Ku-ring-gai",d:10.8,m:2020000,g1:4.9,g5:40.0,s:36},{n:"Denistone East",r:"Ryde - Hunters Hill",d:11.0,m:2325000,g1:1.3,g5:25.2,s:30},{n:"Putney",r:"Ryde - Hunters Hill",d:11.0,m:2295000,g1:4.1,g5:37.1,s:52},{n:"Ryde",r:"Ryde - Hunters Hill",d:11.0,m:2080000,g1:3.1,g5:35.5,s:46},{n:"Blenheim Road",r:"Ryde - Hunters Hill",d:11.1,m:2195000,g1:3.2,g5:27.7,s:56},{n:"East Ryde",r:"Ryde - Hunters Hill",d:11.1,m:2090000,g1:5.4,g5:28.7,s:52},{n:"Macquarie Centre",r:"Ryde - Hunters Hill",d:11.1,m:2025000,g1:3.5,g5:37.8,s:63},{n:"Macquarie Park",r:"Ryde - Hunters Hill",d:11.1,m:2195000,g1:1.2,g5:27.0,s:35},{n:"North Ryde",r:"Ryde - Hunters Hill",d:11.1,m:2530000,g1:2.3,g5:23.4,s:49},{n:"Banksia",r:"Kogarah - Rockdale",d:11.2,m:2035000,g1:4.5,g5:39.6,s:51},{n:"Brighton-Le-Sands",r:"Kogarah - Rockdale",d:11.2,m:2040000,g1:4.8,g5:29.2,s:55},{n:"Kyeemagh",r:"Kogarah - Rockdale",d:11.2,m:1980000,g1:3.5,g5:32.8,s:61},{n:"Rockdale",r:"Kogarah - Rockdale",d:11.2,m:2420000,g1:6.1,g5:35.6,s:31},{n:"Campsie",r:"Strathfield - Burwood - Ashfield",d:11.3,m:2140000,g1:3.9,g5:27.8,s:45},{n:"Brighton Le Sands",r:"Kogarah - Rockdale",d:11.3,m:2055000,g1:3.0,g5:30.6,s:40},{n:"Forestville",r:"Warringah",d:11.4,m:1930000,g1:2.7,g5:32.8,s:38},{n:"Killarney Heights",r:"Warringah",d:11.4,m:2070000,g1:5.4,g5:40.1,s:53},{n:"Chifley",r:"Eastern Suburbs - South",d:11.5,m:2140000,g1:3.5,g5:27.1,s:62},{n:"Eastgardens",r:"Eastern Suburbs - South",d:11.5,m:2185000,g1:2.5,g5:38.1,s:43},{n:"Hillsdale",r:"Eastern Suburbs - South",d:11.5,m:2430000,g1:4.5,g5:26.6,s:49},{n:"La Perouse",r:"Eastern Suburbs - South",d:11.5,m:2215000,g1:5.0,g5:27.9,s:32},{n:"Little Bay",r:"Eastern Suburbs - South",d:11.5,m:2050000,g1:5.6,g5:36.8,s:45},{n:"Malabar",r:"Eastern Suburbs - South",d:11.5,m:2320000,g1:2.6,g5:26.6,s:52},{n:"Matraville",r:"Eastern Suburbs - South",d:11.5,m:2105000,g1:3.5,g5:37.6,s:34},{n:"Phillip Bay",r:"Eastern Suburbs - South",d:11.5,m:2065000,g1:5.9,g5:42.6,s:54},{n:"Port Botany",r:"Eastern Suburbs - South",d:11.5,m:2240000,g1:5.6,g5:31.7,s:46},{n:"Burwood Heights",r:"Strathfield - Burwood - Ashfield",d:11.5,m:1995000,g1:2.1,g5:30.1,s:44},{n:"Enfield",r:"Strathfield - Burwood - Ashfield",d:11.5,m:2195000,g1:4.2,g5:41.1,s:50},{n:"Strathfield South",r:"Strathfield - Burwood - Ashfield",d:11.5,m:2250000,g1:1.8,g5:26.1,s:53},{n:"Strathfield",r:"Strathfield - Burwood - Ashfield",d:11.6,m:2265000,g1:5.4,g5:30.4,s:49},{n:"Concord West",r:"Canada Bay",d:11.7,m:2505000,g1:4.9,g5:33.0,s:53},{n:"Liberty Grove",r:"Canada Bay",d:11.7,m:2490000,g1:3.3,g5:23.9,s:53},{n:"Rhodes",r:"Canada Bay",d:11.7,m:2060000,g1:2.6,g5:34.2,s:62},{n:"Allambie",r:"Warringah",d:12.2,m:2155000,g1:5.5,g5:38.7,s:49},{n:"Allambie Heights",r:"Warringah",d:12.2,m:2395000,g1:2.2,g5:33.1,s:32},{n:"Beacon Hill",r:"Warringah",d:12.2,m:2115000,g1:3.3,g5:38.8,s:34},{n:"Brookvale",r:"Warringah",d:12.2,m:2225000,g1:4.4,g5:29.8,s:58},{n:"North Manly",r:"Warringah",d:12.2,m:2450000,g1:1.9,g5:30.7,s:28},{n:"Oxford Falls",r:"Warringah",d:12.2,m:2095000,g1:2.8,g5:31.8,s:40},{n:"Warringah Mall",r:"Warringah",d:12.2,m:2330000,g1:3.4,g5:39.2,s:47},{n:"Belfield",r:"Strathfield - Burwood - Ashfield",d:12.2,m:2235000,g1:1.8,g5:26.2,s:50},{n:"Bardwell Park",r:"Kogarah - Rockdale",d:12.2,m:2400000,g1:2.7,g5:26.0,s:46},{n:"Bardwell Valley",r:"Kogarah - Rockdale",d:12.2,m:2250000,g1:6.4,g5:38.1,s:35},{n:"Bexley",r:"Kogarah - Rockdale",d:12.2,m:1970000,g1:2.0,g5:33.4,s:45},{n:"Bexley North",r:"Kogarah - Rockdale",d:12.2,m:2070000,g1:4.5,g5:36.2,s:46},{n:"Bexley South",r:"Kogarah - Rockdale",d:12.2,m:1975000,g1:5.0,g5:35.6,s:46},{n:"Killara",r:"Ku-ring-gai",d:12.4,m:1930000,g1:4.4,g5:30.2,s:38},{n:"Curl Curl",r:"Warringah",d:12.4,m:2200000,g1:5.1,g5:34.5,s:59},{n:"Harbord",r:"Warringah",d:12.4,m:2425000,g1:3.1,g5:26.2,s:56},{n:"Queenscliff",r:"Warringah",d:12.4,m:2270000,g1:5.3,g5:36.9,s:41},{n:"Homebush Bay",r:"Auburn",d:12.4,m:1880000,g1:4.6,g5:30.4,s:63},{n:"Newington",r:"Auburn",d:12.4,m:2180000,g1:3.5,g5:36.1,s:47},{n:"Freshwater",r:"Warringah",d:12.5,m:2405000,g1:5.6,g5:36.9,s:51},{n:"Belmore",r:"Canterbury",d:12.5,m:2090000,g1:3.3,g5:30.8,s:59},{n:"East Killara",r:"Ku-ring-gai",d:12.9,m:2030000,g1:6.4,g5:37.6,s:55},{n:"Wentworth Point",r:"Auburn",d:13.0,m:2410000,g1:1.4,g5:23.1,s:58},{n:"Frenchs Forest",r:"Warringah",d:13.1,m:2080000,g1:2.4,g5:28.7,s:35},{n:"Frenchs Forest East",r:"Warringah",d:13.1,m:1805000,g1:6.1,g5:40.3,s:67},{n:"Kingsgrove",r:"Kogarah - Rockdale",d:13.1,m:1980000,g1:5.1,g5:34.3,s:42},{n:"Kingsway West",r:"Kogarah - Rockdale",d:13.1,m:2360000,g1:2.3,g5:23.6,s:36},{n:"Denistone",r:"Ryde - Hunters Hill",d:13.2,m:1935000,g1:3.3,g5:36.5,s:64},{n:"Denistone West",r:"Ryde - Hunters Hill",d:13.2,m:2005000,g1:2.8,g5:29.3,s:62},{n:"Meadowbank",r:"Ryde - Hunters Hill",d:13.2,m:2100000,g1:5.5,g5:34.6,s:42},{n:"Melrose Park",r:"Ryde - Hunters Hill",d:13.2,m:2050000,g1:6.9,g5:42.9,s:63},{n:"West Ryde",r:"Ryde - Hunters Hill",d:13.2,m:2015000,g1:3.0,g5:39.3,s:47},{n:"Homebush",r:"Strathfield - Burwood - Ashfield",d:13.3,m:1965000,g1:5.4,g5:40.4,s:43},{n:"Homebush South",r:"Strathfield - Burwood - Ashfield",d:13.3,m:2370000,g1:1.9,g5:31.9,s:42},{n:"Homebush West",r:"Strathfield - Burwood - Ashfield",d:13.3,m:1915000,g1:5.7,g5:43.9,s:61},{n:"Sydney Olympic Park",r:"Auburn",d:13.4,m:2105000,g1:3.6,g5:30.1,s:59},{n:"Beverley Park",r:"Kogarah - Rockdale",d:13.4,m:1770000,g1:5.2,g5:41.7,s:58},{n:"Kogarah",r:"Kogarah - Rockdale",d:13.4,m:2190000,g1:3.8,g5:34.6,s:41},{n:"Kogarah Bay",r:"Kogarah - Rockdale",d:13.4,m:2370000,g1:4.5,g5:23.1,s:44},{n:"Monterey",r:"Kogarah - Rockdale",d:13.4,m:1895000,g1:4.4,g5:38.4,s:42},{n:"Ramsgate",r:"Kogarah - Rockdale",d:13.4,m:1990000,g1:5.4,g5:35.6,s:40},{n:"Ramsgate Beach",r:"Kogarah - Rockdale",d:13.4,m:2165000,g1:4.2,g5:38.8,s:56},{n:"Gordon",r:"Ku-ring-gai",d:13.7,m:2155000,g1:4.4,g5:41.3,s:36},{n:"Lakemba",r:"Canterbury",d:13.7,m:2025000,g1:4.2,g5:35.1,s:56},{n:"Wiley Park",r:"Canterbury",d:13.7,m:1940000,g1:2.0,g5:29.3,s:39},{n:"Eastwood",r:"Ryde - Hunters Hill",d:13.8,m:1930000,g1:3.5,g5:38.5,s:41},{n:"Marsfield",r:"Ryde - Hunters Hill",d:13.8,m:2160000,g1:3.8,g5:36.4,s:42},{n:"Pymble",r:"Ku-ring-gai",d:14.4,m:2115000,g1:2.3,g5:30.8,s:50},{n:"West Pymble",r:"Ku-ring-gai",d:14.4,m:2085000,g1:3.6,g5:35.7,s:45},{n:"Allawah",r:"Kogarah - Rockdale",d:14.4,m:2075000,g1:3.9,g5:29.5,s:44},{n:"Carlton",r:"Kogarah - Rockdale",d:14.4,m:1705000,g1:5.1,g5:47.8,s:52},{n:"Hurstville",r:"Kogarah - Rockdale",d:14.7,m:1825000,g1:3.9,g5:37.3,s:64},{n:"Hurstville Grove",r:"Kogarah - Rockdale",d:14.7,m:1750000,g1:4.8,g5:46.4,s:55},{n:"Hurstville Westfield",r:"Kogarah - Rockdale",d:14.7,m:1945000,g1:3.0,g5:34.8,s:40},{n:"Cromer",r:"Warringah",d:14.8,m:2185000,g1:2.6,g5:29.9,s:32},{n:"Cromer Heights",r:"Warringah",d:14.8,m:2245000,g1:1.2,g5:26.4,s:32},{n:"Dee Why",r:"Warringah",d:14.8,m:2000000,g1:6.3,g5:42.8,s:58},{n:"Dee Why Beach",r:"Warringah",d:14.8,m:1950000,g1:5.1,g5:41.8,s:39},{n:"Narraweena",r:"Warringah",d:14.8,m:2005000,g1:3.2,g5:38.5,s:52},{n:"North Curl Curl",r:"Warringah",d:14.8,m:1720000,g1:3.1,g5:36.8,s:52},{n:"Wingala",r:"Warringah",d:14.8,m:1710000,g1:3.9,g5:45.6,s:64},{n:"Greenacre",r:"Strathfield - Burwood - Ashfield",d:14.8,m:1840000,g1:4.0,g5:31.1,s:53},{n:"Mount Lewis",r:"Strathfield - Burwood - Ashfield",d:14.8,m:1695000,g1:4.5,g5:47.6,s:53},{n:"Ermington",r:"Carlingford",d:15.1,m:1645000,g1:3.0,g5:36.2,s:51},{n:"Chullora",r:"Strathfield - Burwood - Ashfield",d:15.1,m:2075000,g1:4.9,g5:34.1,s:51},{n:"Berala",r:"Auburn",d:15.2,m:1740000,g1:3.1,g5:43.6,s:69},{n:"Lidcombe",r:"Auburn",d:15.2,m:1680000,g1:4.4,g5:45.0,s:71},{n:"Lidcombe North",r:"Auburn",d:15.2,m:1885000,g1:5.4,g5:33.8,s:59},{n:"Rookwood",r:"Auburn",d:15.2,m:2040000,g1:3.5,g5:33.7,s:45},{n:"Beverly Hills",r:"Hurstville",d:15.3,m:2190000,g1:3.2,g5:34.6,s:49},{n:"Narwee",r:"Hurstville",d:15.3,m:1770000,g1:6.2,g5:45.2,s:51},{n:"Silverwater",r:"Auburn",d:15.4,m:1780000,g1:3.0,g5:33.5,s:48},{n:"Belrose",r:"Warringah",d:15.6,m:1875000,g1:5.4,g5:38.1,s:43},{n:"Belrose West",r:"Warringah",d:15.6,m:1790000,g1:5.5,g5:31.4,s:47},{n:"Davidson",r:"Warringah",d:15.6,m:1700000,g1:5.9,g5:33.5,s:64},{n:"Punchbowl",r:"Canterbury",d:15.6,m:2045000,g1:3.4,g5:28.6,s:34},{n:"Roselands",r:"Canterbury",d:15.6,m:1955000,g1:3.4,g5:41.2,s:40},{n:"Penshurst",r:"Hurstville",d:15.7,m:2025000,g1:3.1,g5:30.4,s:41},{n:"Epping",r:"Ryde - Hunters Hill",d:15.9,m:1755000,g1:3.4,g5:39.2,s:52},{n:"North Epping",r:"Ryde - Hunters Hill",d:15.9,m:1935000,g1:2.1,g5:33.0,s:51},{n:"Dolls Point",r:"Kogarah - Rockdale",d:15.9,m:1765000,g1:5.1,g5:32.7,s:56},{n:"Sandringham",r:"Kogarah - Rockdale",d:15.9,m:1695000,g1:3.3,g5:39.6,s:66},{n:"Sans Souci",r:"Kogarah - Rockdale",d:15.9,m:2045000,g1:3.8,g5:33.0,s:58},{n:"Collaroy",r:"Warringah",d:16.5,m:1935000,g1:2.5,g5:37.8,s:39},{n:"Collaroy Beach",r:"Warringah",d:16.5,m:2075000,g1:2.5,g5:27.4,s:55},{n:"Collaroy Plateau West",r:"Warringah",d:16.5,m:1760000,g1:5.2,g5:32.2,s:41},{n:"Long Reef",r:"Warringah",d:16.5,m:2010000,g1:2.1,g5:33.9,s:45},{n:"Wheeler Heights",r:"Warringah",d:16.5,m:2055000,g1:4.7,g5:37.4,s:51},{n:"North St Ives",r:"Ku-ring-gai",d:16.6,m:1780000,g1:4.7,g5:37.1,s:40},{n:"St Ives",r:"Ku-ring-gai",d:16.6,m:1685000,g1:5.2,g5:42.5,s:52},{n:"St Ives Chase",r:"Ku-ring-gai",d:16.6,m:1785000,g1:6.0,g5:43.4,s:51},{n:"Blakehurst",r:"Kogarah - Rockdale",d:16.7,m:1785000,g1:4.1,g5:43.4,s:67},{n:"Carss Park",r:"Kogarah - Rockdale",d:16.7,m:2070000,g1:3.4,g5:35.4,s:60},{n:"Connells Point",r:"Kogarah - Rockdale",d:16.7,m:1595000,g1:5.2,g5:45.8,s:58},{n:"Kyle Bay",r:"Kogarah - Rockdale",d:16.7,m:1775000,g1:5.0,g5:42.8,s:47},{n:"South Hurstville",r:"Kogarah - Rockdale",d:16.7,m:1830000,g1:5.4,g5:43.8,s:42},{n:"Bobbin Head",r:"Pennant Hills - Epping",d:16.8,m:1820000,g1:3.0,g5:30.5,s:58},{n:"North Turramurra",r:"Pennant Hills - Epping",d:16.8,m:1805000,g1:2.7,g5:39.2,s:50},{n:"South Turramurra",r:"Pennant Hills - Epping",d:16.8,m:1870000,g1:2.2,g5:34.6,s:40},{n:"Turramurra",r:"Pennant Hills - Epping",d:16.8,m:1590000,g1:4.9,g5:33.5,s:57},{n:"Warrawee",r:"Pennant Hills - Epping",d:16.8,m:1920000,g1:6.4,g5:44.9,s:50},{n:"Rydalmere",r:"Carlingford",d:17.0,m:2005000,g1:4.5,g5:38.0,s:50},{n:"Auburn",r:"Auburn",d:17.0,m:1595000,g1:4.2,g5:41.5,s:62},{n:"Auburn South",r:"Auburn",d:17.0,m:1720000,g1:5.7,g5:40.8,s:68},{n:"Collaroy Plateau",r:"Warringah",d:17.1,m:1775000,g1:4.8,g5:39.2,s:52},{n:"Dundas",r:"Parramatta",d:17.4,m:1935000,g1:3.6,g5:44.7,s:56},{n:"Dundas Valley",r:"Parramatta",d:17.4,m:1510000,g1:4.1,g5:38.1,s:71},{n:"Oatlands",r:"Parramatta",d:17.4,m:1655000,g1:4.1,g5:47.1,s:51},{n:"Telopea",r:"Parramatta",d:17.4,m:1645000,g1:3.4,g5:36.3,s:47},{n:"Birrong",r:"Auburn",d:17.4,m:1590000,g1:5.6,g5:39.3,s:55},{n:"Potts Hill",r:"Auburn",d:17.4,m:1645000,g1:6.1,g5:42.2,s:54},{n:"Regents Park",r:"Auburn",d:17.4,m:1605000,g1:4.4,g5:33.3,s:55},{n:"Lugarno",r:"Hurstville",d:17.5,m:1960000,g1:3.9,g5:39.5,s:39},{n:"Peakhurst",r:"Hurstville",d:17.5,m:1685000,g1:4.1,g5:44.4,s:49},{n:"Peakhurst Heights",r:"Hurstville",d:17.5,m:1815000,g1:4.9,g5:42.7,s:49},{n:"Riverwood",r:"Hurstville",d:17.5,m:1785000,g1:2.6,g5:31.3,s:49},{n:"Clyde",r:"Parramatta",d:17.7,m:1805000,g1:5.7,g5:34.2,s:60},{n:"Yagoona",r:"Bankstown",d:17.7,m:1590000,g1:4.4,g5:39.7,s:51},{n:"Yagoona West",r:"Bankstown",d:17.7,m:1970000,g1:5.4,g5:40.1,s:50},{n:"Mortdale",r:"Hurstville",d:17.7,m:1935000,g1:2.9,g5:39.3,s:39},{n:"Oatley",r:"Hurstville",d:17.7,m:1745000,g1:5.3,g5:42.9,s:52},{n:"Kurnell",r:"Cronulla - Miranda - Caringbah",d:18.0,m:1840000,g1:3.7,g5:38.0,s:67},{n:"Caravan Head",r:"Sutherland - Menai - Heathcote",d:18.2,m:1475000,g1:6.1,g5:44.6,s:66},{n:"Oyster Bay",r:"Sutherland - Menai - Heathcote",d:18.2,m:1675000,g1:6.1,g5:46.9,s:53},{n:"Beecroft",r:"Pennant Hills - Epping",d:18.4,m:1620000,g1:3.4,g5:35.3,s:61},{n:"Cheltenham",r:"Pennant Hills - Epping",d:18.4,m:1765000,g1:4.3,g5:37.1,s:58},{n:"Blaxcell",r:"Parramatta",d:18.4,m:1900000,g1:5.8,g5:37.9,s:52},{n:"Camellia",r:"Parramatta",d:18.4,m:1525000,g1:3.0,g5:34.9,s:68},{n:"Granville",r:"Parramatta",d:18.4,m:1945000,g1:4.6,g5:30.5,s:40},{n:"Holroyd",r:"Parramatta",d:18.4,m:1540000,g1:2.1,g5:34.9,s:58},{n:"Rosehill",r:"Parramatta",d:18.4,m:1650000,g1:5.9,g5:41.3,s:60},{n:"South Granville",r:"Parramatta",d:18.4,m:1630000,g1:6.7,g5:45.8,s:56},{n:"Carlingford",r:"Ryde - Hunters Hill",d:18.5,m:1595000,g1:6.5,g5:39.4,s:45},{n:"Carlingford Court",r:"Ryde - Hunters Hill",d:18.5,m:1695000,g1:2.8,g5:39.4,s:47},{n:"Carlingford North",r:"Ryde - Hunters Hill",d:18.5,m:1850000,g1:4.9,g5:37.6,s:48},{n:"Kingsdene",r:"Ryde - Hunters Hill",d:18.5,m:1615000,g1:5.3,g5:44.9,s:66},{n:"Normanhurst",r:"Ku-ring-gai",d:18.7,m:1675000,g1:6.6,g5:40.2,s:50},{n:"Wahroonga",r:"Ku-ring-gai",d:18.7,m:1535000,g1:4.3,g5:46.3,s:73},{n:"Elanora Heights",r:"Warringah",d:18.9,m:1485000,g1:6.3,g5:44.7,s:65},{n:"Ingleside",r:"Warringah",d:18.9,m:1735000,g1:3.5,g5:37.0,s:67},{n:"Narrabeen",r:"Warringah",d:18.9,m:1630000,g1:4.9,g5:41.8,s:44},{n:"Narrabeen Peninsula",r:"Warringah",d:18.9,m:1535000,g1:6.1,g5:36.9,s:71},{n:"North Narrabeen",r:"Warringah",d:18.9,m:1530000,g1:5.3,g5:39.1,s:45},{n:"Kangaroo Point",r:"Sutherland - Menai - Heathcote",d:18.9,m:1445000,g1:5.2,g5:51.0,s:56},{n:"Sylvania",r:"Sutherland - Menai - Heathcote",d:18.9,m:1420000,g1:4.9,g5:43.9,s:67},{n:"Sylvania Southgate",r:"Sutherland - Menai - Heathcote",d:18.9,m:1530000,g1:6.0,g5:40.9,s:53},{n:"Sylvania Waters",r:"Sutherland - Menai - Heathcote",d:18.9,m:1830000,g1:4.7,g5:34.4,s:47},{n:"Chester Hill",r:"Merrylands - Guildford",d:19.0,m:1910000,g1:2.7,g5:35.1,s:66},{n:"Sefton",r:"Merrylands - Guildford",d:19.0,m:1795000,g1:3.4,g5:35.2,s:57},{n:"Bankstown",r:"Canterbury",d:19.1,m:1865000,g1:4.1,g5:37.2,s:49},{n:"Bankstown North",r:"Canterbury",d:19.1,m:1410000,g1:4.8,g5:44.2,s:55},{n:"Bankstown Square",r:"Canterbury",d:19.1,m:1575000,g1:6.4,g5:45.8,s:57},{n:"Condell Park",r:"Canterbury",d:19.1,m:1595000,g1:3.5,g5:39.7,s:70},{n:"Manahan",r:"Canterbury",d:19.1,m:1760000,g1:6.8,g5:43.7,s:47},{n:"Greenhills Beach",r:"Sutherland - Menai - Heathcote",d:19.1,m:1560000,g1:5.8,g5:38.3,s:55},{n:"Padstow",r:"Canterbury",d:19.3,m:1830000,g1:5.1,g5:36.1,s:51},{n:"Padstow Heights",r:"Canterbury",d:19.3,m:1610000,g1:6.0,g5:35.7,s:68},{n:"Harris Park",r:"Parramatta",d:19.7,m:1595000,g1:6.5,g5:47.1,s:47},{n:"Parramatta",r:"Parramatta",d:19.7,m:1425000,g1:5.7,g5:48.9,s:57},{n:"Parramatta Westfield",r:"Parramatta",d:19.7,m:1840000,g1:2.4,g5:32.1,s:43},{n:"Pennant Hills",r:"Pennant Hills - Epping",d:19.8,m:1570000,g1:4.7,g5:38.7,s:66},{n:"Thornleigh",r:"Pennant Hills - Epping",d:19.8,m:1535000,g1:5.9,g5:48.2,s:72},{n:"Westleigh",r:"Pennant Hills - Epping",d:19.8,m:1790000,g1:6.2,g5:39.7,s:63},{n:"Bass Hill",r:"Merrylands - Guildford",d:19.8,m:1770000,g1:4.6,g5:40.4,s:54},{n:"Revesby",r:"Bankstown",d:20.0,m:1755000,g1:6.6,g5:45.6,s:43},{n:"Revesby Heights",r:"Bankstown",d:20.0,m:1745000,g1:5.8,g5:37.5,s:44},{n:"Revesby North",r:"Bankstown",d:20.0,m:1730000,g1:3.7,g5:40.8,s:53},{n:"North Wahroonga",r:"Ku-ring-gai",d:20.3,m:1765000,g1:5.4,g5:40.2,s:48},{n:"North Parramatta",r:"Parramatta",d:20.3,m:1350000,g1:5.8,g5:44.3,s:60},{n:"North Rocks",r:"Parramatta",d:20.3,m:1420000,g1:3.7,g5:37.3,s:60},{n:"Bonnet Bay",r:"Sutherland - Menai - Heathcote",d:20.6,m:1725000,g1:4.0,g5:39.9,s:45},{n:"Como",r:"Sutherland - Menai - Heathcote",d:20.6,m:1495000,g1:4.1,g5:38.7,s:69},{n:"Jannali",r:"Sutherland - Menai - Heathcote",d:20.6,m:1665000,g1:3.7,g5:41.5,s:56},{n:"West Pennant Hills",r:"Pennant Hills - Epping",d:20.9,m:1680000,g1:5.1,g5:43.1,s:48},{n:"Guildford",r:"Merrylands - Guildford",d:20.9,m:1480000,g1:7.0,g5:45.9,s:48},{n:"Guildford West",r:"Merrylands - Guildford",d:20.9,m:1615000,g1:5.1,g5:47.3,s:54},{n:"Old Guildford",r:"Merrylands - Guildford",d:20.9,m:1370000,g1:4.2,g5:48.3,s:49},{n:"Yennora",r:"Merrylands - Guildford",d:20.9,m:1335000,g1:5.1,g5:51.9,s:58},{n:"Georges Hall",r:"Bankstown",d:21.1,m:1535000,g1:4.2,g5:38.8,s:66},{n:"Bankstown Aerodrome",r:"Canterbury",d:21.2,m:1670000,g1:2.7,g5:34.0,s:49},{n:"Miranda",r:"Cronulla - Miranda - Caringbah",d:21.2,m:1660000,g1:6.2,g5:39.9,s:69},{n:"Yowie Bay",r:"Cronulla - Miranda - Caringbah",d:21.2,m:1355000,g1:4.3,g5:37.8,s:72},{n:"Warriewood",r:"Pittwater",d:21.3,m:1620000,g1:5.2,g5:40.8,s:65},{n:"Warriewood Shopping Square",r:"Pittwater",d:21.3,m:1345000,g1:5.1,g5:48.8,s:53},{n:"Carramar",r:"Merrylands - Guildford",d:21.3,m:1580000,g1:3.1,g5:37.5,s:47},{n:"Lansdowne",r:"Merrylands - Guildford",d:21.3,m:1600000,g1:6.5,g5:42.9,s:47},{n:"Villawood",r:"Merrylands - Guildford",d:21.3,m:1680000,g1:4.4,g5:41.4,s:63},{n:"Merrylands",r:"Parramatta",d:21.8,m:1380000,g1:6.2,g5:43.5,s:53},{n:"Merrylands West",r:"Parramatta",d:21.8,m:1635000,g1:6.9,g5:45.9,s:45},{n:"Northmead",r:"Parramatta",d:21.9,m:1360000,g1:3.3,g5:41.3,s:75},{n:"Cherrybrook",r:"Pennant Hills - Epping",d:22.1,m:1315000,g1:6.2,g5:42.4,s:70},{n:"Asquith",r:"Hornsby",d:22.2,m:1350000,g1:3.7,g5:40.4,s:71},{n:"Hornsby",r:"Hornsby",d:22.2,m:1395000,g1:6.7,g5:41.1,s:53},{n:"Hornsby Heights",r:"Hornsby",d:22.2,m:1575000,g1:3.7,g5:33.6,s:64},{n:"Waitara",r:"Hornsby",d:22.2,m:1265000,g1:4.9,g5:51.3,s:72},{n:"East Hills",r:"Bankstown",d:22.2,m:1260000,g1:3.6,g5:43.7,s:53},{n:"Panania",r:"Bankstown",d:22.2,m:1660000,g1:4.4,g5:33.4,s:62},{n:"Picnic Point",r:"Bankstown",d:22.2,m:1305000,g1:6.5,g5:45.4,s:69},{n:"Caringbah",r:"Cronulla - Miranda - Caringbah",d:22.3,m:1385000,g1:5.1,g5:47.0,s:71},{n:"Caringbah South",r:"Cronulla - Miranda - Caringbah",d:22.3,m:1265000,g1:5.6,g5:48.3,s:73},{n:"Dolans Bay",r:"Cronulla - Miranda - Caringbah",d:22.3,m:1385000,g1:7.6,g5:49.9,s:53},{n:"Lilli Pilli",r:"Cronulla - Miranda - Caringbah",d:22.3,m:1670000,g1:5.0,g5:35.2,s:68},{n:"Port Hacking",r:"Cronulla - Miranda - Caringbah",d:22.3,m:1340000,g1:5.0,g5:37.6,s:57},{n:"Taren Point",r:"Cronulla - Miranda - Caringbah",d:22.3,m:1465000,g1:3.3,g5:39.3,s:71},{n:"Warumbul",r:"Cronulla - Miranda - Caringbah",d:22.3,m:1265000,g1:3.7,g5:43.0,s:53},{n:"Milperra",r:"Liverpool",d:22.5,m:1325000,g1:4.3,g5:45.4,s:74},{n:"Mona Vale",r:"Pittwater",d:22.8,m:1625000,g1:7.0,g5:47.0,s:56},{n:"Constitution Hill",r:"Parramatta",d:23.2,m:1545000,g1:4.7,g5:49.5,s:69},{n:"Gymea",r:"Sutherland - Menai - Heathcote",d:23.2,m:1645000,g1:5.0,g5:36.4,s:59},{n:"Gymea Bay",r:"Sutherland - Menai - Heathcote",d:23.2,m:1575000,g1:3.8,g5:41.0,s:48},{n:"Norwest",r:"Parramatta",d:23.4,m:1475000,g1:7.2,g5:49.1,s:51},{n:"Bayview",r:"Pittwater",d:23.9,m:1350000,g1:6.4,g5:38.2,s:60},{n:"Girraween",r:"Parramatta",d:24.1,m:1420000,g1:7.4,g5:47.4,s:69},{n:"Greystanes",r:"Parramatta",d:24.1,m:1310000,g1:6.4,g5:46.6,s:71},{n:"Mays Hill",r:"Parramatta",d:24.1,m:1305000,g1:7.5,g5:50.9,s:48},{n:"Pemulwuy",r:"Parramatta",d:24.1,m:1500000,g1:3.9,g5:49.3,s:71},{n:"Pendle Hill",r:"Parramatta",d:24.1,m:1275000,g1:5.0,g5:40.5,s:48},{n:"South Wentworthville",r:"Parramatta",d:24.1,m:1400000,g1:6.4,g5:43.0,s:50},{n:"Wentworthville",r:"Parramatta",d:24.1,m:1465000,g1:6.1,g5:39.8,s:57},{n:"Westmead",r:"Parramatta",d:24.1,m:1405000,g1:6.6,g5:47.9,s:60},{n:"Mount Colah",r:"Hornsby",d:24.2,m:1225000,g1:7.0,g5:48.1,s:51},{n:"Mount Kuring-Gai",r:"Hornsby",d:24.2,m:1520000,g1:4.4,g5:40.6,s:47},{n:"Akuna Bay",r:"Warringah",d:24.2,m:1365000,g1:5.7,g5:37.4,s:57},{n:"Cottage Point",r:"Warringah",d:24.2,m:1380000,g1:3.8,g5:47.2,s:65},{n:"Duffys Forest",r:"Warringah",d:24.2,m:1230000,g1:5.5,g5:44.7,s:72},{n:"Terrey Hills",r:"Warringah",d:24.2,m:1470000,g1:6.8,g5:50.1,s:61},{n:"Fairfield",r:"Fairfield",d:24.2,m:1430000,g1:5.9,g5:44.0,s:63},{n:"Fairfield East",r:"Fairfield",d:24.2,m:1325000,g1:4.0,g5:50.6,s:62},{n:"Fairfield Heights",r:"Fairfield",d:24.2,m:1465000,g1:7.3,g5:49.3,s:67},{n:"Fairfield West",r:"Fairfield",d:24.2,m:1295000,g1:4.0,g5:39.4,s:51},{n:"Cecil Hills",r:"Liverpool",d:24.2,m:1540000,g1:5.7,g5:48.5,s:60},{n:"Horningsea Park",r:"Liverpool",d:24.2,m:1440000,g1:5.5,g5:44.3,s:62},{n:"Hoxton Park",r:"Liverpool",d:24.2,m:1550000,g1:6.5,g5:44.5,s:52},{n:"West Hoxton",r:"Liverpool",d:24.2,m:1190000,g1:5.5,g5:40.9,s:67},{n:"Castle Hill",r:"Baulkham Hills",d:24.5,m:1180000,g1:5.2,g5:50.9,s:60},{n:"Old Toongabbie",r:"Parramatta",d:24.7,m:1285000,g1:7.1,g5:48.0,s:70},{n:"Toongabbie",r:"Parramatta",d:24.7,m:1420000,g1:7.9,g5:50.2,s:70},{n:"Toongabbie East",r:"Parramatta",d:24.7,m:1445000,g1:4.9,g5:49.0,s:70},{n:"Newport",r:"Pittwater",d:25.1,m:1330000,g1:5.7,g5:41.9,s:54},{n:"Newport Beach",r:"Pittwater",d:25.1,m:1235000,g1:7.3,g5:52.5,s:74},{n:"Dural",r:"Dural - Wisemans Ferry",d:25.3,m:1205000,g1:7.9,g5:53.8,s:73},{n:"Middle Dural",r:"Dural - Wisemans Ferry",d:25.3,m:1390000,g1:5.4,g5:37.1,s:73},{n:"Round Corner",r:"Dural - Wisemans Ferry",d:25.3,m:1280000,g1:6.4,g5:43.8,s:63},{n:"Audley",r:"Sutherland - Menai - Heathcote",d:25.3,m:1510000,g1:3.8,g5:44.2,s:57},{n:"Garie",r:"Sutherland - Menai - Heathcote",d:25.3,m:1155000,g1:5.5,g5:49.7,s:77},{n:"Grays Point",r:"Sutherland - Menai - Heathcote",d:25.3,m:1205000,g1:5.6,g5:38.5,s:62},{n:"Kareela",r:"Sutherland - Menai - Heathcote",d:25.3,m:1350000,g1:5.4,g5:46.9,s:52},{n:"Kirrawee",r:"Sutherland - Menai - Heathcote",d:25.3,m:1465000,g1:4.3,g5:36.2,s:57},{n:"Loftus",r:"Sutherland - Menai - Heathcote",d:25.3,m:1410000,g1:6.0,g5:35.9,s:48},{n:"Sutherland",r:"Sutherland - Menai - Heathcote",d:25.3,m:1360000,g1:5.1,g5:51.0,s:71},{n:"Woronora",r:"Sutherland - Menai - Heathcote",d:25.3,m:1155000,g1:4.8,g5:51.3,s:79},{n:"Alfords Point",r:"Sutherland - Menai - Heathcote",d:25.4,m:1265000,g1:5.8,g5:49.6,s:75},{n:"Bangor",r:"Sutherland - Menai - Heathcote",d:25.4,m:1165000,g1:7.4,g5:51.7,s:71},{n:"Barden Ridge",r:"Sutherland - Menai - Heathcote",d:25.4,m:1345000,g1:7.4,g5:49.7,s:47},{n:"Illawong",r:"Sutherland - Menai - Heathcote",d:25.4,m:1380000,g1:4.0,g5:43.3,s:47},{n:"Lucas Heights",r:"Sutherland - Menai - Heathcote",d:25.4,m:1405000,g1:4.6,g5:48.9,s:49},{n:"Menai",r:"Sutherland - Menai - Heathcote",d:25.4,m:1480000,g1:4.6,g5:47.5,s:65},{n:"Menai Central",r:"Sutherland - Menai - Heathcote",d:25.4,m:1510000,g1:4.3,g5:43.3,s:70},{n:"Bonnie Vale",r:"Sutherland - Menai - Heathcote",d:25.6,m:1130000,g1:4.2,g5:47.1,s:64},{n:"Jibbon",r:"Sutherland - Menai - Heathcote",d:25.7,m:1275000,g1:5.1,g5:46.7,s:65},{n:"McCarrs Creek",r:"Pittwater",d:25.8,m:1155000,g1:7.5,g5:49.4,s:66},{n:"Moorebank",r:"Liverpool",d:25.8,m:1290000,g1:4.3,g5:45.6,s:63},{n:"Bundeena",r:"Sutherland - Menai - Heathcote",d:25.8,m:1420000,g1:5.3,g5:42.1,s:59},{n:"Burraneer",r:"Sutherland - Menai - Heathcote",d:25.8,m:1450000,g1:3.1,g5:39.8,s:74},{n:"Cronulla",r:"Sutherland - Menai - Heathcote",d:25.8,m:1485000,g1:6.1,g5:50.6,s:62},{n:"Maianbar",r:"Sutherland - Menai - Heathcote",d:25.8,m:1190000,g1:7.1,g5:48.5,s:64},{n:"Woolooware",r:"Sutherland - Menai - Heathcote",d:25.8,m:1205000,g1:5.9,g5:42.3,s:66},{n:"Church Point",r:"Pittwater",d:26.0,m:1145000,g1:4.5,g5:53.0,s:56},{n:"Elvina Bay",r:"Pittwater",d:26.0,m:1370000,g1:3.4,g5:39.3,s:51},{n:"Lovett Bay",r:"Pittwater",d:26.0,m:1295000,g1:6.5,g5:40.9,s:76},{n:"Scotland Island",r:"Pittwater",d:26.0,m:1265000,g1:7.2,g5:52.3,s:75},{n:"Cabramatta",r:"Fairfield",d:26.0,m:1495000,g1:6.2,g5:47.0,s:58},{n:"Cabramatta West",r:"Fairfield",d:26.0,m:1355000,g1:5.7,g5:42.1,s:65},{n:"Canley Heights",r:"Fairfield",d:26.0,m:1440000,g1:7.2,g5:44.8,s:54},{n:"Canley Vale",r:"Fairfield",d:26.0,m:1135000,g1:4.8,g5:47.8,s:62},{n:"Lansvale",r:"Fairfield",d:26.0,m:1130000,g1:7.6,g5:50.2,s:78},{n:"Casula",r:"Liverpool",d:27.4,m:1340000,g1:7.6,g5:52.2,s:60},{n:"Casula Mall",r:"Liverpool",d:27.4,m:1230000,g1:4.7,g5:40.2,s:70},{n:"Chipping Norton",r:"Liverpool",d:27.4,m:1420000,g1:2.7,g5:37.2,s:75},{n:"Hammondville",r:"Liverpool",d:27.4,m:1355000,g1:4.1,g5:51.6,s:74},{n:"Liverpool",r:"Liverpool",d:27.4,m:1225000,g1:5.4,g5:40.8,s:50},{n:"Liverpool South",r:"Liverpool",d:27.4,m:1255000,g1:5.3,g5:40.0,s:58},{n:"Liverpool Westfield",r:"Liverpool",d:27.4,m:1435000,g1:4.9,g5:44.4,s:68},{n:"Lurnea",r:"Liverpool",d:27.4,m:1165000,g1:6.0,g5:49.0,s:70},{n:"Mount Pritchard",r:"Liverpool",d:27.4,m:1125000,g1:4.2,g5:49.4,s:60},{n:"Prestons",r:"Liverpool",d:27.4,m:1400000,g1:3.1,g5:38.9,s:63},{n:"Warwick Farm",r:"Liverpool",d:27.4,m:1245000,g1:4.9,g5:47.1,s:54},{n:"Kings Langley",r:"Blacktown",d:27.7,m:1085000,g1:3.8,g5:45.6,s:52},{n:"Lalor Park",r:"Blacktown",d:27.7,m:1410000,g1:3.1,g5:37.6,s:48},{n:"Seven Hills",r:"Blacktown",d:27.7,m:1145000,g1:6.2,g5:52.8,s:56},{n:"Seven Hills West",r:"Blacktown",d:27.7,m:1215000,g1:7.9,g5:53.1,s:77},{n:"Baulkham Hills",r:"Parramatta",d:27.9,m:1340000,g1:7.0,g5:52.0,s:73},{n:"Bella Vista",r:"Parramatta",d:27.9,m:1105000,g1:7.1,g5:46.2,s:75},{n:"Crestwood",r:"Parramatta",d:27.9,m:1295000,g1:3.7,g5:38.7,s:49},{n:"Winston Hills",r:"Parramatta",d:27.9,m:1130000,g1:6.8,g5:54.3,s:66},{n:"Morning Bay",r:"Pittwater",d:28.0,m:1140000,g1:3.9,g5:43.8,s:68},{n:"Avalon",r:"Pittwater",d:28.1,m:1055000,g1:7.8,g5:49.1,s:54},{n:"Avalon Beach",r:"Pittwater",d:28.1,m:1400000,g1:4.5,g5:37.1,s:52},{n:"Bilgola",r:"Pittwater",d:28.1,m:1305000,g1:5.9,g5:46.9,s:77},{n:"Bilgola Beach",r:"Pittwater",d:28.1,m:1150000,g1:4.1,g5:50.9,s:75},{n:"Bilgola Plateau",r:"Pittwater",d:28.1,m:1080000,g1:4.6,g5:52.1,s:55},{n:"Careel Bay",r:"Pittwater",d:28.1,m:1195000,g1:4.4,g5:40.4,s:57},{n:"Clareville",r:"Pittwater",d:28.1,m:1070000,g1:6.9,g5:53.2,s:79},{n:"Paradise Beach",r:"Pittwater",d:28.1,m:1110000,g1:4.1,g5:50.9,s:71},{n:"Taylors Point",r:"Pittwater",d:28.1,m:1255000,g1:5.1,g5:52.3,s:76},{n:"Whale Beach",r:"Pittwater",d:28.1,m:1185000,g1:6.2,g5:42.2,s:56},{n:"Berowra",r:"Hornsby",d:28.2,m:1110000,g1:4.2,g5:51.0,s:74},{n:"Cowan",r:"Hornsby",d:28.2,m:1395000,g1:6.6,g5:44.5,s:57},{n:"Marley",r:"Sutherland - Menai - Heathcote",d:28.3,m:1070000,g1:6.7,g5:41.0,s:69},{n:"Yenabilli",r:"Sutherland - Menai - Heathcote",d:28.3,m:1100000,g1:5.0,g5:40.5,s:68},{n:"Pleasure Point",r:"Liverpool",d:28.4,m:1190000,g1:5.5,g5:41.9,s:61},{n:"Sandy Point",r:"Liverpool",d:28.4,m:1135000,g1:6.4,g5:47.4,s:52},{n:"Voyager Point",r:"Liverpool",d:28.4,m:1380000,g1:3.1,g5:36.8,s:55},{n:"Goarra",r:"Sutherland - Menai - Heathcote",d:28.7,m:1175000,g1:7.0,g5:52.5,s:70},{n:"Beaumont Hills",r:"Blacktown - North",d:29.9,m:985000,g1:4.7,g5:47.0,s:60},{n:"Kellyville",r:"Blacktown - North",d:29.9,m:1105000,g1:6.3,g5:53.7,s:61},{n:"Kellyville Ridge",r:"Blacktown - North",d:29.9,m:1115000,g1:7.0,g5:50.3,s:70},{n:"Rouse Hill",r:"Blacktown - North",d:29.9,m:1315000,g1:3.6,g5:46.3,s:72},{n:"Abbotsbury",r:"Fairfield",d:29.9,m:1095000,g1:3.8,g5:43.7,s:73},{n:"Bossley Park",r:"Fairfield",d:29.9,m:1245000,g1:3.7,g5:45.2,s:68},{n:"Edensor Park",r:"Fairfield",d:29.9,m:1025000,g1:7.4,g5:54.4,s:55},{n:"Greenfield Park",r:"Fairfield",d:29.9,m:1000000,g1:4.5,g5:44.1,s:75},{n:"Prairiewood",r:"Fairfield",d:29.9,m:1205000,g1:3.5,g5:40.0,s:52},{n:"St Johns Park",r:"Fairfield",d:29.9,m:1080000,g1:7.1,g5:49.6,s:76},{n:"Wakeley",r:"Fairfield",d:29.9,m:1275000,g1:7.3,g5:45.7,s:49},{n:"Wentworth Port",r:"Fairfield",d:29.9,m:1170000,g1:4.9,g5:40.6,s:53},{n:"Arndell Park",r:"Fairfield",d:30.0,m:1275000,g1:5.8,g5:41.3,s:63},{n:"Blacktown",r:"Fairfield",d:30.0,m:1020000,g1:4.7,g5:45.1,s:76},{n:"Blacktown Westpoint",r:"Fairfield",d:30.0,m:1225000,g1:5.4,g5:41.2,s:59},{n:"Huntingwood",r:"Fairfield",d:30.0,m:1025000,g1:6.9,g5:43.9,s:65},{n:"Kings Park",r:"Fairfield",d:30.0,m:1270000,g1:5.4,g5:51.7,s:59},{n:"Marayong",r:"Fairfield",d:30.0,m:1290000,g1:5.6,g5:41.6,s:55},{n:"Prospect",r:"Fairfield",d:30.0,m:1265000,g1:6.7,g5:43.3,s:65},{n:"Glenwood",r:"Blacktown - North",d:30.2,m:1180000,g1:5.6,g5:40.0,s:62},{n:"Parklea",r:"Blacktown - North",d:30.2,m:1155000,g1:3.5,g5:46.4,s:75},{n:"Stanhope Gardens",r:"Blacktown - North",d:30.2,m:1260000,g1:4.5,g5:37.9,s:73},{n:"Bonnyrigg",r:"Fairfield",d:30.6,m:1150000,g1:6.0,g5:48.8,s:51},{n:"Bonnyrigg Heights",r:"Fairfield",d:30.6,m:1300000,g1:7.9,g5:52.5,s:61},{n:"Smithfield",r:"Fairfield",d:31.0,m:1175000,g1:3.7,g5:44.0,s:68},{n:"Smithfield West",r:"Fairfield",d:31.0,m:1020000,g1:5.5,g5:45.6,s:78},{n:"Wetherill Park",r:"Fairfield",d:31.0,m:1160000,g1:5.2,g5:51.3,s:54},{n:"Woodpark",r:"Fairfield",d:31.0,m:1240000,g1:5.4,g5:39.4,s:76},{n:"Wattamolla",r:"Shoalhaven",d:31.0,m:1165000,g1:5.8,g5:44.1,s:79},{n:"Coasters Retreat",r:"Pittwater",d:31.3,m:985000,g1:5.5,g5:50.6,s:73},{n:"Currawong Beach",r:"Pittwater",d:31.3,m:1120000,g1:3.3,g5:42.4,s:54},{n:"Great Mackerel Beach",r:"Pittwater",d:31.3,m:965000,g1:4.1,g5:49.4,s:75},{n:"Palm Beach",r:"Pittwater",d:31.3,m:995000,g1:4.6,g5:44.4,s:56},{n:"The Basin",r:"Pittwater",d:31.3,m:1055000,g1:7.2,g5:53.4,s:80},{n:"North Kellyville",r:"Blacktown - North",d:31.3,m:1065000,g1:5.1,g5:41.3,s:56},{n:"Ashcroft",r:"Liverpool",d:31.3,m:1070000,g1:4.4,g5:42.1,s:81},{n:"Busby",r:"Liverpool",d:31.3,m:1005000,g1:4.6,g5:47.4,s:61},{n:"Cartwright",r:"Liverpool",d:31.3,m:1180000,g1:4.6,g5:40.3,s:68},{n:"Green Valley",r:"Liverpool",d:31.3,m:980000,g1:7.3,g5:56.8,s:61},{n:"Heckenberg",r:"Liverpool",d:31.3,m:1130000,g1:5.3,g5:42.9,s:64},{n:"Hinchinbrook",r:"Liverpool",d:31.3,m:1230000,g1:5.0,g5:43.4,s:75},{n:"Miller",r:"Liverpool",d:31.3,m:1265000,g1:4.9,g5:44.5,s:68},{n:"Sadleir",r:"Liverpool",d:31.3,m:1220000,g1:5.6,g5:46.5,s:67},{n:"Glenfield",r:"Campbelltown (NSW)",d:31.6,m:1110000,g1:5.2,g5:46.9,s:78},{n:"Palona",r:"Sutherland - Menai - Heathcote",d:31.8,m:1115000,g1:3.1,g5:42.9,s:59},{n:"Nirimba Fields",r:"Blacktown - North",d:31.9,m:945000,g1:5.2,g5:57.7,s:81},{n:"Annangrove",r:"Dural - Wisemans Ferry",d:32.0,m:1095000,g1:6.3,g5:52.6,s:52},{n:"Glenhaven",r:"Dural - Wisemans Ferry",d:32.0,m:945000,g1:6.2,g5:50.8,s:77},{n:"Kenthurst",r:"Dural - Wisemans Ferry",d:32.0,m:960000,g1:4.6,g5:51.3,s:55},{n:"Engadine",r:"Sutherland - Menai - Heathcote",d:32.0,m:930000,g1:3.8,g5:43.9,s:78},{n:"Heathcote",r:"Sutherland - Menai - Heathcote",d:32.0,m:960000,g1:5.3,g5:55.7,s:60},{n:"Waterfall",r:"Sutherland - Menai - Heathcote",d:32.0,m:1130000,g1:6.0,g5:55.1,s:65},{n:"Woronora Heights",r:"Sutherland - Menai - Heathcote",d:32.0,m:1145000,g1:6.3,g5:45.4,s:62},{n:"Yarrawarrah",r:"Sutherland - Menai - Heathcote",d:32.0,m:945000,g1:5.9,g5:44.8,s:65},{n:"Glenquarie",r:"Campbelltown (NSW)",d:32.4,m:1125000,g1:4.1,g5:51.2,s:55},{n:"Long Point",r:"Campbelltown (NSW)",d:32.4,m:950000,g1:6.6,g5:45.9,s:70},{n:"Macquarie Fields",r:"Campbelltown (NSW)",d:32.4,m:990000,g1:4.2,g5:45.0,s:53},{n:"Uloola",r:"Sutherland - Menai - Heathcote",d:33.0,m:1080000,g1:5.6,g5:40.1,s:79},{n:"Acacia Gardens",r:"Blacktown - North",d:33.1,m:1050000,g1:4.4,g5:51.3,s:60},{n:"Quakers Hill",r:"Blacktown - North",d:33.1,m:1120000,g1:5.9,g5:40.1,s:57},{n:"Len Waters Estate",r:"Liverpool",d:33.3,m:1070000,g1:5.2,g5:47.1,s:76},{n:"Bungarribee",r:"Mount Druitt",d:33.3,m:1095000,g1:3.7,g5:40.9,s:64},{n:"Doonside",r:"Mount Druitt",d:33.3,m:1040000,g1:6.6,g5:44.6,s:52},{n:"Woodcroft",r:"Mount Druitt",d:33.3,m:1135000,g1:5.3,g5:39.9,s:64},{n:"Horsley Park",r:"Fairfield",d:33.4,m:1110000,g1:5.4,g5:50.4,s:61},{n:"The Ponds",r:"Blacktown - North",d:33.4,m:1175000,g1:6.5,g5:45.8,s:72},{n:"Elizabeth Hills",r:"Liverpool",d:33.5,m:910000,g1:7.8,g5:56.6,s:63},{n:"Eastern Creek",r:"Mount Druitt",d:33.7,m:930000,g1:5.5,g5:51.8,s:62},{n:"Rooty Hill",r:"Mount Druitt",d:33.7,m:915000,g1:3.9,g5:48.4,s:66},{n:"Carnes Hill",r:"Liverpool",d:34.1,m:910000,g1:4.5,g5:42.9,s:64},{n:"Middleton Grange",r:"Liverpool",d:34.2,m:1100000,g1:7.7,g5:53.9,s:62},{n:"Bardia",r:"Campbelltown (NSW)",d:34.2,m:1050000,g1:6.9,g5:44.2,s:79},{n:"Berowra Heights",r:"Hornsby",d:34.3,m:915000,g1:6.9,g5:50.5,s:64},{n:"Berowra Waters",r:"Hornsby",d:34.3,m:975000,g1:7.1,g5:45.3,s:67},{n:"Cecil Park",r:"Fairfield",d:34.3,m:1045000,g1:5.5,g5:53.7,s:79},{n:"Kemps Creek",r:"Fairfield",d:34.3,m:1090000,g1:7.0,g5:43.9,s:51},{n:"Mount Vernon",r:"Fairfield",d:34.3,m:885000,g1:6.6,g5:44.9,s:62},{n:"Holsworthy",r:"Liverpool",d:35.2,m:1130000,g1:6.2,g5:40.6,s:61},{n:"Wattle Grove",r:"Liverpool",d:35.2,m:955000,g1:4.7,g5:47.5,s:57},{n:"Tallawong",r:"Blacktown - North",d:35.3,m:1150000,g1:6.4,g5:44.7,s:76},{n:"Schofields",r:"Blacktown - North",d:35.7,m:1115000,g1:5.5,g5:53.9,s:58},{n:"Canoelands",r:"Dural - Wisemans Ferry",d:35.9,m:1080000,g1:3.4,g5:40.2,s:68},{n:"Forest Glen",r:"Dural - Wisemans Ferry",d:35.9,m:965000,g1:6.4,g5:48.8,s:67},{n:"Glenorie",r:"Dural - Wisemans Ferry",d:35.9,m:1020000,g1:6.9,g5:41.6,s:80},{n:"Hillside",r:"Dural - Wisemans Ferry",d:35.9,m:1045000,g1:5.9,g5:47.6,s:71},{n:"Colebee",r:"Mount Druitt",d:36.3,m:1015000,g1:4.3,g5:50.7,s:70},{n:"Dean Park",r:"Mount Druitt",d:36.3,m:1105000,g1:4.5,g5:47.4,s:75},{n:"Glendenning",r:"Mount Druitt",d:36.3,m:875000,g1:4.0,g5:43.5,s:75},{n:"Hassall Grove",r:"Mount Druitt",d:36.3,m:1075000,g1:6.9,g5:55.5,s:67},{n:"Oakhurst",r:"Mount Druitt",d:36.3,m:1045000,g1:4.1,g5:42.6,s:75},{n:"Plumpton",r:"Mount Druitt",d:36.3,m:1085000,g1:4.3,g5:47.5,s:56},{n:"Berowra Creek",r:"Hornsby",d:36.5,m:1075000,g1:5.8,g5:54.1,s:63},{n:"Denham Court",r:"Campbelltown (NSW)",d:36.6,m:1080000,g1:6.0,g5:42.6,s:71},{n:"Ingleburn",r:"Campbelltown (NSW)",d:36.6,m:870000,g1:6.7,g5:46.5,s:58},{n:"Macquarie Links",r:"Campbelltown (NSW)",d:36.6,m:895000,g1:7.6,g5:56.5,s:84},{n:"Austral",r:"Bringelly - Green Valley",d:37.4,m:940000,g1:7.3,g5:49.0,s:63},{n:"Leppington",r:"Bringelly - Green Valley",d:37.4,m:980000,g1:3.5,g5:43.1,s:80},{n:"Bar Point",r:"Hornsby",d:38.2,m:830000,g1:7.2,g5:57.1,s:67},{n:"Brooklyn",r:"Hornsby",d:38.2,m:995000,g1:6.3,g5:51.7,s:70},{n:"Cogra Bay",r:"Hornsby",d:38.2,m:950000,g1:7.1,g5:54.7,s:68},{n:"Dangar Island",r:"Hornsby",d:38.2,m:955000,g1:7.7,g5:53.8,s:66},{n:"Milsons Passage",r:"Hornsby",d:38.2,m:935000,g1:6.1,g5:52.6,s:81},{n:"Mooney Mooney",r:"Hornsby",d:38.2,m:1005000,g1:5.2,g5:47.4,s:60},{n:"Bow Bowing",r:"Campbelltown (NSW)",d:38.2,m:880000,g1:6.1,g5:46.0,s:76},{n:"Minto",r:"Campbelltown (NSW)",d:38.2,m:1060000,g1:5.6,g5:47.8,s:52},{n:"Minto Heights",r:"Campbelltown (NSW)",d:38.2,m:910000,g1:5.7,g5:46.9,s:64},{n:"Raby",r:"Campbelltown (NSW)",d:38.2,m:930000,g1:4.3,g5:49.8,s:80},{n:"St Andrews",r:"Campbelltown (NSW)",d:38.2,m:1020000,g1:4.5,g5:54.2,s:59},{n:"Varroville",r:"Campbelltown (NSW)",d:38.2,m:920000,g1:5.9,g5:43.7,s:83},{n:"Arcadia",r:"Dural - Wisemans Ferry",d:38.4,m:1030000,g1:6.7,g5:41.5,s:66},{n:"Berrilee",r:"Dural - Wisemans Ferry",d:38.4,m:850000,g1:4.6,g5:55.1,s:55},{n:"Fiddletown",r:"Dural - Wisemans Ferry",d:38.4,m:820000,g1:6.7,g5:55.8,s:81},{n:"Galston",r:"Dural - Wisemans Ferry",d:38.4,m:965000,g1:6.9,g5:53.0,s:64},{n:"Bidwill",r:"Mount Druitt",d:38.9,m:1020000,g1:7.1,g5:51.6,s:80},{n:"Blackett",r:"Mount Druitt",d:38.9,m:1000000,g1:7.2,g5:54.3,s:81},{n:"Dharruk",r:"Mount Druitt",d:38.9,m:930000,g1:6.6,g5:48.6,s:55},{n:"Emerton",r:"Mount Druitt",d:38.9,m:935000,g1:6.7,g5:45.7,s:69},{n:"Hebersham",r:"Mount Druitt",d:38.9,m:875000,g1:4.5,g5:51.1,s:63},{n:"Lethbridge Park",r:"Mount Druitt",d:38.9,m:840000,g1:4.9,g5:48.6,s:84},{n:"Minchinbury",r:"Mount Druitt",d:38.9,m:845000,g1:5.6,g5:49.2,s:76},{n:"Mount Druitt",r:"Mount Druitt",d:38.9,m:1055000,g1:5.7,g5:41.4,s:74},{n:"Mount Druitt Village",r:"Mount Druitt",d:38.9,m:990000,g1:7.2,g5:55.4,s:78},{n:"Shalvey",r:"Mount Druitt",d:38.9,m:885000,g1:4.0,g5:46.8,s:57},{n:"Tregear",r:"Mount Druitt",d:38.9,m:1055000,g1:8.2,g5:53.2,s:59},{n:"Whalan",r:"Mount Druitt",d:38.9,m:1005000,g1:7.0,g5:56.1,s:77},{n:"Willmot",r:"Mount Druitt",d:38.9,m:865000,g1:5.1,g5:52.4,s:80},{n:"Berkshire Park",r:"Richmond - Windsor",d:39.6,m:860000,g1:6.4,g5:47.1,s:64},{n:"Box Hill",r:"Richmond - Windsor",d:39.6,m:880000,g1:5.9,g5:45.0,s:79},{n:"Maraylya",r:"Richmond - Windsor",d:39.6,m:970000,g1:5.3,g5:51.5,s:72},{n:"Marsden Park",r:"Richmond - Windsor",d:39.6,m:810000,g1:7.2,g5:45.8,s:79},{n:"Nelson",r:"Richmond - Windsor",d:39.6,m:945000,g1:5.9,g5:54.6,s:76},{n:"Oakville",r:"Richmond - Windsor",d:39.6,m:810000,g1:5.8,g5:54.8,s:74},{n:"Riverstone",r:"Richmond - Windsor",d:39.6,m:1020000,g1:5.4,g5:56.3,s:77},{n:"Vineyard",r:"Richmond - Windsor",d:39.6,m:975000,g1:5.9,g5:47.6,s:70},{n:"Erskine Park",r:"St Marys",d:39.8,m:770000,g1:5.6,g5:51.6,s:76},{n:"St Clair",r:"St Marys",d:39.8,m:790000,g1:6.8,g5:56.9,s:82},{n:"Cheero Point",r:"Hornsby",d:39.9,m:970000,g1:7.3,g5:56.8,s:62},{n:"Woronora Dam",r:"Wollongong",d:41.3,m:870000,g1:7.5,g5:58.5,s:83},{n:"Colyton",r:"St Marys",d:41.3,m:995000,g1:5.6,g5:44.7,s:80},{n:"North St Marys",r:"St Marys",d:41.3,m:785000,g1:5.2,g5:52.9,s:57},{n:"Oxley Park",r:"St Marys",d:41.3,m:830000,g1:7.9,g5:53.9,s:77},{n:"St Marys",r:"St Marys",d:41.3,m:770000,g1:4.4,g5:53.2,s:76},{n:"St Marys East",r:"St Marys",d:41.3,m:825000,g1:4.1,g5:43.4,s:65},{n:"St Marys South",r:"St Marys",d:41.3,m:940000,g1:5.3,g5:56.9,s:82},{n:"Booker Bay",r:"Gosford",d:41.6,m:990000,g1:6.3,g5:41.4,s:64},{n:"Box Head",r:"Gosford",d:41.6,m:835000,g1:4.1,g5:44.1,s:76},{n:"Daleys Point",r:"Gosford",d:41.6,m:760000,g1:5.4,g5:53.1,s:60},{n:"Empire Bay",r:"Gosford",d:41.6,m:920000,g1:4.2,g5:50.8,s:67},{n:"Ettalong Beach",r:"Gosford",d:41.6,m:795000,g1:6.3,g5:57.1,s:86},{n:"Hardys Bay",r:"Gosford",d:41.6,m:985000,g1:6.4,g5:52.3,s:59},{n:"Killcare",r:"Gosford",d:41.6,m:910000,g1:5.9,g5:46.4,s:58},{n:"Killcare Heights",r:"Gosford",d:41.6,m:910000,g1:6.3,g5:56.9,s:80},{n:"Pretty Beach",r:"Gosford",d:41.6,m:815000,g1:5.2,g5:52.8,s:74},{n:"St Huberts Island",r:"Gosford",d:41.6,m:980000,g1:5.8,g5:56.6,s:75},{n:"Umina Beach",r:"Gosford",d:41.6,m:860000,g1:6.3,g5:55.3,s:72},{n:"Wagstaffe",r:"Gosford",d:41.6,m:945000,g1:4.2,g5:47.0,s:55},{n:"Eagle Vale",r:"Campbelltown (NSW)",d:41.9,m:870000,g1:4.9,g5:54.6,s:56},{n:"Eschol Park",r:"Campbelltown (NSW)",d:41.9,m:975000,g1:3.6,g5:42.8,s:56},{n:"Kearns",r:"Campbelltown (NSW)",d:41.9,m:900000,g1:5.7,g5:52.5,s:65},{n:"Catherine Field",r:"Bringelly - Green Valley",d:42.4,m:770000,g1:4.2,g5:52.5,s:76},{n:"Gregory Hills",r:"Bringelly - Green Valley",d:42.4,m:795000,g1:4.0,g5:50.4,s:85},{n:"Rossmore",r:"Bringelly - Green Valley",d:42.4,m:940000,g1:5.1,g5:54.8,s:65},{n:"Gledswood Hills",r:"Bringelly - Green Valley",d:42.6,m:800000,g1:5.1,g5:44.1,s:68},{n:"Ropes Crossing",r:"St Marys",d:42.6,m:755000,g1:5.1,g5:55.4,s:78},{n:"Badgerys Creek",r:"Bringelly - Green Valley",d:43.2,m:890000,g1:5.2,g5:57.6,s:78},{n:"Blairmount",r:"Campbelltown (NSW)",d:43.4,m:775000,g1:6.4,g5:45.4,s:86},{n:"Claymore",r:"Campbelltown (NSW)",d:43.4,m:915000,g1:5.8,g5:48.0,s:56},{n:"Angus",r:"Richmond - Windsor",d:44.0,m:825000,g1:4.5,g5:54.5,s:70},{n:"Gables",r:"Richmond - Windsor",d:44.0,m:930000,g1:6.0,g5:49.6,s:70},{n:"Grantham Farm",r:"Richmond - Windsor",d:44.0,m:775000,g1:5.2,g5:50.3,s:66},{n:"Melonba",r:"Richmond - Windsor",d:44.0,m:930000,g1:7.4,g5:57.3,s:82},{n:"Richards",r:"Richmond - Windsor",d:44.0,m:750000,g1:6.6,g5:51.9,s:66},{n:"Bradfield",r:"Bringelly - Green Valley",d:44.2,m:930000,g1:5.4,g5:58.0,s:80},{n:"Blackwall",r:"Gosford",d:44.5,m:845000,g1:4.9,g5:54.9,s:80},{n:"Horsfield Bay",r:"Gosford",d:44.5,m:860000,g1:7.4,g5:53.7,s:83},{n:"Koolewong",r:"Gosford",d:44.5,m:790000,g1:5.5,g5:44.8,s:72},{n:"Little Wobby",r:"Gosford",d:44.5,m:760000,g1:7.0,g5:56.7,s:68},{n:"Patonga",r:"Gosford",d:44.5,m:700000,g1:7.0,g5:55.8,s:68},{n:"Pearl Beach",r:"Gosford",d:44.5,m:790000,g1:4.4,g5:48.7,s:75},{n:"Phegans Bay",r:"Gosford",d:44.5,m:840000,g1:6.8,g5:45.9,s:64},{n:"Wondabyne",r:"Gosford",d:44.5,m:785000,g1:5.3,g5:49.5,s:79},{n:"Woy Woy",r:"Gosford",d:44.5,m:875000,g1:7.8,g5:50.5,s:66},{n:"Woy Woy Bay",r:"Gosford",d:44.5,m:845000,g1:5.9,g5:57.9,s:64},{n:"Caddens",r:"Penrith",d:44.8,m:745000,g1:5.9,g5:47.4,s:85},{n:"Orchard Hills",r:"St Marys",d:45.4,m:870000,g1:5.4,g5:44.5,s:56},{n:"Bringelly",r:"Bringelly - Green Valley",d:45.5,m:810000,g1:4.8,g5:56.8,s:79},{n:"Singletons Mill",r:"Hawkesbury",d:45.6,m:685000,g1:8.8,g5:58.7,s:75},{n:"Coalcliff",r:"Wollongong",d:45.9,m:685000,g1:5.3,g5:45.9,s:59},{n:"Darkes Forest",r:"Wollongong",d:45.9,m:880000,g1:5.6,g5:53.1,s:59},{n:"Helensburgh",r:"Wollongong",d:45.9,m:830000,g1:5.1,g5:53.1,s:77},{n:"Lilyvale",r:"Wollongong",d:45.9,m:740000,g1:3.4,g5:45.6,s:58},{n:"Maddens Plains",r:"Wollongong",d:45.9,m:920000,g1:6.8,g5:44.2,s:80},{n:"Otford",r:"Wollongong",d:45.9,m:840000,g1:6.0,g5:58.8,s:80},{n:"Stanwell Park",r:"Wollongong",d:45.9,m:910000,g1:4.9,g5:48.8,s:66},{n:"Stanwell Tops",r:"Wollongong",d:45.9,m:695000,g1:7.7,g5:50.1,s:73},{n:"Pitt Town Bottoms",r:"Richmond - Windsor",d:46.0,m:725000,g1:5.1,g5:53.7,s:79},{n:"Cambridge Gardens",r:"Penrith",d:46.4,m:790000,g1:7.4,g5:49.9,s:84},{n:"Cambridge Park",r:"Penrith",d:46.4,m:680000,g1:6.2,g5:45.4,s:74},{n:"Claremont Meadows",r:"Penrith",d:46.4,m:760000,g1:5.7,g5:50.3,s:80},{n:"Kingswood",r:"Penrith",d:46.4,m:780000,g1:7.8,g5:49.0,s:84},{n:"Llandilo",r:"Penrith",d:46.4,m:725000,g1:6.7,g5:48.3,s:82},{n:"Shanes Park",r:"Penrith",d:46.4,m:680000,g1:5.8,g5:49.7,s:87},{n:"Werrington",r:"Penrith",d:46.4,m:840000,g1:8.3,g5:58.6,s:83},{n:"Werrington County",r:"Penrith",d:46.4,m:910000,g1:4.9,g5:50.6,s:58},{n:"Werrington Downs",r:"Penrith",d:46.4,m:815000,g1:6.2,g5:50.0,s:61},{n:"Avoca Beach",r:"Gosford",d:46.5,m:895000,g1:4.9,g5:46.9,s:65},{n:"Bensville",r:"Gosford",d:46.5,m:865000,g1:4.6,g5:55.6,s:59},{n:"Bouddi",r:"Gosford",d:46.5,m:855000,g1:7.8,g5:52.3,s:58},{n:"Copacabana",r:"Gosford",d:46.5,m:690000,g1:4.2,g5:46.4,s:86},{n:"Davistown",r:"Gosford",d:46.5,m:760000,g1:4.6,g5:54.7,s:61},{n:"Green Point",r:"Gosford",d:46.5,m:800000,g1:6.7,g5:57.5,s:68},{n:"Kincumber",r:"Gosford",d:46.5,m:755000,g1:3.9,g5:49.7,s:75},{n:"Kincumber South",r:"Gosford",d:46.5,m:880000,g1:4.1,g5:49.7,s:71},{n:"Macmasters Beach",r:"Gosford",d:46.5,m:720000,g1:5.5,g5:52.0,s:61},{n:"Picketts Valley",r:"Gosford",d:46.5,m:785000,g1:7.6,g5:59.7,s:69},{n:"Saratoga",r:"Gosford",d:46.5,m:890000,g1:5.0,g5:55.0,s:56},{n:"Yattalunga",r:"Gosford",d:46.5,m:710000,g1:4.3,g5:52.1,s:85},{n:"Currans Hill",r:"Campbelltown (NSW)",d:46.6,m:675000,g1:8.4,g5:59.9,s:74},{n:"Harrington Park",r:"Campbelltown (NSW)",d:46.6,m:820000,g1:7.4,g5:49.2,s:78},{n:"Mount Annan",r:"Campbelltown (NSW)",d:46.6,m:860000,g1:4.2,g5:46.0,s:61},{n:"Narellan",r:"Campbelltown (NSW)",d:46.6,m:830000,g1:6.0,g5:50.4,s:82},{n:"Narellan Vale",r:"Campbelltown (NSW)",d:46.6,m:795000,g1:5.0,g5:53.8,s:71},{n:"Smeaton Grange",r:"Campbelltown (NSW)",d:46.6,m:905000,g1:4.2,g5:44.0,s:71},{n:"Jordan Springs",r:"Penrith",d:47.4,m:700000,g1:8.0,g5:51.4,s:71},{n:"Shane Park",r:"Penrith",d:47.4,m:700000,g1:7.9,g5:56.7,s:69},{n:"Menangle Park",r:"Campbelltown (NSW)",d:49.7,m:855000,g1:6.0,g5:49.1,s:76},{n:"Glenmore Park",r:"Bringelly - Green Valley",d:49.7,m:840000,g1:5.7,g5:53.4,s:57},{n:"Greendale",r:"Bringelly - Green Valley",d:49.7,m:775000,g1:7.1,g5:54.6,s:83},{n:"Luddenham",r:"Bringelly - Green Valley",d:49.7,m:850000,g1:6.6,g5:54.1,s:80},{n:"Mulgoa",r:"Bringelly - Green Valley",d:49.7,m:710000,g1:5.6,g5:58.1,s:79},{n:"Regentville",r:"Bringelly - Green Valley",d:49.7,m:725000,g1:6.0,g5:54.4,s:59},{n:"Wallacia",r:"Bringelly - Green Valley",d:49.7,m:715000,g1:5.6,g5:46.7,s:76},{n:"Emu Heights",r:"Penrith",d:50.6,m:830000,g1:6.9,g5:46.1,s:81},{n:"Emu Plains",r:"Penrith",d:50.6,m:670000,g1:7.6,g5:60.4,s:58},{n:"Jamisontown",r:"Penrith",d:50.6,m:680000,g1:5.7,g5:56.4,s:68},{n:"Leonay",r:"Penrith",d:50.6,m:745000,g1:7.1,g5:52.4,s:83},{n:"Penrith",r:"Penrith",d:50.6,m:670000,g1:7.5,g5:59.2,s:87},{n:"Penrith Plaza",r:"Penrith",d:50.6,m:670000,g1:5.5,g5:59.8,s:63},{n:"Penrith South",r:"Penrith",d:50.6,m:835000,g1:8.2,g5:53.7,s:60},{n:"South Penrith",r:"Penrith",d:50.6,m:650000,g1:5.3,g5:57.2,s:68},{n:"West Gosford",r:"Hawkesbury",d:50.8,m:690000,g1:4.3,g5:51.4,s:70},{n:"Castlereagh",r:"Penrith",d:51.7,m:795000,g1:6.9,g5:46.2,s:72},{n:"Cranebrook",r:"Penrith",d:51.7,m:680000,g1:3.9,g5:45.6,s:86},{n:"Richmond Lowlands",r:"Richmond - Windsor",d:53.1,m:680000,g1:6.6,g5:50.4,s:73},{n:"Cumberland Reach",r:"Richmond - Windsor",d:53.5,m:730000,g1:7.9,g5:56.8,s:85},{n:"Erina Heights",r:"Wyong",d:53.6,m:650000,g1:4.5,g5:47.3,s:76},{n:"Forresters Beach",r:"Wyong",d:53.6,m:635000,g1:6.6,g5:50.2,s:66},{n:"North Avoca",r:"Wyong",d:53.6,m:765000,g1:6.5,g5:52.4,s:79},{n:"Terrigal",r:"Wyong",d:53.6,m:730000,g1:6.1,g5:54.0,s:67},{n:"Wamberal",r:"Wyong",d:53.6,m:740000,g1:5.7,g5:58.3,s:59},{n:"Bligh Park",r:"Richmond - Windsor",d:53.8,m:730000,g1:4.6,g5:50.2,s:85},{n:"Cattai",r:"Richmond - Windsor",d:53.8,m:815000,g1:5.6,g5:47.8,s:72},{n:"Central Colo",r:"Richmond - Windsor",d:53.8,m:795000,g1:4.7,g5:51.5,s:78},{n:"Clarendon",r:"Richmond - Windsor",d:53.8,m:610000,g1:8.2,g5:57.2,s:61},{n:"Colo",r:"Richmond - Windsor",d:53.8,m:805000,g1:6.5,g5:46.0,s:70},{n:"Colo Heights",r:"Richmond - Windsor",d:53.8,m:760000,g1:7.4,g5:56.9,s:72},{n:"Cornwallis",r:"Richmond - Windsor",d:53.8,m:645000,g1:8.1,g5:53.7,s:66},{n:"Ebenezer",r:"Richmond - Windsor",d:53.8,m:615000,g1:7.1,g5:56.4,s:63},{n:"Freemans Reach",r:"Richmond - Windsor",d:53.8,m:625000,g1:6.3,g5:61.1,s:76},{n:"Glossodia",r:"Richmond - Windsor",d:53.8,m:780000,g1:7.5,g5:55.4,s:59},{n:"Leets Vale",r:"Richmond - Windsor",d:53.8,m:810000,g1:8.5,g5:58.7,s:85},{n:"Lower Portland",r:"Richmond - Windsor",d:53.8,m:620000,g1:6.9,g5:49.6,s:61},{n:"Maroota",r:"Richmond - Windsor",d:53.8,m:635000,g1:5.5,g5:54.1,s:62},{n:"McGraths Hill",r:"Richmond - Windsor",d:53.8,m:810000,g1:7.2,g5:58.7,s:74},{n:"Mellong",r:"Richmond - Windsor",d:53.8,m:610000,g1:4.9,g5:46.5,s:68},{n:"Mulgrave",r:"Richmond - Windsor",d:53.8,m:640000,g1:6.5,g5:53.1,s:59},{n:"Pitt Town",r:"Richmond - Windsor",d:53.8,m:750000,g1:7.1,g5:55.1,s:83},{n:"Sackville",r:"Richmond - Windsor",d:53.8,m:730000,g1:5.8,g5:46.5,s:62},{n:"Sackville North",r:"Richmond - Windsor",d:53.8,m:685000,g1:5.7,g5:47.1,s:78},{n:"Scheyville",r:"Richmond - Windsor",d:53.8,m:625000,g1:7.5,g5:51.7,s:75},{n:"South Maroota",r:"Richmond - Windsor",d:53.8,m:670000,g1:4.7,g5:48.4,s:74},{n:"South Windsor",r:"Richmond - Windsor",d:53.8,m:780000,g1:6.4,g5:48.1,s:81},{n:"Upper Colo",r:"Richmond - Windsor",d:53.8,m:675000,g1:4.5,g5:53.7,s:77},{n:"Wilberforce",r:"Richmond - Windsor",d:53.8,m:670000,g1:6.6,g5:55.8,s:79},{n:"Windsor",r:"Richmond - Windsor",d:53.8,m:655000,g1:5.5,g5:48.9,s:87},{n:"Windsor Downs",r:"Richmond - Windsor",d:53.8,m:645000,g1:4.3,g5:48.8,s:71},{n:"Hobartville",r:"Richmond - Windsor",d:54.1,m:790000,g1:8.5,g5:55.7,s:76},{n:"Austinmer",r:"Wollongong",d:54.4,m:615000,g1:5.6,g5:53.3,s:62},{n:"Clifton",r:"Wollongong",d:54.4,m:765000,g1:5.6,g5:49.6,s:84},{n:"Coledale",r:"Wollongong",d:54.4,m:640000,g1:5.9,g5:61.2,s:69},{n:"Scarborough",r:"Wollongong",d:54.4,m:745000,g1:6.1,g5:46.2,s:61},{n:"Thirroul",r:"Wollongong",d:54.4,m:780000,g1:4.6,g5:50.8,s:85},{n:"Wombarra",r:"Wollongong",d:54.4,m:795000,g1:4.6,g5:55.7,s:86},{n:"Airds",r:"Wollondilly",d:54.4,m:745000,g1:6.7,g5:45.8,s:67},{n:"Ambarvale",r:"Wollondilly",d:54.4,m:625000,g1:8.1,g5:58.4,s:86},{n:"Appin",r:"Wollondilly",d:54.4,m:800000,g1:6.1,g5:52.0,s:76},{n:"Blair Athol",r:"Wollondilly",d:54.4,m:675000,g1:7.4,g5:48.0,s:66},{n:"Bradbury",r:"Wollondilly",d:54.4,m:695000,g1:8.3,g5:57.7,s:76},{n:"Campbelltown",r:"Wollondilly",d:54.4,m:635000,g1:7.0,g5:54.0,s:60},{n:"Campbelltown North",r:"Wollondilly",d:54.4,m:655000,g1:8.2,g5:59.9,s:60},{n:"Englorie Park",r:"Wollondilly",d:54.4,m:660000,g1:4.4,g5:48.2,s:78},{n:"Gilead",r:"Wollondilly",d:54.4,m:655000,g1:5.9,g5:59.6,s:79},{n:"Glen Alpine",r:"Wollondilly",d:54.4,m:740000,g1:6.4,g5:53.5,s:58},{n:"Kentlyn",r:"Wollondilly",d:54.4,m:615000,g1:6.0,g5:55.8,s:69},{n:"Leumeah",r:"Wollondilly",d:54.4,m:630000,g1:4.1,g5:48.3,s:74},{n:"Macarthur Square",r:"Wollondilly",d:54.4,m:660000,g1:4.9,g5:49.8,s:70},{n:"Rosemeadow",r:"Wollondilly",d:54.4,m:780000,g1:4.6,g5:55.6,s:77},{n:"Ruse",r:"Wollondilly",d:54.4,m:785000,g1:5.4,g5:49.3,s:64},{n:"St Helens Park",r:"Wollondilly",d:54.4,m:625000,g1:6.0,g5:48.5,s:84},{n:"Wedderburn",r:"Wollondilly",d:54.4,m:790000,g1:6.1,g5:47.7,s:56},{n:"Woodbine",r:"Wollondilly",d:54.4,m:705000,g1:5.3,g5:55.8,s:61},{n:"Menangle",r:"Wollondilly",d:54.9,m:620000,g1:4.5,g5:49.8,s:67},{n:"Glenbrook",r:"Blue Mountains",d:54.9,m:615000,g1:6.6,g5:55.6,s:83},{n:"Lapstone",r:"Blue Mountains",d:54.9,m:780000,g1:6.9,g5:57.3,s:68},{n:"Blaxland",r:"Blue Mountains",d:55.7,m:615000,g1:6.0,g5:53.2,s:65},{n:"Blaxland East",r:"Blue Mountains",d:55.7,m:690000,g1:8.0,g5:60.1,s:75},{n:"Mount Riverview",r:"Blue Mountains",d:55.7,m:785000,g1:7.1,g5:53.6,s:85},{n:"Warrimoo",r:"Blue Mountains",d:55.7,m:760000,g1:5.5,g5:56.5,s:70},{n:"North Richmond",r:"Richmond - Windsor",d:56.4,m:760000,g1:7.4,g5:59.5,s:64},{n:"Tennyson",r:"Richmond - Windsor",d:56.4,m:765000,g1:7.5,g5:53.1,s:80},{n:"The Slopes",r:"Richmond - Windsor",d:56.4,m:610000,g1:5.7,g5:46.3,s:84},{n:"Silverdale",r:"Bringelly - Green Valley",d:58.0,m:705000,g1:4.8,g5:51.5,s:87},{n:"Warragamba",r:"Bringelly - Green Valley",d:58.0,m:760000,g1:8.4,g5:56.7,s:81},{n:"Brereton",r:"Bringelly - Green Valley",d:58.6,m:620000,g1:5.0,g5:56.6,s:69},{n:"Bulli",r:"Wollongong",d:58.7,m:635000,g1:4.3,g5:47.9,s:76},{n:"Bulli Tops",r:"Wollongong",d:58.7,m:575000,g1:5.2,g5:60.1,s:82},{n:"Douglas Park",r:"Wollondilly",d:58.7,m:590000,g1:7.0,g5:55.2,s:67},{n:"Cataract",r:"Wollondilly",d:59.0,m:605000,g1:5.7,g5:53.0,s:81},{n:"Kurmond",r:"Hawkesbury",d:59.2,m:745000,g1:6.0,g5:49.5,s:73},{n:"Agnes Banks",r:"Richmond - Windsor",d:59.8,m:740000,g1:6.5,g5:52.4,s:68},{n:"Bowen Mountain",r:"Richmond - Windsor",d:59.8,m:665000,g1:8.1,g5:54.0,s:63},{n:"Grose Vale",r:"Richmond - Windsor",d:59.8,m:625000,g1:5.2,g5:48.4,s:65},{n:"Grose Wold",r:"Richmond - Windsor",d:59.8,m:685000,g1:8.8,g5:58.2,s:73},{n:"Londonderry",r:"Richmond - Windsor",d:59.8,m:705000,g1:5.5,g5:60.2,s:68},{n:"Richmond",r:"Richmond - Windsor",d:59.8,m:570000,g1:5.6,g5:62.0,s:76},{n:"Yarramundi",r:"Richmond - Windsor",d:59.8,m:735000,g1:6.8,g5:46.8,s:71}];
+  var SUBURBS = RAW.map(function (r) {
+    return { name: r.n, region: r.r, distance: r.d, median: r.m, g1: r.g1, g5: r.g5, sample_size: r.s };
+  });
+
+  var css = getComputedStyle(document.documentElement);
+  function cv(name) { return css.getPropertyValue(name).trim(); }
+
+  var fmtMoney = new Intl.NumberFormat("en-AU", { style: "currency", currency: "AUD", maximumFractionDigits: 0 });
+  function compactMoney(v) {
+    if (v >= 1000000) return "$" + (v / 1000000).toFixed(v % 1000000 === 0 ? 0 : 1) + "M";
+    return "$" + Math.round(v / 1000) + "K";
+  }
+  function pct(v) { return (v > 0 ? "+" : "") + v.toFixed(1) + "%"; }
+
+  var tooltip = document.getElementById("tooltip");
+  function showTooltip(evt, html) {
+    tooltip.innerHTML = html;
+    tooltip.style.opacity = "1";
+    var x = evt.clientX + 14, y = evt.clientY + 14;
+    var rect = tooltip.getBoundingClientRect();
+    if (x + rect.width > window.innerWidth - 8) x = evt.clientX - rect.width - 14;
+    if (y + rect.height > window.innerHeight - 8) y = evt.clientY - rect.height - 14;
+    tooltip.style.transform = "translate(" + x + "px," + y + "px)";
+  }
+  function hideTooltip() {
+    tooltip.style.opacity = "0";
+    tooltip.style.transform = "translate(-9999px,-9999px)";
+  }
+
+  function svgEl(tag, attrs) {
+    var el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+    for (var k in attrs) el.setAttribute(k, attrs[k]);
+    return el;
+  }
+
+  // ---- KPI tiles (computed over the full 60km set) ----
+  function renderKpis() {
+    var n = SUBURBS.length;
+    var medians = SUBURBS.map(function (d) { return d.median; }).sort(function (a, b) { return a - b; });
+    var cityMedian = medians[Math.floor(n / 2)];
+    var avgG1 = SUBURBS.reduce(function (s, d) { return s + d.g1; }, 0) / n;
+    var avgG5 = SUBURBS.reduce(function (s, d) { return s + d.g5; }, 0) / n;
+
+    var tiles = [
+      { label: "Suburbs within 60km", value: String(n) },
+      { label: "Citywide median (house)", value: compactMoney(cityMedian) },
+      { label: "Avg 1yr growth", value: pct(avgG1), delta: avgG1 },
+      { label: "Avg 5yr growth", value: pct(avgG5), delta: avgG5 }
+    ];
+    var wrap = document.getElementById("kpis");
+    tiles.forEach(function (t) {
+      var div = document.createElement("div");
+      div.className = "kpi";
+      var deltaHtml = "";
+      if (typeof t.delta === "number") {
+        var cls = t.delta >= 0 ? "up" : "down";
+        var arrow = t.delta >= 0 ? "▲" : "▼";
+        deltaHtml = '<div class="delta ' + cls + '">' + arrow + " modeled trend</div>";
+      }
+      div.innerHTML = '<div class="label"></div><div class="value"></div>' + deltaHtml;
+      div.querySelector(".label").textContent = t.label;
+      div.querySelector(".value").textContent = t.value;
+      wrap.appendChild(div);
+    });
+  }
+
+  // ---- Top-12 price bar chart ----
+  function renderPriceChart() {
+    var svg = document.getElementById("chart-price");
+    var W = 560, ML = 118, MR = 46, MT = 8, MB = 8;
+    var data = SUBURBS.slice().sort(function (a, b) { return b.median - a.median; }).slice(0, 12);
+    var barH = 20, gap = 8;
+    var plotH = data.length * (barH + gap) - gap;
+    var H = plotH + MT + MB;
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    var maxV = Math.max.apply(null, data.map(function (d) { return d.median; }));
+    var plotW = W - ML - MR;
+    var scale = function (v) { return (v / maxV) * plotW; };
+
+    var frag = document.createDocumentFragment();
+    [0.25, 0.5, 0.75, 1].forEach(function (f) {
+      var x = ML + plotW * f;
+      frag.appendChild(svgEl("line", { x1: x, x2: x, y1: MT, y2: MT + plotH, class: "grid-line" }));
+    });
+    frag.appendChild(svgEl("line", { x1: ML, x2: ML, y1: MT, y2: MT + plotH, class: "base-line" }));
+
+    data.forEach(function (d, i) {
+      var y = MT + i * (barH + gap);
+      var w = Math.max(scale(d.median), 2);
+      var name = svgEl("text", { x: ML - 8, y: y + barH * 0.68, class: "bar-name", "text-anchor": "end" });
+      name.textContent = d.name;
+      frag.appendChild(name);
+
+      var bar = svgEl("rect", { x: ML, y: y, width: w, height: barH, rx: 4, fill: cv("--series-price"), class: "bar" });
+      var hit = svgEl("rect", { x: ML, y: y - gap / 2, width: plotW, height: barH + gap, class: "hit" });
+      hit.addEventListener("pointermove", function (e) {
+        showTooltip(e, '<span class="tt-strong">' + compactMoney(d.median) + "</span> · " + d.name);
+      });
+      hit.addEventListener("pointerleave", hideTooltip);
+      frag.appendChild(bar);
+      frag.appendChild(hit);
+
+      var label = svgEl("text", { x: ML + w + 8, y: y + barH * 0.68, class: "bar-label" });
+      label.textContent = compactMoney(d.median);
+      frag.appendChild(label);
+    });
+
+    svg.innerHTML = "";
+    svg.appendChild(frag);
+  }
+
+  // ---- Growth leaders/laggards diverging bar chart ----
+  function renderGrowthChart() {
+    var svg = document.getElementById("chart-growth");
+    var W = 480;
+    var sorted = SUBURBS.slice().sort(function (a, b) { return b.g5 - a.g5; });
+    var top = sorted.slice(0, 6);
+    var bottom = sorted.slice(-6).reverse();
+    var data = top.concat(bottom);
+    var barH = 20, gap = 8, groupGap = 14;
+    var H = data.length * (barH + gap) - gap + groupGap;
+    var MT = 8, ML_c = W / 2;
+    svg.setAttribute("viewBox", "0 0 " + W + " " + (H + MT + 8));
+
+    var maxAbs = Math.max.apply(null, data.map(function (d) { return Math.abs(d.g5); }));
+    var half = (W - 160) / 2;
+    var scale = function (v) { return (Math.abs(v) / maxAbs) * half; };
+
+    var frag = document.createDocumentFragment();
+    frag.appendChild(svgEl("line", { x1: ML_c, x2: ML_c, y1: MT, y2: MT + H - groupGap, class: "base-line" }));
+
+    data.forEach(function (d, i) {
+      var y = MT + i * (barH + gap) + (i >= 6 ? groupGap : 0);
+      var w = Math.max(scale(d.g5), 2);
+      var pos = d.g5 >= 0;
+      var x = pos ? ML_c : ML_c - w;
+      var color = pos ? cv("--diverge-pos") : cv("--diverge-neg");
+
+      var bar = svgEl("rect", { x: x, y: y, width: w, height: barH, rx: 4, fill: color, class: "bar" });
+      var hitX = ML_c - half - 4, hitW = half * 2 + 8;
+      var hit = svgEl("rect", { x: hitX, y: y - gap / 2, width: hitW, height: barH + gap, class: "hit" });
+      hit.addEventListener("pointermove", function (e) {
+        showTooltip(e, '<span class="tt-strong">' + pct(d.g5) + "</span> 5yr · " + d.name);
+      });
+      hit.addEventListener("pointerleave", hideTooltip);
+
+      var nameX = pos ? ML_c - w - 8 : ML_c + w + 8;
+      var name = svgEl("text", { x: nameX, y: y + barH * 0.68, class: "bar-name", "text-anchor": pos ? "end" : "start" });
+      name.textContent = d.name;
+
+      var labelX = pos ? ML_c + w + 8 : ML_c - w - 8;
+      var label = svgEl("text", { x: labelX, y: y + barH * 0.68, class: "bar-label", "text-anchor": pos ? "start" : "end" });
+      label.textContent = pct(d.g5);
+
+      frag.appendChild(bar);
+      frag.appendChild(hit);
+      frag.appendChild(name);
+      frag.appendChild(label);
+    });
+
+    svg.innerHTML = "";
+    svg.appendChild(frag);
+  }
+
+  // ---- Scatter: median price vs 5yr growth, all suburbs, nearest-point hover ----
+  var scatterState = null;
+  function renderScatter() {
+    var svg = document.getElementById("chart-scatter");
+    var W = 1080, H = 340, ML = 60, MR = 20, MT = 16, MB = 34;
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    var plotW = W - ML - MR, plotH = H - MT - MB;
+
+    document.getElementById("scatter-cap").textContent =
+      "Each of the " + SUBURBS.length + " suburbs is one point — move your pointer over the chart";
+
+    var xs = SUBURBS.map(function (d) { return d.median; });
+    var ys = SUBURBS.map(function (d) { return d.g5; });
+    var xMax = Math.max.apply(null, xs) * 1.05;
+    var yMin = Math.min(0, Math.min.apply(null, ys)) - 4;
+    var yMax = Math.max.apply(null, ys) + 4;
+    var xScale = function (v) { return ML + (v / xMax) * plotW; };
+    var yScale = function (v) { return MT + plotH - ((v - yMin) / (yMax - yMin)) * plotH; };
+
+    var frag = document.createDocumentFragment();
+    for (var xv = 0; xv <= xMax; xv += 1000000) {
+      var gx = xScale(xv);
+      frag.appendChild(svgEl("line", { x1: gx, x2: gx, y1: MT, y2: MT + plotH, class: "grid-line" }));
+      var xl = svgEl("text", { x: gx, y: MT + plotH + 16, class: "axis-label", "text-anchor": "middle" });
+      xl.textContent = compactMoney(xv);
+      frag.appendChild(xl);
+    }
+    [0, 10, 20, 30, 40, 50, 60].forEach(function (yv) {
+      if (yv < yMin || yv > yMax) return;
+      var gy = yScale(yv);
+      frag.appendChild(svgEl("line", { x1: ML, x2: ML + plotW, y1: gy, y2: gy, class: yv === 0 ? "base-line" : "grid-line" }));
+      var yl = svgEl("text", { x: ML - 8, y: gy + 3, class: "axis-label", "text-anchor": "end" });
+      yl.textContent = yv + "%";
+      frag.appendChild(yl);
+    });
+
+    var points = [];
+    SUBURBS.forEach(function (d) {
+      var cx = xScale(d.median), cy = yScale(d.g5);
+      points.push({ cx: cx, cy: cy, d: d });
+      frag.appendChild(svgEl("circle", { cx: cx, cy: cy, r: 3, class: "dot", "fill-opacity": 0.55 }));
+    });
+
+    var hitLayer = svgEl("rect", { x: ML, y: MT, width: plotW, height: plotH, class: "hit" });
+    var highlight = svgEl("circle", { r: 6, class: "crosshair-dot", style: "display:none" });
+    frag.appendChild(hitLayer);
+    frag.appendChild(highlight);
+
+    svg.innerHTML = "";
+    svg.appendChild(frag);
+    scatterState = { points: points, highlight: highlight, svg: svg };
+
+    hitLayer.addEventListener("pointermove", function (e) {
+      var rect = svg.getBoundingClientRect();
+      var scaleX = W / rect.width, scaleY = H / rect.height;
+      var px = (e.clientX - rect.left) * scaleX;
+      var py = (e.clientY - rect.top) * scaleY;
+      var best = null, bestDist = Infinity;
+      points.forEach(function (p) {
+        var dx = p.cx - px, dy = p.cy - py;
+        var dist = dx * dx + dy * dy;
+        if (dist < bestDist) { bestDist = dist; best = p; }
+      });
+      if (!best) return;
+      highlight.setAttribute("cx", best.cx);
+      highlight.setAttribute("cy", best.cy);
+      highlight.style.display = "";
+      showTooltip(e,
+        '<span class="tt-strong">' + best.d.name + "</span><br>" +
+        compactMoney(best.d.median) + " median · " + pct(best.d.g5) + " 5yr");
+    });
+    hitLayer.addEventListener("pointerleave", function () {
+      highlight.style.display = "none";
+      hideTooltip();
+    });
+  }
+
+  // ---- Table ----
+  var sortKey = "median", sortDir = -1;
+  var searchTerm = "";
+  var maxDistance = 60;
+
+  function renderTable() {
+    var tbody = document.getElementById("tbody");
+    var rows = SUBURBS.filter(function (d) {
+      if (d.distance > maxDistance) return false;
+      if (!searchTerm) return true;
+      var t = searchTerm.toLowerCase();
+      return d.name.toLowerCase().indexOf(t) !== -1 || d.region.toLowerCase().indexOf(t) !== -1;
+    });
+    rows.sort(function (a, b) {
+      var av = a[sortKey], bv = b[sortKey];
+      if (typeof av === "string") return av.localeCompare(bv) * sortDir;
+      return (av - bv) * sortDir;
+    });
+
+    document.getElementById("count").textContent = rows.length + " of " + SUBURBS.length + " suburbs";
+
+    tbody.innerHTML = "";
+    if (rows.length === 0) {
+      var tr = document.createElement("tr");
+      tr.className = "empty-row";
+      var td = document.createElement("td");
+      td.colSpan = 6;
+      td.textContent = "No suburbs match “" + searchTerm + "”.";
+      tr.appendChild(td);
+      tbody.appendChild(tr);
+      return;
+    }
+
+    var frag = document.createDocumentFragment();
+    rows.forEach(function (d) {
+      var tr = document.createElement("tr");
+
+      var tdName = document.createElement("td");
+      tdName.className = "name";
+      var strong = document.createElement("span");
+      strong.textContent = d.name;
+      var region = document.createElement("span");
+      region.className = "region";
+      region.textContent = d.region;
+      tdName.appendChild(strong);
+      tdName.appendChild(region);
+
+      var tdDist = document.createElement("td");
+      tdDist.textContent = d.distance.toFixed(1) + " km";
+
+      var tdMedian = document.createElement("td");
+      tdMedian.textContent = fmtMoney.format(d.median).replace(/\.00$/, "");
+
+      var tdG1 = document.createElement("td");
+      var g1span = document.createElement("span");
+      g1span.className = "delta " + (d.g1 >= 0 ? "up" : "down");
+      g1span.textContent = (d.g1 >= 0 ? "▲ " : "▼ ") + pct(d.g1);
+      tdG1.appendChild(g1span);
+
+      var tdG5 = document.createElement("td");
+      var g5span = document.createElement("span");
+      g5span.className = "delta " + (d.g5 >= 0 ? "up" : "down");
+      g5span.textContent = (d.g5 >= 0 ? "▲ " : "▼ ") + pct(d.g5);
+      tdG5.appendChild(g5span);
+
+      var tdN = document.createElement("td");
+      tdN.textContent = String(d.sample_size);
+
+      tr.appendChild(tdName);
+      tr.appendChild(tdDist);
+      tr.appendChild(tdMedian);
+      tr.appendChild(tdG1);
+      tr.appendChild(tdG5);
+      tr.appendChild(tdN);
+      frag.appendChild(tr);
+    });
+    tbody.appendChild(frag);
+  }
+
+  function updateSortHeaders() {
+    document.querySelectorAll("thead th").forEach(function (th) {
+      th.classList.toggle("active", th.dataset.key === sortKey);
+      var arrow = th.querySelector(".arrow");
+      if (th.dataset.key === sortKey) arrow.textContent = sortDir === 1 ? "▴" : "▾";
+      else arrow.textContent = "▾";
+    });
+  }
+
+  document.querySelectorAll("thead th").forEach(function (th) {
+    th.addEventListener("click", function () {
+      var key = th.dataset.key;
+      if (sortKey === key) sortDir *= -1;
+      else { sortKey = key; sortDir = key === "name" ? 1 : -1; }
+      updateSortHeaders();
+      renderTable();
+    });
+  });
+  document.getElementById("search").addEventListener("input", function (e) {
+    searchTerm = e.target.value.trim();
+    renderTable();
+  });
+  document.getElementById("distance").addEventListener("input", function (e) {
+    maxDistance = Number(e.target.value);
+    document.getElementById("distance-val").textContent = maxDistance + " km";
+    renderTable();
+  });
+
+  renderKpis();
+  renderPriceChart();
+  renderGrowthChart();
+  renderScatter();
+  updateSortHeaders();
+  renderTable();
+
+  window.addEventListener("resize", function () {
+    renderPriceChart();
+    renderGrowthChart();
+    renderScatter();
+  });
+})();
+</script>

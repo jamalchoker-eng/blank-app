@@ -1,0 +1,7805 @@
+[
+ {
+  "name": "Barangaroo",
+  "region": "Sydney Inner City",
+  "distance_km": 1.2,
+  "median": 3690000,
+  "g1": 3.7,
+  "g5": 18.6,
+  "sample_size": 26
+ },
+ {
+  "name": "Elizabeth Bay",
+  "region": "Sydney Inner City",
+  "distance_km": 1.3,
+  "median": 3050000,
+  "g1": 1.4,
+  "g5": 24.3,
+  "sample_size": 20
+ },
+ {
+  "name": "Kings Cross",
+  "region": "Sydney Inner City",
+  "distance_km": 1.3,
+  "median": 3635000,
+  "g1": 2.4,
+  "g5": 19.0,
+  "sample_size": 20
+ },
+ {
+  "name": "Potts Point",
+  "region": "Sydney Inner City",
+  "distance_km": 1.3,
+  "median": 3815000,
+  "g1": -0.1,
+  "g5": 10.2,
+  "sample_size": 8
+ },
+ {
+  "name": "Rushcutters Bay",
+  "region": "Sydney Inner City",
+  "distance_km": 1.3,
+  "median": 3460000,
+  "g1": -0.1,
+  "g5": 8.9,
+  "sample_size": 22
+ },
+ {
+  "name": "Woolloomooloo",
+  "region": "Sydney Inner City",
+  "distance_km": 1.3,
+  "median": 3885000,
+  "g1": 0.9,
+  "g5": 7.9,
+  "sample_size": 8
+ },
+ {
+  "name": "Pyrmont",
+  "region": "Sydney Inner City",
+  "distance_km": 1.5,
+  "median": 3845000,
+  "g1": 2.7,
+  "g5": 15.1,
+  "sample_size": 27
+ },
+ {
+  "name": "Darlinghurst",
+  "region": "Sydney Inner City",
+  "distance_km": 1.7,
+  "median": 3535000,
+  "g1": 1.9,
+  "g5": 8.3,
+  "sample_size": 21
+ },
+ {
+  "name": "Surry Hills",
+  "region": "Sydney Inner City",
+  "distance_km": 1.7,
+  "median": 3150000,
+  "g1": 4.8,
+  "g5": 27.7,
+  "sample_size": 38
+ },
+ {
+  "name": "Taylor Square",
+  "region": "Sydney Inner City",
+  "distance_km": 1.7,
+  "median": 3120000,
+  "g1": 3.7,
+  "g5": 24.1,
+  "sample_size": 29
+ },
+ {
+  "name": "Broadway",
+  "region": "Sydney Inner City",
+  "distance_km": 2.0,
+  "median": 3145000,
+  "g1": 3.3,
+  "g5": 22.4,
+  "sample_size": 44
+ },
+ {
+  "name": "Ultimo",
+  "region": "Sydney Inner City",
+  "distance_km": 2.0,
+  "median": 3835000,
+  "g1": 3.5,
+  "g5": 17.3,
+  "sample_size": 26
+ },
+ {
+  "name": "Kirribilli",
+  "region": "North Sydney - Mosman",
+  "distance_km": 2.2,
+  "median": 3225000,
+  "g1": 3.6,
+  "g5": 20.7,
+  "sample_size": 22
+ },
+ {
+  "name": "Milsons Point",
+  "region": "North Sydney - Mosman",
+  "distance_km": 2.2,
+  "median": 3390000,
+  "g1": 2.8,
+  "g5": 15.0,
+  "sample_size": 22
+ },
+ {
+  "name": "Forest Lodge",
+  "region": "Sydney Inner City",
+  "distance_km": 2.6,
+  "median": 3270000,
+  "g1": 1.1,
+  "g5": 19.6,
+  "sample_size": 28
+ },
+ {
+  "name": "Glebe",
+  "region": "Sydney Inner City",
+  "distance_km": 2.6,
+  "median": 3125000,
+  "g1": 0.0,
+  "g5": 15.9,
+  "sample_size": 21
+ },
+ {
+  "name": "Chippendale",
+  "region": "Sydney Inner City",
+  "distance_km": 2.9,
+  "median": 3620000,
+  "g1": 0.2,
+  "g5": 10.5,
+  "sample_size": 19
+ },
+ {
+  "name": "Darlington",
+  "region": "Sydney Inner City",
+  "distance_km": 2.9,
+  "median": 3275000,
+  "g1": 2.5,
+  "g5": 20.7,
+  "sample_size": 30
+ },
+ {
+  "name": "Golden Grove",
+  "region": "Sydney Inner City",
+  "distance_km": 2.9,
+  "median": 2855000,
+  "g1": 4.4,
+  "g5": 25.5,
+  "sample_size": 28
+ },
+ {
+  "name": "Redfern",
+  "region": "Sydney Inner City",
+  "distance_km": 2.9,
+  "median": 2795000,
+  "g1": 5.3,
+  "g5": 29.7,
+  "sample_size": 36
+ },
+ {
+  "name": "Balmain",
+  "region": "Leichhardt",
+  "distance_km": 2.9,
+  "median": 3210000,
+  "g1": 0.7,
+  "g5": 21.5,
+  "sample_size": 17
+ },
+ {
+  "name": "Balmain East",
+  "region": "Leichhardt",
+  "distance_km": 2.9,
+  "median": 3665000,
+  "g1": 1.5,
+  "g5": 10.5,
+  "sample_size": 36
+ },
+ {
+  "name": "Birchgrove",
+  "region": "Leichhardt",
+  "distance_km": 2.9,
+  "median": 3570000,
+  "g1": 2.0,
+  "g5": 21.7,
+  "sample_size": 35
+ },
+ {
+  "name": "The University Of Sydney",
+  "region": "Sydney Inner City",
+  "distance_km": 3.1,
+  "median": 2870000,
+  "g1": 0.7,
+  "g5": 18.5,
+  "sample_size": 43
+ },
+ {
+  "name": "Double Bay",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 3.1,
+  "median": 2995000,
+  "g1": 4.1,
+  "g5": 23.3,
+  "sample_size": 23
+ },
+ {
+  "name": "North Sydney",
+  "region": "North Sydney - Mosman",
+  "distance_km": 3.2,
+  "median": 3060000,
+  "g1": 0.8,
+  "g5": 22.9,
+  "sample_size": 22
+ },
+ {
+  "name": "Lavender Bay",
+  "region": "North Sydney - Mosman",
+  "distance_km": 3.2,
+  "median": 3080000,
+  "g1": 0.6,
+  "g5": 18.3,
+  "sample_size": 42
+ },
+ {
+  "name": "McMahons Point",
+  "region": "North Sydney - Mosman",
+  "distance_km": 3.2,
+  "median": 3335000,
+  "g1": 0.5,
+  "g5": 14.8,
+  "sample_size": 35
+ },
+ {
+  "name": "North Sydney Shoppingworld",
+  "region": "North Sydney - Mosman",
+  "distance_km": 3.2,
+  "median": 3195000,
+  "g1": 2.3,
+  "g5": 17.2,
+  "sample_size": 43
+ },
+ {
+  "name": "Waverton",
+  "region": "North Sydney - Mosman",
+  "distance_km": 3.2,
+  "median": 3325000,
+  "g1": 2.5,
+  "g5": 17.5,
+  "sample_size": 16
+ },
+ {
+  "name": "Kurraba Point",
+  "region": "North Sydney - Mosman",
+  "distance_km": 3.3,
+  "median": 3680000,
+  "g1": 2.5,
+  "g5": 11.6,
+  "sample_size": 16
+ },
+ {
+  "name": "Centennial Park",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 3.4,
+  "median": 3160000,
+  "g1": 4.7,
+  "g5": 26.9,
+  "sample_size": 31
+ },
+ {
+  "name": "Moore Park",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 3.4,
+  "median": 3275000,
+  "g1": -0.1,
+  "g5": 14.1,
+  "sample_size": 21
+ },
+ {
+  "name": "Paddington",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 3.4,
+  "median": 3315000,
+  "g1": 3.1,
+  "g5": 25.7,
+  "sample_size": 33
+ },
+ {
+  "name": "Rozelle",
+  "region": "Leichhardt",
+  "distance_km": 3.5,
+  "median": 2860000,
+  "g1": 0.2,
+  "g5": 17.8,
+  "sample_size": 28
+ },
+ {
+  "name": "Neutral Bay",
+  "region": "North Sydney - Mosman",
+  "distance_km": 3.5,
+  "median": 3010000,
+  "g1": 1.5,
+  "g5": 27.5,
+  "sample_size": 33
+ },
+ {
+  "name": "Neutral Bay Junction",
+  "region": "North Sydney - Mosman",
+  "distance_km": 3.5,
+  "median": 2860000,
+  "g1": 1.4,
+  "g5": 26.4,
+  "sample_size": 31
+ },
+ {
+  "name": "Woollahra",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 3.6,
+  "median": 3395000,
+  "g1": 3.4,
+  "g5": 19.6,
+  "sample_size": 29
+ },
+ {
+  "name": "Darling Point",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 3.8,
+  "median": 3410000,
+  "g1": 2.9,
+  "g5": 24.2,
+  "sample_size": 13
+ },
+ {
+  "name": "Edgecliff",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 3.8,
+  "median": 2740000,
+  "g1": 5.4,
+  "g5": 31.7,
+  "sample_size": 52
+ },
+ {
+  "name": "Point Piper",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 3.8,
+  "median": 3220000,
+  "g1": 2.2,
+  "g5": 16.7,
+  "sample_size": 33
+ },
+ {
+  "name": "Waterloo",
+  "region": "Sydney Inner City",
+  "distance_km": 3.9,
+  "median": 3200000,
+  "g1": 4.4,
+  "g5": 21.3,
+  "sample_size": 17
+ },
+ {
+  "name": "Zetland",
+  "region": "Sydney Inner City",
+  "distance_km": 3.9,
+  "median": 3485000,
+  "g1": 2.3,
+  "g5": 23.9,
+  "sample_size": 23
+ },
+ {
+  "name": "Annandale",
+  "region": "Leichhardt",
+  "distance_km": 3.9,
+  "median": 2945000,
+  "g1": 3.8,
+  "g5": 17.8,
+  "sample_size": 35
+ },
+ {
+  "name": "Camperdown",
+  "region": "Sydney Inner City",
+  "distance_km": 3.9,
+  "median": 2940000,
+  "g1": 2.8,
+  "g5": 21.3,
+  "sample_size": 38
+ },
+ {
+  "name": "Missenden Road",
+  "region": "Sydney Inner City",
+  "distance_km": 3.9,
+  "median": 3075000,
+  "g1": 5.2,
+  "g5": 27.4,
+  "sample_size": 30
+ },
+ {
+  "name": "Drummoyne",
+  "region": "Canada Bay",
+  "distance_km": 4.3,
+  "median": 3300000,
+  "g1": 1.7,
+  "g5": 13.1,
+  "sample_size": 22
+ },
+ {
+  "name": "Darling Harbour",
+  "region": "Sydney Inner City",
+  "distance_km": 4.5,
+  "median": 2775000,
+  "g1": 4.1,
+  "g5": 24.1,
+  "sample_size": 30
+ },
+ {
+  "name": "Dawes Point",
+  "region": "Sydney Inner City",
+  "distance_km": 4.5,
+  "median": 2980000,
+  "g1": 3.1,
+  "g5": 29.1,
+  "sample_size": 24
+ },
+ {
+  "name": "Haymarket",
+  "region": "Sydney Inner City",
+  "distance_km": 4.5,
+  "median": 2785000,
+  "g1": 4.3,
+  "g5": 21.6,
+  "sample_size": 39
+ },
+ {
+  "name": "Millers Point",
+  "region": "Sydney Inner City",
+  "distance_km": 4.5,
+  "median": 3150000,
+  "g1": 1.5,
+  "g5": 13.8,
+  "sample_size": 16
+ },
+ {
+  "name": "Parliament House",
+  "region": "Sydney Inner City",
+  "distance_km": 4.5,
+  "median": 2805000,
+  "g1": 1.9,
+  "g5": 32.4,
+  "sample_size": 45
+ },
+ {
+  "name": "Sydney",
+  "region": "Sydney Inner City",
+  "distance_km": 4.5,
+  "median": 2715000,
+  "g1": 4.4,
+  "g5": 26.8,
+  "sample_size": 45
+ },
+ {
+  "name": "Sydney South",
+  "region": "Sydney Inner City",
+  "distance_km": 4.5,
+  "median": 2680000,
+  "g1": 3.3,
+  "g5": 23.3,
+  "sample_size": 34
+ },
+ {
+  "name": "The Rocks",
+  "region": "Sydney Inner City",
+  "distance_km": 4.5,
+  "median": 3265000,
+  "g1": 0.8,
+  "g5": 18.6,
+  "sample_size": 29
+ },
+ {
+  "name": "Bondi Junction",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 4.5,
+  "median": 2885000,
+  "g1": 0.8,
+  "g5": 19.6,
+  "sample_size": 32
+ },
+ {
+  "name": "Bondi Junction Plaza",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 4.5,
+  "median": 2655000,
+  "g1": 0.6,
+  "g5": 22.0,
+  "sample_size": 48
+ },
+ {
+  "name": "Queens Park",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 4.5,
+  "median": 2710000,
+  "g1": 2.0,
+  "g5": 32.2,
+  "sample_size": 33
+ },
+ {
+  "name": "Erskineville",
+  "region": "Sydney Inner City",
+  "distance_km": 4.5,
+  "median": 2955000,
+  "g1": 3.5,
+  "g5": 18.7,
+  "sample_size": 38
+ },
+ {
+  "name": "Cremorne",
+  "region": "North Sydney - Mosman",
+  "distance_km": 4.6,
+  "median": 2590000,
+  "g1": 3.6,
+  "g5": 24.4,
+  "sample_size": 41
+ },
+ {
+  "name": "Cremorne Junction",
+  "region": "North Sydney - Mosman",
+  "distance_km": 4.6,
+  "median": 3400000,
+  "g1": 1.7,
+  "g5": 10.5,
+  "sample_size": 29
+ },
+ {
+  "name": "Cremorne Point",
+  "region": "North Sydney - Mosman",
+  "distance_km": 4.6,
+  "median": 2715000,
+  "g1": 0.5,
+  "g5": 19.9,
+  "sample_size": 38
+ },
+ {
+  "name": "Bellevue Hill",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 4.7,
+  "median": 3180000,
+  "g1": 3.9,
+  "g5": 27.8,
+  "sample_size": 21
+ },
+ {
+  "name": "Enmore",
+  "region": "Sydney Inner City",
+  "distance_km": 4.7,
+  "median": 2795000,
+  "g1": 2.9,
+  "g5": 18.0,
+  "sample_size": 35
+ },
+ {
+  "name": "Newtown",
+  "region": "Sydney Inner City",
+  "distance_km": 4.7,
+  "median": 2985000,
+  "g1": 2.1,
+  "g5": 21.6,
+  "sample_size": 28
+ },
+ {
+  "name": "Alexandria",
+  "region": "Sydney Inner City",
+  "distance_km": 4.8,
+  "median": 3045000,
+  "g1": 4.0,
+  "g5": 20.1,
+  "sample_size": 27
+ },
+ {
+  "name": "Beaconsfield",
+  "region": "Sydney Inner City",
+  "distance_km": 4.8,
+  "median": 2760000,
+  "g1": 3.0,
+  "g5": 30.1,
+  "sample_size": 49
+ },
+ {
+  "name": "Eveleigh",
+  "region": "Sydney Inner City",
+  "distance_km": 4.8,
+  "median": 2995000,
+  "g1": 1.1,
+  "g5": 17.9,
+  "sample_size": 21
+ },
+ {
+  "name": "Kensington",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 4.8,
+  "median": 3210000,
+  "g1": 4.6,
+  "g5": 26.7,
+  "sample_size": 39
+ },
+ {
+  "name": "Crows Nest",
+  "region": "North Sydney - Mosman",
+  "distance_km": 4.8,
+  "median": 3020000,
+  "g1": 4.9,
+  "g5": 25.2,
+  "sample_size": 45
+ },
+ {
+  "name": "Gore Hill",
+  "region": "North Sydney - Mosman",
+  "distance_km": 4.8,
+  "median": 2660000,
+  "g1": 1.1,
+  "g5": 21.8,
+  "sample_size": 53
+ },
+ {
+  "name": "Greenwich",
+  "region": "North Sydney - Mosman",
+  "distance_km": 4.8,
+  "median": 2680000,
+  "g1": 3.6,
+  "g5": 26.4,
+  "sample_size": 50
+ },
+ {
+  "name": "Naremburn",
+  "region": "North Sydney - Mosman",
+  "distance_km": 4.8,
+  "median": 2935000,
+  "g1": 2.6,
+  "g5": 20.0,
+  "sample_size": 24
+ },
+ {
+  "name": "Royal North Shore Hospital",
+  "region": "North Sydney - Mosman",
+  "distance_km": 4.8,
+  "median": 3160000,
+  "g1": 4.7,
+  "g5": 25.6,
+  "sample_size": 32
+ },
+ {
+  "name": "St Leonards",
+  "region": "North Sydney - Mosman",
+  "distance_km": 4.8,
+  "median": 3195000,
+  "g1": 1.7,
+  "g5": 13.2,
+  "sample_size": 43
+ },
+ {
+  "name": "Wollstonecraft",
+  "region": "North Sydney - Mosman",
+  "distance_km": 4.8,
+  "median": 3270000,
+  "g1": 1.1,
+  "g5": 24.9,
+  "sample_size": 43
+ },
+ {
+  "name": "Stanmore",
+  "region": "Leichhardt",
+  "distance_km": 4.9,
+  "median": 3215000,
+  "g1": 3.9,
+  "g5": 19.7,
+  "sample_size": 19
+ },
+ {
+  "name": "Westgate",
+  "region": "Leichhardt",
+  "distance_km": 4.9,
+  "median": 3260000,
+  "g1": 1.4,
+  "g5": 15.0,
+  "sample_size": 15
+ },
+ {
+  "name": "Leichhardt",
+  "region": "Leichhardt",
+  "distance_km": 5.0,
+  "median": 3285000,
+  "g1": 0.9,
+  "g5": 13.2,
+  "sample_size": 36
+ },
+ {
+  "name": "Lilyfield",
+  "region": "Leichhardt",
+  "distance_km": 5.0,
+  "median": 2850000,
+  "g1": 4.4,
+  "g5": 30.4,
+  "sample_size": 25
+ },
+ {
+  "name": "Cammeray",
+  "region": "North Sydney - Mosman",
+  "distance_km": 5.1,
+  "median": 2535000,
+  "g1": 1.2,
+  "g5": 23.7,
+  "sample_size": 28
+ },
+ {
+  "name": "Mosman",
+  "region": "North Sydney - Mosman",
+  "distance_km": 5.3,
+  "median": 2885000,
+  "g1": 2.7,
+  "g5": 23.0,
+  "sample_size": 42
+ },
+ {
+  "name": "Spit Junction",
+  "region": "North Sydney - Mosman",
+  "distance_km": 5.3,
+  "median": 3360000,
+  "g1": 3.6,
+  "g5": 16.8,
+  "sample_size": 20
+ },
+ {
+  "name": "Rose Bay",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 5.4,
+  "median": 3065000,
+  "g1": 4.7,
+  "g5": 28.5,
+  "sample_size": 21
+ },
+ {
+  "name": "Clovelly",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 5.8,
+  "median": 2800000,
+  "g1": 2.6,
+  "g5": 31.8,
+  "sample_size": 23
+ },
+ {
+  "name": "Clovelly West",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 5.8,
+  "median": 2550000,
+  "g1": 5.5,
+  "g5": 35.5,
+  "sample_size": 33
+ },
+ {
+  "name": "Randwick",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 5.8,
+  "median": 2885000,
+  "g1": 2.1,
+  "g5": 19.5,
+  "sample_size": 42
+ },
+ {
+  "name": "St Pauls",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 5.8,
+  "median": 2880000,
+  "g1": 3.0,
+  "g5": 19.4,
+  "sample_size": 36
+ },
+ {
+  "name": "Ben Buckler",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 6.0,
+  "median": 2470000,
+  "g1": 2.3,
+  "g5": 35.5,
+  "sample_size": 47
+ },
+ {
+  "name": "Bondi",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 6.0,
+  "median": 2780000,
+  "g1": 2.1,
+  "g5": 26.0,
+  "sample_size": 34
+ },
+ {
+  "name": "Bondi Beach",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 6.0,
+  "median": 2950000,
+  "g1": 3.7,
+  "g5": 29.8,
+  "sample_size": 23
+ },
+ {
+  "name": "North Bondi",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 6.0,
+  "median": 2435000,
+  "g1": 2.3,
+  "g5": 26.9,
+  "sample_size": 44
+ },
+ {
+  "name": "Tamarama",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 6.0,
+  "median": 2775000,
+  "g1": 1.7,
+  "g5": 27.9,
+  "sample_size": 41
+ },
+ {
+  "name": "Eastlakes",
+  "region": "Sydney Inner City",
+  "distance_km": 6.1,
+  "median": 2565000,
+  "g1": 4.3,
+  "g5": 35.9,
+  "sample_size": 31
+ },
+ {
+  "name": "Rosebery",
+  "region": "Sydney Inner City",
+  "distance_km": 6.1,
+  "median": 2535000,
+  "g1": 3.9,
+  "g5": 33.9,
+  "sample_size": 52
+ },
+ {
+  "name": "Bronte",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 6.1,
+  "median": 2450000,
+  "g1": 5.0,
+  "g5": 26.8,
+  "sample_size": 57
+ },
+ {
+  "name": "Charing Cross",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 6.1,
+  "median": 2645000,
+  "g1": 2.8,
+  "g5": 25.8,
+  "sample_size": 45
+ },
+ {
+  "name": "Waverley",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 6.1,
+  "median": 3095000,
+  "g1": 4.5,
+  "g5": 27.7,
+  "sample_size": 38
+ },
+ {
+  "name": "Diamond Bay",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 6.3,
+  "median": 2395000,
+  "g1": 1.1,
+  "g5": 23.2,
+  "sample_size": 55
+ },
+ {
+  "name": "Dover Heights",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 6.3,
+  "median": 2925000,
+  "g1": 2.0,
+  "g5": 21.4,
+  "sample_size": 20
+ },
+ {
+  "name": "Rose Bay North",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 6.3,
+  "median": 2405000,
+  "g1": 5.3,
+  "g5": 35.0,
+  "sample_size": 48
+ },
+ {
+  "name": "Vaucluse",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 6.3,
+  "median": 2525000,
+  "g1": 3.8,
+  "g5": 21.7,
+  "sample_size": 34
+ },
+ {
+  "name": "Watsons Bay",
+  "region": "Eastern Suburbs - North",
+  "distance_km": 6.3,
+  "median": 2625000,
+  "g1": 4.0,
+  "g5": 29.4,
+  "sample_size": 41
+ },
+ {
+  "name": "Lewisham",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 6.3,
+  "median": 2525000,
+  "g1": 3.7,
+  "g5": 34.5,
+  "sample_size": 27
+ },
+ {
+  "name": "Petersham",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 6.3,
+  "median": 3065000,
+  "g1": 1.7,
+  "g5": 20.7,
+  "sample_size": 31
+ },
+ {
+  "name": "Petersham North",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 6.3,
+  "median": 3210000,
+  "g1": 2.9,
+  "g5": 17.4,
+  "sample_size": 33
+ },
+ {
+  "name": "Northbridge",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 6.3,
+  "median": 2405000,
+  "g1": 3.1,
+  "g5": 28.6,
+  "sample_size": 46
+ },
+ {
+  "name": "Haberfield",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 6.6,
+  "median": 2490000,
+  "g1": 4.2,
+  "g5": 34.6,
+  "sample_size": 50
+ },
+ {
+  "name": "Artarmon",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 6.6,
+  "median": 2970000,
+  "g1": 2.3,
+  "g5": 29.8,
+  "sample_size": 43
+ },
+ {
+  "name": "Hunters Hill",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 6.6,
+  "median": 2985000,
+  "g1": 4.0,
+  "g5": 19.9,
+  "sample_size": 39
+ },
+ {
+  "name": "Hunters Hill West",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 6.6,
+  "median": 3150000,
+  "g1": 1.4,
+  "g5": 17.8,
+  "sample_size": 36
+ },
+ {
+  "name": "Woolwich",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 6.6,
+  "median": 2505000,
+  "g1": 2.8,
+  "g5": 24.2,
+  "sample_size": 50
+ },
+ {
+  "name": "St Peters",
+  "region": "Sydney Inner City",
+  "distance_km": 6.8,
+  "median": 2435000,
+  "g1": 5.3,
+  "g5": 32.5,
+  "sample_size": 51
+ },
+ {
+  "name": "Sydenham",
+  "region": "Sydney Inner City",
+  "distance_km": 6.8,
+  "median": 2425000,
+  "g1": 4.7,
+  "g5": 31.0,
+  "sample_size": 39
+ },
+ {
+  "name": "Tempe",
+  "region": "Sydney Inner City",
+  "distance_km": 6.8,
+  "median": 2390000,
+  "g1": 2.5,
+  "g5": 37.7,
+  "sample_size": 35
+ },
+ {
+  "name": "Marrickville",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 6.9,
+  "median": 3040000,
+  "g1": 5.1,
+  "g5": 28.6,
+  "sample_size": 42
+ },
+ {
+  "name": "Marrickville Metro",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 6.9,
+  "median": 2970000,
+  "g1": 3.9,
+  "g5": 26.2,
+  "sample_size": 43
+ },
+ {
+  "name": "Marrickville South",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 6.9,
+  "median": 2835000,
+  "g1": 4.7,
+  "g5": 24.1,
+  "sample_size": 44
+ },
+ {
+  "name": "Daceyville",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 7.0,
+  "median": 2805000,
+  "g1": 2.5,
+  "g5": 28.1,
+  "sample_size": 49
+ },
+ {
+  "name": "Kingsford",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 7.0,
+  "median": 3130000,
+  "g1": 3.4,
+  "g5": 20.9,
+  "sample_size": 18
+ },
+ {
+  "name": "Abbotsford",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 7.0,
+  "median": 2460000,
+  "g1": 2.5,
+  "g5": 30.4,
+  "sample_size": 31
+ },
+ {
+  "name": "Canada Bay",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 7.0,
+  "median": 2645000,
+  "g1": 2.6,
+  "g5": 32.5,
+  "sample_size": 44
+ },
+ {
+  "name": "Chiswick",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 7.0,
+  "median": 2590000,
+  "g1": 4.3,
+  "g5": 27.6,
+  "sample_size": 52
+ },
+ {
+  "name": "Five Dock",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 7.0,
+  "median": 2620000,
+  "g1": 2.3,
+  "g5": 20.8,
+  "sample_size": 50
+ },
+ {
+  "name": "Rodd Point",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 7.0,
+  "median": 2875000,
+  "g1": 4.5,
+  "g5": 26.8,
+  "sample_size": 31
+ },
+ {
+  "name": "Russell Lea",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 7.0,
+  "median": 2840000,
+  "g1": 2.7,
+  "g5": 31.0,
+  "sample_size": 35
+ },
+ {
+  "name": "Wareemba",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 7.0,
+  "median": 2915000,
+  "g1": 3.6,
+  "g5": 25.0,
+  "sample_size": 31
+ },
+ {
+  "name": "Lane Cove",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 7.1,
+  "median": 2895000,
+  "g1": 3.4,
+  "g5": 22.4,
+  "sample_size": 43
+ },
+ {
+  "name": "Lane Cove North",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 7.1,
+  "median": 3075000,
+  "g1": 2.5,
+  "g5": 29.1,
+  "sample_size": 43
+ },
+ {
+  "name": "Lane Cove West",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 7.1,
+  "median": 2970000,
+  "g1": 2.0,
+  "g5": 22.7,
+  "sample_size": 24
+ },
+ {
+  "name": "Linley Point",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 7.1,
+  "median": 2920000,
+  "g1": 4.5,
+  "g5": 23.4,
+  "sample_size": 48
+ },
+ {
+  "name": "Longueville",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 7.1,
+  "median": 2975000,
+  "g1": 3.0,
+  "g5": 29.7,
+  "sample_size": 41
+ },
+ {
+  "name": "Northwood",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 7.1,
+  "median": 2590000,
+  "g1": 2.0,
+  "g5": 32.1,
+  "sample_size": 40
+ },
+ {
+  "name": "Osborne Park",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 7.1,
+  "median": 2830000,
+  "g1": 1.8,
+  "g5": 22.7,
+  "sample_size": 24
+ },
+ {
+  "name": "Riverview",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 7.1,
+  "median": 3065000,
+  "g1": 2.6,
+  "g5": 26.0,
+  "sample_size": 41
+ },
+ {
+  "name": "Summer Hill",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 7.3,
+  "median": 2775000,
+  "g1": 3.6,
+  "g5": 25.2,
+  "sample_size": 25
+ },
+ {
+  "name": "Castlecrag",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 7.6,
+  "median": 2795000,
+  "g1": 2.4,
+  "g5": 20.1,
+  "sample_size": 38
+ },
+ {
+  "name": "Middle Cove",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 7.6,
+  "median": 2425000,
+  "g1": 5.4,
+  "g5": 36.3,
+  "sample_size": 56
+ },
+ {
+  "name": "Willoughby",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 7.6,
+  "median": 3025000,
+  "g1": 2.4,
+  "g5": 30.0,
+  "sample_size": 20
+ },
+ {
+  "name": "Willoughby North",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 7.6,
+  "median": 2835000,
+  "g1": 4.4,
+  "g5": 23.3,
+  "sample_size": 50
+ },
+ {
+  "name": "Dulwich Hill",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 7.6,
+  "median": 2500000,
+  "g1": 2.8,
+  "g5": 35.8,
+  "sample_size": 46
+ },
+ {
+  "name": "Coogee",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 7.8,
+  "median": 2745000,
+  "g1": 1.5,
+  "g5": 22.8,
+  "sample_size": 48
+ },
+ {
+  "name": "South Coogee",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 7.8,
+  "median": 2795000,
+  "g1": 2.5,
+  "g5": 33.4,
+  "sample_size": 26
+ },
+ {
+  "name": "Willoughby East",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 7.8,
+  "median": 2425000,
+  "g1": 2.6,
+  "g5": 36.3,
+  "sample_size": 51
+ },
+ {
+  "name": "Mascot",
+  "region": "Marrickville - Sydenham - Petersham",
+  "distance_km": 8.1,
+  "median": 2805000,
+  "g1": 4.1,
+  "g5": 25.7,
+  "sample_size": 42
+ },
+ {
+  "name": "North Willoughby",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 8.1,
+  "median": 2805000,
+  "g1": 3.7,
+  "g5": 28.3,
+  "sample_size": 36
+ },
+ {
+  "name": "Ashfield",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 8.1,
+  "median": 2345000,
+  "g1": 3.8,
+  "g5": 29.7,
+  "sample_size": 44
+ },
+ {
+  "name": "Chatswood",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 8.4,
+  "median": 2745000,
+  "g1": 3.9,
+  "g5": 32.6,
+  "sample_size": 25
+ },
+ {
+  "name": "Chatswood West",
+  "region": "Chatswood - Lane Cove",
+  "distance_km": 8.4,
+  "median": 2210000,
+  "g1": 5.0,
+  "g5": 31.7,
+  "sample_size": 55
+ },
+ {
+  "name": "Seaforth",
+  "region": "Manly",
+  "distance_km": 8.6,
+  "median": 2310000,
+  "g1": 6.1,
+  "g5": 38.7,
+  "sample_size": 38
+ },
+ {
+  "name": "Banksmeadow",
+  "region": "Botany",
+  "distance_km": 8.7,
+  "median": 2855000,
+  "g1": 2.6,
+  "g5": 23.4,
+  "sample_size": 42
+ },
+ {
+  "name": "Botany",
+  "region": "Botany",
+  "distance_km": 8.7,
+  "median": 2445000,
+  "g1": 3.8,
+  "g5": 37.3,
+  "sample_size": 51
+ },
+ {
+  "name": "Boronia Park",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 8.9,
+  "median": 2540000,
+  "g1": 3.8,
+  "g5": 26.4,
+  "sample_size": 29
+ },
+ {
+  "name": "Gladesville",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 8.9,
+  "median": 2855000,
+  "g1": 1.2,
+  "g5": 26.3,
+  "sample_size": 50
+ },
+ {
+  "name": "Henley",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 8.9,
+  "median": 2850000,
+  "g1": 0.5,
+  "g5": 21.3,
+  "sample_size": 50
+ },
+ {
+  "name": "Huntleys Cove",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 8.9,
+  "median": 2145000,
+  "g1": 4.2,
+  "g5": 33.0,
+  "sample_size": 56
+ },
+ {
+  "name": "Huntleys Point",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 8.9,
+  "median": 2215000,
+  "g1": 2.4,
+  "g5": 29.5,
+  "sample_size": 44
+ },
+ {
+  "name": "Monash Park",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 8.9,
+  "median": 2365000,
+  "g1": 4.0,
+  "g5": 35.1,
+  "sample_size": 30
+ },
+ {
+  "name": "Tennyson Point",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 8.9,
+  "median": 2480000,
+  "g1": 2.9,
+  "g5": 34.8,
+  "sample_size": 39
+ },
+ {
+  "name": "Maroubra",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 9.0,
+  "median": 2800000,
+  "g1": 5.4,
+  "g5": 33.1,
+  "sample_size": 48
+ },
+ {
+  "name": "Maroubra South",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 9.0,
+  "median": 2305000,
+  "g1": 3.9,
+  "g5": 33.6,
+  "sample_size": 42
+ },
+ {
+  "name": "Pagewood",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 9.0,
+  "median": 2755000,
+  "g1": 3.9,
+  "g5": 25.1,
+  "sample_size": 25
+ },
+ {
+  "name": "Croydon",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 9.0,
+  "median": 2790000,
+  "g1": 2.3,
+  "g5": 28.4,
+  "sample_size": 29
+ },
+ {
+  "name": "Ashbury",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 9.4,
+  "median": 2750000,
+  "g1": 1.6,
+  "g5": 26.2,
+  "sample_size": 29
+ },
+ {
+  "name": "Canterbury",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 9.4,
+  "median": 2570000,
+  "g1": 3.0,
+  "g5": 30.1,
+  "sample_size": 48
+ },
+ {
+  "name": "Hurlstone Park",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 9.4,
+  "median": 2195000,
+  "g1": 3.2,
+  "g5": 38.7,
+  "sample_size": 36
+ },
+ {
+  "name": "Balgowlah",
+  "region": "Warringah",
+  "distance_km": 9.5,
+  "median": 2265000,
+  "g1": 5.4,
+  "g5": 39.2,
+  "sample_size": 55
+ },
+ {
+  "name": "Balgowlah Heights",
+  "region": "Warringah",
+  "distance_km": 9.5,
+  "median": 2600000,
+  "g1": 5.2,
+  "g5": 36.1,
+  "sample_size": 33
+ },
+ {
+  "name": "Clontarf",
+  "region": "Warringah",
+  "distance_km": 9.5,
+  "median": 2500000,
+  "g1": 4.6,
+  "g5": 24.6,
+  "sample_size": 56
+ },
+ {
+  "name": "Manly Vale",
+  "region": "Warringah",
+  "distance_km": 9.5,
+  "median": 2675000,
+  "g1": 4.3,
+  "g5": 26.5,
+  "sample_size": 35
+ },
+ {
+  "name": "North Balgowlah",
+  "region": "Warringah",
+  "distance_km": 9.5,
+  "median": 2640000,
+  "g1": 5.5,
+  "g5": 30.8,
+  "sample_size": 41
+ },
+ {
+  "name": "Arncliffe",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 9.5,
+  "median": 2155000,
+  "g1": 5.6,
+  "g5": 38.2,
+  "sample_size": 54
+ },
+ {
+  "name": "Turrella",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 9.5,
+  "median": 2305000,
+  "g1": 2.3,
+  "g5": 27.1,
+  "sample_size": 34
+ },
+ {
+  "name": "Wolli Creek",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 9.5,
+  "median": 2485000,
+  "g1": 4.7,
+  "g5": 37.6,
+  "sample_size": 50
+ },
+ {
+  "name": "Breakfast Point",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 9.8,
+  "median": 2095000,
+  "g1": 4.5,
+  "g5": 28.6,
+  "sample_size": 41
+ },
+ {
+  "name": "Cabarita",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 9.8,
+  "median": 2625000,
+  "g1": 2.6,
+  "g5": 25.9,
+  "sample_size": 33
+ },
+ {
+  "name": "Concord",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 9.8,
+  "median": 2260000,
+  "g1": 4.3,
+  "g5": 25.9,
+  "sample_size": 39
+ },
+ {
+  "name": "Mortlake",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 9.8,
+  "median": 2050000,
+  "g1": 4.2,
+  "g5": 30.5,
+  "sample_size": 50
+ },
+ {
+  "name": "North Strathfield",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 9.8,
+  "median": 2120000,
+  "g1": 5.2,
+  "g5": 29.6,
+  "sample_size": 47
+ },
+ {
+  "name": "Castle Cove",
+  "region": "Ku-ring-gai",
+  "distance_km": 9.9,
+  "median": 2720000,
+  "g1": 2.4,
+  "g5": 24.5,
+  "sample_size": 28
+ },
+ {
+  "name": "Roseville",
+  "region": "Ku-ring-gai",
+  "distance_km": 9.9,
+  "median": 2200000,
+  "g1": 2.8,
+  "g5": 40.6,
+  "sample_size": 44
+ },
+ {
+  "name": "Roseville Chase",
+  "region": "Ku-ring-gai",
+  "distance_km": 9.9,
+  "median": 2475000,
+  "g1": 5.9,
+  "g5": 37.3,
+  "sample_size": 32
+ },
+ {
+  "name": "Manly",
+  "region": "Manly",
+  "distance_km": 9.9,
+  "median": 2400000,
+  "g1": 3.4,
+  "g5": 30.7,
+  "sample_size": 52
+ },
+ {
+  "name": "Manly East",
+  "region": "Manly",
+  "distance_km": 9.9,
+  "median": 2425000,
+  "g1": 4.5,
+  "g5": 37.7,
+  "sample_size": 49
+ },
+ {
+  "name": "Burwood",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 10.0,
+  "median": 2205000,
+  "g1": 5.9,
+  "g5": 37.9,
+  "sample_size": 48
+ },
+ {
+  "name": "Burwood North",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 10.0,
+  "median": 2090000,
+  "g1": 4.2,
+  "g5": 42.1,
+  "sample_size": 57
+ },
+ {
+  "name": "Fairlight",
+  "region": "Manly",
+  "distance_km": 10.1,
+  "median": 2410000,
+  "g1": 5.9,
+  "g5": 33.3,
+  "sample_size": 40
+ },
+ {
+  "name": "Clemton Park",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 10.2,
+  "median": 2430000,
+  "g1": 4.3,
+  "g5": 23.2,
+  "sample_size": 54
+ },
+ {
+  "name": "Earlwood",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 10.2,
+  "median": 2630000,
+  "g1": 5.2,
+  "g5": 34.9,
+  "sample_size": 43
+ },
+ {
+  "name": "Undercliffe",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 10.2,
+  "median": 2245000,
+  "g1": 3.2,
+  "g5": 26.7,
+  "sample_size": 56
+ },
+ {
+  "name": "Croydon Park",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 10.4,
+  "median": 2015000,
+  "g1": 4.3,
+  "g5": 40.4,
+  "sample_size": 39
+ },
+ {
+  "name": "Enfield South",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 10.4,
+  "median": 2555000,
+  "g1": 3.2,
+  "g5": 35.8,
+  "sample_size": 28
+ },
+ {
+  "name": "East Lindfield",
+  "region": "Ku-ring-gai",
+  "distance_km": 10.8,
+  "median": 2025000,
+  "g1": 3.3,
+  "g5": 34.9,
+  "sample_size": 61
+ },
+ {
+  "name": "Lindfield",
+  "region": "Ku-ring-gai",
+  "distance_km": 10.8,
+  "median": 2260000,
+  "g1": 4.3,
+  "g5": 25.3,
+  "sample_size": 51
+ },
+ {
+  "name": "Lindfield West",
+  "region": "Ku-ring-gai",
+  "distance_km": 10.8,
+  "median": 2020000,
+  "g1": 4.9,
+  "g5": 40.0,
+  "sample_size": 36
+ },
+ {
+  "name": "Denistone East",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 11.0,
+  "median": 2325000,
+  "g1": 1.3,
+  "g5": 25.2,
+  "sample_size": 30
+ },
+ {
+  "name": "Putney",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 11.0,
+  "median": 2295000,
+  "g1": 4.1,
+  "g5": 37.1,
+  "sample_size": 52
+ },
+ {
+  "name": "Ryde",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 11.0,
+  "median": 2080000,
+  "g1": 3.1,
+  "g5": 35.5,
+  "sample_size": 46
+ },
+ {
+  "name": "Blenheim Road",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 11.1,
+  "median": 2195000,
+  "g1": 3.2,
+  "g5": 27.7,
+  "sample_size": 56
+ },
+ {
+  "name": "East Ryde",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 11.1,
+  "median": 2090000,
+  "g1": 5.4,
+  "g5": 28.7,
+  "sample_size": 52
+ },
+ {
+  "name": "Macquarie Centre",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 11.1,
+  "median": 2025000,
+  "g1": 3.5,
+  "g5": 37.8,
+  "sample_size": 63
+ },
+ {
+  "name": "Macquarie Park",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 11.1,
+  "median": 2195000,
+  "g1": 1.2,
+  "g5": 27.0,
+  "sample_size": 35
+ },
+ {
+  "name": "North Ryde",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 11.1,
+  "median": 2530000,
+  "g1": 2.3,
+  "g5": 23.4,
+  "sample_size": 49
+ },
+ {
+  "name": "Banksia",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 11.2,
+  "median": 2035000,
+  "g1": 4.5,
+  "g5": 39.6,
+  "sample_size": 51
+ },
+ {
+  "name": "Brighton-Le-Sands",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 11.2,
+  "median": 2040000,
+  "g1": 4.8,
+  "g5": 29.2,
+  "sample_size": 55
+ },
+ {
+  "name": "Kyeemagh",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 11.2,
+  "median": 1980000,
+  "g1": 3.5,
+  "g5": 32.8,
+  "sample_size": 61
+ },
+ {
+  "name": "Rockdale",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 11.2,
+  "median": 2420000,
+  "g1": 6.1,
+  "g5": 35.6,
+  "sample_size": 31
+ },
+ {
+  "name": "Campsie",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 11.3,
+  "median": 2140000,
+  "g1": 3.9,
+  "g5": 27.8,
+  "sample_size": 45
+ },
+ {
+  "name": "Brighton Le Sands",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 11.3,
+  "median": 2055000,
+  "g1": 3.0,
+  "g5": 30.6,
+  "sample_size": 40
+ },
+ {
+  "name": "Forestville",
+  "region": "Warringah",
+  "distance_km": 11.4,
+  "median": 1930000,
+  "g1": 2.7,
+  "g5": 32.8,
+  "sample_size": 38
+ },
+ {
+  "name": "Killarney Heights",
+  "region": "Warringah",
+  "distance_km": 11.4,
+  "median": 2070000,
+  "g1": 5.4,
+  "g5": 40.1,
+  "sample_size": 53
+ },
+ {
+  "name": "Chifley",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 11.5,
+  "median": 2140000,
+  "g1": 3.5,
+  "g5": 27.1,
+  "sample_size": 62
+ },
+ {
+  "name": "Eastgardens",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 11.5,
+  "median": 2185000,
+  "g1": 2.5,
+  "g5": 38.1,
+  "sample_size": 43
+ },
+ {
+  "name": "Hillsdale",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 11.5,
+  "median": 2430000,
+  "g1": 4.5,
+  "g5": 26.6,
+  "sample_size": 49
+ },
+ {
+  "name": "La Perouse",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 11.5,
+  "median": 2215000,
+  "g1": 5.0,
+  "g5": 27.9,
+  "sample_size": 32
+ },
+ {
+  "name": "Little Bay",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 11.5,
+  "median": 2050000,
+  "g1": 5.6,
+  "g5": 36.8,
+  "sample_size": 45
+ },
+ {
+  "name": "Malabar",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 11.5,
+  "median": 2320000,
+  "g1": 2.6,
+  "g5": 26.6,
+  "sample_size": 52
+ },
+ {
+  "name": "Matraville",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 11.5,
+  "median": 2105000,
+  "g1": 3.5,
+  "g5": 37.6,
+  "sample_size": 34
+ },
+ {
+  "name": "Phillip Bay",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 11.5,
+  "median": 2065000,
+  "g1": 5.9,
+  "g5": 42.6,
+  "sample_size": 54
+ },
+ {
+  "name": "Port Botany",
+  "region": "Eastern Suburbs - South",
+  "distance_km": 11.5,
+  "median": 2240000,
+  "g1": 5.6,
+  "g5": 31.7,
+  "sample_size": 46
+ },
+ {
+  "name": "Burwood Heights",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 11.5,
+  "median": 1995000,
+  "g1": 2.1,
+  "g5": 30.1,
+  "sample_size": 44
+ },
+ {
+  "name": "Enfield",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 11.5,
+  "median": 2195000,
+  "g1": 4.2,
+  "g5": 41.1,
+  "sample_size": 50
+ },
+ {
+  "name": "Strathfield South",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 11.5,
+  "median": 2250000,
+  "g1": 1.8,
+  "g5": 26.1,
+  "sample_size": 53
+ },
+ {
+  "name": "Strathfield",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 11.6,
+  "median": 2265000,
+  "g1": 5.4,
+  "g5": 30.4,
+  "sample_size": 49
+ },
+ {
+  "name": "Concord West",
+  "region": "Canada Bay",
+  "distance_km": 11.7,
+  "median": 2505000,
+  "g1": 4.9,
+  "g5": 33.0,
+  "sample_size": 53
+ },
+ {
+  "name": "Liberty Grove",
+  "region": "Canada Bay",
+  "distance_km": 11.7,
+  "median": 2490000,
+  "g1": 3.3,
+  "g5": 23.9,
+  "sample_size": 53
+ },
+ {
+  "name": "Rhodes",
+  "region": "Canada Bay",
+  "distance_km": 11.7,
+  "median": 2060000,
+  "g1": 2.6,
+  "g5": 34.2,
+  "sample_size": 62
+ },
+ {
+  "name": "Allambie",
+  "region": "Warringah",
+  "distance_km": 12.2,
+  "median": 2155000,
+  "g1": 5.5,
+  "g5": 38.7,
+  "sample_size": 49
+ },
+ {
+  "name": "Allambie Heights",
+  "region": "Warringah",
+  "distance_km": 12.2,
+  "median": 2395000,
+  "g1": 2.2,
+  "g5": 33.1,
+  "sample_size": 32
+ },
+ {
+  "name": "Beacon Hill",
+  "region": "Warringah",
+  "distance_km": 12.2,
+  "median": 2115000,
+  "g1": 3.3,
+  "g5": 38.8,
+  "sample_size": 34
+ },
+ {
+  "name": "Brookvale",
+  "region": "Warringah",
+  "distance_km": 12.2,
+  "median": 2225000,
+  "g1": 4.4,
+  "g5": 29.8,
+  "sample_size": 58
+ },
+ {
+  "name": "North Manly",
+  "region": "Warringah",
+  "distance_km": 12.2,
+  "median": 2450000,
+  "g1": 1.9,
+  "g5": 30.7,
+  "sample_size": 28
+ },
+ {
+  "name": "Oxford Falls",
+  "region": "Warringah",
+  "distance_km": 12.2,
+  "median": 2095000,
+  "g1": 2.8,
+  "g5": 31.8,
+  "sample_size": 40
+ },
+ {
+  "name": "Warringah Mall",
+  "region": "Warringah",
+  "distance_km": 12.2,
+  "median": 2330000,
+  "g1": 3.4,
+  "g5": 39.2,
+  "sample_size": 47
+ },
+ {
+  "name": "Belfield",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 12.2,
+  "median": 2235000,
+  "g1": 1.8,
+  "g5": 26.2,
+  "sample_size": 50
+ },
+ {
+  "name": "Bardwell Park",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 12.2,
+  "median": 2400000,
+  "g1": 2.7,
+  "g5": 26.0,
+  "sample_size": 46
+ },
+ {
+  "name": "Bardwell Valley",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 12.2,
+  "median": 2250000,
+  "g1": 6.4,
+  "g5": 38.1,
+  "sample_size": 35
+ },
+ {
+  "name": "Bexley",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 12.2,
+  "median": 1970000,
+  "g1": 2.0,
+  "g5": 33.4,
+  "sample_size": 45
+ },
+ {
+  "name": "Bexley North",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 12.2,
+  "median": 2070000,
+  "g1": 4.5,
+  "g5": 36.2,
+  "sample_size": 46
+ },
+ {
+  "name": "Bexley South",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 12.2,
+  "median": 1975000,
+  "g1": 5.0,
+  "g5": 35.6,
+  "sample_size": 46
+ },
+ {
+  "name": "Killara",
+  "region": "Ku-ring-gai",
+  "distance_km": 12.4,
+  "median": 1930000,
+  "g1": 4.4,
+  "g5": 30.2,
+  "sample_size": 38
+ },
+ {
+  "name": "Curl Curl",
+  "region": "Warringah",
+  "distance_km": 12.4,
+  "median": 2200000,
+  "g1": 5.1,
+  "g5": 34.5,
+  "sample_size": 59
+ },
+ {
+  "name": "Harbord",
+  "region": "Warringah",
+  "distance_km": 12.4,
+  "median": 2425000,
+  "g1": 3.1,
+  "g5": 26.2,
+  "sample_size": 56
+ },
+ {
+  "name": "Queenscliff",
+  "region": "Warringah",
+  "distance_km": 12.4,
+  "median": 2270000,
+  "g1": 5.3,
+  "g5": 36.9,
+  "sample_size": 41
+ },
+ {
+  "name": "Homebush Bay",
+  "region": "Auburn",
+  "distance_km": 12.4,
+  "median": 1880000,
+  "g1": 4.6,
+  "g5": 30.4,
+  "sample_size": 63
+ },
+ {
+  "name": "Newington",
+  "region": "Auburn",
+  "distance_km": 12.4,
+  "median": 2180000,
+  "g1": 3.5,
+  "g5": 36.1,
+  "sample_size": 47
+ },
+ {
+  "name": "Freshwater",
+  "region": "Warringah",
+  "distance_km": 12.5,
+  "median": 2405000,
+  "g1": 5.6,
+  "g5": 36.9,
+  "sample_size": 51
+ },
+ {
+  "name": "Belmore",
+  "region": "Canterbury",
+  "distance_km": 12.5,
+  "median": 2090000,
+  "g1": 3.3,
+  "g5": 30.8,
+  "sample_size": 59
+ },
+ {
+  "name": "East Killara",
+  "region": "Ku-ring-gai",
+  "distance_km": 12.9,
+  "median": 2030000,
+  "g1": 6.4,
+  "g5": 37.6,
+  "sample_size": 55
+ },
+ {
+  "name": "Wentworth Point",
+  "region": "Auburn",
+  "distance_km": 13.0,
+  "median": 2410000,
+  "g1": 1.4,
+  "g5": 23.1,
+  "sample_size": 58
+ },
+ {
+  "name": "Frenchs Forest",
+  "region": "Warringah",
+  "distance_km": 13.1,
+  "median": 2080000,
+  "g1": 2.4,
+  "g5": 28.7,
+  "sample_size": 35
+ },
+ {
+  "name": "Frenchs Forest East",
+  "region": "Warringah",
+  "distance_km": 13.1,
+  "median": 1805000,
+  "g1": 6.1,
+  "g5": 40.3,
+  "sample_size": 67
+ },
+ {
+  "name": "Kingsgrove",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 13.1,
+  "median": 1980000,
+  "g1": 5.1,
+  "g5": 34.3,
+  "sample_size": 42
+ },
+ {
+  "name": "Kingsway West",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 13.1,
+  "median": 2360000,
+  "g1": 2.3,
+  "g5": 23.6,
+  "sample_size": 36
+ },
+ {
+  "name": "Denistone",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 13.2,
+  "median": 1935000,
+  "g1": 3.3,
+  "g5": 36.5,
+  "sample_size": 64
+ },
+ {
+  "name": "Denistone West",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 13.2,
+  "median": 2005000,
+  "g1": 2.8,
+  "g5": 29.3,
+  "sample_size": 62
+ },
+ {
+  "name": "Meadowbank",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 13.2,
+  "median": 2100000,
+  "g1": 5.5,
+  "g5": 34.6,
+  "sample_size": 42
+ },
+ {
+  "name": "Melrose Park",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 13.2,
+  "median": 2050000,
+  "g1": 6.9,
+  "g5": 42.9,
+  "sample_size": 63
+ },
+ {
+  "name": "West Ryde",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 13.2,
+  "median": 2015000,
+  "g1": 3.0,
+  "g5": 39.3,
+  "sample_size": 47
+ },
+ {
+  "name": "Homebush",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 13.3,
+  "median": 1965000,
+  "g1": 5.4,
+  "g5": 40.4,
+  "sample_size": 43
+ },
+ {
+  "name": "Homebush South",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 13.3,
+  "median": 2370000,
+  "g1": 1.9,
+  "g5": 31.9,
+  "sample_size": 42
+ },
+ {
+  "name": "Homebush West",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 13.3,
+  "median": 1915000,
+  "g1": 5.7,
+  "g5": 43.9,
+  "sample_size": 61
+ },
+ {
+  "name": "Sydney Olympic Park",
+  "region": "Auburn",
+  "distance_km": 13.4,
+  "median": 2105000,
+  "g1": 3.6,
+  "g5": 30.1,
+  "sample_size": 59
+ },
+ {
+  "name": "Beverley Park",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 13.4,
+  "median": 1770000,
+  "g1": 5.2,
+  "g5": 41.7,
+  "sample_size": 58
+ },
+ {
+  "name": "Kogarah",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 13.4,
+  "median": 2190000,
+  "g1": 3.8,
+  "g5": 34.6,
+  "sample_size": 41
+ },
+ {
+  "name": "Kogarah Bay",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 13.4,
+  "median": 2370000,
+  "g1": 4.5,
+  "g5": 23.1,
+  "sample_size": 44
+ },
+ {
+  "name": "Monterey",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 13.4,
+  "median": 1895000,
+  "g1": 4.4,
+  "g5": 38.4,
+  "sample_size": 42
+ },
+ {
+  "name": "Ramsgate",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 13.4,
+  "median": 1990000,
+  "g1": 5.4,
+  "g5": 35.6,
+  "sample_size": 40
+ },
+ {
+  "name": "Ramsgate Beach",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 13.4,
+  "median": 2165000,
+  "g1": 4.2,
+  "g5": 38.8,
+  "sample_size": 56
+ },
+ {
+  "name": "Gordon",
+  "region": "Ku-ring-gai",
+  "distance_km": 13.7,
+  "median": 2155000,
+  "g1": 4.4,
+  "g5": 41.3,
+  "sample_size": 36
+ },
+ {
+  "name": "Lakemba",
+  "region": "Canterbury",
+  "distance_km": 13.7,
+  "median": 2025000,
+  "g1": 4.2,
+  "g5": 35.1,
+  "sample_size": 56
+ },
+ {
+  "name": "Wiley Park",
+  "region": "Canterbury",
+  "distance_km": 13.7,
+  "median": 1940000,
+  "g1": 2.0,
+  "g5": 29.3,
+  "sample_size": 39
+ },
+ {
+  "name": "Eastwood",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 13.8,
+  "median": 1930000,
+  "g1": 3.5,
+  "g5": 38.5,
+  "sample_size": 41
+ },
+ {
+  "name": "Marsfield",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 13.8,
+  "median": 2160000,
+  "g1": 3.8,
+  "g5": 36.4,
+  "sample_size": 42
+ },
+ {
+  "name": "Pymble",
+  "region": "Ku-ring-gai",
+  "distance_km": 14.4,
+  "median": 2115000,
+  "g1": 2.3,
+  "g5": 30.8,
+  "sample_size": 50
+ },
+ {
+  "name": "West Pymble",
+  "region": "Ku-ring-gai",
+  "distance_km": 14.4,
+  "median": 2085000,
+  "g1": 3.6,
+  "g5": 35.7,
+  "sample_size": 45
+ },
+ {
+  "name": "Allawah",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 14.4,
+  "median": 2075000,
+  "g1": 3.9,
+  "g5": 29.5,
+  "sample_size": 44
+ },
+ {
+  "name": "Carlton",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 14.4,
+  "median": 1705000,
+  "g1": 5.1,
+  "g5": 47.8,
+  "sample_size": 52
+ },
+ {
+  "name": "Hurstville",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 14.7,
+  "median": 1825000,
+  "g1": 3.9,
+  "g5": 37.3,
+  "sample_size": 64
+ },
+ {
+  "name": "Hurstville Grove",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 14.7,
+  "median": 1750000,
+  "g1": 4.8,
+  "g5": 46.4,
+  "sample_size": 55
+ },
+ {
+  "name": "Hurstville Westfield",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 14.7,
+  "median": 1945000,
+  "g1": 3.0,
+  "g5": 34.8,
+  "sample_size": 40
+ },
+ {
+  "name": "Cromer",
+  "region": "Warringah",
+  "distance_km": 14.8,
+  "median": 2185000,
+  "g1": 2.6,
+  "g5": 29.9,
+  "sample_size": 32
+ },
+ {
+  "name": "Cromer Heights",
+  "region": "Warringah",
+  "distance_km": 14.8,
+  "median": 2245000,
+  "g1": 1.2,
+  "g5": 26.4,
+  "sample_size": 32
+ },
+ {
+  "name": "Dee Why",
+  "region": "Warringah",
+  "distance_km": 14.8,
+  "median": 2000000,
+  "g1": 6.3,
+  "g5": 42.8,
+  "sample_size": 58
+ },
+ {
+  "name": "Dee Why Beach",
+  "region": "Warringah",
+  "distance_km": 14.8,
+  "median": 1950000,
+  "g1": 5.1,
+  "g5": 41.8,
+  "sample_size": 39
+ },
+ {
+  "name": "Narraweena",
+  "region": "Warringah",
+  "distance_km": 14.8,
+  "median": 2005000,
+  "g1": 3.2,
+  "g5": 38.5,
+  "sample_size": 52
+ },
+ {
+  "name": "North Curl Curl",
+  "region": "Warringah",
+  "distance_km": 14.8,
+  "median": 1720000,
+  "g1": 3.1,
+  "g5": 36.8,
+  "sample_size": 52
+ },
+ {
+  "name": "Wingala",
+  "region": "Warringah",
+  "distance_km": 14.8,
+  "median": 1710000,
+  "g1": 3.9,
+  "g5": 45.6,
+  "sample_size": 64
+ },
+ {
+  "name": "Greenacre",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 14.8,
+  "median": 1840000,
+  "g1": 4.0,
+  "g5": 31.1,
+  "sample_size": 53
+ },
+ {
+  "name": "Mount Lewis",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 14.8,
+  "median": 1695000,
+  "g1": 4.5,
+  "g5": 47.6,
+  "sample_size": 53
+ },
+ {
+  "name": "Ermington",
+  "region": "Carlingford",
+  "distance_km": 15.1,
+  "median": 1645000,
+  "g1": 3.0,
+  "g5": 36.2,
+  "sample_size": 51
+ },
+ {
+  "name": "Chullora",
+  "region": "Strathfield - Burwood - Ashfield",
+  "distance_km": 15.1,
+  "median": 2075000,
+  "g1": 4.9,
+  "g5": 34.1,
+  "sample_size": 51
+ },
+ {
+  "name": "Berala",
+  "region": "Auburn",
+  "distance_km": 15.2,
+  "median": 1740000,
+  "g1": 3.1,
+  "g5": 43.6,
+  "sample_size": 69
+ },
+ {
+  "name": "Lidcombe",
+  "region": "Auburn",
+  "distance_km": 15.2,
+  "median": 1680000,
+  "g1": 4.4,
+  "g5": 45.0,
+  "sample_size": 71
+ },
+ {
+  "name": "Lidcombe North",
+  "region": "Auburn",
+  "distance_km": 15.2,
+  "median": 1885000,
+  "g1": 5.4,
+  "g5": 33.8,
+  "sample_size": 59
+ },
+ {
+  "name": "Rookwood",
+  "region": "Auburn",
+  "distance_km": 15.2,
+  "median": 2040000,
+  "g1": 3.5,
+  "g5": 33.7,
+  "sample_size": 45
+ },
+ {
+  "name": "Beverly Hills",
+  "region": "Hurstville",
+  "distance_km": 15.3,
+  "median": 2190000,
+  "g1": 3.2,
+  "g5": 34.6,
+  "sample_size": 49
+ },
+ {
+  "name": "Narwee",
+  "region": "Hurstville",
+  "distance_km": 15.3,
+  "median": 1770000,
+  "g1": 6.2,
+  "g5": 45.2,
+  "sample_size": 51
+ },
+ {
+  "name": "Silverwater",
+  "region": "Auburn",
+  "distance_km": 15.4,
+  "median": 1780000,
+  "g1": 3.0,
+  "g5": 33.5,
+  "sample_size": 48
+ },
+ {
+  "name": "Belrose",
+  "region": "Warringah",
+  "distance_km": 15.6,
+  "median": 1875000,
+  "g1": 5.4,
+  "g5": 38.1,
+  "sample_size": 43
+ },
+ {
+  "name": "Belrose West",
+  "region": "Warringah",
+  "distance_km": 15.6,
+  "median": 1790000,
+  "g1": 5.5,
+  "g5": 31.4,
+  "sample_size": 47
+ },
+ {
+  "name": "Davidson",
+  "region": "Warringah",
+  "distance_km": 15.6,
+  "median": 1700000,
+  "g1": 5.9,
+  "g5": 33.5,
+  "sample_size": 64
+ },
+ {
+  "name": "Punchbowl",
+  "region": "Canterbury",
+  "distance_km": 15.6,
+  "median": 2045000,
+  "g1": 3.4,
+  "g5": 28.6,
+  "sample_size": 34
+ },
+ {
+  "name": "Roselands",
+  "region": "Canterbury",
+  "distance_km": 15.6,
+  "median": 1955000,
+  "g1": 3.4,
+  "g5": 41.2,
+  "sample_size": 40
+ },
+ {
+  "name": "Penshurst",
+  "region": "Hurstville",
+  "distance_km": 15.7,
+  "median": 2025000,
+  "g1": 3.1,
+  "g5": 30.4,
+  "sample_size": 41
+ },
+ {
+  "name": "Epping",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 15.9,
+  "median": 1755000,
+  "g1": 3.4,
+  "g5": 39.2,
+  "sample_size": 52
+ },
+ {
+  "name": "North Epping",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 15.9,
+  "median": 1935000,
+  "g1": 2.1,
+  "g5": 33.0,
+  "sample_size": 51
+ },
+ {
+  "name": "Dolls Point",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 15.9,
+  "median": 1765000,
+  "g1": 5.1,
+  "g5": 32.7,
+  "sample_size": 56
+ },
+ {
+  "name": "Sandringham",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 15.9,
+  "median": 1695000,
+  "g1": 3.3,
+  "g5": 39.6,
+  "sample_size": 66
+ },
+ {
+  "name": "Sans Souci",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 15.9,
+  "median": 2045000,
+  "g1": 3.8,
+  "g5": 33.0,
+  "sample_size": 58
+ },
+ {
+  "name": "Collaroy",
+  "region": "Warringah",
+  "distance_km": 16.5,
+  "median": 1935000,
+  "g1": 2.5,
+  "g5": 37.8,
+  "sample_size": 39
+ },
+ {
+  "name": "Collaroy Beach",
+  "region": "Warringah",
+  "distance_km": 16.5,
+  "median": 2075000,
+  "g1": 2.5,
+  "g5": 27.4,
+  "sample_size": 55
+ },
+ {
+  "name": "Collaroy Plateau West",
+  "region": "Warringah",
+  "distance_km": 16.5,
+  "median": 1760000,
+  "g1": 5.2,
+  "g5": 32.2,
+  "sample_size": 41
+ },
+ {
+  "name": "Long Reef",
+  "region": "Warringah",
+  "distance_km": 16.5,
+  "median": 2010000,
+  "g1": 2.1,
+  "g5": 33.9,
+  "sample_size": 45
+ },
+ {
+  "name": "Wheeler Heights",
+  "region": "Warringah",
+  "distance_km": 16.5,
+  "median": 2055000,
+  "g1": 4.7,
+  "g5": 37.4,
+  "sample_size": 51
+ },
+ {
+  "name": "North St Ives",
+  "region": "Ku-ring-gai",
+  "distance_km": 16.6,
+  "median": 1780000,
+  "g1": 4.7,
+  "g5": 37.1,
+  "sample_size": 40
+ },
+ {
+  "name": "St Ives",
+  "region": "Ku-ring-gai",
+  "distance_km": 16.6,
+  "median": 1685000,
+  "g1": 5.2,
+  "g5": 42.5,
+  "sample_size": 52
+ },
+ {
+  "name": "St Ives Chase",
+  "region": "Ku-ring-gai",
+  "distance_km": 16.6,
+  "median": 1785000,
+  "g1": 6.0,
+  "g5": 43.4,
+  "sample_size": 51
+ },
+ {
+  "name": "Blakehurst",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 16.7,
+  "median": 1785000,
+  "g1": 4.1,
+  "g5": 43.4,
+  "sample_size": 67
+ },
+ {
+  "name": "Carss Park",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 16.7,
+  "median": 2070000,
+  "g1": 3.4,
+  "g5": 35.4,
+  "sample_size": 60
+ },
+ {
+  "name": "Connells Point",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 16.7,
+  "median": 1595000,
+  "g1": 5.2,
+  "g5": 45.8,
+  "sample_size": 58
+ },
+ {
+  "name": "Kyle Bay",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 16.7,
+  "median": 1775000,
+  "g1": 5.0,
+  "g5": 42.8,
+  "sample_size": 47
+ },
+ {
+  "name": "South Hurstville",
+  "region": "Kogarah - Rockdale",
+  "distance_km": 16.7,
+  "median": 1830000,
+  "g1": 5.4,
+  "g5": 43.8,
+  "sample_size": 42
+ },
+ {
+  "name": "Bobbin Head",
+  "region": "Pennant Hills - Epping",
+  "distance_km": 16.8,
+  "median": 1820000,
+  "g1": 3.0,
+  "g5": 30.5,
+  "sample_size": 58
+ },
+ {
+  "name": "North Turramurra",
+  "region": "Pennant Hills - Epping",
+  "distance_km": 16.8,
+  "median": 1805000,
+  "g1": 2.7,
+  "g5": 39.2,
+  "sample_size": 50
+ },
+ {
+  "name": "South Turramurra",
+  "region": "Pennant Hills - Epping",
+  "distance_km": 16.8,
+  "median": 1870000,
+  "g1": 2.2,
+  "g5": 34.6,
+  "sample_size": 40
+ },
+ {
+  "name": "Turramurra",
+  "region": "Pennant Hills - Epping",
+  "distance_km": 16.8,
+  "median": 1590000,
+  "g1": 4.9,
+  "g5": 33.5,
+  "sample_size": 57
+ },
+ {
+  "name": "Warrawee",
+  "region": "Pennant Hills - Epping",
+  "distance_km": 16.8,
+  "median": 1920000,
+  "g1": 6.4,
+  "g5": 44.9,
+  "sample_size": 50
+ },
+ {
+  "name": "Rydalmere",
+  "region": "Carlingford",
+  "distance_km": 17.0,
+  "median": 2005000,
+  "g1": 4.5,
+  "g5": 38.0,
+  "sample_size": 50
+ },
+ {
+  "name": "Auburn",
+  "region": "Auburn",
+  "distance_km": 17.0,
+  "median": 1595000,
+  "g1": 4.2,
+  "g5": 41.5,
+  "sample_size": 62
+ },
+ {
+  "name": "Auburn South",
+  "region": "Auburn",
+  "distance_km": 17.0,
+  "median": 1720000,
+  "g1": 5.7,
+  "g5": 40.8,
+  "sample_size": 68
+ },
+ {
+  "name": "Collaroy Plateau",
+  "region": "Warringah",
+  "distance_km": 17.1,
+  "median": 1775000,
+  "g1": 4.8,
+  "g5": 39.2,
+  "sample_size": 52
+ },
+ {
+  "name": "Dundas",
+  "region": "Parramatta",
+  "distance_km": 17.4,
+  "median": 1935000,
+  "g1": 3.6,
+  "g5": 44.7,
+  "sample_size": 56
+ },
+ {
+  "name": "Dundas Valley",
+  "region": "Parramatta",
+  "distance_km": 17.4,
+  "median": 1510000,
+  "g1": 4.1,
+  "g5": 38.1,
+  "sample_size": 71
+ },
+ {
+  "name": "Oatlands",
+  "region": "Parramatta",
+  "distance_km": 17.4,
+  "median": 1655000,
+  "g1": 4.1,
+  "g5": 47.1,
+  "sample_size": 51
+ },
+ {
+  "name": "Telopea",
+  "region": "Parramatta",
+  "distance_km": 17.4,
+  "median": 1645000,
+  "g1": 3.4,
+  "g5": 36.3,
+  "sample_size": 47
+ },
+ {
+  "name": "Birrong",
+  "region": "Auburn",
+  "distance_km": 17.4,
+  "median": 1590000,
+  "g1": 5.6,
+  "g5": 39.3,
+  "sample_size": 55
+ },
+ {
+  "name": "Potts Hill",
+  "region": "Auburn",
+  "distance_km": 17.4,
+  "median": 1645000,
+  "g1": 6.1,
+  "g5": 42.2,
+  "sample_size": 54
+ },
+ {
+  "name": "Regents Park",
+  "region": "Auburn",
+  "distance_km": 17.4,
+  "median": 1605000,
+  "g1": 4.4,
+  "g5": 33.3,
+  "sample_size": 55
+ },
+ {
+  "name": "Lugarno",
+  "region": "Hurstville",
+  "distance_km": 17.5,
+  "median": 1960000,
+  "g1": 3.9,
+  "g5": 39.5,
+  "sample_size": 39
+ },
+ {
+  "name": "Peakhurst",
+  "region": "Hurstville",
+  "distance_km": 17.5,
+  "median": 1685000,
+  "g1": 4.1,
+  "g5": 44.4,
+  "sample_size": 49
+ },
+ {
+  "name": "Peakhurst Heights",
+  "region": "Hurstville",
+  "distance_km": 17.5,
+  "median": 1815000,
+  "g1": 4.9,
+  "g5": 42.7,
+  "sample_size": 49
+ },
+ {
+  "name": "Riverwood",
+  "region": "Hurstville",
+  "distance_km": 17.5,
+  "median": 1785000,
+  "g1": 2.6,
+  "g5": 31.3,
+  "sample_size": 49
+ },
+ {
+  "name": "Clyde",
+  "region": "Parramatta",
+  "distance_km": 17.7,
+  "median": 1805000,
+  "g1": 5.7,
+  "g5": 34.2,
+  "sample_size": 60
+ },
+ {
+  "name": "Yagoona",
+  "region": "Bankstown",
+  "distance_km": 17.7,
+  "median": 1590000,
+  "g1": 4.4,
+  "g5": 39.7,
+  "sample_size": 51
+ },
+ {
+  "name": "Yagoona West",
+  "region": "Bankstown",
+  "distance_km": 17.7,
+  "median": 1970000,
+  "g1": 5.4,
+  "g5": 40.1,
+  "sample_size": 50
+ },
+ {
+  "name": "Mortdale",
+  "region": "Hurstville",
+  "distance_km": 17.7,
+  "median": 1935000,
+  "g1": 2.9,
+  "g5": 39.3,
+  "sample_size": 39
+ },
+ {
+  "name": "Oatley",
+  "region": "Hurstville",
+  "distance_km": 17.7,
+  "median": 1745000,
+  "g1": 5.3,
+  "g5": 42.9,
+  "sample_size": 52
+ },
+ {
+  "name": "Kurnell",
+  "region": "Cronulla - Miranda - Caringbah",
+  "distance_km": 18.0,
+  "median": 1840000,
+  "g1": 3.7,
+  "g5": 38.0,
+  "sample_size": 67
+ },
+ {
+  "name": "Caravan Head",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 18.2,
+  "median": 1475000,
+  "g1": 6.1,
+  "g5": 44.6,
+  "sample_size": 66
+ },
+ {
+  "name": "Oyster Bay",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 18.2,
+  "median": 1675000,
+  "g1": 6.1,
+  "g5": 46.9,
+  "sample_size": 53
+ },
+ {
+  "name": "Beecroft",
+  "region": "Pennant Hills - Epping",
+  "distance_km": 18.4,
+  "median": 1620000,
+  "g1": 3.4,
+  "g5": 35.3,
+  "sample_size": 61
+ },
+ {
+  "name": "Cheltenham",
+  "region": "Pennant Hills - Epping",
+  "distance_km": 18.4,
+  "median": 1765000,
+  "g1": 4.3,
+  "g5": 37.1,
+  "sample_size": 58
+ },
+ {
+  "name": "Blaxcell",
+  "region": "Parramatta",
+  "distance_km": 18.4,
+  "median": 1900000,
+  "g1": 5.8,
+  "g5": 37.9,
+  "sample_size": 52
+ },
+ {
+  "name": "Camellia",
+  "region": "Parramatta",
+  "distance_km": 18.4,
+  "median": 1525000,
+  "g1": 3.0,
+  "g5": 34.9,
+  "sample_size": 68
+ },
+ {
+  "name": "Granville",
+  "region": "Parramatta",
+  "distance_km": 18.4,
+  "median": 1945000,
+  "g1": 4.6,
+  "g5": 30.5,
+  "sample_size": 40
+ },
+ {
+  "name": "Holroyd",
+  "region": "Parramatta",
+  "distance_km": 18.4,
+  "median": 1540000,
+  "g1": 2.1,
+  "g5": 34.9,
+  "sample_size": 58
+ },
+ {
+  "name": "Rosehill",
+  "region": "Parramatta",
+  "distance_km": 18.4,
+  "median": 1650000,
+  "g1": 5.9,
+  "g5": 41.3,
+  "sample_size": 60
+ },
+ {
+  "name": "South Granville",
+  "region": "Parramatta",
+  "distance_km": 18.4,
+  "median": 1630000,
+  "g1": 6.7,
+  "g5": 45.8,
+  "sample_size": 56
+ },
+ {
+  "name": "Carlingford",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 18.5,
+  "median": 1595000,
+  "g1": 6.5,
+  "g5": 39.4,
+  "sample_size": 45
+ },
+ {
+  "name": "Carlingford Court",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 18.5,
+  "median": 1695000,
+  "g1": 2.8,
+  "g5": 39.4,
+  "sample_size": 47
+ },
+ {
+  "name": "Carlingford North",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 18.5,
+  "median": 1850000,
+  "g1": 4.9,
+  "g5": 37.6,
+  "sample_size": 48
+ },
+ {
+  "name": "Kingsdene",
+  "region": "Ryde - Hunters Hill",
+  "distance_km": 18.5,
+  "median": 1615000,
+  "g1": 5.3,
+  "g5": 44.9,
+  "sample_size": 66
+ },
+ {
+  "name": "Normanhurst",
+  "region": "Ku-ring-gai",
+  "distance_km": 18.7,
+  "median": 1675000,
+  "g1": 6.6,
+  "g5": 40.2,
+  "sample_size": 50
+ },
+ {
+  "name": "Wahroonga",
+  "region": "Ku-ring-gai",
+  "distance_km": 18.7,
+  "median": 1535000,
+  "g1": 4.3,
+  "g5": 46.3,
+  "sample_size": 73
+ },
+ {
+  "name": "Elanora Heights",
+  "region": "Warringah",
+  "distance_km": 18.9,
+  "median": 1485000,
+  "g1": 6.3,
+  "g5": 44.7,
+  "sample_size": 65
+ },
+ {
+  "name": "Ingleside",
+  "region": "Warringah",
+  "distance_km": 18.9,
+  "median": 1735000,
+  "g1": 3.5,
+  "g5": 37.0,
+  "sample_size": 67
+ },
+ {
+  "name": "Narrabeen",
+  "region": "Warringah",
+  "distance_km": 18.9,
+  "median": 1630000,
+  "g1": 4.9,
+  "g5": 41.8,
+  "sample_size": 44
+ },
+ {
+  "name": "Narrabeen Peninsula",
+  "region": "Warringah",
+  "distance_km": 18.9,
+  "median": 1535000,
+  "g1": 6.1,
+  "g5": 36.9,
+  "sample_size": 71
+ },
+ {
+  "name": "North Narrabeen",
+  "region": "Warringah",
+  "distance_km": 18.9,
+  "median": 1530000,
+  "g1": 5.3,
+  "g5": 39.1,
+  "sample_size": 45
+ },
+ {
+  "name": "Kangaroo Point",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 18.9,
+  "median": 1445000,
+  "g1": 5.2,
+  "g5": 51.0,
+  "sample_size": 56
+ },
+ {
+  "name": "Sylvania",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 18.9,
+  "median": 1420000,
+  "g1": 4.9,
+  "g5": 43.9,
+  "sample_size": 67
+ },
+ {
+  "name": "Sylvania Southgate",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 18.9,
+  "median": 1530000,
+  "g1": 6.0,
+  "g5": 40.9,
+  "sample_size": 53
+ },
+ {
+  "name": "Sylvania Waters",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 18.9,
+  "median": 1830000,
+  "g1": 4.7,
+  "g5": 34.4,
+  "sample_size": 47
+ },
+ {
+  "name": "Chester Hill",
+  "region": "Merrylands - Guildford",
+  "distance_km": 19.0,
+  "median": 1910000,
+  "g1": 2.7,
+  "g5": 35.1,
+  "sample_size": 66
+ },
+ {
+  "name": "Sefton",
+  "region": "Merrylands - Guildford",
+  "distance_km": 19.0,
+  "median": 1795000,
+  "g1": 3.4,
+  "g5": 35.2,
+  "sample_size": 57
+ },
+ {
+  "name": "Bankstown",
+  "region": "Canterbury",
+  "distance_km": 19.1,
+  "median": 1865000,
+  "g1": 4.1,
+  "g5": 37.2,
+  "sample_size": 49
+ },
+ {
+  "name": "Bankstown North",
+  "region": "Canterbury",
+  "distance_km": 19.1,
+  "median": 1410000,
+  "g1": 4.8,
+  "g5": 44.2,
+  "sample_size": 55
+ },
+ {
+  "name": "Bankstown Square",
+  "region": "Canterbury",
+  "distance_km": 19.1,
+  "median": 1575000,
+  "g1": 6.4,
+  "g5": 45.8,
+  "sample_size": 57
+ },
+ {
+  "name": "Condell Park",
+  "region": "Canterbury",
+  "distance_km": 19.1,
+  "median": 1595000,
+  "g1": 3.5,
+  "g5": 39.7,
+  "sample_size": 70
+ },
+ {
+  "name": "Manahan",
+  "region": "Canterbury",
+  "distance_km": 19.1,
+  "median": 1760000,
+  "g1": 6.8,
+  "g5": 43.7,
+  "sample_size": 47
+ },
+ {
+  "name": "Greenhills Beach",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 19.1,
+  "median": 1560000,
+  "g1": 5.8,
+  "g5": 38.3,
+  "sample_size": 55
+ },
+ {
+  "name": "Padstow",
+  "region": "Canterbury",
+  "distance_km": 19.3,
+  "median": 1830000,
+  "g1": 5.1,
+  "g5": 36.1,
+  "sample_size": 51
+ },
+ {
+  "name": "Padstow Heights",
+  "region": "Canterbury",
+  "distance_km": 19.3,
+  "median": 1610000,
+  "g1": 6.0,
+  "g5": 35.7,
+  "sample_size": 68
+ },
+ {
+  "name": "Harris Park",
+  "region": "Parramatta",
+  "distance_km": 19.7,
+  "median": 1595000,
+  "g1": 6.5,
+  "g5": 47.1,
+  "sample_size": 47
+ },
+ {
+  "name": "Parramatta",
+  "region": "Parramatta",
+  "distance_km": 19.7,
+  "median": 1425000,
+  "g1": 5.7,
+  "g5": 48.9,
+  "sample_size": 57
+ },
+ {
+  "name": "Parramatta Westfield",
+  "region": "Parramatta",
+  "distance_km": 19.7,
+  "median": 1840000,
+  "g1": 2.4,
+  "g5": 32.1,
+  "sample_size": 43
+ },
+ {
+  "name": "Pennant Hills",
+  "region": "Pennant Hills - Epping",
+  "distance_km": 19.8,
+  "median": 1570000,
+  "g1": 4.7,
+  "g5": 38.7,
+  "sample_size": 66
+ },
+ {
+  "name": "Thornleigh",
+  "region": "Pennant Hills - Epping",
+  "distance_km": 19.8,
+  "median": 1535000,
+  "g1": 5.9,
+  "g5": 48.2,
+  "sample_size": 72
+ },
+ {
+  "name": "Westleigh",
+  "region": "Pennant Hills - Epping",
+  "distance_km": 19.8,
+  "median": 1790000,
+  "g1": 6.2,
+  "g5": 39.7,
+  "sample_size": 63
+ },
+ {
+  "name": "Bass Hill",
+  "region": "Merrylands - Guildford",
+  "distance_km": 19.8,
+  "median": 1770000,
+  "g1": 4.6,
+  "g5": 40.4,
+  "sample_size": 54
+ },
+ {
+  "name": "Revesby",
+  "region": "Bankstown",
+  "distance_km": 20.0,
+  "median": 1755000,
+  "g1": 6.6,
+  "g5": 45.6,
+  "sample_size": 43
+ },
+ {
+  "name": "Revesby Heights",
+  "region": "Bankstown",
+  "distance_km": 20.0,
+  "median": 1745000,
+  "g1": 5.8,
+  "g5": 37.5,
+  "sample_size": 44
+ },
+ {
+  "name": "Revesby North",
+  "region": "Bankstown",
+  "distance_km": 20.0,
+  "median": 1730000,
+  "g1": 3.7,
+  "g5": 40.8,
+  "sample_size": 53
+ },
+ {
+  "name": "North Wahroonga",
+  "region": "Ku-ring-gai",
+  "distance_km": 20.3,
+  "median": 1765000,
+  "g1": 5.4,
+  "g5": 40.2,
+  "sample_size": 48
+ },
+ {
+  "name": "North Parramatta",
+  "region": "Parramatta",
+  "distance_km": 20.3,
+  "median": 1350000,
+  "g1": 5.8,
+  "g5": 44.3,
+  "sample_size": 60
+ },
+ {
+  "name": "North Rocks",
+  "region": "Parramatta",
+  "distance_km": 20.3,
+  "median": 1420000,
+  "g1": 3.7,
+  "g5": 37.3,
+  "sample_size": 60
+ },
+ {
+  "name": "Bonnet Bay",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 20.6,
+  "median": 1725000,
+  "g1": 4.0,
+  "g5": 39.9,
+  "sample_size": 45
+ },
+ {
+  "name": "Como",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 20.6,
+  "median": 1495000,
+  "g1": 4.1,
+  "g5": 38.7,
+  "sample_size": 69
+ },
+ {
+  "name": "Jannali",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 20.6,
+  "median": 1665000,
+  "g1": 3.7,
+  "g5": 41.5,
+  "sample_size": 56
+ },
+ {
+  "name": "West Pennant Hills",
+  "region": "Pennant Hills - Epping",
+  "distance_km": 20.9,
+  "median": 1680000,
+  "g1": 5.1,
+  "g5": 43.1,
+  "sample_size": 48
+ },
+ {
+  "name": "Guildford",
+  "region": "Merrylands - Guildford",
+  "distance_km": 20.9,
+  "median": 1480000,
+  "g1": 7.0,
+  "g5": 45.9,
+  "sample_size": 48
+ },
+ {
+  "name": "Guildford West",
+  "region": "Merrylands - Guildford",
+  "distance_km": 20.9,
+  "median": 1615000,
+  "g1": 5.1,
+  "g5": 47.3,
+  "sample_size": 54
+ },
+ {
+  "name": "Old Guildford",
+  "region": "Merrylands - Guildford",
+  "distance_km": 20.9,
+  "median": 1370000,
+  "g1": 4.2,
+  "g5": 48.3,
+  "sample_size": 49
+ },
+ {
+  "name": "Yennora",
+  "region": "Merrylands - Guildford",
+  "distance_km": 20.9,
+  "median": 1335000,
+  "g1": 5.1,
+  "g5": 51.9,
+  "sample_size": 58
+ },
+ {
+  "name": "Georges Hall",
+  "region": "Bankstown",
+  "distance_km": 21.1,
+  "median": 1535000,
+  "g1": 4.2,
+  "g5": 38.8,
+  "sample_size": 66
+ },
+ {
+  "name": "Bankstown Aerodrome",
+  "region": "Canterbury",
+  "distance_km": 21.2,
+  "median": 1670000,
+  "g1": 2.7,
+  "g5": 34.0,
+  "sample_size": 49
+ },
+ {
+  "name": "Miranda",
+  "region": "Cronulla - Miranda - Caringbah",
+  "distance_km": 21.2,
+  "median": 1660000,
+  "g1": 6.2,
+  "g5": 39.9,
+  "sample_size": 69
+ },
+ {
+  "name": "Yowie Bay",
+  "region": "Cronulla - Miranda - Caringbah",
+  "distance_km": 21.2,
+  "median": 1355000,
+  "g1": 4.3,
+  "g5": 37.8,
+  "sample_size": 72
+ },
+ {
+  "name": "Warriewood",
+  "region": "Pittwater",
+  "distance_km": 21.3,
+  "median": 1620000,
+  "g1": 5.2,
+  "g5": 40.8,
+  "sample_size": 65
+ },
+ {
+  "name": "Warriewood Shopping Square",
+  "region": "Pittwater",
+  "distance_km": 21.3,
+  "median": 1345000,
+  "g1": 5.1,
+  "g5": 48.8,
+  "sample_size": 53
+ },
+ {
+  "name": "Carramar",
+  "region": "Merrylands - Guildford",
+  "distance_km": 21.3,
+  "median": 1580000,
+  "g1": 3.1,
+  "g5": 37.5,
+  "sample_size": 47
+ },
+ {
+  "name": "Lansdowne",
+  "region": "Merrylands - Guildford",
+  "distance_km": 21.3,
+  "median": 1600000,
+  "g1": 6.5,
+  "g5": 42.9,
+  "sample_size": 47
+ },
+ {
+  "name": "Villawood",
+  "region": "Merrylands - Guildford",
+  "distance_km": 21.3,
+  "median": 1680000,
+  "g1": 4.4,
+  "g5": 41.4,
+  "sample_size": 63
+ },
+ {
+  "name": "Merrylands",
+  "region": "Parramatta",
+  "distance_km": 21.8,
+  "median": 1380000,
+  "g1": 6.2,
+  "g5": 43.5,
+  "sample_size": 53
+ },
+ {
+  "name": "Merrylands West",
+  "region": "Parramatta",
+  "distance_km": 21.8,
+  "median": 1635000,
+  "g1": 6.9,
+  "g5": 45.9,
+  "sample_size": 45
+ },
+ {
+  "name": "Northmead",
+  "region": "Parramatta",
+  "distance_km": 21.9,
+  "median": 1360000,
+  "g1": 3.3,
+  "g5": 41.3,
+  "sample_size": 75
+ },
+ {
+  "name": "Cherrybrook",
+  "region": "Pennant Hills - Epping",
+  "distance_km": 22.1,
+  "median": 1315000,
+  "g1": 6.2,
+  "g5": 42.4,
+  "sample_size": 70
+ },
+ {
+  "name": "Asquith",
+  "region": "Hornsby",
+  "distance_km": 22.2,
+  "median": 1350000,
+  "g1": 3.7,
+  "g5": 40.4,
+  "sample_size": 71
+ },
+ {
+  "name": "Hornsby",
+  "region": "Hornsby",
+  "distance_km": 22.2,
+  "median": 1395000,
+  "g1": 6.7,
+  "g5": 41.1,
+  "sample_size": 53
+ },
+ {
+  "name": "Hornsby Heights",
+  "region": "Hornsby",
+  "distance_km": 22.2,
+  "median": 1575000,
+  "g1": 3.7,
+  "g5": 33.6,
+  "sample_size": 64
+ },
+ {
+  "name": "Waitara",
+  "region": "Hornsby",
+  "distance_km": 22.2,
+  "median": 1265000,
+  "g1": 4.9,
+  "g5": 51.3,
+  "sample_size": 72
+ },
+ {
+  "name": "East Hills",
+  "region": "Bankstown",
+  "distance_km": 22.2,
+  "median": 1260000,
+  "g1": 3.6,
+  "g5": 43.7,
+  "sample_size": 53
+ },
+ {
+  "name": "Panania",
+  "region": "Bankstown",
+  "distance_km": 22.2,
+  "median": 1660000,
+  "g1": 4.4,
+  "g5": 33.4,
+  "sample_size": 62
+ },
+ {
+  "name": "Picnic Point",
+  "region": "Bankstown",
+  "distance_km": 22.2,
+  "median": 1305000,
+  "g1": 6.5,
+  "g5": 45.4,
+  "sample_size": 69
+ },
+ {
+  "name": "Caringbah",
+  "region": "Cronulla - Miranda - Caringbah",
+  "distance_km": 22.3,
+  "median": 1385000,
+  "g1": 5.1,
+  "g5": 47.0,
+  "sample_size": 71
+ },
+ {
+  "name": "Caringbah South",
+  "region": "Cronulla - Miranda - Caringbah",
+  "distance_km": 22.3,
+  "median": 1265000,
+  "g1": 5.6,
+  "g5": 48.3,
+  "sample_size": 73
+ },
+ {
+  "name": "Dolans Bay",
+  "region": "Cronulla - Miranda - Caringbah",
+  "distance_km": 22.3,
+  "median": 1385000,
+  "g1": 7.6,
+  "g5": 49.9,
+  "sample_size": 53
+ },
+ {
+  "name": "Lilli Pilli",
+  "region": "Cronulla - Miranda - Caringbah",
+  "distance_km": 22.3,
+  "median": 1670000,
+  "g1": 5.0,
+  "g5": 35.2,
+  "sample_size": 68
+ },
+ {
+  "name": "Port Hacking",
+  "region": "Cronulla - Miranda - Caringbah",
+  "distance_km": 22.3,
+  "median": 1340000,
+  "g1": 5.0,
+  "g5": 37.6,
+  "sample_size": 57
+ },
+ {
+  "name": "Taren Point",
+  "region": "Cronulla - Miranda - Caringbah",
+  "distance_km": 22.3,
+  "median": 1465000,
+  "g1": 3.3,
+  "g5": 39.3,
+  "sample_size": 71
+ },
+ {
+  "name": "Warumbul",
+  "region": "Cronulla - Miranda - Caringbah",
+  "distance_km": 22.3,
+  "median": 1265000,
+  "g1": 3.7,
+  "g5": 43.0,
+  "sample_size": 53
+ },
+ {
+  "name": "Milperra",
+  "region": "Liverpool",
+  "distance_km": 22.5,
+  "median": 1325000,
+  "g1": 4.3,
+  "g5": 45.4,
+  "sample_size": 74
+ },
+ {
+  "name": "Mona Vale",
+  "region": "Pittwater",
+  "distance_km": 22.8,
+  "median": 1625000,
+  "g1": 7.0,
+  "g5": 47.0,
+  "sample_size": 56
+ },
+ {
+  "name": "Constitution Hill",
+  "region": "Parramatta",
+  "distance_km": 23.2,
+  "median": 1545000,
+  "g1": 4.7,
+  "g5": 49.5,
+  "sample_size": 69
+ },
+ {
+  "name": "Gymea",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 23.2,
+  "median": 1645000,
+  "g1": 5.0,
+  "g5": 36.4,
+  "sample_size": 59
+ },
+ {
+  "name": "Gymea Bay",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 23.2,
+  "median": 1575000,
+  "g1": 3.8,
+  "g5": 41.0,
+  "sample_size": 48
+ },
+ {
+  "name": "Norwest",
+  "region": "Parramatta",
+  "distance_km": 23.4,
+  "median": 1475000,
+  "g1": 7.2,
+  "g5": 49.1,
+  "sample_size": 51
+ },
+ {
+  "name": "Bayview",
+  "region": "Pittwater",
+  "distance_km": 23.9,
+  "median": 1350000,
+  "g1": 6.4,
+  "g5": 38.2,
+  "sample_size": 60
+ },
+ {
+  "name": "Girraween",
+  "region": "Parramatta",
+  "distance_km": 24.1,
+  "median": 1420000,
+  "g1": 7.4,
+  "g5": 47.4,
+  "sample_size": 69
+ },
+ {
+  "name": "Greystanes",
+  "region": "Parramatta",
+  "distance_km": 24.1,
+  "median": 1310000,
+  "g1": 6.4,
+  "g5": 46.6,
+  "sample_size": 71
+ },
+ {
+  "name": "Mays Hill",
+  "region": "Parramatta",
+  "distance_km": 24.1,
+  "median": 1305000,
+  "g1": 7.5,
+  "g5": 50.9,
+  "sample_size": 48
+ },
+ {
+  "name": "Pemulwuy",
+  "region": "Parramatta",
+  "distance_km": 24.1,
+  "median": 1500000,
+  "g1": 3.9,
+  "g5": 49.3,
+  "sample_size": 71
+ },
+ {
+  "name": "Pendle Hill",
+  "region": "Parramatta",
+  "distance_km": 24.1,
+  "median": 1275000,
+  "g1": 5.0,
+  "g5": 40.5,
+  "sample_size": 48
+ },
+ {
+  "name": "South Wentworthville",
+  "region": "Parramatta",
+  "distance_km": 24.1,
+  "median": 1400000,
+  "g1": 6.4,
+  "g5": 43.0,
+  "sample_size": 50
+ },
+ {
+  "name": "Wentworthville",
+  "region": "Parramatta",
+  "distance_km": 24.1,
+  "median": 1465000,
+  "g1": 6.1,
+  "g5": 39.8,
+  "sample_size": 57
+ },
+ {
+  "name": "Westmead",
+  "region": "Parramatta",
+  "distance_km": 24.1,
+  "median": 1405000,
+  "g1": 6.6,
+  "g5": 47.9,
+  "sample_size": 60
+ },
+ {
+  "name": "Mount Colah",
+  "region": "Hornsby",
+  "distance_km": 24.2,
+  "median": 1225000,
+  "g1": 7.0,
+  "g5": 48.1,
+  "sample_size": 51
+ },
+ {
+  "name": "Mount Kuring-Gai",
+  "region": "Hornsby",
+  "distance_km": 24.2,
+  "median": 1520000,
+  "g1": 4.4,
+  "g5": 40.6,
+  "sample_size": 47
+ },
+ {
+  "name": "Akuna Bay",
+  "region": "Warringah",
+  "distance_km": 24.2,
+  "median": 1365000,
+  "g1": 5.7,
+  "g5": 37.4,
+  "sample_size": 57
+ },
+ {
+  "name": "Cottage Point",
+  "region": "Warringah",
+  "distance_km": 24.2,
+  "median": 1380000,
+  "g1": 3.8,
+  "g5": 47.2,
+  "sample_size": 65
+ },
+ {
+  "name": "Duffys Forest",
+  "region": "Warringah",
+  "distance_km": 24.2,
+  "median": 1230000,
+  "g1": 5.5,
+  "g5": 44.7,
+  "sample_size": 72
+ },
+ {
+  "name": "Terrey Hills",
+  "region": "Warringah",
+  "distance_km": 24.2,
+  "median": 1470000,
+  "g1": 6.8,
+  "g5": 50.1,
+  "sample_size": 61
+ },
+ {
+  "name": "Fairfield",
+  "region": "Fairfield",
+  "distance_km": 24.2,
+  "median": 1430000,
+  "g1": 5.9,
+  "g5": 44.0,
+  "sample_size": 63
+ },
+ {
+  "name": "Fairfield East",
+  "region": "Fairfield",
+  "distance_km": 24.2,
+  "median": 1325000,
+  "g1": 4.0,
+  "g5": 50.6,
+  "sample_size": 62
+ },
+ {
+  "name": "Fairfield Heights",
+  "region": "Fairfield",
+  "distance_km": 24.2,
+  "median": 1465000,
+  "g1": 7.3,
+  "g5": 49.3,
+  "sample_size": 67
+ },
+ {
+  "name": "Fairfield West",
+  "region": "Fairfield",
+  "distance_km": 24.2,
+  "median": 1295000,
+  "g1": 4.0,
+  "g5": 39.4,
+  "sample_size": 51
+ },
+ {
+  "name": "Cecil Hills",
+  "region": "Liverpool",
+  "distance_km": 24.2,
+  "median": 1540000,
+  "g1": 5.7,
+  "g5": 48.5,
+  "sample_size": 60
+ },
+ {
+  "name": "Horningsea Park",
+  "region": "Liverpool",
+  "distance_km": 24.2,
+  "median": 1440000,
+  "g1": 5.5,
+  "g5": 44.3,
+  "sample_size": 62
+ },
+ {
+  "name": "Hoxton Park",
+  "region": "Liverpool",
+  "distance_km": 24.2,
+  "median": 1550000,
+  "g1": 6.5,
+  "g5": 44.5,
+  "sample_size": 52
+ },
+ {
+  "name": "West Hoxton",
+  "region": "Liverpool",
+  "distance_km": 24.2,
+  "median": 1190000,
+  "g1": 5.5,
+  "g5": 40.9,
+  "sample_size": 67
+ },
+ {
+  "name": "Castle Hill",
+  "region": "Baulkham Hills",
+  "distance_km": 24.5,
+  "median": 1180000,
+  "g1": 5.2,
+  "g5": 50.9,
+  "sample_size": 60
+ },
+ {
+  "name": "Old Toongabbie",
+  "region": "Parramatta",
+  "distance_km": 24.7,
+  "median": 1285000,
+  "g1": 7.1,
+  "g5": 48.0,
+  "sample_size": 70
+ },
+ {
+  "name": "Toongabbie",
+  "region": "Parramatta",
+  "distance_km": 24.7,
+  "median": 1420000,
+  "g1": 7.9,
+  "g5": 50.2,
+  "sample_size": 70
+ },
+ {
+  "name": "Toongabbie East",
+  "region": "Parramatta",
+  "distance_km": 24.7,
+  "median": 1445000,
+  "g1": 4.9,
+  "g5": 49.0,
+  "sample_size": 70
+ },
+ {
+  "name": "Newport",
+  "region": "Pittwater",
+  "distance_km": 25.1,
+  "median": 1330000,
+  "g1": 5.7,
+  "g5": 41.9,
+  "sample_size": 54
+ },
+ {
+  "name": "Newport Beach",
+  "region": "Pittwater",
+  "distance_km": 25.1,
+  "median": 1235000,
+  "g1": 7.3,
+  "g5": 52.5,
+  "sample_size": 74
+ },
+ {
+  "name": "Dural",
+  "region": "Dural - Wisemans Ferry",
+  "distance_km": 25.3,
+  "median": 1205000,
+  "g1": 7.9,
+  "g5": 53.8,
+  "sample_size": 73
+ },
+ {
+  "name": "Middle Dural",
+  "region": "Dural - Wisemans Ferry",
+  "distance_km": 25.3,
+  "median": 1390000,
+  "g1": 5.4,
+  "g5": 37.1,
+  "sample_size": 73
+ },
+ {
+  "name": "Round Corner",
+  "region": "Dural - Wisemans Ferry",
+  "distance_km": 25.3,
+  "median": 1280000,
+  "g1": 6.4,
+  "g5": 43.8,
+  "sample_size": 63
+ },
+ {
+  "name": "Audley",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.3,
+  "median": 1510000,
+  "g1": 3.8,
+  "g5": 44.2,
+  "sample_size": 57
+ },
+ {
+  "name": "Garie",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.3,
+  "median": 1155000,
+  "g1": 5.5,
+  "g5": 49.7,
+  "sample_size": 77
+ },
+ {
+  "name": "Grays Point",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.3,
+  "median": 1205000,
+  "g1": 5.6,
+  "g5": 38.5,
+  "sample_size": 62
+ },
+ {
+  "name": "Kareela",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.3,
+  "median": 1350000,
+  "g1": 5.4,
+  "g5": 46.9,
+  "sample_size": 52
+ },
+ {
+  "name": "Kirrawee",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.3,
+  "median": 1465000,
+  "g1": 4.3,
+  "g5": 36.2,
+  "sample_size": 57
+ },
+ {
+  "name": "Loftus",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.3,
+  "median": 1410000,
+  "g1": 6.0,
+  "g5": 35.9,
+  "sample_size": 48
+ },
+ {
+  "name": "Sutherland",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.3,
+  "median": 1360000,
+  "g1": 5.1,
+  "g5": 51.0,
+  "sample_size": 71
+ },
+ {
+  "name": "Woronora",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.3,
+  "median": 1155000,
+  "g1": 4.8,
+  "g5": 51.3,
+  "sample_size": 79
+ },
+ {
+  "name": "Alfords Point",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.4,
+  "median": 1265000,
+  "g1": 5.8,
+  "g5": 49.6,
+  "sample_size": 75
+ },
+ {
+  "name": "Bangor",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.4,
+  "median": 1165000,
+  "g1": 7.4,
+  "g5": 51.7,
+  "sample_size": 71
+ },
+ {
+  "name": "Barden Ridge",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.4,
+  "median": 1345000,
+  "g1": 7.4,
+  "g5": 49.7,
+  "sample_size": 47
+ },
+ {
+  "name": "Illawong",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.4,
+  "median": 1380000,
+  "g1": 4.0,
+  "g5": 43.3,
+  "sample_size": 47
+ },
+ {
+  "name": "Lucas Heights",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.4,
+  "median": 1405000,
+  "g1": 4.6,
+  "g5": 48.9,
+  "sample_size": 49
+ },
+ {
+  "name": "Menai",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.4,
+  "median": 1480000,
+  "g1": 4.6,
+  "g5": 47.5,
+  "sample_size": 65
+ },
+ {
+  "name": "Menai Central",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.4,
+  "median": 1510000,
+  "g1": 4.3,
+  "g5": 43.3,
+  "sample_size": 70
+ },
+ {
+  "name": "Bonnie Vale",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.6,
+  "median": 1130000,
+  "g1": 4.2,
+  "g5": 47.1,
+  "sample_size": 64
+ },
+ {
+  "name": "Jibbon",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.7,
+  "median": 1275000,
+  "g1": 5.1,
+  "g5": 46.7,
+  "sample_size": 65
+ },
+ {
+  "name": "McCarrs Creek",
+  "region": "Pittwater",
+  "distance_km": 25.8,
+  "median": 1155000,
+  "g1": 7.5,
+  "g5": 49.4,
+  "sample_size": 66
+ },
+ {
+  "name": "Moorebank",
+  "region": "Liverpool",
+  "distance_km": 25.8,
+  "median": 1290000,
+  "g1": 4.3,
+  "g5": 45.6,
+  "sample_size": 63
+ },
+ {
+  "name": "Bundeena",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.8,
+  "median": 1420000,
+  "g1": 5.3,
+  "g5": 42.1,
+  "sample_size": 59
+ },
+ {
+  "name": "Burraneer",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.8,
+  "median": 1450000,
+  "g1": 3.1,
+  "g5": 39.8,
+  "sample_size": 74
+ },
+ {
+  "name": "Cronulla",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.8,
+  "median": 1485000,
+  "g1": 6.1,
+  "g5": 50.6,
+  "sample_size": 62
+ },
+ {
+  "name": "Maianbar",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.8,
+  "median": 1190000,
+  "g1": 7.1,
+  "g5": 48.5,
+  "sample_size": 64
+ },
+ {
+  "name": "Woolooware",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 25.8,
+  "median": 1205000,
+  "g1": 5.9,
+  "g5": 42.3,
+  "sample_size": 66
+ },
+ {
+  "name": "Church Point",
+  "region": "Pittwater",
+  "distance_km": 26.0,
+  "median": 1145000,
+  "g1": 4.5,
+  "g5": 53.0,
+  "sample_size": 56
+ },
+ {
+  "name": "Elvina Bay",
+  "region": "Pittwater",
+  "distance_km": 26.0,
+  "median": 1370000,
+  "g1": 3.4,
+  "g5": 39.3,
+  "sample_size": 51
+ },
+ {
+  "name": "Lovett Bay",
+  "region": "Pittwater",
+  "distance_km": 26.0,
+  "median": 1295000,
+  "g1": 6.5,
+  "g5": 40.9,
+  "sample_size": 76
+ },
+ {
+  "name": "Scotland Island",
+  "region": "Pittwater",
+  "distance_km": 26.0,
+  "median": 1265000,
+  "g1": 7.2,
+  "g5": 52.3,
+  "sample_size": 75
+ },
+ {
+  "name": "Cabramatta",
+  "region": "Fairfield",
+  "distance_km": 26.0,
+  "median": 1495000,
+  "g1": 6.2,
+  "g5": 47.0,
+  "sample_size": 58
+ },
+ {
+  "name": "Cabramatta West",
+  "region": "Fairfield",
+  "distance_km": 26.0,
+  "median": 1355000,
+  "g1": 5.7,
+  "g5": 42.1,
+  "sample_size": 65
+ },
+ {
+  "name": "Canley Heights",
+  "region": "Fairfield",
+  "distance_km": 26.0,
+  "median": 1440000,
+  "g1": 7.2,
+  "g5": 44.8,
+  "sample_size": 54
+ },
+ {
+  "name": "Canley Vale",
+  "region": "Fairfield",
+  "distance_km": 26.0,
+  "median": 1135000,
+  "g1": 4.8,
+  "g5": 47.8,
+  "sample_size": 62
+ },
+ {
+  "name": "Lansvale",
+  "region": "Fairfield",
+  "distance_km": 26.0,
+  "median": 1130000,
+  "g1": 7.6,
+  "g5": 50.2,
+  "sample_size": 78
+ },
+ {
+  "name": "Casula",
+  "region": "Liverpool",
+  "distance_km": 27.4,
+  "median": 1340000,
+  "g1": 7.6,
+  "g5": 52.2,
+  "sample_size": 60
+ },
+ {
+  "name": "Casula Mall",
+  "region": "Liverpool",
+  "distance_km": 27.4,
+  "median": 1230000,
+  "g1": 4.7,
+  "g5": 40.2,
+  "sample_size": 70
+ },
+ {
+  "name": "Chipping Norton",
+  "region": "Liverpool",
+  "distance_km": 27.4,
+  "median": 1420000,
+  "g1": 2.7,
+  "g5": 37.2,
+  "sample_size": 75
+ },
+ {
+  "name": "Hammondville",
+  "region": "Liverpool",
+  "distance_km": 27.4,
+  "median": 1355000,
+  "g1": 4.1,
+  "g5": 51.6,
+  "sample_size": 74
+ },
+ {
+  "name": "Liverpool",
+  "region": "Liverpool",
+  "distance_km": 27.4,
+  "median": 1225000,
+  "g1": 5.4,
+  "g5": 40.8,
+  "sample_size": 50
+ },
+ {
+  "name": "Liverpool South",
+  "region": "Liverpool",
+  "distance_km": 27.4,
+  "median": 1255000,
+  "g1": 5.3,
+  "g5": 40.0,
+  "sample_size": 58
+ },
+ {
+  "name": "Liverpool Westfield",
+  "region": "Liverpool",
+  "distance_km": 27.4,
+  "median": 1435000,
+  "g1": 4.9,
+  "g5": 44.4,
+  "sample_size": 68
+ },
+ {
+  "name": "Lurnea",
+  "region": "Liverpool",
+  "distance_km": 27.4,
+  "median": 1165000,
+  "g1": 6.0,
+  "g5": 49.0,
+  "sample_size": 70
+ },
+ {
+  "name": "Mount Pritchard",
+  "region": "Liverpool",
+  "distance_km": 27.4,
+  "median": 1125000,
+  "g1": 4.2,
+  "g5": 49.4,
+  "sample_size": 60
+ },
+ {
+  "name": "Prestons",
+  "region": "Liverpool",
+  "distance_km": 27.4,
+  "median": 1400000,
+  "g1": 3.1,
+  "g5": 38.9,
+  "sample_size": 63
+ },
+ {
+  "name": "Warwick Farm",
+  "region": "Liverpool",
+  "distance_km": 27.4,
+  "median": 1245000,
+  "g1": 4.9,
+  "g5": 47.1,
+  "sample_size": 54
+ },
+ {
+  "name": "Kings Langley",
+  "region": "Blacktown",
+  "distance_km": 27.7,
+  "median": 1085000,
+  "g1": 3.8,
+  "g5": 45.6,
+  "sample_size": 52
+ },
+ {
+  "name": "Lalor Park",
+  "region": "Blacktown",
+  "distance_km": 27.7,
+  "median": 1410000,
+  "g1": 3.1,
+  "g5": 37.6,
+  "sample_size": 48
+ },
+ {
+  "name": "Seven Hills",
+  "region": "Blacktown",
+  "distance_km": 27.7,
+  "median": 1145000,
+  "g1": 6.2,
+  "g5": 52.8,
+  "sample_size": 56
+ },
+ {
+  "name": "Seven Hills West",
+  "region": "Blacktown",
+  "distance_km": 27.7,
+  "median": 1215000,
+  "g1": 7.9,
+  "g5": 53.1,
+  "sample_size": 77
+ },
+ {
+  "name": "Baulkham Hills",
+  "region": "Parramatta",
+  "distance_km": 27.9,
+  "median": 1340000,
+  "g1": 7.0,
+  "g5": 52.0,
+  "sample_size": 73
+ },
+ {
+  "name": "Bella Vista",
+  "region": "Parramatta",
+  "distance_km": 27.9,
+  "median": 1105000,
+  "g1": 7.1,
+  "g5": 46.2,
+  "sample_size": 75
+ },
+ {
+  "name": "Crestwood",
+  "region": "Parramatta",
+  "distance_km": 27.9,
+  "median": 1295000,
+  "g1": 3.7,
+  "g5": 38.7,
+  "sample_size": 49
+ },
+ {
+  "name": "Winston Hills",
+  "region": "Parramatta",
+  "distance_km": 27.9,
+  "median": 1130000,
+  "g1": 6.8,
+  "g5": 54.3,
+  "sample_size": 66
+ },
+ {
+  "name": "Morning Bay",
+  "region": "Pittwater",
+  "distance_km": 28.0,
+  "median": 1140000,
+  "g1": 3.9,
+  "g5": 43.8,
+  "sample_size": 68
+ },
+ {
+  "name": "Avalon",
+  "region": "Pittwater",
+  "distance_km": 28.1,
+  "median": 1055000,
+  "g1": 7.8,
+  "g5": 49.1,
+  "sample_size": 54
+ },
+ {
+  "name": "Avalon Beach",
+  "region": "Pittwater",
+  "distance_km": 28.1,
+  "median": 1400000,
+  "g1": 4.5,
+  "g5": 37.1,
+  "sample_size": 52
+ },
+ {
+  "name": "Bilgola",
+  "region": "Pittwater",
+  "distance_km": 28.1,
+  "median": 1305000,
+  "g1": 5.9,
+  "g5": 46.9,
+  "sample_size": 77
+ },
+ {
+  "name": "Bilgola Beach",
+  "region": "Pittwater",
+  "distance_km": 28.1,
+  "median": 1150000,
+  "g1": 4.1,
+  "g5": 50.9,
+  "sample_size": 75
+ },
+ {
+  "name": "Bilgola Plateau",
+  "region": "Pittwater",
+  "distance_km": 28.1,
+  "median": 1080000,
+  "g1": 4.6,
+  "g5": 52.1,
+  "sample_size": 55
+ },
+ {
+  "name": "Careel Bay",
+  "region": "Pittwater",
+  "distance_km": 28.1,
+  "median": 1195000,
+  "g1": 4.4,
+  "g5": 40.4,
+  "sample_size": 57
+ },
+ {
+  "name": "Clareville",
+  "region": "Pittwater",
+  "distance_km": 28.1,
+  "median": 1070000,
+  "g1": 6.9,
+  "g5": 53.2,
+  "sample_size": 79
+ },
+ {
+  "name": "Paradise Beach",
+  "region": "Pittwater",
+  "distance_km": 28.1,
+  "median": 1110000,
+  "g1": 4.1,
+  "g5": 50.9,
+  "sample_size": 71
+ },
+ {
+  "name": "Taylors Point",
+  "region": "Pittwater",
+  "distance_km": 28.1,
+  "median": 1255000,
+  "g1": 5.1,
+  "g5": 52.3,
+  "sample_size": 76
+ },
+ {
+  "name": "Whale Beach",
+  "region": "Pittwater",
+  "distance_km": 28.1,
+  "median": 1185000,
+  "g1": 6.2,
+  "g5": 42.2,
+  "sample_size": 56
+ },
+ {
+  "name": "Berowra",
+  "region": "Hornsby",
+  "distance_km": 28.2,
+  "median": 1110000,
+  "g1": 4.2,
+  "g5": 51.0,
+  "sample_size": 74
+ },
+ {
+  "name": "Cowan",
+  "region": "Hornsby",
+  "distance_km": 28.2,
+  "median": 1395000,
+  "g1": 6.6,
+  "g5": 44.5,
+  "sample_size": 57
+ },
+ {
+  "name": "Marley",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 28.3,
+  "median": 1070000,
+  "g1": 6.7,
+  "g5": 41.0,
+  "sample_size": 69
+ },
+ {
+  "name": "Yenabilli",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 28.3,
+  "median": 1100000,
+  "g1": 5.0,
+  "g5": 40.5,
+  "sample_size": 68
+ },
+ {
+  "name": "Pleasure Point",
+  "region": "Liverpool",
+  "distance_km": 28.4,
+  "median": 1190000,
+  "g1": 5.5,
+  "g5": 41.9,
+  "sample_size": 61
+ },
+ {
+  "name": "Sandy Point",
+  "region": "Liverpool",
+  "distance_km": 28.4,
+  "median": 1135000,
+  "g1": 6.4,
+  "g5": 47.4,
+  "sample_size": 52
+ },
+ {
+  "name": "Voyager Point",
+  "region": "Liverpool",
+  "distance_km": 28.4,
+  "median": 1380000,
+  "g1": 3.1,
+  "g5": 36.8,
+  "sample_size": 55
+ },
+ {
+  "name": "Goarra",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 28.7,
+  "median": 1175000,
+  "g1": 7.0,
+  "g5": 52.5,
+  "sample_size": 70
+ },
+ {
+  "name": "Beaumont Hills",
+  "region": "Blacktown - North",
+  "distance_km": 29.9,
+  "median": 985000,
+  "g1": 4.7,
+  "g5": 47.0,
+  "sample_size": 60
+ },
+ {
+  "name": "Kellyville",
+  "region": "Blacktown - North",
+  "distance_km": 29.9,
+  "median": 1105000,
+  "g1": 6.3,
+  "g5": 53.7,
+  "sample_size": 61
+ },
+ {
+  "name": "Kellyville Ridge",
+  "region": "Blacktown - North",
+  "distance_km": 29.9,
+  "median": 1115000,
+  "g1": 7.0,
+  "g5": 50.3,
+  "sample_size": 70
+ },
+ {
+  "name": "Rouse Hill",
+  "region": "Blacktown - North",
+  "distance_km": 29.9,
+  "median": 1315000,
+  "g1": 3.6,
+  "g5": 46.3,
+  "sample_size": 72
+ },
+ {
+  "name": "Abbotsbury",
+  "region": "Fairfield",
+  "distance_km": 29.9,
+  "median": 1095000,
+  "g1": 3.8,
+  "g5": 43.7,
+  "sample_size": 73
+ },
+ {
+  "name": "Bossley Park",
+  "region": "Fairfield",
+  "distance_km": 29.9,
+  "median": 1245000,
+  "g1": 3.7,
+  "g5": 45.2,
+  "sample_size": 68
+ },
+ {
+  "name": "Edensor Park",
+  "region": "Fairfield",
+  "distance_km": 29.9,
+  "median": 1025000,
+  "g1": 7.4,
+  "g5": 54.4,
+  "sample_size": 55
+ },
+ {
+  "name": "Greenfield Park",
+  "region": "Fairfield",
+  "distance_km": 29.9,
+  "median": 1000000,
+  "g1": 4.5,
+  "g5": 44.1,
+  "sample_size": 75
+ },
+ {
+  "name": "Prairiewood",
+  "region": "Fairfield",
+  "distance_km": 29.9,
+  "median": 1205000,
+  "g1": 3.5,
+  "g5": 40.0,
+  "sample_size": 52
+ },
+ {
+  "name": "St Johns Park",
+  "region": "Fairfield",
+  "distance_km": 29.9,
+  "median": 1080000,
+  "g1": 7.1,
+  "g5": 49.6,
+  "sample_size": 76
+ },
+ {
+  "name": "Wakeley",
+  "region": "Fairfield",
+  "distance_km": 29.9,
+  "median": 1275000,
+  "g1": 7.3,
+  "g5": 45.7,
+  "sample_size": 49
+ },
+ {
+  "name": "Wentworth Port",
+  "region": "Fairfield",
+  "distance_km": 29.9,
+  "median": 1170000,
+  "g1": 4.9,
+  "g5": 40.6,
+  "sample_size": 53
+ },
+ {
+  "name": "Arndell Park",
+  "region": "Fairfield",
+  "distance_km": 30.0,
+  "median": 1275000,
+  "g1": 5.8,
+  "g5": 41.3,
+  "sample_size": 63
+ },
+ {
+  "name": "Blacktown",
+  "region": "Fairfield",
+  "distance_km": 30.0,
+  "median": 1020000,
+  "g1": 4.7,
+  "g5": 45.1,
+  "sample_size": 76
+ },
+ {
+  "name": "Blacktown Westpoint",
+  "region": "Fairfield",
+  "distance_km": 30.0,
+  "median": 1225000,
+  "g1": 5.4,
+  "g5": 41.2,
+  "sample_size": 59
+ },
+ {
+  "name": "Huntingwood",
+  "region": "Fairfield",
+  "distance_km": 30.0,
+  "median": 1025000,
+  "g1": 6.9,
+  "g5": 43.9,
+  "sample_size": 65
+ },
+ {
+  "name": "Kings Park",
+  "region": "Fairfield",
+  "distance_km": 30.0,
+  "median": 1270000,
+  "g1": 5.4,
+  "g5": 51.7,
+  "sample_size": 59
+ },
+ {
+  "name": "Marayong",
+  "region": "Fairfield",
+  "distance_km": 30.0,
+  "median": 1290000,
+  "g1": 5.6,
+  "g5": 41.6,
+  "sample_size": 55
+ },
+ {
+  "name": "Prospect",
+  "region": "Fairfield",
+  "distance_km": 30.0,
+  "median": 1265000,
+  "g1": 6.7,
+  "g5": 43.3,
+  "sample_size": 65
+ },
+ {
+  "name": "Glenwood",
+  "region": "Blacktown - North",
+  "distance_km": 30.2,
+  "median": 1180000,
+  "g1": 5.6,
+  "g5": 40.0,
+  "sample_size": 62
+ },
+ {
+  "name": "Parklea",
+  "region": "Blacktown - North",
+  "distance_km": 30.2,
+  "median": 1155000,
+  "g1": 3.5,
+  "g5": 46.4,
+  "sample_size": 75
+ },
+ {
+  "name": "Stanhope Gardens",
+  "region": "Blacktown - North",
+  "distance_km": 30.2,
+  "median": 1260000,
+  "g1": 4.5,
+  "g5": 37.9,
+  "sample_size": 73
+ },
+ {
+  "name": "Bonnyrigg",
+  "region": "Fairfield",
+  "distance_km": 30.6,
+  "median": 1150000,
+  "g1": 6.0,
+  "g5": 48.8,
+  "sample_size": 51
+ },
+ {
+  "name": "Bonnyrigg Heights",
+  "region": "Fairfield",
+  "distance_km": 30.6,
+  "median": 1300000,
+  "g1": 7.9,
+  "g5": 52.5,
+  "sample_size": 61
+ },
+ {
+  "name": "Smithfield",
+  "region": "Fairfield",
+  "distance_km": 31.0,
+  "median": 1175000,
+  "g1": 3.7,
+  "g5": 44.0,
+  "sample_size": 68
+ },
+ {
+  "name": "Smithfield West",
+  "region": "Fairfield",
+  "distance_km": 31.0,
+  "median": 1020000,
+  "g1": 5.5,
+  "g5": 45.6,
+  "sample_size": 78
+ },
+ {
+  "name": "Wetherill Park",
+  "region": "Fairfield",
+  "distance_km": 31.0,
+  "median": 1160000,
+  "g1": 5.2,
+  "g5": 51.3,
+  "sample_size": 54
+ },
+ {
+  "name": "Woodpark",
+  "region": "Fairfield",
+  "distance_km": 31.0,
+  "median": 1240000,
+  "g1": 5.4,
+  "g5": 39.4,
+  "sample_size": 76
+ },
+ {
+  "name": "Wattamolla",
+  "region": "Shoalhaven",
+  "distance_km": 31.0,
+  "median": 1165000,
+  "g1": 5.8,
+  "g5": 44.1,
+  "sample_size": 79
+ },
+ {
+  "name": "Coasters Retreat",
+  "region": "Pittwater",
+  "distance_km": 31.3,
+  "median": 985000,
+  "g1": 5.5,
+  "g5": 50.6,
+  "sample_size": 73
+ },
+ {
+  "name": "Currawong Beach",
+  "region": "Pittwater",
+  "distance_km": 31.3,
+  "median": 1120000,
+  "g1": 3.3,
+  "g5": 42.4,
+  "sample_size": 54
+ },
+ {
+  "name": "Great Mackerel Beach",
+  "region": "Pittwater",
+  "distance_km": 31.3,
+  "median": 965000,
+  "g1": 4.1,
+  "g5": 49.4,
+  "sample_size": 75
+ },
+ {
+  "name": "Palm Beach",
+  "region": "Pittwater",
+  "distance_km": 31.3,
+  "median": 995000,
+  "g1": 4.6,
+  "g5": 44.4,
+  "sample_size": 56
+ },
+ {
+  "name": "The Basin",
+  "region": "Pittwater",
+  "distance_km": 31.3,
+  "median": 1055000,
+  "g1": 7.2,
+  "g5": 53.4,
+  "sample_size": 80
+ },
+ {
+  "name": "North Kellyville",
+  "region": "Blacktown - North",
+  "distance_km": 31.3,
+  "median": 1065000,
+  "g1": 5.1,
+  "g5": 41.3,
+  "sample_size": 56
+ },
+ {
+  "name": "Ashcroft",
+  "region": "Liverpool",
+  "distance_km": 31.3,
+  "median": 1070000,
+  "g1": 4.4,
+  "g5": 42.1,
+  "sample_size": 81
+ },
+ {
+  "name": "Busby",
+  "region": "Liverpool",
+  "distance_km": 31.3,
+  "median": 1005000,
+  "g1": 4.6,
+  "g5": 47.4,
+  "sample_size": 61
+ },
+ {
+  "name": "Cartwright",
+  "region": "Liverpool",
+  "distance_km": 31.3,
+  "median": 1180000,
+  "g1": 4.6,
+  "g5": 40.3,
+  "sample_size": 68
+ },
+ {
+  "name": "Green Valley",
+  "region": "Liverpool",
+  "distance_km": 31.3,
+  "median": 980000,
+  "g1": 7.3,
+  "g5": 56.8,
+  "sample_size": 61
+ },
+ {
+  "name": "Heckenberg",
+  "region": "Liverpool",
+  "distance_km": 31.3,
+  "median": 1130000,
+  "g1": 5.3,
+  "g5": 42.9,
+  "sample_size": 64
+ },
+ {
+  "name": "Hinchinbrook",
+  "region": "Liverpool",
+  "distance_km": 31.3,
+  "median": 1230000,
+  "g1": 5.0,
+  "g5": 43.4,
+  "sample_size": 75
+ },
+ {
+  "name": "Miller",
+  "region": "Liverpool",
+  "distance_km": 31.3,
+  "median": 1265000,
+  "g1": 4.9,
+  "g5": 44.5,
+  "sample_size": 68
+ },
+ {
+  "name": "Sadleir",
+  "region": "Liverpool",
+  "distance_km": 31.3,
+  "median": 1220000,
+  "g1": 5.6,
+  "g5": 46.5,
+  "sample_size": 67
+ },
+ {
+  "name": "Glenfield",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 31.6,
+  "median": 1110000,
+  "g1": 5.2,
+  "g5": 46.9,
+  "sample_size": 78
+ },
+ {
+  "name": "Palona",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 31.8,
+  "median": 1115000,
+  "g1": 3.1,
+  "g5": 42.9,
+  "sample_size": 59
+ },
+ {
+  "name": "Nirimba Fields",
+  "region": "Blacktown - North",
+  "distance_km": 31.9,
+  "median": 945000,
+  "g1": 5.2,
+  "g5": 57.7,
+  "sample_size": 81
+ },
+ {
+  "name": "Annangrove",
+  "region": "Dural - Wisemans Ferry",
+  "distance_km": 32.0,
+  "median": 1095000,
+  "g1": 6.3,
+  "g5": 52.6,
+  "sample_size": 52
+ },
+ {
+  "name": "Glenhaven",
+  "region": "Dural - Wisemans Ferry",
+  "distance_km": 32.0,
+  "median": 945000,
+  "g1": 6.2,
+  "g5": 50.8,
+  "sample_size": 77
+ },
+ {
+  "name": "Kenthurst",
+  "region": "Dural - Wisemans Ferry",
+  "distance_km": 32.0,
+  "median": 960000,
+  "g1": 4.6,
+  "g5": 51.3,
+  "sample_size": 55
+ },
+ {
+  "name": "Engadine",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 32.0,
+  "median": 930000,
+  "g1": 3.8,
+  "g5": 43.9,
+  "sample_size": 78
+ },
+ {
+  "name": "Heathcote",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 32.0,
+  "median": 960000,
+  "g1": 5.3,
+  "g5": 55.7,
+  "sample_size": 60
+ },
+ {
+  "name": "Waterfall",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 32.0,
+  "median": 1130000,
+  "g1": 6.0,
+  "g5": 55.1,
+  "sample_size": 65
+ },
+ {
+  "name": "Woronora Heights",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 32.0,
+  "median": 1145000,
+  "g1": 6.3,
+  "g5": 45.4,
+  "sample_size": 62
+ },
+ {
+  "name": "Yarrawarrah",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 32.0,
+  "median": 945000,
+  "g1": 5.9,
+  "g5": 44.8,
+  "sample_size": 65
+ },
+ {
+  "name": "Glenquarie",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 32.4,
+  "median": 1125000,
+  "g1": 4.1,
+  "g5": 51.2,
+  "sample_size": 55
+ },
+ {
+  "name": "Long Point",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 32.4,
+  "median": 950000,
+  "g1": 6.6,
+  "g5": 45.9,
+  "sample_size": 70
+ },
+ {
+  "name": "Macquarie Fields",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 32.4,
+  "median": 990000,
+  "g1": 4.2,
+  "g5": 45.0,
+  "sample_size": 53
+ },
+ {
+  "name": "Uloola",
+  "region": "Sutherland - Menai - Heathcote",
+  "distance_km": 33.0,
+  "median": 1080000,
+  "g1": 5.6,
+  "g5": 40.1,
+  "sample_size": 79
+ },
+ {
+  "name": "Acacia Gardens",
+  "region": "Blacktown - North",
+  "distance_km": 33.1,
+  "median": 1050000,
+  "g1": 4.4,
+  "g5": 51.3,
+  "sample_size": 60
+ },
+ {
+  "name": "Quakers Hill",
+  "region": "Blacktown - North",
+  "distance_km": 33.1,
+  "median": 1120000,
+  "g1": 5.9,
+  "g5": 40.1,
+  "sample_size": 57
+ },
+ {
+  "name": "Len Waters Estate",
+  "region": "Liverpool",
+  "distance_km": 33.3,
+  "median": 1070000,
+  "g1": 5.2,
+  "g5": 47.1,
+  "sample_size": 76
+ },
+ {
+  "name": "Bungarribee",
+  "region": "Mount Druitt",
+  "distance_km": 33.3,
+  "median": 1095000,
+  "g1": 3.7,
+  "g5": 40.9,
+  "sample_size": 64
+ },
+ {
+  "name": "Doonside",
+  "region": "Mount Druitt",
+  "distance_km": 33.3,
+  "median": 1040000,
+  "g1": 6.6,
+  "g5": 44.6,
+  "sample_size": 52
+ },
+ {
+  "name": "Woodcroft",
+  "region": "Mount Druitt",
+  "distance_km": 33.3,
+  "median": 1135000,
+  "g1": 5.3,
+  "g5": 39.9,
+  "sample_size": 64
+ },
+ {
+  "name": "Horsley Park",
+  "region": "Fairfield",
+  "distance_km": 33.4,
+  "median": 1110000,
+  "g1": 5.4,
+  "g5": 50.4,
+  "sample_size": 61
+ },
+ {
+  "name": "The Ponds",
+  "region": "Blacktown - North",
+  "distance_km": 33.4,
+  "median": 1175000,
+  "g1": 6.5,
+  "g5": 45.8,
+  "sample_size": 72
+ },
+ {
+  "name": "Elizabeth Hills",
+  "region": "Liverpool",
+  "distance_km": 33.5,
+  "median": 910000,
+  "g1": 7.8,
+  "g5": 56.6,
+  "sample_size": 63
+ },
+ {
+  "name": "Eastern Creek",
+  "region": "Mount Druitt",
+  "distance_km": 33.7,
+  "median": 930000,
+  "g1": 5.5,
+  "g5": 51.8,
+  "sample_size": 62
+ },
+ {
+  "name": "Rooty Hill",
+  "region": "Mount Druitt",
+  "distance_km": 33.7,
+  "median": 915000,
+  "g1": 3.9,
+  "g5": 48.4,
+  "sample_size": 66
+ },
+ {
+  "name": "Carnes Hill",
+  "region": "Liverpool",
+  "distance_km": 34.1,
+  "median": 910000,
+  "g1": 4.5,
+  "g5": 42.9,
+  "sample_size": 64
+ },
+ {
+  "name": "Middleton Grange",
+  "region": "Liverpool",
+  "distance_km": 34.2,
+  "median": 1100000,
+  "g1": 7.7,
+  "g5": 53.9,
+  "sample_size": 62
+ },
+ {
+  "name": "Bardia",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 34.2,
+  "median": 1050000,
+  "g1": 6.9,
+  "g5": 44.2,
+  "sample_size": 79
+ },
+ {
+  "name": "Berowra Heights",
+  "region": "Hornsby",
+  "distance_km": 34.3,
+  "median": 915000,
+  "g1": 6.9,
+  "g5": 50.5,
+  "sample_size": 64
+ },
+ {
+  "name": "Berowra Waters",
+  "region": "Hornsby",
+  "distance_km": 34.3,
+  "median": 975000,
+  "g1": 7.1,
+  "g5": 45.3,
+  "sample_size": 67
+ },
+ {
+  "name": "Cecil Park",
+  "region": "Fairfield",
+  "distance_km": 34.3,
+  "median": 1045000,
+  "g1": 5.5,
+  "g5": 53.7,
+  "sample_size": 79
+ },
+ {
+  "name": "Kemps Creek",
+  "region": "Fairfield",
+  "distance_km": 34.3,
+  "median": 1090000,
+  "g1": 7.0,
+  "g5": 43.9,
+  "sample_size": 51
+ },
+ {
+  "name": "Mount Vernon",
+  "region": "Fairfield",
+  "distance_km": 34.3,
+  "median": 885000,
+  "g1": 6.6,
+  "g5": 44.9,
+  "sample_size": 62
+ },
+ {
+  "name": "Holsworthy",
+  "region": "Liverpool",
+  "distance_km": 35.2,
+  "median": 1130000,
+  "g1": 6.2,
+  "g5": 40.6,
+  "sample_size": 61
+ },
+ {
+  "name": "Wattle Grove",
+  "region": "Liverpool",
+  "distance_km": 35.2,
+  "median": 955000,
+  "g1": 4.7,
+  "g5": 47.5,
+  "sample_size": 57
+ },
+ {
+  "name": "Tallawong",
+  "region": "Blacktown - North",
+  "distance_km": 35.3,
+  "median": 1150000,
+  "g1": 6.4,
+  "g5": 44.7,
+  "sample_size": 76
+ },
+ {
+  "name": "Schofields",
+  "region": "Blacktown - North",
+  "distance_km": 35.7,
+  "median": 1115000,
+  "g1": 5.5,
+  "g5": 53.9,
+  "sample_size": 58
+ },
+ {
+  "name": "Canoelands",
+  "region": "Dural - Wisemans Ferry",
+  "distance_km": 35.9,
+  "median": 1080000,
+  "g1": 3.4,
+  "g5": 40.2,
+  "sample_size": 68
+ },
+ {
+  "name": "Forest Glen",
+  "region": "Dural - Wisemans Ferry",
+  "distance_km": 35.9,
+  "median": 965000,
+  "g1": 6.4,
+  "g5": 48.8,
+  "sample_size": 67
+ },
+ {
+  "name": "Glenorie",
+  "region": "Dural - Wisemans Ferry",
+  "distance_km": 35.9,
+  "median": 1020000,
+  "g1": 6.9,
+  "g5": 41.6,
+  "sample_size": 80
+ },
+ {
+  "name": "Hillside",
+  "region": "Dural - Wisemans Ferry",
+  "distance_km": 35.9,
+  "median": 1045000,
+  "g1": 5.9,
+  "g5": 47.6,
+  "sample_size": 71
+ },
+ {
+  "name": "Colebee",
+  "region": "Mount Druitt",
+  "distance_km": 36.3,
+  "median": 1015000,
+  "g1": 4.3,
+  "g5": 50.7,
+  "sample_size": 70
+ },
+ {
+  "name": "Dean Park",
+  "region": "Mount Druitt",
+  "distance_km": 36.3,
+  "median": 1105000,
+  "g1": 4.5,
+  "g5": 47.4,
+  "sample_size": 75
+ },
+ {
+  "name": "Glendenning",
+  "region": "Mount Druitt",
+  "distance_km": 36.3,
+  "median": 875000,
+  "g1": 4.0,
+  "g5": 43.5,
+  "sample_size": 75
+ },
+ {
+  "name": "Hassall Grove",
+  "region": "Mount Druitt",
+  "distance_km": 36.3,
+  "median": 1075000,
+  "g1": 6.9,
+  "g5": 55.5,
+  "sample_size": 67
+ },
+ {
+  "name": "Oakhurst",
+  "region": "Mount Druitt",
+  "distance_km": 36.3,
+  "median": 1045000,
+  "g1": 4.1,
+  "g5": 42.6,
+  "sample_size": 75
+ },
+ {
+  "name": "Plumpton",
+  "region": "Mount Druitt",
+  "distance_km": 36.3,
+  "median": 1085000,
+  "g1": 4.3,
+  "g5": 47.5,
+  "sample_size": 56
+ },
+ {
+  "name": "Berowra Creek",
+  "region": "Hornsby",
+  "distance_km": 36.5,
+  "median": 1075000,
+  "g1": 5.8,
+  "g5": 54.1,
+  "sample_size": 63
+ },
+ {
+  "name": "Denham Court",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 36.6,
+  "median": 1080000,
+  "g1": 6.0,
+  "g5": 42.6,
+  "sample_size": 71
+ },
+ {
+  "name": "Ingleburn",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 36.6,
+  "median": 870000,
+  "g1": 6.7,
+  "g5": 46.5,
+  "sample_size": 58
+ },
+ {
+  "name": "Macquarie Links",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 36.6,
+  "median": 895000,
+  "g1": 7.6,
+  "g5": 56.5,
+  "sample_size": 84
+ },
+ {
+  "name": "Austral",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 37.4,
+  "median": 940000,
+  "g1": 7.3,
+  "g5": 49.0,
+  "sample_size": 63
+ },
+ {
+  "name": "Leppington",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 37.4,
+  "median": 980000,
+  "g1": 3.5,
+  "g5": 43.1,
+  "sample_size": 80
+ },
+ {
+  "name": "Bar Point",
+  "region": "Hornsby",
+  "distance_km": 38.2,
+  "median": 830000,
+  "g1": 7.2,
+  "g5": 57.1,
+  "sample_size": 67
+ },
+ {
+  "name": "Brooklyn",
+  "region": "Hornsby",
+  "distance_km": 38.2,
+  "median": 995000,
+  "g1": 6.3,
+  "g5": 51.7,
+  "sample_size": 70
+ },
+ {
+  "name": "Cogra Bay",
+  "region": "Hornsby",
+  "distance_km": 38.2,
+  "median": 950000,
+  "g1": 7.1,
+  "g5": 54.7,
+  "sample_size": 68
+ },
+ {
+  "name": "Dangar Island",
+  "region": "Hornsby",
+  "distance_km": 38.2,
+  "median": 955000,
+  "g1": 7.7,
+  "g5": 53.8,
+  "sample_size": 66
+ },
+ {
+  "name": "Milsons Passage",
+  "region": "Hornsby",
+  "distance_km": 38.2,
+  "median": 935000,
+  "g1": 6.1,
+  "g5": 52.6,
+  "sample_size": 81
+ },
+ {
+  "name": "Mooney Mooney",
+  "region": "Hornsby",
+  "distance_km": 38.2,
+  "median": 1005000,
+  "g1": 5.2,
+  "g5": 47.4,
+  "sample_size": 60
+ },
+ {
+  "name": "Bow Bowing",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 38.2,
+  "median": 880000,
+  "g1": 6.1,
+  "g5": 46.0,
+  "sample_size": 76
+ },
+ {
+  "name": "Minto",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 38.2,
+  "median": 1060000,
+  "g1": 5.6,
+  "g5": 47.8,
+  "sample_size": 52
+ },
+ {
+  "name": "Minto Heights",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 38.2,
+  "median": 910000,
+  "g1": 5.7,
+  "g5": 46.9,
+  "sample_size": 64
+ },
+ {
+  "name": "Raby",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 38.2,
+  "median": 930000,
+  "g1": 4.3,
+  "g5": 49.8,
+  "sample_size": 80
+ },
+ {
+  "name": "St Andrews",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 38.2,
+  "median": 1020000,
+  "g1": 4.5,
+  "g5": 54.2,
+  "sample_size": 59
+ },
+ {
+  "name": "Varroville",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 38.2,
+  "median": 920000,
+  "g1": 5.9,
+  "g5": 43.7,
+  "sample_size": 83
+ },
+ {
+  "name": "Arcadia",
+  "region": "Dural - Wisemans Ferry",
+  "distance_km": 38.4,
+  "median": 1030000,
+  "g1": 6.7,
+  "g5": 41.5,
+  "sample_size": 66
+ },
+ {
+  "name": "Berrilee",
+  "region": "Dural - Wisemans Ferry",
+  "distance_km": 38.4,
+  "median": 850000,
+  "g1": 4.6,
+  "g5": 55.1,
+  "sample_size": 55
+ },
+ {
+  "name": "Fiddletown",
+  "region": "Dural - Wisemans Ferry",
+  "distance_km": 38.4,
+  "median": 820000,
+  "g1": 6.7,
+  "g5": 55.8,
+  "sample_size": 81
+ },
+ {
+  "name": "Galston",
+  "region": "Dural - Wisemans Ferry",
+  "distance_km": 38.4,
+  "median": 965000,
+  "g1": 6.9,
+  "g5": 53.0,
+  "sample_size": 64
+ },
+ {
+  "name": "Bidwill",
+  "region": "Mount Druitt",
+  "distance_km": 38.9,
+  "median": 1020000,
+  "g1": 7.1,
+  "g5": 51.6,
+  "sample_size": 80
+ },
+ {
+  "name": "Blackett",
+  "region": "Mount Druitt",
+  "distance_km": 38.9,
+  "median": 1000000,
+  "g1": 7.2,
+  "g5": 54.3,
+  "sample_size": 81
+ },
+ {
+  "name": "Dharruk",
+  "region": "Mount Druitt",
+  "distance_km": 38.9,
+  "median": 930000,
+  "g1": 6.6,
+  "g5": 48.6,
+  "sample_size": 55
+ },
+ {
+  "name": "Emerton",
+  "region": "Mount Druitt",
+  "distance_km": 38.9,
+  "median": 935000,
+  "g1": 6.7,
+  "g5": 45.7,
+  "sample_size": 69
+ },
+ {
+  "name": "Hebersham",
+  "region": "Mount Druitt",
+  "distance_km": 38.9,
+  "median": 875000,
+  "g1": 4.5,
+  "g5": 51.1,
+  "sample_size": 63
+ },
+ {
+  "name": "Lethbridge Park",
+  "region": "Mount Druitt",
+  "distance_km": 38.9,
+  "median": 840000,
+  "g1": 4.9,
+  "g5": 48.6,
+  "sample_size": 84
+ },
+ {
+  "name": "Minchinbury",
+  "region": "Mount Druitt",
+  "distance_km": 38.9,
+  "median": 845000,
+  "g1": 5.6,
+  "g5": 49.2,
+  "sample_size": 76
+ },
+ {
+  "name": "Mount Druitt",
+  "region": "Mount Druitt",
+  "distance_km": 38.9,
+  "median": 1055000,
+  "g1": 5.7,
+  "g5": 41.4,
+  "sample_size": 74
+ },
+ {
+  "name": "Mount Druitt Village",
+  "region": "Mount Druitt",
+  "distance_km": 38.9,
+  "median": 990000,
+  "g1": 7.2,
+  "g5": 55.4,
+  "sample_size": 78
+ },
+ {
+  "name": "Shalvey",
+  "region": "Mount Druitt",
+  "distance_km": 38.9,
+  "median": 885000,
+  "g1": 4.0,
+  "g5": 46.8,
+  "sample_size": 57
+ },
+ {
+  "name": "Tregear",
+  "region": "Mount Druitt",
+  "distance_km": 38.9,
+  "median": 1055000,
+  "g1": 8.2,
+  "g5": 53.2,
+  "sample_size": 59
+ },
+ {
+  "name": "Whalan",
+  "region": "Mount Druitt",
+  "distance_km": 38.9,
+  "median": 1005000,
+  "g1": 7.0,
+  "g5": 56.1,
+  "sample_size": 77
+ },
+ {
+  "name": "Willmot",
+  "region": "Mount Druitt",
+  "distance_km": 38.9,
+  "median": 865000,
+  "g1": 5.1,
+  "g5": 52.4,
+  "sample_size": 80
+ },
+ {
+  "name": "Berkshire Park",
+  "region": "Richmond - Windsor",
+  "distance_km": 39.6,
+  "median": 860000,
+  "g1": 6.4,
+  "g5": 47.1,
+  "sample_size": 64
+ },
+ {
+  "name": "Box Hill",
+  "region": "Richmond - Windsor",
+  "distance_km": 39.6,
+  "median": 880000,
+  "g1": 5.9,
+  "g5": 45.0,
+  "sample_size": 79
+ },
+ {
+  "name": "Maraylya",
+  "region": "Richmond - Windsor",
+  "distance_km": 39.6,
+  "median": 970000,
+  "g1": 5.3,
+  "g5": 51.5,
+  "sample_size": 72
+ },
+ {
+  "name": "Marsden Park",
+  "region": "Richmond - Windsor",
+  "distance_km": 39.6,
+  "median": 810000,
+  "g1": 7.2,
+  "g5": 45.8,
+  "sample_size": 79
+ },
+ {
+  "name": "Nelson",
+  "region": "Richmond - Windsor",
+  "distance_km": 39.6,
+  "median": 945000,
+  "g1": 5.9,
+  "g5": 54.6,
+  "sample_size": 76
+ },
+ {
+  "name": "Oakville",
+  "region": "Richmond - Windsor",
+  "distance_km": 39.6,
+  "median": 810000,
+  "g1": 5.8,
+  "g5": 54.8,
+  "sample_size": 74
+ },
+ {
+  "name": "Riverstone",
+  "region": "Richmond - Windsor",
+  "distance_km": 39.6,
+  "median": 1020000,
+  "g1": 5.4,
+  "g5": 56.3,
+  "sample_size": 77
+ },
+ {
+  "name": "Vineyard",
+  "region": "Richmond - Windsor",
+  "distance_km": 39.6,
+  "median": 975000,
+  "g1": 5.9,
+  "g5": 47.6,
+  "sample_size": 70
+ },
+ {
+  "name": "Erskine Park",
+  "region": "St Marys",
+  "distance_km": 39.8,
+  "median": 770000,
+  "g1": 5.6,
+  "g5": 51.6,
+  "sample_size": 76
+ },
+ {
+  "name": "St Clair",
+  "region": "St Marys",
+  "distance_km": 39.8,
+  "median": 790000,
+  "g1": 6.8,
+  "g5": 56.9,
+  "sample_size": 82
+ },
+ {
+  "name": "Cheero Point",
+  "region": "Hornsby",
+  "distance_km": 39.9,
+  "median": 970000,
+  "g1": 7.3,
+  "g5": 56.8,
+  "sample_size": 62
+ },
+ {
+  "name": "Woronora Dam",
+  "region": "Wollongong",
+  "distance_km": 41.3,
+  "median": 870000,
+  "g1": 7.5,
+  "g5": 58.5,
+  "sample_size": 83
+ },
+ {
+  "name": "Colyton",
+  "region": "St Marys",
+  "distance_km": 41.3,
+  "median": 995000,
+  "g1": 5.6,
+  "g5": 44.7,
+  "sample_size": 80
+ },
+ {
+  "name": "North St Marys",
+  "region": "St Marys",
+  "distance_km": 41.3,
+  "median": 785000,
+  "g1": 5.2,
+  "g5": 52.9,
+  "sample_size": 57
+ },
+ {
+  "name": "Oxley Park",
+  "region": "St Marys",
+  "distance_km": 41.3,
+  "median": 830000,
+  "g1": 7.9,
+  "g5": 53.9,
+  "sample_size": 77
+ },
+ {
+  "name": "St Marys",
+  "region": "St Marys",
+  "distance_km": 41.3,
+  "median": 770000,
+  "g1": 4.4,
+  "g5": 53.2,
+  "sample_size": 76
+ },
+ {
+  "name": "St Marys East",
+  "region": "St Marys",
+  "distance_km": 41.3,
+  "median": 825000,
+  "g1": 4.1,
+  "g5": 43.4,
+  "sample_size": 65
+ },
+ {
+  "name": "St Marys South",
+  "region": "St Marys",
+  "distance_km": 41.3,
+  "median": 940000,
+  "g1": 5.3,
+  "g5": 56.9,
+  "sample_size": 82
+ },
+ {
+  "name": "Booker Bay",
+  "region": "Gosford",
+  "distance_km": 41.6,
+  "median": 990000,
+  "g1": 6.3,
+  "g5": 41.4,
+  "sample_size": 64
+ },
+ {
+  "name": "Box Head",
+  "region": "Gosford",
+  "distance_km": 41.6,
+  "median": 835000,
+  "g1": 4.1,
+  "g5": 44.1,
+  "sample_size": 76
+ },
+ {
+  "name": "Daleys Point",
+  "region": "Gosford",
+  "distance_km": 41.6,
+  "median": 760000,
+  "g1": 5.4,
+  "g5": 53.1,
+  "sample_size": 60
+ },
+ {
+  "name": "Empire Bay",
+  "region": "Gosford",
+  "distance_km": 41.6,
+  "median": 920000,
+  "g1": 4.2,
+  "g5": 50.8,
+  "sample_size": 67
+ },
+ {
+  "name": "Ettalong Beach",
+  "region": "Gosford",
+  "distance_km": 41.6,
+  "median": 795000,
+  "g1": 6.3,
+  "g5": 57.1,
+  "sample_size": 86
+ },
+ {
+  "name": "Hardys Bay",
+  "region": "Gosford",
+  "distance_km": 41.6,
+  "median": 985000,
+  "g1": 6.4,
+  "g5": 52.3,
+  "sample_size": 59
+ },
+ {
+  "name": "Killcare",
+  "region": "Gosford",
+  "distance_km": 41.6,
+  "median": 910000,
+  "g1": 5.9,
+  "g5": 46.4,
+  "sample_size": 58
+ },
+ {
+  "name": "Killcare Heights",
+  "region": "Gosford",
+  "distance_km": 41.6,
+  "median": 910000,
+  "g1": 6.3,
+  "g5": 56.9,
+  "sample_size": 80
+ },
+ {
+  "name": "Pretty Beach",
+  "region": "Gosford",
+  "distance_km": 41.6,
+  "median": 815000,
+  "g1": 5.2,
+  "g5": 52.8,
+  "sample_size": 74
+ },
+ {
+  "name": "St Huberts Island",
+  "region": "Gosford",
+  "distance_km": 41.6,
+  "median": 980000,
+  "g1": 5.8,
+  "g5": 56.6,
+  "sample_size": 75
+ },
+ {
+  "name": "Umina Beach",
+  "region": "Gosford",
+  "distance_km": 41.6,
+  "median": 860000,
+  "g1": 6.3,
+  "g5": 55.3,
+  "sample_size": 72
+ },
+ {
+  "name": "Wagstaffe",
+  "region": "Gosford",
+  "distance_km": 41.6,
+  "median": 945000,
+  "g1": 4.2,
+  "g5": 47.0,
+  "sample_size": 55
+ },
+ {
+  "name": "Eagle Vale",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 41.9,
+  "median": 870000,
+  "g1": 4.9,
+  "g5": 54.6,
+  "sample_size": 56
+ },
+ {
+  "name": "Eschol Park",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 41.9,
+  "median": 975000,
+  "g1": 3.6,
+  "g5": 42.8,
+  "sample_size": 56
+ },
+ {
+  "name": "Kearns",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 41.9,
+  "median": 900000,
+  "g1": 5.7,
+  "g5": 52.5,
+  "sample_size": 65
+ },
+ {
+  "name": "Catherine Field",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 42.4,
+  "median": 770000,
+  "g1": 4.2,
+  "g5": 52.5,
+  "sample_size": 76
+ },
+ {
+  "name": "Gregory Hills",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 42.4,
+  "median": 795000,
+  "g1": 4.0,
+  "g5": 50.4,
+  "sample_size": 85
+ },
+ {
+  "name": "Rossmore",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 42.4,
+  "median": 940000,
+  "g1": 5.1,
+  "g5": 54.8,
+  "sample_size": 65
+ },
+ {
+  "name": "Gledswood Hills",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 42.6,
+  "median": 800000,
+  "g1": 5.1,
+  "g5": 44.1,
+  "sample_size": 68
+ },
+ {
+  "name": "Ropes Crossing",
+  "region": "St Marys",
+  "distance_km": 42.6,
+  "median": 755000,
+  "g1": 5.1,
+  "g5": 55.4,
+  "sample_size": 78
+ },
+ {
+  "name": "Badgerys Creek",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 43.2,
+  "median": 890000,
+  "g1": 5.2,
+  "g5": 57.6,
+  "sample_size": 78
+ },
+ {
+  "name": "Blairmount",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 43.4,
+  "median": 775000,
+  "g1": 6.4,
+  "g5": 45.4,
+  "sample_size": 86
+ },
+ {
+  "name": "Claymore",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 43.4,
+  "median": 915000,
+  "g1": 5.8,
+  "g5": 48.0,
+  "sample_size": 56
+ },
+ {
+  "name": "Angus",
+  "region": "Richmond - Windsor",
+  "distance_km": 44.0,
+  "median": 825000,
+  "g1": 4.5,
+  "g5": 54.5,
+  "sample_size": 70
+ },
+ {
+  "name": "Gables",
+  "region": "Richmond - Windsor",
+  "distance_km": 44.0,
+  "median": 930000,
+  "g1": 6.0,
+  "g5": 49.6,
+  "sample_size": 70
+ },
+ {
+  "name": "Grantham Farm",
+  "region": "Richmond - Windsor",
+  "distance_km": 44.0,
+  "median": 775000,
+  "g1": 5.2,
+  "g5": 50.3,
+  "sample_size": 66
+ },
+ {
+  "name": "Melonba",
+  "region": "Richmond - Windsor",
+  "distance_km": 44.0,
+  "median": 930000,
+  "g1": 7.4,
+  "g5": 57.3,
+  "sample_size": 82
+ },
+ {
+  "name": "Richards",
+  "region": "Richmond - Windsor",
+  "distance_km": 44.0,
+  "median": 750000,
+  "g1": 6.6,
+  "g5": 51.9,
+  "sample_size": 66
+ },
+ {
+  "name": "Bradfield",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 44.2,
+  "median": 930000,
+  "g1": 5.4,
+  "g5": 58.0,
+  "sample_size": 80
+ },
+ {
+  "name": "Blackwall",
+  "region": "Gosford",
+  "distance_km": 44.5,
+  "median": 845000,
+  "g1": 4.9,
+  "g5": 54.9,
+  "sample_size": 80
+ },
+ {
+  "name": "Horsfield Bay",
+  "region": "Gosford",
+  "distance_km": 44.5,
+  "median": 860000,
+  "g1": 7.4,
+  "g5": 53.7,
+  "sample_size": 83
+ },
+ {
+  "name": "Koolewong",
+  "region": "Gosford",
+  "distance_km": 44.5,
+  "median": 790000,
+  "g1": 5.5,
+  "g5": 44.8,
+  "sample_size": 72
+ },
+ {
+  "name": "Little Wobby",
+  "region": "Gosford",
+  "distance_km": 44.5,
+  "median": 760000,
+  "g1": 7.0,
+  "g5": 56.7,
+  "sample_size": 68
+ },
+ {
+  "name": "Patonga",
+  "region": "Gosford",
+  "distance_km": 44.5,
+  "median": 700000,
+  "g1": 7.0,
+  "g5": 55.8,
+  "sample_size": 68
+ },
+ {
+  "name": "Pearl Beach",
+  "region": "Gosford",
+  "distance_km": 44.5,
+  "median": 790000,
+  "g1": 4.4,
+  "g5": 48.7,
+  "sample_size": 75
+ },
+ {
+  "name": "Phegans Bay",
+  "region": "Gosford",
+  "distance_km": 44.5,
+  "median": 840000,
+  "g1": 6.8,
+  "g5": 45.9,
+  "sample_size": 64
+ },
+ {
+  "name": "Wondabyne",
+  "region": "Gosford",
+  "distance_km": 44.5,
+  "median": 785000,
+  "g1": 5.3,
+  "g5": 49.5,
+  "sample_size": 79
+ },
+ {
+  "name": "Woy Woy",
+  "region": "Gosford",
+  "distance_km": 44.5,
+  "median": 875000,
+  "g1": 7.8,
+  "g5": 50.5,
+  "sample_size": 66
+ },
+ {
+  "name": "Woy Woy Bay",
+  "region": "Gosford",
+  "distance_km": 44.5,
+  "median": 845000,
+  "g1": 5.9,
+  "g5": 57.9,
+  "sample_size": 64
+ },
+ {
+  "name": "Caddens",
+  "region": "Penrith",
+  "distance_km": 44.8,
+  "median": 745000,
+  "g1": 5.9,
+  "g5": 47.4,
+  "sample_size": 85
+ },
+ {
+  "name": "Orchard Hills",
+  "region": "St Marys",
+  "distance_km": 45.4,
+  "median": 870000,
+  "g1": 5.4,
+  "g5": 44.5,
+  "sample_size": 56
+ },
+ {
+  "name": "Bringelly",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 45.5,
+  "median": 810000,
+  "g1": 4.8,
+  "g5": 56.8,
+  "sample_size": 79
+ },
+ {
+  "name": "Singletons Mill",
+  "region": "Hawkesbury",
+  "distance_km": 45.6,
+  "median": 685000,
+  "g1": 8.8,
+  "g5": 58.7,
+  "sample_size": 75
+ },
+ {
+  "name": "Coalcliff",
+  "region": "Wollongong",
+  "distance_km": 45.9,
+  "median": 685000,
+  "g1": 5.3,
+  "g5": 45.9,
+  "sample_size": 59
+ },
+ {
+  "name": "Darkes Forest",
+  "region": "Wollongong",
+  "distance_km": 45.9,
+  "median": 880000,
+  "g1": 5.6,
+  "g5": 53.1,
+  "sample_size": 59
+ },
+ {
+  "name": "Helensburgh",
+  "region": "Wollongong",
+  "distance_km": 45.9,
+  "median": 830000,
+  "g1": 5.1,
+  "g5": 53.1,
+  "sample_size": 77
+ },
+ {
+  "name": "Lilyvale",
+  "region": "Wollongong",
+  "distance_km": 45.9,
+  "median": 740000,
+  "g1": 3.4,
+  "g5": 45.6,
+  "sample_size": 58
+ },
+ {
+  "name": "Maddens Plains",
+  "region": "Wollongong",
+  "distance_km": 45.9,
+  "median": 920000,
+  "g1": 6.8,
+  "g5": 44.2,
+  "sample_size": 80
+ },
+ {
+  "name": "Otford",
+  "region": "Wollongong",
+  "distance_km": 45.9,
+  "median": 840000,
+  "g1": 6.0,
+  "g5": 58.8,
+  "sample_size": 80
+ },
+ {
+  "name": "Stanwell Park",
+  "region": "Wollongong",
+  "distance_km": 45.9,
+  "median": 910000,
+  "g1": 4.9,
+  "g5": 48.8,
+  "sample_size": 66
+ },
+ {
+  "name": "Stanwell Tops",
+  "region": "Wollongong",
+  "distance_km": 45.9,
+  "median": 695000,
+  "g1": 7.7,
+  "g5": 50.1,
+  "sample_size": 73
+ },
+ {
+  "name": "Pitt Town Bottoms",
+  "region": "Richmond - Windsor",
+  "distance_km": 46.0,
+  "median": 725000,
+  "g1": 5.1,
+  "g5": 53.7,
+  "sample_size": 79
+ },
+ {
+  "name": "Cambridge Gardens",
+  "region": "Penrith",
+  "distance_km": 46.4,
+  "median": 790000,
+  "g1": 7.4,
+  "g5": 49.9,
+  "sample_size": 84
+ },
+ {
+  "name": "Cambridge Park",
+  "region": "Penrith",
+  "distance_km": 46.4,
+  "median": 680000,
+  "g1": 6.2,
+  "g5": 45.4,
+  "sample_size": 74
+ },
+ {
+  "name": "Claremont Meadows",
+  "region": "Penrith",
+  "distance_km": 46.4,
+  "median": 760000,
+  "g1": 5.7,
+  "g5": 50.3,
+  "sample_size": 80
+ },
+ {
+  "name": "Kingswood",
+  "region": "Penrith",
+  "distance_km": 46.4,
+  "median": 780000,
+  "g1": 7.8,
+  "g5": 49.0,
+  "sample_size": 84
+ },
+ {
+  "name": "Llandilo",
+  "region": "Penrith",
+  "distance_km": 46.4,
+  "median": 725000,
+  "g1": 6.7,
+  "g5": 48.3,
+  "sample_size": 82
+ },
+ {
+  "name": "Shanes Park",
+  "region": "Penrith",
+  "distance_km": 46.4,
+  "median": 680000,
+  "g1": 5.8,
+  "g5": 49.7,
+  "sample_size": 87
+ },
+ {
+  "name": "Werrington",
+  "region": "Penrith",
+  "distance_km": 46.4,
+  "median": 840000,
+  "g1": 8.3,
+  "g5": 58.6,
+  "sample_size": 83
+ },
+ {
+  "name": "Werrington County",
+  "region": "Penrith",
+  "distance_km": 46.4,
+  "median": 910000,
+  "g1": 4.9,
+  "g5": 50.6,
+  "sample_size": 58
+ },
+ {
+  "name": "Werrington Downs",
+  "region": "Penrith",
+  "distance_km": 46.4,
+  "median": 815000,
+  "g1": 6.2,
+  "g5": 50.0,
+  "sample_size": 61
+ },
+ {
+  "name": "Avoca Beach",
+  "region": "Gosford",
+  "distance_km": 46.5,
+  "median": 895000,
+  "g1": 4.9,
+  "g5": 46.9,
+  "sample_size": 65
+ },
+ {
+  "name": "Bensville",
+  "region": "Gosford",
+  "distance_km": 46.5,
+  "median": 865000,
+  "g1": 4.6,
+  "g5": 55.6,
+  "sample_size": 59
+ },
+ {
+  "name": "Bouddi",
+  "region": "Gosford",
+  "distance_km": 46.5,
+  "median": 855000,
+  "g1": 7.8,
+  "g5": 52.3,
+  "sample_size": 58
+ },
+ {
+  "name": "Copacabana",
+  "region": "Gosford",
+  "distance_km": 46.5,
+  "median": 690000,
+  "g1": 4.2,
+  "g5": 46.4,
+  "sample_size": 86
+ },
+ {
+  "name": "Davistown",
+  "region": "Gosford",
+  "distance_km": 46.5,
+  "median": 760000,
+  "g1": 4.6,
+  "g5": 54.7,
+  "sample_size": 61
+ },
+ {
+  "name": "Green Point",
+  "region": "Gosford",
+  "distance_km": 46.5,
+  "median": 800000,
+  "g1": 6.7,
+  "g5": 57.5,
+  "sample_size": 68
+ },
+ {
+  "name": "Kincumber",
+  "region": "Gosford",
+  "distance_km": 46.5,
+  "median": 755000,
+  "g1": 3.9,
+  "g5": 49.7,
+  "sample_size": 75
+ },
+ {
+  "name": "Kincumber South",
+  "region": "Gosford",
+  "distance_km": 46.5,
+  "median": 880000,
+  "g1": 4.1,
+  "g5": 49.7,
+  "sample_size": 71
+ },
+ {
+  "name": "Macmasters Beach",
+  "region": "Gosford",
+  "distance_km": 46.5,
+  "median": 720000,
+  "g1": 5.5,
+  "g5": 52.0,
+  "sample_size": 61
+ },
+ {
+  "name": "Picketts Valley",
+  "region": "Gosford",
+  "distance_km": 46.5,
+  "median": 785000,
+  "g1": 7.6,
+  "g5": 59.7,
+  "sample_size": 69
+ },
+ {
+  "name": "Saratoga",
+  "region": "Gosford",
+  "distance_km": 46.5,
+  "median": 890000,
+  "g1": 5.0,
+  "g5": 55.0,
+  "sample_size": 56
+ },
+ {
+  "name": "Yattalunga",
+  "region": "Gosford",
+  "distance_km": 46.5,
+  "median": 710000,
+  "g1": 4.3,
+  "g5": 52.1,
+  "sample_size": 85
+ },
+ {
+  "name": "Currans Hill",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 46.6,
+  "median": 675000,
+  "g1": 8.4,
+  "g5": 59.9,
+  "sample_size": 74
+ },
+ {
+  "name": "Harrington Park",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 46.6,
+  "median": 820000,
+  "g1": 7.4,
+  "g5": 49.2,
+  "sample_size": 78
+ },
+ {
+  "name": "Mount Annan",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 46.6,
+  "median": 860000,
+  "g1": 4.2,
+  "g5": 46.0,
+  "sample_size": 61
+ },
+ {
+  "name": "Narellan",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 46.6,
+  "median": 830000,
+  "g1": 6.0,
+  "g5": 50.4,
+  "sample_size": 82
+ },
+ {
+  "name": "Narellan Vale",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 46.6,
+  "median": 795000,
+  "g1": 5.0,
+  "g5": 53.8,
+  "sample_size": 71
+ },
+ {
+  "name": "Smeaton Grange",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 46.6,
+  "median": 905000,
+  "g1": 4.2,
+  "g5": 44.0,
+  "sample_size": 71
+ },
+ {
+  "name": "Jordan Springs",
+  "region": "Penrith",
+  "distance_km": 47.4,
+  "median": 700000,
+  "g1": 8.0,
+  "g5": 51.4,
+  "sample_size": 71
+ },
+ {
+  "name": "Shane Park",
+  "region": "Penrith",
+  "distance_km": 47.4,
+  "median": 700000,
+  "g1": 7.9,
+  "g5": 56.7,
+  "sample_size": 69
+ },
+ {
+  "name": "Menangle Park",
+  "region": "Campbelltown (NSW)",
+  "distance_km": 49.7,
+  "median": 855000,
+  "g1": 6.0,
+  "g5": 49.1,
+  "sample_size": 76
+ },
+ {
+  "name": "Glenmore Park",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 49.7,
+  "median": 840000,
+  "g1": 5.7,
+  "g5": 53.4,
+  "sample_size": 57
+ },
+ {
+  "name": "Greendale",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 49.7,
+  "median": 775000,
+  "g1": 7.1,
+  "g5": 54.6,
+  "sample_size": 83
+ },
+ {
+  "name": "Luddenham",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 49.7,
+  "median": 850000,
+  "g1": 6.6,
+  "g5": 54.1,
+  "sample_size": 80
+ },
+ {
+  "name": "Mulgoa",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 49.7,
+  "median": 710000,
+  "g1": 5.6,
+  "g5": 58.1,
+  "sample_size": 79
+ },
+ {
+  "name": "Regentville",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 49.7,
+  "median": 725000,
+  "g1": 6.0,
+  "g5": 54.4,
+  "sample_size": 59
+ },
+ {
+  "name": "Wallacia",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 49.7,
+  "median": 715000,
+  "g1": 5.6,
+  "g5": 46.7,
+  "sample_size": 76
+ },
+ {
+  "name": "Emu Heights",
+  "region": "Penrith",
+  "distance_km": 50.6,
+  "median": 830000,
+  "g1": 6.9,
+  "g5": 46.1,
+  "sample_size": 81
+ },
+ {
+  "name": "Emu Plains",
+  "region": "Penrith",
+  "distance_km": 50.6,
+  "median": 670000,
+  "g1": 7.6,
+  "g5": 60.4,
+  "sample_size": 58
+ },
+ {
+  "name": "Jamisontown",
+  "region": "Penrith",
+  "distance_km": 50.6,
+  "median": 680000,
+  "g1": 5.7,
+  "g5": 56.4,
+  "sample_size": 68
+ },
+ {
+  "name": "Leonay",
+  "region": "Penrith",
+  "distance_km": 50.6,
+  "median": 745000,
+  "g1": 7.1,
+  "g5": 52.4,
+  "sample_size": 83
+ },
+ {
+  "name": "Penrith",
+  "region": "Penrith",
+  "distance_km": 50.6,
+  "median": 670000,
+  "g1": 7.5,
+  "g5": 59.2,
+  "sample_size": 87
+ },
+ {
+  "name": "Penrith Plaza",
+  "region": "Penrith",
+  "distance_km": 50.6,
+  "median": 670000,
+  "g1": 5.5,
+  "g5": 59.8,
+  "sample_size": 63
+ },
+ {
+  "name": "Penrith South",
+  "region": "Penrith",
+  "distance_km": 50.6,
+  "median": 835000,
+  "g1": 8.2,
+  "g5": 53.7,
+  "sample_size": 60
+ },
+ {
+  "name": "South Penrith",
+  "region": "Penrith",
+  "distance_km": 50.6,
+  "median": 650000,
+  "g1": 5.3,
+  "g5": 57.2,
+  "sample_size": 68
+ },
+ {
+  "name": "West Gosford",
+  "region": "Hawkesbury",
+  "distance_km": 50.8,
+  "median": 690000,
+  "g1": 4.3,
+  "g5": 51.4,
+  "sample_size": 70
+ },
+ {
+  "name": "Castlereagh",
+  "region": "Penrith",
+  "distance_km": 51.7,
+  "median": 795000,
+  "g1": 6.9,
+  "g5": 46.2,
+  "sample_size": 72
+ },
+ {
+  "name": "Cranebrook",
+  "region": "Penrith",
+  "distance_km": 51.7,
+  "median": 680000,
+  "g1": 3.9,
+  "g5": 45.6,
+  "sample_size": 86
+ },
+ {
+  "name": "Richmond Lowlands",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.1,
+  "median": 680000,
+  "g1": 6.6,
+  "g5": 50.4,
+  "sample_size": 73
+ },
+ {
+  "name": "Cumberland Reach",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.5,
+  "median": 730000,
+  "g1": 7.9,
+  "g5": 56.8,
+  "sample_size": 85
+ },
+ {
+  "name": "Erina Heights",
+  "region": "Wyong",
+  "distance_km": 53.6,
+  "median": 650000,
+  "g1": 4.5,
+  "g5": 47.3,
+  "sample_size": 76
+ },
+ {
+  "name": "Forresters Beach",
+  "region": "Wyong",
+  "distance_km": 53.6,
+  "median": 635000,
+  "g1": 6.6,
+  "g5": 50.2,
+  "sample_size": 66
+ },
+ {
+  "name": "North Avoca",
+  "region": "Wyong",
+  "distance_km": 53.6,
+  "median": 765000,
+  "g1": 6.5,
+  "g5": 52.4,
+  "sample_size": 79
+ },
+ {
+  "name": "Terrigal",
+  "region": "Wyong",
+  "distance_km": 53.6,
+  "median": 730000,
+  "g1": 6.1,
+  "g5": 54.0,
+  "sample_size": 67
+ },
+ {
+  "name": "Wamberal",
+  "region": "Wyong",
+  "distance_km": 53.6,
+  "median": 740000,
+  "g1": 5.7,
+  "g5": 58.3,
+  "sample_size": 59
+ },
+ {
+  "name": "Bligh Park",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 730000,
+  "g1": 4.6,
+  "g5": 50.2,
+  "sample_size": 85
+ },
+ {
+  "name": "Cattai",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 815000,
+  "g1": 5.6,
+  "g5": 47.8,
+  "sample_size": 72
+ },
+ {
+  "name": "Central Colo",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 795000,
+  "g1": 4.7,
+  "g5": 51.5,
+  "sample_size": 78
+ },
+ {
+  "name": "Clarendon",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 610000,
+  "g1": 8.2,
+  "g5": 57.2,
+  "sample_size": 61
+ },
+ {
+  "name": "Colo",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 805000,
+  "g1": 6.5,
+  "g5": 46.0,
+  "sample_size": 70
+ },
+ {
+  "name": "Colo Heights",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 760000,
+  "g1": 7.4,
+  "g5": 56.9,
+  "sample_size": 72
+ },
+ {
+  "name": "Cornwallis",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 645000,
+  "g1": 8.1,
+  "g5": 53.7,
+  "sample_size": 66
+ },
+ {
+  "name": "Ebenezer",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 615000,
+  "g1": 7.1,
+  "g5": 56.4,
+  "sample_size": 63
+ },
+ {
+  "name": "Freemans Reach",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 625000,
+  "g1": 6.3,
+  "g5": 61.1,
+  "sample_size": 76
+ },
+ {
+  "name": "Glossodia",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 780000,
+  "g1": 7.5,
+  "g5": 55.4,
+  "sample_size": 59
+ },
+ {
+  "name": "Leets Vale",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 810000,
+  "g1": 8.5,
+  "g5": 58.7,
+  "sample_size": 85
+ },
+ {
+  "name": "Lower Portland",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 620000,
+  "g1": 6.9,
+  "g5": 49.6,
+  "sample_size": 61
+ },
+ {
+  "name": "Maroota",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 635000,
+  "g1": 5.5,
+  "g5": 54.1,
+  "sample_size": 62
+ },
+ {
+  "name": "McGraths Hill",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 810000,
+  "g1": 7.2,
+  "g5": 58.7,
+  "sample_size": 74
+ },
+ {
+  "name": "Mellong",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 610000,
+  "g1": 4.9,
+  "g5": 46.5,
+  "sample_size": 68
+ },
+ {
+  "name": "Mulgrave",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 640000,
+  "g1": 6.5,
+  "g5": 53.1,
+  "sample_size": 59
+ },
+ {
+  "name": "Pitt Town",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 750000,
+  "g1": 7.1,
+  "g5": 55.1,
+  "sample_size": 83
+ },
+ {
+  "name": "Sackville",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 730000,
+  "g1": 5.8,
+  "g5": 46.5,
+  "sample_size": 62
+ },
+ {
+  "name": "Sackville North",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 685000,
+  "g1": 5.7,
+  "g5": 47.1,
+  "sample_size": 78
+ },
+ {
+  "name": "Scheyville",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 625000,
+  "g1": 7.5,
+  "g5": 51.7,
+  "sample_size": 75
+ },
+ {
+  "name": "South Maroota",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 670000,
+  "g1": 4.7,
+  "g5": 48.4,
+  "sample_size": 74
+ },
+ {
+  "name": "South Windsor",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 780000,
+  "g1": 6.4,
+  "g5": 48.1,
+  "sample_size": 81
+ },
+ {
+  "name": "Upper Colo",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 675000,
+  "g1": 4.5,
+  "g5": 53.7,
+  "sample_size": 77
+ },
+ {
+  "name": "Wilberforce",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 670000,
+  "g1": 6.6,
+  "g5": 55.8,
+  "sample_size": 79
+ },
+ {
+  "name": "Windsor",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 655000,
+  "g1": 5.5,
+  "g5": 48.9,
+  "sample_size": 87
+ },
+ {
+  "name": "Windsor Downs",
+  "region": "Richmond - Windsor",
+  "distance_km": 53.8,
+  "median": 645000,
+  "g1": 4.3,
+  "g5": 48.8,
+  "sample_size": 71
+ },
+ {
+  "name": "Hobartville",
+  "region": "Richmond - Windsor",
+  "distance_km": 54.1,
+  "median": 790000,
+  "g1": 8.5,
+  "g5": 55.7,
+  "sample_size": 76
+ },
+ {
+  "name": "Austinmer",
+  "region": "Wollongong",
+  "distance_km": 54.4,
+  "median": 615000,
+  "g1": 5.6,
+  "g5": 53.3,
+  "sample_size": 62
+ },
+ {
+  "name": "Clifton",
+  "region": "Wollongong",
+  "distance_km": 54.4,
+  "median": 765000,
+  "g1": 5.6,
+  "g5": 49.6,
+  "sample_size": 84
+ },
+ {
+  "name": "Coledale",
+  "region": "Wollongong",
+  "distance_km": 54.4,
+  "median": 640000,
+  "g1": 5.9,
+  "g5": 61.2,
+  "sample_size": 69
+ },
+ {
+  "name": "Scarborough",
+  "region": "Wollongong",
+  "distance_km": 54.4,
+  "median": 745000,
+  "g1": 6.1,
+  "g5": 46.2,
+  "sample_size": 61
+ },
+ {
+  "name": "Thirroul",
+  "region": "Wollongong",
+  "distance_km": 54.4,
+  "median": 780000,
+  "g1": 4.6,
+  "g5": 50.8,
+  "sample_size": 85
+ },
+ {
+  "name": "Wombarra",
+  "region": "Wollongong",
+  "distance_km": 54.4,
+  "median": 795000,
+  "g1": 4.6,
+  "g5": 55.7,
+  "sample_size": 86
+ },
+ {
+  "name": "Airds",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 745000,
+  "g1": 6.7,
+  "g5": 45.8,
+  "sample_size": 67
+ },
+ {
+  "name": "Ambarvale",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 625000,
+  "g1": 8.1,
+  "g5": 58.4,
+  "sample_size": 86
+ },
+ {
+  "name": "Appin",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 800000,
+  "g1": 6.1,
+  "g5": 52.0,
+  "sample_size": 76
+ },
+ {
+  "name": "Blair Athol",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 675000,
+  "g1": 7.4,
+  "g5": 48.0,
+  "sample_size": 66
+ },
+ {
+  "name": "Bradbury",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 695000,
+  "g1": 8.3,
+  "g5": 57.7,
+  "sample_size": 76
+ },
+ {
+  "name": "Campbelltown",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 635000,
+  "g1": 7.0,
+  "g5": 54.0,
+  "sample_size": 60
+ },
+ {
+  "name": "Campbelltown North",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 655000,
+  "g1": 8.2,
+  "g5": 59.9,
+  "sample_size": 60
+ },
+ {
+  "name": "Englorie Park",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 660000,
+  "g1": 4.4,
+  "g5": 48.2,
+  "sample_size": 78
+ },
+ {
+  "name": "Gilead",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 655000,
+  "g1": 5.9,
+  "g5": 59.6,
+  "sample_size": 79
+ },
+ {
+  "name": "Glen Alpine",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 740000,
+  "g1": 6.4,
+  "g5": 53.5,
+  "sample_size": 58
+ },
+ {
+  "name": "Kentlyn",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 615000,
+  "g1": 6.0,
+  "g5": 55.8,
+  "sample_size": 69
+ },
+ {
+  "name": "Leumeah",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 630000,
+  "g1": 4.1,
+  "g5": 48.3,
+  "sample_size": 74
+ },
+ {
+  "name": "Macarthur Square",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 660000,
+  "g1": 4.9,
+  "g5": 49.8,
+  "sample_size": 70
+ },
+ {
+  "name": "Rosemeadow",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 780000,
+  "g1": 4.6,
+  "g5": 55.6,
+  "sample_size": 77
+ },
+ {
+  "name": "Ruse",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 785000,
+  "g1": 5.4,
+  "g5": 49.3,
+  "sample_size": 64
+ },
+ {
+  "name": "St Helens Park",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 625000,
+  "g1": 6.0,
+  "g5": 48.5,
+  "sample_size": 84
+ },
+ {
+  "name": "Wedderburn",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 790000,
+  "g1": 6.1,
+  "g5": 47.7,
+  "sample_size": 56
+ },
+ {
+  "name": "Woodbine",
+  "region": "Wollondilly",
+  "distance_km": 54.4,
+  "median": 705000,
+  "g1": 5.3,
+  "g5": 55.8,
+  "sample_size": 61
+ },
+ {
+  "name": "Menangle",
+  "region": "Wollondilly",
+  "distance_km": 54.9,
+  "median": 620000,
+  "g1": 4.5,
+  "g5": 49.8,
+  "sample_size": 67
+ },
+ {
+  "name": "Glenbrook",
+  "region": "Blue Mountains",
+  "distance_km": 54.9,
+  "median": 615000,
+  "g1": 6.6,
+  "g5": 55.6,
+  "sample_size": 83
+ },
+ {
+  "name": "Lapstone",
+  "region": "Blue Mountains",
+  "distance_km": 54.9,
+  "median": 780000,
+  "g1": 6.9,
+  "g5": 57.3,
+  "sample_size": 68
+ },
+ {
+  "name": "Blaxland",
+  "region": "Blue Mountains",
+  "distance_km": 55.7,
+  "median": 615000,
+  "g1": 6.0,
+  "g5": 53.2,
+  "sample_size": 65
+ },
+ {
+  "name": "Blaxland East",
+  "region": "Blue Mountains",
+  "distance_km": 55.7,
+  "median": 690000,
+  "g1": 8.0,
+  "g5": 60.1,
+  "sample_size": 75
+ },
+ {
+  "name": "Mount Riverview",
+  "region": "Blue Mountains",
+  "distance_km": 55.7,
+  "median": 785000,
+  "g1": 7.1,
+  "g5": 53.6,
+  "sample_size": 85
+ },
+ {
+  "name": "Warrimoo",
+  "region": "Blue Mountains",
+  "distance_km": 55.7,
+  "median": 760000,
+  "g1": 5.5,
+  "g5": 56.5,
+  "sample_size": 70
+ },
+ {
+  "name": "North Richmond",
+  "region": "Richmond - Windsor",
+  "distance_km": 56.4,
+  "median": 760000,
+  "g1": 7.4,
+  "g5": 59.5,
+  "sample_size": 64
+ },
+ {
+  "name": "Tennyson",
+  "region": "Richmond - Windsor",
+  "distance_km": 56.4,
+  "median": 765000,
+  "g1": 7.5,
+  "g5": 53.1,
+  "sample_size": 80
+ },
+ {
+  "name": "The Slopes",
+  "region": "Richmond - Windsor",
+  "distance_km": 56.4,
+  "median": 610000,
+  "g1": 5.7,
+  "g5": 46.3,
+  "sample_size": 84
+ },
+ {
+  "name": "Silverdale",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 58.0,
+  "median": 705000,
+  "g1": 4.8,
+  "g5": 51.5,
+  "sample_size": 87
+ },
+ {
+  "name": "Warragamba",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 58.0,
+  "median": 760000,
+  "g1": 8.4,
+  "g5": 56.7,
+  "sample_size": 81
+ },
+ {
+  "name": "Brereton",
+  "region": "Bringelly - Green Valley",
+  "distance_km": 58.6,
+  "median": 620000,
+  "g1": 5.0,
+  "g5": 56.6,
+  "sample_size": 69
+ },
+ {
+  "name": "Bulli",
+  "region": "Wollongong",
+  "distance_km": 58.7,
+  "median": 635000,
+  "g1": 4.3,
+  "g5": 47.9,
+  "sample_size": 76
+ },
+ {
+  "name": "Bulli Tops",
+  "region": "Wollongong",
+  "distance_km": 58.7,
+  "median": 575000,
+  "g1": 5.2,
+  "g5": 60.1,
+  "sample_size": 82
+ },
+ {
+  "name": "Douglas Park",
+  "region": "Wollondilly",
+  "distance_km": 58.7,
+  "median": 590000,
+  "g1": 7.0,
+  "g5": 55.2,
+  "sample_size": 67
+ },
+ {
+  "name": "Cataract",
+  "region": "Wollondilly",
+  "distance_km": 59.0,
+  "median": 605000,
+  "g1": 5.7,
+  "g5": 53.0,
+  "sample_size": 81
+ },
+ {
+  "name": "Kurmond",
+  "region": "Hawkesbury",
+  "distance_km": 59.2,
+  "median": 745000,
+  "g1": 6.0,
+  "g5": 49.5,
+  "sample_size": 73
+ },
+ {
+  "name": "Agnes Banks",
+  "region": "Richmond - Windsor",
+  "distance_km": 59.8,
+  "median": 740000,
+  "g1": 6.5,
+  "g5": 52.4,
+  "sample_size": 68
+ },
+ {
+  "name": "Bowen Mountain",
+  "region": "Richmond - Windsor",
+  "distance_km": 59.8,
+  "median": 665000,
+  "g1": 8.1,
+  "g5": 54.0,
+  "sample_size": 63
+ },
+ {
+  "name": "Grose Vale",
+  "region": "Richmond - Windsor",
+  "distance_km": 59.8,
+  "median": 625000,
+  "g1": 5.2,
+  "g5": 48.4,
+  "sample_size": 65
+ },
+ {
+  "name": "Grose Wold",
+  "region": "Richmond - Windsor",
+  "distance_km": 59.8,
+  "median": 685000,
+  "g1": 8.8,
+  "g5": 58.2,
+  "sample_size": 73
+ },
+ {
+  "name": "Londonderry",
+  "region": "Richmond - Windsor",
+  "distance_km": 59.8,
+  "median": 705000,
+  "g1": 5.5,
+  "g5": 60.2,
+  "sample_size": 68
+ },
+ {
+  "name": "Richmond",
+  "region": "Richmond - Windsor",
+  "distance_km": 59.8,
+  "median": 570000,
+  "g1": 5.6,
+  "g5": 62.0,
+  "sample_size": 76
+ },
+ {
+  "name": "Yarramundi",
+  "region": "Richmond - Windsor",
+  "distance_km": 59.8,
+  "median": 735000,
+  "g1": 6.8,
+  "g5": 46.8,
+  "sample_size": 71
+ }
+]
