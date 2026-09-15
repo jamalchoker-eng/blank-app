@@ -13,25 +13,30 @@ WHAT THIS DOES
 3. Classifies each sale as a house or a unit (see `classify_dwelling_type()`),
    keeps the Greater Sydney LGAs, and drops everything else (vacant land,
    commercial, etc).
-4. Computes, per suburb and per dwelling type: median sale price over the
-   trailing 12 months, and the median from ~1yr and ~5yr ago (each its own
-   trailing-12-month window), to get 1yr/5yr growth for houses and units
-   separately.
+4. Computes, per suburb and per dwelling type: median, min and max sale
+   price over the trailing 12 months, and the median from ~1yr and ~5yr ago
+   (each its own trailing-12-month window), to get 1yr/5yr growth for
+   houses and units separately. min/max are real extremes of the same
+   purchase_price values, not a placeholder.
 5. Writes data/sydney_suburbs.json in a stable, simple shape a downstream UI
    (e.g. a React screener) can consume directly.
 
-NO BEDROOM COUNTS
-------------------
+NO BEDROOM COUNTS, NO DAYS-ON-MARKET
+--------------------------------------
 The NSW Valuer General bulk sales file does not include bedroom count (or
-any other internal dwelling attribute like bathrooms) — it's a land-title
-transaction record, not a listing. `median`/`g1`/`g5` here are per suburb
-and dwelling type only. If you need a bedroom-level cut of *real* sales,
-this dataset can't give you one; you'd have to join it against a listings
-source (e.g. Domain, realestate.com.au, or a paid CoreLogic/PropTrack feed)
-by address, which is a different pipeline. `dashboard.html`'s bedroom
-breakdown is built entirely from `scripts/generate_placeholder_suburbs.py`'s
-synthetic model for exactly this reason — it isn't something this script
-can produce from real data.
+any other internal dwelling attribute like bathrooms), and it has no
+listing date — only `contract_date` (when contract was exchanged) and
+`settlement_date` (conveyancing settlement, ~42 days later by convention).
+Neither gap tells you how long a property sat on the market before going
+under contract. `median`/`min`/`max`/`g1`/`g5` here are per suburb and
+dwelling type only. If you need a bedroom-level cut or days-on-market for
+*real* sales, this dataset can't give you either — you'd have to join it
+against a listings source (e.g. Domain, realestate.com.au, or a paid
+CoreLogic/PropTrack feed) by address, which is a different pipeline.
+`dashboard.html`'s bedroom breakdown and days-on-market figure are built
+entirely from `scripts/generate_placeholder_suburbs.py`'s synthetic model
+for exactly this reason — neither is something this script can produce
+from real data.
 
 BEFORE YOU RUN THIS
 --------------------
@@ -181,26 +186,53 @@ def parse_date(s: str):
     return None
 
 
+def _prices_in_window(sales: list[dict], start: datetime, end: datetime) -> list[float]:
+    return [s["price"] for s in sales if start <= s["date"] < end]
+
+
 def _median_in_window(sales: list[dict], start: datetime, end: datetime) -> tuple[float | None, int]:
     """Median purchase price for sales with start <= date < end, plus the sample size."""
-    prices = [s["price"] for s in sales if start <= s["date"] < end]
+    prices = _prices_in_window(sales, start, end)
     if len(prices) < MIN_SAMPLE_SIZE:
         return None, len(prices)
     return statistics.median(prices), len(prices)
 
 
 def _dwelling_stats(sales: list[dict], window_now, window_1y_ago, window_5y_ago) -> dict | None:
-    median_now, sample_now = _median_in_window(sales, *window_now)
-    if median_now is None:
+    """median/g1/g5/sample_size/min/max over the trailing-12mo window.
+
+    min/max are genuinely computable from this dataset (they're just the
+    extremes of the same purchase_price values the median comes from), so
+    unlike bedroom count or days-on-market, this is not a placeholder.
+
+    NOTE ON "DAYS ON MARKET": don't be tempted to derive it from
+    settlement_date - contract_date. That gap is conveyancing/settlement
+    lag (typically a fixed ~42 days by convention, sometimes negotiated
+    longer), not how long the property sat listed before going under
+    contract. The VG bulk sales file has no listing date at all, so days-
+    on-market isn't derivable from this dataset — same limitation as
+    bedroom count (see the NO BEDROOM COUNTS note above). It would need a
+    listings source (Domain, realestate.com.au, CoreLogic/PropTrack).
+    """
+    prices_now = _prices_in_window(sales, *window_now)
+    if len(prices_now) < MIN_SAMPLE_SIZE:
         return None  # too few recent sales for a reliable current median
 
+    median_now = statistics.median(prices_now)
     median_1y_ago, _ = _median_in_window(sales, *window_1y_ago)
     median_5y_ago, _ = _median_in_window(sales, *window_5y_ago)
 
     g1 = round((median_now / median_1y_ago - 1) * 100, 1) if median_1y_ago else None
     g5 = round((median_now / median_5y_ago - 1) * 100, 1) if median_5y_ago else None
 
-    return {"median": round(median_now), "g1": g1, "g5": g5, "sample_size": sample_now}
+    return {
+        "median": round(median_now),
+        "g1": g1,
+        "g5": g5,
+        "sample_size": len(prices_now),
+        "min": round(min(prices_now)),
+        "max": round(max(prices_now)),
+    }
 
 
 def aggregate_by_suburb(all_rows: list[dict]) -> list[dict]:

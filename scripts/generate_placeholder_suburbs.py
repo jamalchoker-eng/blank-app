@@ -4,10 +4,10 @@ Generate a placeholder suburb dataset for the Sydney dashboard.
 
 Real geography, synthetic prices. This script downloads a public Australia
 Post / ABS postcode dataset, keeps every NSW locality within a given radius
-of Sydney CBD, and models a plausible-looking (but NOT real) median price
-and 1yr/5yr growth for each one — separately for houses and units, and
-further split by bedroom count — as a function of distance from the CBD,
-plus deterministic per-suburb noise.
+of Sydney CBD, and models a plausible-looking (but NOT real) median/min/max
+price, 1yr/5yr growth, and days-on-market for each one — separately for
+houses and units, and further split by bedroom count for price/growth — as
+a function of distance from the CBD, plus deterministic per-suburb noise.
 
 It exists to give `dashboard.html` full, realistic-looking coverage while
 `nsw_sales_pipeline.py` can't be run against the actual NSW Valuer General
@@ -16,12 +16,29 @@ their ABS SA3 "region", and their distance from the CBD are real. Every
 price, growth, sales-volume, "recent sales" and development-score figure
 is NOT — they're synthetic placeholders for laying out the dashboard.
 
-`nsw_sales_pipeline.py`'s real output can replace the house/unit split here
-(it separates dwelling types from the actual NSW Valuer General data), but
-NOT the bedroom breakdown — bedroom count isn't a field in that dataset at
-all (see the "NO BEDROOM COUNTS" note in that script). The bedroom-level
-cut is, and will remain, a synthetic modeling choice specific to this
-placeholder generator.
+`nsw_sales_pipeline.py`'s real output can replace the house/unit median,
+min, max and growth figures here (that script computes real min/max from
+the actual sale prices in its window) — but NOT the bedroom breakdown or
+days-on-market. Bedroom count isn't a field in the VG dataset at all, and
+neither is a listing date (see the "NO BEDROOM COUNTS, NO DAYS-ON-MARKET"
+note in that script). Those two stay a synthetic modeling choice specific
+to this placeholder generator, however good `nsw_sales_pipeline.py` gets.
+
+DAYS ON MARKET
+----------------
+`dom_days` (per suburb, per dwelling type) is entirely synthetic — there is
+no real-world data source wired into either script for it. It's modeled as
+a base that rises gently with distance from the CBD, pulled down by strong
+5yr growth (more buyer demand assumed to mean faster sales), and pushed up
+~25% for the WATERFRONT_SUBURBS list (a thinner buyer pool for niche/
+expensive listings), clamped to 14-95 days. Treat it as illustrative only.
+
+MIN / MAX PRICE
+-----------------
+Per bedroom bucket (including "overall"), min/max are modeled as a spread
+around that bucket's own synthetic median (min ~0.55-0.70x, max ~1.35-1.80x)
+representing condition/land-size/aspect variation within the bucket. Same
+placeholder status as the median itself.
 
 BEDROOM PRICE MODEL
 --------------------
@@ -221,13 +238,36 @@ WATERFRONT_SAMPLE_MULT = 0.55  # smaller, lower-turnover dwelling stock
 
 def _bucket_stats(seed: int, salt_base: int, anchor_median: float, anchor_g5: float,
                    anchor_sample: float, multiplier: float, share: float) -> dict:
-    """One bedroom-bucket's median/g1/g5/sample_size, derived from the
-    dwelling-type anchor with deterministic per-bucket noise."""
+    """One bedroom-bucket's median/g1/g5/sample_size/min/max, derived from
+    the dwelling-type anchor with deterministic per-bucket noise. min/max
+    model the spread of sale prices within the bucket (condition, land
+    size, aspect) as a fraction of that bucket's own median — same
+    modeling status as everything else here: plausible, not measured."""
     median = round(anchor_median * multiplier * (0.94 + 0.12 * pseudo_rand(seed, salt_base)) / 5000) * 5000
     g5 = max(-8.0, min(65.0, anchor_g5 + (pseudo_rand(seed, salt_base + 1) - 0.5) * 6))
     g1 = max(-4.5, min(9.5, g5 / 8.5 + (pseudo_rand(seed, salt_base + 2) - 0.5) * 3))
     sample = int(round(max(4, anchor_sample * share * (0.8 + 0.4 * pseudo_rand(seed, salt_base + 3)))))
-    return {"median": int(median), "g1": round(g1, 1), "g5": round(g5, 1), "sample_size": sample}
+    min_price = round(median * (0.55 + 0.15 * pseudo_rand(seed, salt_base + 4)) / 5000) * 5000
+    max_price = round(median * (1.35 + 0.45 * pseudo_rand(seed, salt_base + 5)) / 5000) * 5000
+    return {
+        "median": int(median), "g1": round(g1, 1), "g5": round(g5, 1), "sample_size": sample,
+        "min": int(min_price), "max": int(max_price),
+    }
+
+
+def synthesize_dom(seed: int, salt: int, distance_km: float, g5: float, is_waterfront: bool) -> int:
+    """Median "days on market" (illustrative — see the DAYS ON MARKET note
+    at the top of this file): a base that rises gently with distance from
+    the CBD, pulled down for suburbs with strong 5yr growth (more buyer
+    demand -> faster sales), pushed up for waterfront/niche suburbs (a
+    thinner buyer pool), plus noise. Clamped to a plausible 14-95 day
+    range. Not derived from any real listings data."""
+    base = 22 + distance_km * 0.45
+    base -= (g5 - 25) * 0.3
+    base += (pseudo_rand(seed, salt) - 0.5) * 16
+    if is_waterfront:
+        base *= 1.25
+    return int(round(max(14, min(95, base))))
 
 
 def synthesize_housing(name_raw: str, distance_km: float) -> dict:
@@ -251,7 +291,8 @@ def synthesize_housing(name_raw: str, distance_km: float) -> dict:
     unit_g5 = max(-8.0, min(65.0, house_g5 * 0.85 - 2 + (pseudo_rand(seed, 5) - 0.5) * 6))
     unit_sample_anchor = house_sample_anchor * (0.7 + 0.5 * (1 - math.exp(-distance_km / 15)))
 
-    if name_raw.upper() in WATERFRONT_SUBURBS:
+    is_waterfront = name_raw.upper() in WATERFRONT_SUBURBS
+    if is_waterfront:
         house_anchor *= WATERFRONT_PRICE_MULT["house"]
         unit_anchor *= WATERFRONT_PRICE_MULT["unit"]
         house_sample_anchor *= WATERFRONT_SAMPLE_MULT
@@ -263,6 +304,7 @@ def synthesize_housing(name_raw: str, distance_km: float) -> dict:
             str(beds): _bucket_stats(seed, 20 + beds * 4, house_anchor, house_g5, house_sample_anchor, mult, HOUSE_BED_SHARE[beds])
             for beds, mult in HOUSE_BED_MULTIPLIERS.items()
         },
+        "dom_days": synthesize_dom(seed, 90, distance_km, house_g5, is_waterfront),
     }
     units = {
         "overall": _bucket_stats(seed, 60, unit_anchor, unit_g5, unit_sample_anchor, 1.0, 1.0),
@@ -270,6 +312,7 @@ def synthesize_housing(name_raw: str, distance_km: float) -> dict:
             str(beds): _bucket_stats(seed, 70 + beds * 4, unit_anchor, unit_g5, unit_sample_anchor, mult, UNIT_BED_SHARE[beds])
             for beds, mult in UNIT_BED_MULTIPLIERS.items()
         },
+        "dom_days": synthesize_dom(seed, 95, distance_km, unit_g5, is_waterfront),
     }
     return {"houses": houses, "units": units}
 
