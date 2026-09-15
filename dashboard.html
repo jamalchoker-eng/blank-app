@@ -140,6 +140,15 @@
   }
   .reset-btn:hover { color: var(--text-primary); }
 
+  .preset-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .preset-label { font-size: 12.5px; color: var(--text-secondary); font-weight: 600; margin-right: 2px; }
+  .preset-btn {
+    background: var(--surface-2); border: 1px solid var(--border); color: var(--text-secondary);
+    border-radius: 999px; padding: 6px 13px; font-size: 12.5px; font-weight: 600; cursor: pointer;
+  }
+  .preset-btn:hover { color: var(--text-primary); border-color: var(--series-price); }
+  .preset-btn.active { background: var(--series-price); color: #fff; border-color: var(--series-price); }
+
   .type-controls {
     display: flex;
     align-items: center;
@@ -454,6 +463,14 @@
       <h2>Search by development potential</h2>
       <p class="cap">Filter all 867 suburbs by the modeled 0–10 development score and its four components</p>
       <div class="dev-filters">
+        <div class="preset-row">
+          <span class="preset-label">Quick search:</span>
+          <button type="button" class="preset-btn" data-preset="top" title="Overall score ≥ 7.5">Top opportunities</button>
+          <button type="button" class="preset-btn" data-preset="growth" title="Growth score ≥ 7.5, no other minimums">High growth</button>
+          <button type="button" class="preset-btn" data-preset="value" title="Affordability ≥ 7 and turnover ≥ 7">Affordable &amp; liquid</button>
+          <button type="button" class="preset-btn" data-preset="location" title="Location score ≥ 7.5 (the ~18km transit-corridor sweet spot)">Prime location</button>
+          <button type="button" class="preset-btn" data-preset="balanced" title="Overall ≥ 6 and every component ≥ 5 — no single weak factor">Balanced all-rounder</button>
+        </div>
         <div class="filter-row">
           <input id="dev-search" type="search" placeholder="Search suburb or region…" autocomplete="off">
           <div class="range-group">
@@ -1415,39 +1432,80 @@
     });
   });
 
+  var SLIDER_IDS = {
+    score: "min-score", growth: "min-growth", location: "min-location",
+    affordability: "min-afford", turnover: "min-turnover"
+  };
+
+  function clearPresetHighlight() {
+    document.querySelectorAll(".preset-btn").forEach(function (b) { b.classList.remove("active"); });
+  }
+
+  function setSliderValues(values) {
+    // values: { score, growth, location, affordability, turnover } - any omitted key stays unchanged
+    Object.keys(SLIDER_IDS).forEach(function (key) {
+      if (!(key in values)) return;
+      devFilters[key] = values[key];
+      var id = SLIDER_IDS[key];
+      document.getElementById(id).value = values[key];
+      document.getElementById(id + "-val").textContent = values[key].toFixed(1);
+    });
+    renderDevHistogram();
+    renderDevTable();
+  }
+
   document.getElementById("dev-search").addEventListener("input", function (e) {
     devFilters.search = e.target.value.trim();
+    clearPresetHighlight();
     renderDevTable();
   });
   document.getElementById("dev-distance").addEventListener("input", function (e) {
     devFilters.distance = Number(e.target.value);
     document.getElementById("dev-distance-val").textContent = devFilters.distance + " km";
+    clearPresetHighlight();
     renderDevTable();
   });
-  [
-    ["min-score", "score"], ["min-growth", "growth"], ["min-location", "location"],
-    ["min-afford", "affordability"], ["min-turnover", "turnover"]
-  ].forEach(function (pair) {
-    var input = document.getElementById(pair[0]);
-    var valEl = document.getElementById(pair[0] + "-val");
+  Object.keys(SLIDER_IDS).forEach(function (key) {
+    var id = SLIDER_IDS[key];
+    var input = document.getElementById(id);
+    var valEl = document.getElementById(id + "-val");
     input.addEventListener("input", function () {
-      devFilters[pair[1]] = Number(input.value);
+      devFilters[key] = Number(input.value);
       valEl.textContent = Number(input.value).toFixed(1);
+      clearPresetHighlight();
       renderDevTable();
-      if (pair[1] === "score") renderDevHistogram();
+      if (key === "score") renderDevHistogram();
     });
   });
   document.getElementById("dev-reset").addEventListener("click", function () {
-    devFilters = { search: "", distance: 60, score: 0, growth: 0, location: 0, affordability: 0, turnover: 0 };
+    devFilters.search = "";
+    devFilters.distance = 60;
     document.getElementById("dev-search").value = "";
     document.getElementById("dev-distance").value = 60;
     document.getElementById("dev-distance-val").textContent = "60 km";
-    ["min-score", "min-growth", "min-location", "min-afford", "min-turnover"].forEach(function (id) {
-      document.getElementById(id).value = 0;
-      document.getElementById(id + "-val").textContent = "0.0";
+    clearPresetHighlight();
+    setSliderValues({ score: 0, growth: 0, location: 0, affordability: 0, turnover: 0 });
+  });
+
+  // ---- Quick-search presets ----
+  var DEV_PRESETS = {
+    top: { score: 7.5, growth: 0, location: 0, affordability: 0, turnover: 0 },
+    growth: { score: 0, growth: 7.5, location: 0, affordability: 0, turnover: 0 },
+    value: { score: 0, growth: 0, location: 0, affordability: 7, turnover: 7 },
+    location: { score: 0, growth: 0, location: 7.5, affordability: 0, turnover: 0 },
+    balanced: { score: 6, growth: 5, location: 5, affordability: 5, turnover: 5 }
+  };
+  document.querySelectorAll(".preset-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var wasActive = btn.classList.contains("active");
+      clearPresetHighlight();
+      if (wasActive) {
+        setSliderValues({ score: 0, growth: 0, location: 0, affordability: 0, turnover: 0 });
+        return;
+      }
+      btn.classList.add("active");
+      setSliderValues(DEV_PRESETS[btn.dataset.preset]);
     });
-    renderDevHistogram();
-    renderDevTable();
   });
 
   window.addEventListener("resize", function () {
