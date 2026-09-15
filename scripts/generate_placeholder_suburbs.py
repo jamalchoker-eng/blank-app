@@ -40,6 +40,20 @@ inner ring (harbourside land value, heritage terraces) than in the outer
 suburbs where houses and units are closer in scale. This is a plausible
 shape, not a measured one.
 
+WATERFRONT OVERRIDE
+---------------------
+Distance-from-CBD alone badly underprices small, low-density waterfront
+enclaves that happen to sit further out — e.g. Burraneer (~26km, on Port
+Hacking) came out priced like a generic mid-ring suburb before this was
+added, when real waterfront houses there run well above that. A hand-curated
+list of ~80 well-known Sydney Harbour / Middle Harbour / river / Pittwater /
+Port Hacking / Georges River localities (WATERFRONT_SUBURBS — real places,
+not exhaustive, not derived from any dataset) gets a price multiplier
+(1.85x houses, 1.30x units) and a turnover discount (0.55x sample size, for
+their typically smaller and lower-density dwelling stock). Still a
+placeholder, still not real sales data — just a less wrong one for suburbs
+this specific curve handles badly.
+
 DEVELOPMENT FAVOURABILITY SCORE (0-10)
 ---------------------------------------
 A transparent, documented heuristic — NOT a real planning/zoning
@@ -164,9 +178,45 @@ HOUSE_BED_MULTIPLIERS = {2: 0.82, 3: 1.00, 4: 1.28, 5: 1.62}  # 5 == "5+"
 UNIT_BED_MULTIPLIERS = {1: 0.68, 2: 1.00, 3: 1.35}  # 3 == "3+"
 
 # Rough real-world bedroom mix, used only to weight synthetic sample counts
-# and to pick realistic "recent sale" bedroom counts. Not measured.
+# and to pick realistic "recent sale" bedroom counts. Not measured. Shares
+# for a dwelling type sum to ~1.0 so its bedroom buckets sum to roughly its
+# "overall" (share=1.0) sample size, not multiply past it.
 HOUSE_BED_SHARE = {2: 0.18, 3: 0.42, 4: 0.30, 5: 0.10}
 UNIT_BED_SHARE = {1: 0.30, 2: 0.50, 3: 0.20}
+
+# Well-known Sydney Harbour / Middle Harbour / Parramatta & Lane Cove River /
+# Pittwater / Port Hacking / Georges River waterfront localities. Real
+# places, hand-curated from general knowledge of Sydney geography — NOT
+# exhaustive, and not derived from any dataset. They exist because the
+# distance-from-CBD price curve alone badly underprices small, low-density
+# waterfront enclaves (e.g. Burraneer, 26km out on Port Hacking, priced like
+# a generic mid-ring suburb by distance alone when real waterfront houses
+# there run well into 7 figures above that). WATERFRONT_PRICE_MULT and
+# WATERFRONT_SAMPLE_MULT below are equally hand-picked, not fitted.
+WATERFRONT_SUBURBS = {
+    "VAUCLUSE", "WATSONS BAY", "POINT PIPER", "DARLING POINT", "ELIZABETH BAY",
+    "ROSE BAY", "ROSE BAY NORTH", "DOUBLE BAY", "KIRRIBILLI", "MILSONS POINT",
+    "KURRABA POINT", "CREMORNE POINT", "MOSMAN", "CLIFTON GARDENS", "BALMORAL",
+    "CASTLECRAG", "NORTHBRIDGE", "BEAUTY POINT", "SEAFORTH", "CLONTARF",
+    "BALGOWLAH HEIGHTS", "FAIRLIGHT", "HUNTERS HILL", "HUNTERS HILL WEST",
+    "WOOLWICH", "HENLEY", "HUNTLEYS POINT", "HUNTLEYS COVE", "RIVERVIEW",
+    "LONGUEVILLE", "NORTHWOOD", "LINLEY POINT", "GREENWICH", "WOLLSTONECRAFT",
+    "WAVERTON", "BIRCHGROVE", "BALMAIN EAST", "DRUMMOYNE", "CHISWICK",
+    "ABBOTSFORD", "CABARITA", "RODD POINT", "RUSSELL LEA", "MORTLAKE",
+    "PUTNEY", "TENNYSON POINT", "BORONIA PARK", "GLADESVILLE",
+    "PALM BEACH", "WHALE BEACH", "CAREEL BAY", "AVALON BEACH", "BILGOLA",
+    "NEWPORT", "BAYVIEW", "CHURCH POINT", "ELVINA BAY", "LOVETT BAY",
+    "SCOTLAND ISLAND", "CLAREVILLE", "TAYLORS POINT",
+    "BURRANEER", "DOLANS BAY", "YOWIE BAY", "LILLI PILLI", "PORT HACKING",
+    "WOOLOOWARE", "GYMEA BAY", "GRAYS POINT", "BONNET BAY", "COMO",
+    "OYSTER BAY", "ILLAWONG", "VOYAGER POINT", "SYLVANIA WATERS",
+    "KANGAROO POINT", "CARAVAN HEAD",
+    "OATLEY", "CONNELLS POINT", "BLAKEHURST", "CARSS PARK", "KYLE BAY",
+    "SANS SOUCI", "SANDRINGHAM", "DOLLS POINT", "RAMSGATE BEACH",
+    "BEROWRA WATERS", "DANGAR ISLAND", "ST HUBERTS ISLAND",
+}
+WATERFRONT_PRICE_MULT = {"house": 1.85, "unit": 1.30}
+WATERFRONT_SAMPLE_MULT = 0.55  # smaller, lower-turnover dwelling stock
 
 
 def _bucket_stats(seed: int, salt_base: int, anchor_median: float, anchor_g5: float,
@@ -176,7 +226,7 @@ def _bucket_stats(seed: int, salt_base: int, anchor_median: float, anchor_g5: fl
     median = round(anchor_median * multiplier * (0.94 + 0.12 * pseudo_rand(seed, salt_base)) / 5000) * 5000
     g5 = max(-8.0, min(65.0, anchor_g5 + (pseudo_rand(seed, salt_base + 1) - 0.5) * 6))
     g1 = max(-4.5, min(9.5, g5 / 8.5 + (pseudo_rand(seed, salt_base + 2) - 0.5) * 3))
-    sample = int(round(max(4, anchor_sample * share * 4 * (0.8 + 0.4 * pseudo_rand(seed, salt_base + 3)))))
+    sample = int(round(max(4, anchor_sample * share * (0.8 + 0.4 * pseudo_rand(seed, salt_base + 3)))))
     return {"median": int(median), "g1": round(g1, 1), "g5": round(g5, 1), "sample_size": sample}
 
 
@@ -200,6 +250,12 @@ def synthesize_housing(name_raw: str, distance_km: float) -> dict:
     unit_anchor = house_anchor * unit_ratio
     unit_g5 = max(-8.0, min(65.0, house_g5 * 0.85 - 2 + (pseudo_rand(seed, 5) - 0.5) * 6))
     unit_sample_anchor = house_sample_anchor * (0.7 + 0.5 * (1 - math.exp(-distance_km / 15)))
+
+    if name_raw.upper() in WATERFRONT_SUBURBS:
+        house_anchor *= WATERFRONT_PRICE_MULT["house"]
+        unit_anchor *= WATERFRONT_PRICE_MULT["unit"]
+        house_sample_anchor *= WATERFRONT_SAMPLE_MULT
+        unit_sample_anchor *= WATERFRONT_SAMPLE_MULT
 
     houses = {
         "overall": _bucket_stats(seed, 10, house_anchor, house_g5, house_sample_anchor, 1.0, 1.0),
