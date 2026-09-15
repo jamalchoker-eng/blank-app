@@ -101,6 +101,45 @@
     font-size: 12px;
   }
 
+  .tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid var(--gridline);
+    margin-bottom: 20px;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    font: inherit;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 10px 2px;
+    margin-right: 22px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+  }
+  .tab-btn:hover { color: var(--text-primary); }
+  .tab-btn.active { color: var(--text-primary); border-bottom-color: var(--series-price); }
+
+  .dev-filters { display: flex; flex-direction: column; gap: 14px; }
+  .filter-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .filter-row input[type="search"] {
+    flex: 1; min-width: 160px;
+    background: var(--surface-2); border: 1px solid var(--border); color: var(--text-primary);
+    border-radius: 7px; padding: 7px 10px; font-size: 13px; font-family: inherit;
+  }
+  .slider-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px 18px; }
+  @media (max-width: 920px) { .slider-grid { grid-template-columns: repeat(2, 1fr); } }
+  .slider-grid .range-group { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+  .slider-grid .range-group input[type="range"] { width: 100%; }
+  .reset-btn {
+    align-self: flex-start;
+    background: var(--surface-2); border: 1px solid var(--border); color: var(--text-secondary);
+    border-radius: 7px; padding: 6px 12px; font-size: 12.5px; font-weight: 600; cursor: pointer;
+  }
+  .reset-btn:hover { color: var(--text-primary); }
+
   .type-controls {
     display: flex;
     align-items: center;
@@ -338,69 +377,153 @@
     score against council/professional advice before acting on it.
   </div>
 
-  <div class="type-controls">
-    <div class="segmented" id="type-toggle">
-      <button type="button" data-type="house" class="active">Houses</button>
-      <button type="button" data-type="unit">Units</button>
-    </div>
-    <select id="beds"></select>
-    <span class="type-note">Applies to the KPI tiles, charts and table below</span>
+  <div class="tabs">
+    <button type="button" class="tab-btn active" data-tab="overview">Price &amp; Growth</button>
+    <button type="button" class="tab-btn" data-tab="devsearch">Development Search</button>
   </div>
 
-  <div class="kpis" id="kpis"></div>
-
-  <div class="charts">
-    <div class="card">
-      <h2>Top 12 by median price</h2>
-      <p class="cap" id="price-cap">Across all suburbs within 60km</p>
-      <svg id="chart-price" viewBox="0 0 560 360" preserveAspectRatio="xMinYMin meet"></svg>
-    </div>
-    <div class="card">
-      <h2>5-year growth: leaders &amp; laggards</h2>
-      <p class="cap" id="growth-cap">Top 6 gainers and bottom 6 by 5yr median growth</p>
-      <svg id="chart-growth" viewBox="0 0 480 360" preserveAspectRatio="xMinYMin meet"></svg>
-    </div>
-    <div class="card" style="grid-column: 1 / -1;">
-      <h2>Most development-favourable (top 12)</h2>
-      <p class="cap">By the modeled 0–10 development score — see a suburb's detail panel for the breakdown</p>
-      <svg id="chart-dev" viewBox="0 0 1080 220" preserveAspectRatio="xMinYMin meet"></svg>
-    </div>
-  </div>
-
-  <div class="card" style="margin-bottom:22px;">
-    <h2>Price vs. 5-year growth</h2>
-    <p class="cap" id="scatter-cap">Each point is one suburb — hover for the nearest match</p>
-    <svg id="chart-scatter" viewBox="0 0 1080 340" preserveAspectRatio="xMinYMin meet"></svg>
-  </div>
-
-  <div class="card">
-    <div class="controls">
-      <input id="search" type="search" placeholder="Search suburb or region…" autocomplete="off">
-      <div class="range-group">
-        <label for="distance">Within</label>
-        <input id="distance" type="range" min="1" max="60" value="60" step="1">
-        <span class="range-val" id="distance-val">60 km</span>
+  <div id="tab-overview">
+    <div class="type-controls">
+      <div class="segmented" id="type-toggle">
+        <button type="button" data-type="house" class="active">Houses</button>
+        <button type="button" data-type="unit">Units</button>
       </div>
-      <span class="count" id="count"></span>
+      <select id="beds"></select>
+      <span class="type-note">Applies to the KPI tiles, charts and table below</span>
     </div>
-    <div class="table-wrap">
-      <table id="table">
-        <thead>
-          <tr>
-            <th data-key="name" style="text-align:left">Suburb<span class="arrow">▾</span></th>
-            <th data-key="distance">Distance<span class="arrow">▾</span></th>
-            <th data-key="median" id="median-th">Median<span class="arrow">▾</span></th>
-            <th data-key="min" id="range-th">Range<span class="arrow">▾</span></th>
-            <th data-key="g1">1yr Δ<span class="arrow">▾</span></th>
-            <th data-key="g5">5yr Δ<span class="arrow">▾</span></th>
-            <th data-key="sample_size">Sales (12mo)<span class="arrow">▾</span></th>
-            <th data-key="dom">Days on mkt<span class="arrow">▾</span></th>
-            <th data-key="dev_score">Dev score<span class="arrow">▾</span></th>
-          </tr>
-        </thead>
-        <tbody id="tbody"></tbody>
-      </table>
+
+    <div class="kpis" id="kpis"></div>
+
+    <div class="charts">
+      <div class="card">
+        <h2>Top 12 by median price</h2>
+        <p class="cap" id="price-cap">Across all suburbs within 60km</p>
+        <svg id="chart-price" viewBox="0 0 560 360" preserveAspectRatio="xMinYMin meet"></svg>
+      </div>
+      <div class="card">
+        <h2>5-year growth: leaders &amp; laggards</h2>
+        <p class="cap" id="growth-cap">Top 6 gainers and bottom 6 by 5yr median growth</p>
+        <svg id="chart-growth" viewBox="0 0 480 360" preserveAspectRatio="xMinYMin meet"></svg>
+      </div>
+      <div class="card" style="grid-column: 1 / -1;">
+        <h2>Most development-favourable (top 12)</h2>
+        <p class="cap">By the modeled 0–10 development score — see the Development Search tab to filter by it</p>
+        <svg id="chart-dev" viewBox="0 0 1080 220" preserveAspectRatio="xMinYMin meet"></svg>
+      </div>
     </div>
+
+    <div class="card" style="margin-bottom:22px;">
+      <h2>Price vs. 5-year growth</h2>
+      <p class="cap" id="scatter-cap">Each point is one suburb — hover for the nearest match</p>
+      <svg id="chart-scatter" viewBox="0 0 1080 340" preserveAspectRatio="xMinYMin meet"></svg>
+    </div>
+
+    <div class="card">
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search suburb or region…" autocomplete="off">
+        <div class="range-group">
+          <label for="distance">Within</label>
+          <input id="distance" type="range" min="1" max="60" value="60" step="1">
+          <span class="range-val" id="distance-val">60 km</span>
+        </div>
+        <span class="count" id="count"></span>
+      </div>
+      <div class="table-wrap">
+        <table id="table">
+          <thead>
+            <tr>
+              <th data-key="name" style="text-align:left">Suburb<span class="arrow">▾</span></th>
+              <th data-key="distance">Distance<span class="arrow">▾</span></th>
+              <th data-key="median" id="median-th">Median<span class="arrow">▾</span></th>
+              <th data-key="min" id="range-th">Range<span class="arrow">▾</span></th>
+              <th data-key="g1">1yr Δ<span class="arrow">▾</span></th>
+              <th data-key="g5">5yr Δ<span class="arrow">▾</span></th>
+              <th data-key="sample_size">Sales (12mo)<span class="arrow">▾</span></th>
+              <th data-key="dom">Days on mkt<span class="arrow">▾</span></th>
+              <th data-key="dev_score">Dev score<span class="arrow">▾</span></th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-devsearch" hidden>
+    <div class="card" style="margin-bottom:22px;">
+      <h2>Search by development potential</h2>
+      <p class="cap">Filter all 867 suburbs by the modeled 0–10 development score and its four components</p>
+      <div class="dev-filters">
+        <div class="filter-row">
+          <input id="dev-search" type="search" placeholder="Search suburb or region…" autocomplete="off">
+          <div class="range-group">
+            <label for="dev-distance">Within</label>
+            <input id="dev-distance" type="range" min="1" max="60" value="60" step="1">
+            <span class="range-val" id="dev-distance-val">60 km</span>
+          </div>
+          <button type="button" id="dev-reset" class="reset-btn">Reset filters</button>
+        </div>
+        <div class="slider-grid">
+          <div class="range-group">
+            <label for="min-score">Min overall score</label>
+            <input id="min-score" type="range" min="0" max="10" value="0" step="0.5">
+            <span class="range-val" id="min-score-val">0.0</span>
+          </div>
+          <div class="range-group">
+            <label for="min-growth">Min growth</label>
+            <input id="min-growth" type="range" min="0" max="10" value="0" step="0.5">
+            <span class="range-val" id="min-growth-val">0.0</span>
+          </div>
+          <div class="range-group">
+            <label for="min-location">Min location</label>
+            <input id="min-location" type="range" min="0" max="10" value="0" step="0.5">
+            <span class="range-val" id="min-location-val">0.0</span>
+          </div>
+          <div class="range-group">
+            <label for="min-afford">Min affordability</label>
+            <input id="min-afford" type="range" min="0" max="10" value="0" step="0.5">
+            <span class="range-val" id="min-afford-val">0.0</span>
+          </div>
+          <div class="range-group">
+            <label for="min-turnover">Min turnover</label>
+            <input id="min-turnover" type="range" min="0" max="10" value="0" step="0.5">
+            <span class="range-val" id="min-turnover-val">0.0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:22px;">
+      <h2>Score distribution</h2>
+      <p class="cap">All 867 suburbs · dashed line marks your minimum overall score</p>
+      <svg id="chart-dev-hist" viewBox="0 0 1080 160" preserveAspectRatio="xMinYMin meet"></svg>
+    </div>
+
+    <div class="card">
+      <div class="controls">
+        <span class="count" id="dev-count"></span>
+      </div>
+      <div class="table-wrap">
+        <table id="dev-table">
+          <thead>
+            <tr>
+              <th data-key="name" style="text-align:left">Suburb<span class="arrow">▾</span></th>
+              <th data-key="distance">Distance<span class="arrow">▾</span></th>
+              <th data-key="median">Median (house)<span class="arrow">▾</span></th>
+              <th data-key="score">Score<span class="arrow">▾</span></th>
+              <th data-key="growth">Growth<span class="arrow">▾</span></th>
+              <th data-key="location">Location<span class="arrow">▾</span></th>
+              <th data-key="affordability">Afford.<span class="arrow">▾</span></th>
+              <th data-key="turnover">Turnover<span class="arrow">▾</span></th>
+            </tr>
+          </thead>
+          <tbody id="dev-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+    <p class="modal-caveat" style="margin-top:14px;">Modeled heuristic (35% growth, 30% distance-from-CBD sweet
+      spot, 20% affordability, 15% turnover) — not a real zoning or planning assessment. Verify with
+      council/professional advice before acting on it.</p>
   </div>
 
   <footer>Suburb names/regions/distances: Australia Post &amp; ABS postcode data. Price, growth, recent sales and development score: synthetic demo values, not real sales or planning data. Click any row for detail.</footer>
@@ -1118,11 +1241,221 @@
   updateSortHeaders();
   renderTable();
 
+  // ---- Tabs ----
+  document.querySelectorAll(".tab-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".tab-btn").forEach(function (b) { b.classList.toggle("active", b === btn); });
+      document.getElementById("tab-overview").hidden = btn.dataset.tab !== "overview";
+      document.getElementById("tab-devsearch").hidden = btn.dataset.tab !== "devsearch";
+      if (btn.dataset.tab === "devsearch") { renderDevHistogram(); renderDevTable(); }
+    });
+  });
+
+  // ---- Development Search tab ----
+  var devFilters = { search: "", distance: 60, score: 0, growth: 0, location: 0, affordability: 0, turnover: 0 };
+  var devSortKey = "score", devSortDir = -1;
+
+  function devMatches(d) {
+    if (d.distance > devFilters.distance) return false;
+    if (d.dev_score < devFilters.score) return false;
+    if (d.dev_breakdown.growth < devFilters.growth) return false;
+    if (d.dev_breakdown.location < devFilters.location) return false;
+    if (d.dev_breakdown.affordability < devFilters.affordability) return false;
+    if (d.dev_breakdown.turnover < devFilters.turnover) return false;
+    if (devFilters.search) {
+      var t = devFilters.search.toLowerCase();
+      if (d.name.toLowerCase().indexOf(t) === -1 && d.region.toLowerCase().indexOf(t) === -1) return false;
+    }
+    return true;
+  }
+
+  function renderDevHistogram() {
+    var svg = document.getElementById("chart-dev-hist");
+    var W = 1080, H = 160, ML = 30, MR = 20, MT = 10, MB = 24;
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    var plotW = W - ML - MR, plotH = H - MT - MB;
+
+    var binSize = 0.5, binCount = 20;
+    var bins = new Array(binCount).fill(0);
+    SUBURBS.forEach(function (d) {
+      var idx = Math.min(binCount - 1, Math.max(0, Math.floor(d.dev_score / binSize)));
+      bins[idx]++;
+    });
+    var maxBin = Math.max.apply(null, bins);
+    var barW = plotW / binCount;
+
+    var frag = document.createDocumentFragment();
+    bins.forEach(function (count, i) {
+      var h = maxBin ? (count / maxBin) * plotH : 0;
+      var x = ML + i * barW;
+      var y = MT + plotH - h;
+      var bar = svgEl("rect", { x: x + 1, y: y, width: Math.max(barW - 2, 1), height: h, rx: 2, fill: cv("--series-price") });
+      var hit = svgEl("rect", { x: x, y: MT, width: barW, height: plotH, class: "hit" });
+      var lo = (i * binSize).toFixed(1), hi = ((i + 1) * binSize).toFixed(1);
+      hit.addEventListener("pointermove", function (e) {
+        showTooltip(e, '<span class="tt-strong">' + count + "</span> suburbs · score " + lo + "–" + hi);
+      });
+      hit.addEventListener("pointerleave", hideTooltip);
+      frag.appendChild(bar);
+      frag.appendChild(hit);
+    });
+    [0, 2, 4, 6, 8, 10].forEach(function (v) {
+      var x = ML + (v / 10) * plotW;
+      var t = svgEl("text", { x: x, y: H - 6, class: "axis-label", "text-anchor": "middle" });
+      t.textContent = String(v);
+      frag.appendChild(t);
+    });
+    var markerX = ML + (devFilters.score / 10) * plotW;
+    frag.appendChild(svgEl("line", {
+      x1: markerX, x2: markerX, y1: MT, y2: MT + plotH,
+      stroke: cv("--critical"), "stroke-width": 2, "stroke-dasharray": "4,3"
+    }));
+
+    svg.innerHTML = "";
+    svg.appendChild(frag);
+  }
+
+  function renderDevTable() {
+    var tbody = document.getElementById("dev-tbody");
+    var rows = SUBURBS.filter(devMatches);
+
+    rows.sort(function (a, b) {
+      var getters = {
+        name: function (d) { return d.name; },
+        distance: function (d) { return d.distance; },
+        median: function (d) { return d.houses[0].median; },
+        score: function (d) { return d.dev_score; },
+        growth: function (d) { return d.dev_breakdown.growth; },
+        location: function (d) { return d.dev_breakdown.location; },
+        affordability: function (d) { return d.dev_breakdown.affordability; },
+        turnover: function (d) { return d.dev_breakdown.turnover; }
+      };
+      var av = getters[devSortKey](a), bv = getters[devSortKey](b);
+      if (typeof av === "string") return av.localeCompare(bv) * devSortDir;
+      return (av - bv) * devSortDir;
+    });
+
+    document.getElementById("dev-count").textContent = rows.length + " of " + SUBURBS.length + " suburbs match";
+
+    tbody.innerHTML = "";
+    if (rows.length === 0) {
+      var tr = document.createElement("tr");
+      tr.className = "empty-row";
+      var td = document.createElement("td");
+      td.colSpan = 8;
+      td.textContent = "No suburbs match these filters.";
+      tr.appendChild(td);
+      tbody.appendChild(tr);
+      return;
+    }
+
+    function scoreCell(value) {
+      var td = document.createElement("td");
+      var wrap = document.createElement("span");
+      wrap.className = "score-cell";
+      var meter = document.createElement("span");
+      meter.className = "score-meter";
+      var fill = document.createElement("span");
+      fill.style.width = (value / 10 * 100) + "%";
+      meter.appendChild(fill);
+      var num = document.createElement("span");
+      num.className = "score-num";
+      num.textContent = value.toFixed(1);
+      wrap.appendChild(meter);
+      wrap.appendChild(num);
+      td.appendChild(wrap);
+      return td;
+    }
+
+    var frag = document.createDocumentFragment();
+    rows.forEach(function (d) {
+      var tr = document.createElement("tr");
+
+      var tdName = document.createElement("td");
+      tdName.className = "name";
+      var strong = document.createElement("span");
+      strong.textContent = d.name;
+      var region = document.createElement("span");
+      region.className = "region";
+      region.textContent = d.region;
+      tdName.appendChild(strong);
+      tdName.appendChild(region);
+
+      var tdDist = document.createElement("td");
+      tdDist.textContent = d.distance.toFixed(1) + " km";
+
+      var tdMedian = document.createElement("td");
+      tdMedian.textContent = compactMoney(d.houses[0].median);
+
+      tr.appendChild(tdName);
+      tr.appendChild(tdDist);
+      tr.appendChild(tdMedian);
+      tr.appendChild(scoreCell(d.dev_score));
+      tr.appendChild(scoreCell(d.dev_breakdown.growth));
+      tr.appendChild(scoreCell(d.dev_breakdown.location));
+      tr.appendChild(scoreCell(d.dev_breakdown.affordability));
+      tr.appendChild(scoreCell(d.dev_breakdown.turnover));
+      tr.addEventListener("click", function () { openDetail(d); });
+      frag.appendChild(tr);
+    });
+    tbody.appendChild(frag);
+  }
+
+  document.querySelectorAll("#dev-table thead th").forEach(function (th) {
+    th.addEventListener("click", function () {
+      var key = th.dataset.key;
+      if (devSortKey === key) devSortDir *= -1;
+      else { devSortKey = key; devSortDir = key === "name" ? 1 : -1; }
+      document.querySelectorAll("#dev-table thead th").forEach(function (t) {
+        t.classList.toggle("active", t === th);
+        var arrow = t.querySelector(".arrow");
+        arrow.textContent = t === th ? (devSortDir === 1 ? "▴" : "▾") : "▾";
+      });
+      renderDevTable();
+    });
+  });
+
+  document.getElementById("dev-search").addEventListener("input", function (e) {
+    devFilters.search = e.target.value.trim();
+    renderDevTable();
+  });
+  document.getElementById("dev-distance").addEventListener("input", function (e) {
+    devFilters.distance = Number(e.target.value);
+    document.getElementById("dev-distance-val").textContent = devFilters.distance + " km";
+    renderDevTable();
+  });
+  [
+    ["min-score", "score"], ["min-growth", "growth"], ["min-location", "location"],
+    ["min-afford", "affordability"], ["min-turnover", "turnover"]
+  ].forEach(function (pair) {
+    var input = document.getElementById(pair[0]);
+    var valEl = document.getElementById(pair[0] + "-val");
+    input.addEventListener("input", function () {
+      devFilters[pair[1]] = Number(input.value);
+      valEl.textContent = Number(input.value).toFixed(1);
+      renderDevTable();
+      if (pair[1] === "score") renderDevHistogram();
+    });
+  });
+  document.getElementById("dev-reset").addEventListener("click", function () {
+    devFilters = { search: "", distance: 60, score: 0, growth: 0, location: 0, affordability: 0, turnover: 0 };
+    document.getElementById("dev-search").value = "";
+    document.getElementById("dev-distance").value = 60;
+    document.getElementById("dev-distance-val").textContent = "60 km";
+    ["min-score", "min-growth", "min-location", "min-afford", "min-turnover"].forEach(function (id) {
+      document.getElementById(id).value = 0;
+      document.getElementById(id + "-val").textContent = "0.0";
+    });
+    renderDevHistogram();
+    renderDevTable();
+  });
+
   window.addEventListener("resize", function () {
     renderPriceChart();
     renderGrowthChart();
     renderDevChart();
     renderScatter();
+    if (!document.getElementById("tab-devsearch").hidden) renderDevHistogram();
   });
 })();
 </script>
