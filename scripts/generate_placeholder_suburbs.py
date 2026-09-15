@@ -77,22 +77,34 @@ A transparent, documented heuristic — NOT a real planning/zoning
 assessment. It has no access to actual LEP zoning, floor-space ratios,
 lot sizes, heritage overlays, flood/bushfire mapping, or council DA
 approval rates, none of which are available from this environment. It
-combines four proxy signals, each scored 0-10 and weighted:
+combines five proxy signals, each scored 0-10 and weighted:
 
-  * growth (35%)       — trailing 5yr price growth, clamped/scaled
-  * location (30%)     — a bell curve peaking ~18km from the CBD, on the
+  * growth (25%)        — trailing 5yr PERCENTAGE price growth, clamped/
+                          scaled. The demand-momentum half of "opportunity".
+  * profit (25%)        — estimated 5yr DOLLAR uplift (house median x g5),
+                          min-max normalized across the dataset. Deliberately
+                          separate from growth%: a 60% gain on a $700k outer
+                          suburb ($420k) and a 20% gain on a $3.5M suburb
+                          ($700k) rank very differently on raw growth% alone,
+                          and developer profit is a dollar figure, not a
+                          percentage. The "overall potential profit" half of
+                          "opportunity".
+  * location (25%)      — a bell curve peaking ~18km from the CBD, on the
                           premise that middle-ring, transit-linked suburbs
                           are the more common rezoning/redevelopment
                           target vs. built-out inner suburbs or
                           infrastructure-light fringe growth areas
-  * affordability (20%) — cheaper entry price relative to the priciest
+  * affordability (15%) — cheaper entry price relative to the priciest
                           suburb in the set, as a rough margin proxy for
                           knockdown-rebuild/townhouse economics
-  * turnover (15%)      — trailing-12mo sales volume, as a liquidity proxy
+  * turnover (10%)       — trailing-12mo sales volume, as a liquidity proxy
 
 This is a reasonable starting shape for a real score, but every weight and
 curve here is a guess. Do not use it for actual investment or development
-decisions without professional and council verification.
+decisions without professional and council verification. It is still a
+suburb-level heuristic, not a per-project financial model — it has no idea
+what a given block of land or dwelling actually costs to acquire or build
+on, so "profit" here means directional price uplift, not a real margin.
 
 USAGE
 -----
@@ -352,11 +364,16 @@ def synthesize_recent_sales(name_raw: str, houses: dict, units: dict, count: int
 
 
 def synthesize_dev_score(distance_km: float, median: int, g5: float, sample_size: int,
-                          min_median: int, max_median: int) -> dict:
+                          min_median: int, max_median: int, profit_dollars: float,
+                          min_profit: float, max_profit: float) -> dict:
     """See the DEVELOPMENT FAVOURABILITY SCORE note at the top of this file —
-    a documented, weighted heuristic over four 0-10 proxy signals. Not a real
-    planning/zoning assessment."""
+    a documented, weighted heuristic over five 0-10 proxy signals. Not a real
+    planning/zoning assessment, and "profit" is directional price uplift,
+    not a real per-project margin."""
     growth = max(0.0, min(10.0, (g5 + 10) / 70 * 10))
+
+    profit_span = max(1.0, max_profit - min_profit)
+    profit = max(0.0, min(10.0, (profit_dollars - min_profit) / profit_span * 10))
 
     peak_km, sigma_km = 18.0, 12.0
     location = 10.0 * math.exp(-((distance_km - peak_km) ** 2) / (2 * sigma_km ** 2))
@@ -366,9 +383,10 @@ def synthesize_dev_score(distance_km: float, median: int, g5: float, sample_size
 
     turnover = max(0.0, min(10.0, sample_size / 80 * 10))
 
-    weights = {"growth": 0.35, "location": 0.30, "affordability": 0.20, "turnover": 0.15}
+    weights = {"growth": 0.25, "profit": 0.25, "location": 0.25, "affordability": 0.15, "turnover": 0.10}
     total = (
         weights["growth"] * growth
+        + weights["profit"] * profit
         + weights["location"] * location
         + weights["affordability"] * affordability
         + weights["turnover"] * turnover
@@ -377,6 +395,7 @@ def synthesize_dev_score(distance_km: float, median: int, g5: float, sample_size
         "score": round(max(0.0, min(10.0, total)), 1),
         "breakdown": {
             "growth": round(growth, 1),
+            "profit": round(profit, 1),
             "location": round(location, 1),
             "affordability": round(affordability, 1),
             "turnover": round(turnover, 1),
@@ -400,18 +419,26 @@ def main():
         record["recent_sales"] = synthesize_recent_sales(name_raw, housing["houses"], housing["units"])
         records.append(record)
 
-    # Dev score and its affordability normalization are keyed off the house
-    # market (3-bed-equivalent "overall" figure) regardless of dwelling type,
-    # since suburb-level redevelopment potential is conventionally assessed
-    # against house-zoned land.
+    # Dev score and its affordability/profit normalization are keyed off the
+    # house market (3-bed-equivalent "overall" figure) regardless of dwelling
+    # type, since suburb-level redevelopment potential is conventionally
+    # assessed against house-zoned land.
     house_medians = [r["houses"]["overall"]["median"] for r in records]
     min_median, max_median = min(house_medians), max(house_medians)
-    for r in records:
+
+    # Estimated 5yr dollar uplift: median x g5%, the "overall potential
+    # profit" half of the score (see DEVELOPMENT FAVOURABILITY SCORE note).
+    profits = [r["houses"]["overall"]["median"] * r["houses"]["overall"]["g5"] / 100 for r in records]
+    min_profit, max_profit = min(profits), max(profits)
+
+    for r, profit_dollars in zip(records, profits):
         house_overall = r["houses"]["overall"]
         dev = synthesize_dev_score(r["distance_km"], house_overall["median"], house_overall["g5"],
-                                    house_overall["sample_size"], min_median, max_median)
+                                    house_overall["sample_size"], min_median, max_median,
+                                    profit_dollars, min_profit, max_profit)
         r["dev_score"] = dev["score"]
         r["dev_breakdown"] = dev["breakdown"]
+        r["profit_dollars"] = round(profit_dollars)
 
     records.sort(key=lambda r: r["distance_km"])
 
