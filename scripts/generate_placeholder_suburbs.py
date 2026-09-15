@@ -4,18 +4,41 @@ Generate a placeholder suburb dataset for the Sydney dashboard.
 
 Real geography, synthetic prices. This script downloads a public Australia
 Post / ABS postcode dataset, keeps every NSW locality within a given radius
-of Sydney CBD, and models a plausible-looking (but NOT real) median house
-price and 1yr/5yr growth for each one as a function of distance from the
-CBD, plus deterministic per-suburb noise.
+of Sydney CBD, and models a plausible-looking (but NOT real) median price
+and 1yr/5yr growth for each one — separately for houses and units, and
+further split by bedroom count — as a function of distance from the CBD,
+plus deterministic per-suburb noise.
 
 It exists to give `dashboard.html` full, realistic-looking coverage while
 `nsw_sales_pipeline.py` can't be run against the actual NSW Valuer General
 (no outbound access to nsw.gov.au from this environment). Suburb names,
-their ABS SA3 "region", and their distance from the CBD are real. Median
-price, g1 (1yr growth), g5 (5yr growth), the "recent sales" feed, and the
-development favourability score are NOT — they're synthetic placeholders
-for laying out the dashboard, and should be replaced by
-`nsw_sales_pipeline.py`'s real output as soon as that can run.
+their ABS SA3 "region", and their distance from the CBD are real. Every
+price, growth, sales-volume, "recent sales" and development-score figure
+is NOT — they're synthetic placeholders for laying out the dashboard.
+
+`nsw_sales_pipeline.py`'s real output can replace the house/unit split here
+(it separates dwelling types from the actual NSW Valuer General data), but
+NOT the bedroom breakdown — bedroom count isn't a field in that dataset at
+all (see the "NO BEDROOM COUNTS" note in that script). The bedroom-level
+cut is, and will remain, a synthetic modeling choice specific to this
+placeholder generator.
+
+BEDROOM PRICE MODEL
+--------------------
+For each suburb, a distance-based "house 3-bed" price is the anchor (same
+curve as before: floor + amplitude * exp(-distance/tau)). Other buckets are
+fixed multipliers off that anchor — a modeling simplification, not a fitted
+relationship:
+
+  houses: 2-bed x0.82, 3-bed x1.00 (anchor), 4-bed x1.28, 5-bed+ x1.62
+  units:  1-bed x0.68, 2-bed x1.00 (unit anchor), 3-bed+ x1.35
+
+The unit anchor itself is a fraction of the house anchor that RISES with
+distance from the CBD (0.45 near the CBD, approaching ~0.69 at 60km) — the
+premise being that the house/unit price gap is proportionally wider in the
+inner ring (harbourside land value, heritage terraces) than in the outer
+suburbs where houses and units are closer in scale. This is a plausible
+shape, not a measured one.
 
 DEVELOPMENT FAVOURABILITY SCORE (0-10)
 ---------------------------------------
@@ -137,43 +160,94 @@ def fetch_nsw_localities() -> dict[str, tuple[str, float, str]]:
     return best
 
 
-def synthesize_metrics(name_raw: str, distance_km: float) -> dict:
-    """Models a plausible median price / growth curve by distance from the
-    CBD, with deterministic per-suburb noise. Not real sales data."""
+HOUSE_BED_MULTIPLIERS = {2: 0.82, 3: 1.00, 4: 1.28, 5: 1.62}  # 5 == "5+"
+UNIT_BED_MULTIPLIERS = {1: 0.68, 2: 1.00, 3: 1.35}  # 3 == "3+"
+
+# Rough real-world bedroom mix, used only to weight synthetic sample counts
+# and to pick realistic "recent sale" bedroom counts. Not measured.
+HOUSE_BED_SHARE = {2: 0.18, 3: 0.42, 4: 0.30, 5: 0.10}
+UNIT_BED_SHARE = {1: 0.30, 2: 0.50, 3: 0.20}
+
+
+def _bucket_stats(seed: int, salt_base: int, anchor_median: float, anchor_g5: float,
+                   anchor_sample: float, multiplier: float, share: float) -> dict:
+    """One bedroom-bucket's median/g1/g5/sample_size, derived from the
+    dwelling-type anchor with deterministic per-bucket noise."""
+    median = round(anchor_median * multiplier * (0.94 + 0.12 * pseudo_rand(seed, salt_base)) / 5000) * 5000
+    g5 = max(-8.0, min(65.0, anchor_g5 + (pseudo_rand(seed, salt_base + 1) - 0.5) * 6))
+    g1 = max(-4.5, min(9.5, g5 / 8.5 + (pseudo_rand(seed, salt_base + 2) - 0.5) * 3))
+    sample = int(round(max(4, anchor_sample * share * 4 * (0.8 + 0.4 * pseudo_rand(seed, salt_base + 3)))))
+    return {"median": int(median), "g1": round(g1, 1), "g5": round(g5, 1), "sample_size": sample}
+
+
+def synthesize_housing(name_raw: str, distance_km: float) -> dict:
+    """Models plausible house and unit price/growth curves by distance from
+    the CBD, each split by bedroom count, with deterministic per-suburb
+    noise. See the BEDROOM PRICE MODEL note at the top of this file. Not
+    real sales data."""
     seed = str_hash(name_raw.upper())
 
     floor, amplitude, tau = 550_000, 3_200_000, 18.0
-    base_price = floor + amplitude * math.exp(-distance_km / tau)
-    noise = 0.85 + 0.30 * pseudo_rand(seed, 1)  # +/- 15%
-    median = round(base_price * noise / 5000) * 5000
+    house_anchor = (floor + amplitude * math.exp(-distance_km / tau)) * (0.85 + 0.30 * pseudo_rand(seed, 1))
 
-    g5_base = 55 - (median - floor) / 3_200_000 * 42
-    g5 = max(-8, min(65, g5_base + (pseudo_rand(seed, 2) - 0.5) * 16))
+    house_g5_base = 55 - (house_anchor - floor) / 3_200_000 * 42
+    house_g5 = max(-8.0, min(65.0, house_g5_base + (pseudo_rand(seed, 2) - 0.5) * 16))
 
-    g1 = max(-4.5, min(9.5, g5 / 8.5 + (pseudo_rand(seed, 3) - 0.5) * 4))
+    sample_base = 20 + (3_750_000 - house_anchor) / 3_200_000 * 55
+    house_sample_anchor = max(8.0, sample_base + (pseudo_rand(seed, 4) - 0.5) * 30)
 
-    sample_base = 20 + (3_750_000 - median) / 3_200_000 * 55
-    sample_size = int(round(max(8, sample_base + (pseudo_rand(seed, 4) - 0.5) * 30)))
+    unit_ratio = 0.45 + 0.24 * (1 - math.exp(-distance_km / 20))
+    unit_anchor = house_anchor * unit_ratio
+    unit_g5 = max(-8.0, min(65.0, house_g5 * 0.85 - 2 + (pseudo_rand(seed, 5) - 0.5) * 6))
+    unit_sample_anchor = house_sample_anchor * (0.7 + 0.5 * (1 - math.exp(-distance_km / 15)))
 
-    return {
-        "median": int(median),
-        "g1": round(g1, 1),
-        "g5": round(g5, 1),
-        "sample_size": sample_size,
+    houses = {
+        "overall": _bucket_stats(seed, 10, house_anchor, house_g5, house_sample_anchor, 1.0, 1.0),
+        "by_beds": {
+            str(beds): _bucket_stats(seed, 20 + beds * 4, house_anchor, house_g5, house_sample_anchor, mult, HOUSE_BED_SHARE[beds])
+            for beds, mult in HOUSE_BED_MULTIPLIERS.items()
+        },
     }
+    units = {
+        "overall": _bucket_stats(seed, 60, unit_anchor, unit_g5, unit_sample_anchor, 1.0, 1.0),
+        "by_beds": {
+            str(beds): _bucket_stats(seed, 70 + beds * 4, unit_anchor, unit_g5, unit_sample_anchor, mult, UNIT_BED_SHARE[beds])
+            for beds, mult in UNIT_BED_MULTIPLIERS.items()
+        },
+    }
+    return {"houses": houses, "units": units}
 
 
-def synthesize_recent_sales(name_raw: str, median: float, count: int = 6) -> list[dict]:
-    """A short illustrative list of "recent sales" for a suburb: date offset,
-    price, and bedroom count only — no addresses, agents, or vendor details,
-    since these are not real transactions."""
+def synthesize_recent_sales(name_raw: str, houses: dict, units: dict, count: int = 8) -> list[dict]:
+    """A short illustrative list of "recent sales" for a suburb, mixing
+    houses and units: date offset, price, dwelling type, and bedroom count
+    only — no addresses, agents, or vendor details, since these are not
+    real transactions."""
     seed = str_hash(name_raw.upper())
     sales = []
     for i in range(count):
-        days_ago = int(3 + pseudo_rand(seed, 100 + i) * 115)  # within ~last 4 months
-        price = round(median * (0.82 + pseudo_rand(seed, 200 + i) * 0.42) / 5000) * 5000
-        beds = 2 + int(pseudo_rand(seed, 300 + i) * 4)  # 2-5 bedrooms
-        sales.append({"days_ago": days_ago, "price": int(price), "beds": beds})
+        is_unit = pseudo_rand(seed, 400 + i) < 0.4
+        bed_shares = UNIT_BED_SHARE if is_unit else HOUSE_BED_SHARE
+        multipliers = UNIT_BED_MULTIPLIERS if is_unit else HOUSE_BED_MULTIPLIERS
+        anchor = units["overall"]["median"] if is_unit else houses["overall"]["median"]
+
+        r = pseudo_rand(seed, 450 + i)
+        cumulative = 0.0
+        beds = next(iter(bed_shares))
+        for b, share in bed_shares.items():
+            cumulative += share
+            if r <= cumulative:
+                beds = b
+                break
+
+        days_ago = int(3 + pseudo_rand(seed, 500 + i) * 115)  # within ~last 4 months
+        price = round(anchor * multipliers[beds] * (0.88 + pseudo_rand(seed, 550 + i) * 0.24) / 5000) * 5000
+        sales.append({
+            "days_ago": days_ago,
+            "price": int(price),
+            "type": "unit" if is_unit else "house",
+            "beds": beds,
+        })
     sales.sort(key=lambda s: s["days_ago"])
     return sales
 
@@ -216,20 +290,27 @@ def main():
 
     records = []
     for name_raw, distance_km, region in localities.values():
+        housing = synthesize_housing(name_raw, distance_km)
         record = {
             "name": title_case(name_raw),
             "region": region,
             "distance_km": round(distance_km, 1),
+            "houses": housing["houses"],
+            "units": housing["units"],
         }
-        record.update(synthesize_metrics(name_raw, distance_km))
-        record["recent_sales"] = synthesize_recent_sales(name_raw, record["median"])
+        record["recent_sales"] = synthesize_recent_sales(name_raw, housing["houses"], housing["units"])
         records.append(record)
 
-    medians = [r["median"] for r in records]
-    min_median, max_median = min(medians), max(medians)
+    # Dev score and its affordability normalization are keyed off the house
+    # market (3-bed-equivalent "overall" figure) regardless of dwelling type,
+    # since suburb-level redevelopment potential is conventionally assessed
+    # against house-zoned land.
+    house_medians = [r["houses"]["overall"]["median"] for r in records]
+    min_median, max_median = min(house_medians), max(house_medians)
     for r in records:
-        dev = synthesize_dev_score(r["distance_km"], r["median"], r["g5"], r["sample_size"],
-                                    min_median, max_median)
+        house_overall = r["houses"]["overall"]
+        dev = synthesize_dev_score(r["distance_km"], house_overall["median"], house_overall["g5"],
+                                    house_overall["sample_size"], min_median, max_median)
         r["dev_score"] = dev["score"]
         r["dev_breakdown"] = dev["breakdown"]
 

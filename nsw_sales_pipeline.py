@@ -10,12 +10,28 @@ WHAT THIS DOES
    (Free, Creative Commons Attribution, address-level sales back to 1990.)
 2. Parses the pipe-delimited .DAT files inside each zip (record type B = a
    single property sale).
-3. Filters to houses (not units/vacant land), keeps the Greater Sydney LGAs.
-4. Computes, per suburb: median sale price over the trailing 12 months, and
-   the median from ~1yr and ~5yr ago (each its own trailing-12-month window),
-   to get the 1yr/5yr growth figures a screener would show.
+3. Classifies each sale as a house or a unit (see `classify_dwelling_type()`),
+   keeps the Greater Sydney LGAs, and drops everything else (vacant land,
+   commercial, etc).
+4. Computes, per suburb and per dwelling type: median sale price over the
+   trailing 12 months, and the median from ~1yr and ~5yr ago (each its own
+   trailing-12-month window), to get 1yr/5yr growth for houses and units
+   separately.
 5. Writes data/sydney_suburbs.json in a stable, simple shape a downstream UI
    (e.g. a React screener) can consume directly.
+
+NO BEDROOM COUNTS
+------------------
+The NSW Valuer General bulk sales file does not include bedroom count (or
+any other internal dwelling attribute like bathrooms) — it's a land-title
+transaction record, not a listing. `median`/`g1`/`g5` here are per suburb
+and dwelling type only. If you need a bedroom-level cut of *real* sales,
+this dataset can't give you one; you'd have to join it against a listings
+source (e.g. Domain, realestate.com.au, or a paid CoreLogic/PropTrack feed)
+by address, which is a different pipeline. `dashboard.html`'s bedroom
+breakdown is built entirely from `scripts/generate_placeholder_suburbs.py`'s
+synthetic model for exactly this reason — it isn't something this script
+can produce from real data.
 
 BEFORE YOU RUN THIS
 --------------------
@@ -105,13 +121,17 @@ def parse_b_record(line: str) -> dict | None:
     return row
 
 
-def is_house_sale(row: dict) -> bool:
-    # Primary purpose codes vary by release; "RESIDENCE" is the common one.
-    # Excludes vacant land, commercial, and (roughly) strata units — a strata
-    # lot number present usually means a unit/townhouse, not a house.
+def classify_dwelling_type(row: dict) -> str | None:
+    """Returns "house", "unit", or None (skip: vacant land, commercial, etc).
+
+    Primary purpose codes vary by release. A strata lot number present is
+    the more reliable unit/townhouse signal; "RESIDENCE"/"RESIDENTIAL"
+    without one is treated as a house."""
     purpose = (row.get("primary_purpose") or "").strip().upper()
     strata = (row.get("strata_lot_number") or "").strip()
-    return purpose in {"RESIDENCE", "RESIDENTIAL"} and not strata
+    if purpose not in {"RESIDENCE", "RESIDENTIAL"}:
+        return None
+    return "unit" if strata else "house"
 
 
 # ---------------------------------------------------------------------------
@@ -139,7 +159,11 @@ def fetch_lga_sales(lga_name: str) -> list[dict]:
             with zf.open(name) as f:
                 for raw_line in io.TextIOWrapper(f, encoding="latin-1"):
                     row = parse_b_record(raw_line)
-                    if row and is_house_sale(row):
+                    if not row:
+                        continue
+                    dwelling_type = classify_dwelling_type(row)
+                    if dwelling_type:
+                        row["dwelling_type"] = dwelling_type
                         rows.append(row)
     return rows
 
@@ -165,6 +189,20 @@ def _median_in_window(sales: list[dict], start: datetime, end: datetime) -> tupl
     return statistics.median(prices), len(prices)
 
 
+def _dwelling_stats(sales: list[dict], window_now, window_1y_ago, window_5y_ago) -> dict | None:
+    median_now, sample_now = _median_in_window(sales, *window_now)
+    if median_now is None:
+        return None  # too few recent sales for a reliable current median
+
+    median_1y_ago, _ = _median_in_window(sales, *window_1y_ago)
+    median_5y_ago, _ = _median_in_window(sales, *window_5y_ago)
+
+    g1 = round((median_now / median_1y_ago - 1) * 100, 1) if median_1y_ago else None
+    g5 = round((median_now / median_5y_ago - 1) * 100, 1) if median_5y_ago else None
+
+    return {"median": round(median_now), "g1": g1, "g5": g5, "sample_size": sample_now}
+
+
 def aggregate_by_suburb(all_rows: list[dict]) -> list[dict]:
     now = datetime.now()
 
@@ -176,7 +214,8 @@ def aggregate_by_suburb(all_rows: list[dict]) -> list[dict]:
     window_1y_ago = (now - timedelta(days=365 * 2), now - timedelta(days=365))
     window_5y_ago = (now - timedelta(days=365 * 6), now - timedelta(days=365 * 5))
 
-    by_suburb: dict[str, list[dict]] = {}
+    # {suburb: {"house": [...], "unit": [...]}}
+    by_suburb: dict[str, dict[str, list[dict]]] = {}
     for row in all_rows:
         suburb = (row.get("suburb") or "").strip().title()
         if not suburb:
@@ -188,29 +227,22 @@ def aggregate_by_suburb(all_rows: list[dict]) -> list[dict]:
             price = 0
         if not date or price < 50_000:  # drop unparseable/junk rows
             continue
-        by_suburb.setdefault(suburb, []).append({"date": date, "price": price})
+        bucket = by_suburb.setdefault(suburb, {"house": [], "unit": []})
+        bucket[row["dwelling_type"]].append({"date": date, "price": price})
 
     results = []
-    for suburb, sales in by_suburb.items():
-        median_now, sample_now = _median_in_window(sales, *window_now)
-        if median_now is None:
-            continue  # too few recent sales for a reliable current median
+    for suburb, by_type in by_suburb.items():
+        houses = _dwelling_stats(by_type["house"], window_now, window_1y_ago, window_5y_ago)
+        units = _dwelling_stats(by_type["unit"], window_now, window_1y_ago, window_5y_ago)
+        if houses is None and units is None:
+            continue  # neither dwelling type had enough recent sales
 
-        median_1y_ago, _ = _median_in_window(sales, *window_1y_ago)
-        median_5y_ago, _ = _median_in_window(sales, *window_5y_ago)
+        results.append({"name": suburb, "houses": houses, "units": units})
 
-        g1 = round((median_now / median_1y_ago - 1) * 100, 1) if median_1y_ago else None
-        g5 = round((median_now / median_5y_ago - 1) * 100, 1) if median_5y_ago else None
+    def sort_key(r):
+        return (r["houses"] or r["units"])["median"]
 
-        results.append({
-            "name": suburb,
-            "median": round(median_now),
-            "g1": g1,
-            "g5": g5,
-            "sample_size": sample_now,
-        })
-
-    return sorted(results, key=lambda r: r["median"], reverse=True)
+    return sorted(results, key=sort_key, reverse=True)
 
 
 # ---------------------------------------------------------------------------
