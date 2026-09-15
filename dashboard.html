@@ -1368,20 +1368,24 @@
     resilience: "Min resilience"
   };
 
-  function devMatches(d) {
+  function matchesSearchDistance(d) {
     if (d.distance > devFilters.distance) return false;
-    if (d.dev_score < devFilters.score) return false;
-    if (d.dev_breakdown.growth < devFilters.growth) return false;
-    if (d.dev_breakdown.profit < devFilters.profit) return false;
-    if (d.dev_breakdown.location < devFilters.location) return false;
-    if (d.dev_breakdown.affordability < devFilters.affordability) return false;
-    if (d.dev_breakdown.turnover < devFilters.turnover) return false;
-    if (d.resilience_score < devFilters.resilience) return false;
     if (devFilters.search) {
       var t = devFilters.search.toLowerCase();
       if (d.name.toLowerCase().indexOf(t) === -1 && d.region.toLowerCase().indexOf(t) === -1) return false;
     }
     return true;
+  }
+  function activeThresholdKeys() {
+    return Object.keys(DEV_FIELD_LABELS).filter(function (key) { return devFilters[key] > 0; });
+  }
+  function passesThresholds(d, keys) {
+    return keys.every(function (key) { return DEV_GETTERS[key](d) >= devFilters[key]; });
+  }
+  // Total shortfall below every active threshold (0 = fully qualifies) -
+  // used to rank "closest matches" when nothing qualifies outright.
+  function shortfall(d, keys) {
+    return keys.reduce(function (sum, key) { return sum + Math.max(0, devFilters[key] - DEV_GETTERS[key](d)); }, 0);
   }
 
   function renderDevHistogram() {
@@ -1436,24 +1440,12 @@
   // suburb that's simultaneously expensive/fast-growing (profit) and
   // affordable/stable (resilience), which this model treats as being in
   // real tension with each other (see the MARKET RESILIENCE SCORE note).
-  function buildNoMatchMessage(container) {
-    var base = SUBURBS.filter(function (d) {
-      if (d.distance > devFilters.distance) return false;
-      if (!devFilters.search) return true;
-      var t = devFilters.search.toLowerCase();
-      return d.name.toLowerCase().indexOf(t) !== -1 || d.region.toLowerCase().indexOf(t) !== -1;
-    });
-
-    if (base.length === 0) {
-      container.textContent = "No suburbs within " + devFilters.distance + " km match “" + devFilters.search + "”. Try a broader search or distance.";
-      return;
-    }
-
-    var active = Object.keys(DEV_FIELD_LABELS).filter(function (key) { return devFilters[key] > 0; });
-    if (active.length === 0) {
-      container.textContent = "No suburbs match these filters.";
-      return;
-    }
+  // Builds the "why nothing matched" explanation as a left-aligned block
+  // (not a full replacement message - it sits above the closest-matches
+  // rows renderDevTable adds below it).
+  function buildNoMatchExplanation(base, active) {
+    var wrap = document.createElement("div");
+    wrap.style.textAlign = "left";
 
     var stats = active.map(function (key) {
       var values = base.map(DEV_GETTERS[key]);
@@ -1462,18 +1454,13 @@
       return { key: key, label: DEV_FIELD_LABELS[key], threshold: devFilters[key], passCount: passCount, achievableMax: achievableMax };
     }).sort(function (a, b) { return a.passCount - b.passCount; });
 
-    container.innerHTML = "";
-    var wrap = document.createElement("div");
-    wrap.style.display = "inline-block";
-    wrap.style.textAlign = "left";
-
     var intro = document.createElement("div");
     intro.textContent = "No suburb clears every threshold at once. The tightest:";
     intro.style.marginBottom = "6px";
     wrap.appendChild(intro);
 
     var list = document.createElement("ul");
-    list.style.margin = "0";
+    list.style.margin = "0 0 4px";
     list.style.paddingLeft = "18px";
     stats.slice(0, 2).forEach(function (s) {
       var li = document.createElement("li");
@@ -1484,12 +1471,71 @@
       list.appendChild(li);
     });
     wrap.appendChild(list);
-    container.appendChild(wrap);
+
+    var closestNote = document.createElement("div");
+    closestNote.className = "row-sub";
+    closestNote.textContent = "Showing the closest matches instead, ranked by how little they miss by:";
+    wrap.appendChild(closestNote);
+    return wrap;
+  }
+
+  function devScoreCell(value, title) {
+    var td = document.createElement("td");
+    var wrap = document.createElement("span");
+    wrap.className = "score-cell";
+    if (title) td.title = title;
+    var meter = document.createElement("span");
+    meter.className = "score-meter";
+    var fill = document.createElement("span");
+    fill.style.width = (value / 10 * 100) + "%";
+    meter.appendChild(fill);
+    var num = document.createElement("span");
+    num.className = "score-num";
+    num.textContent = value.toFixed(1);
+    wrap.appendChild(meter);
+    wrap.appendChild(num);
+    td.appendChild(wrap);
+    return td;
+  }
+
+  function buildDevRow(d) {
+    var tr = document.createElement("tr");
+
+    var tdName = document.createElement("td");
+    tdName.className = "name";
+    var strong = document.createElement("span");
+    strong.textContent = d.name;
+    var region = document.createElement("span");
+    region.className = "region";
+    region.textContent = d.region;
+    tdName.appendChild(strong);
+    tdName.appendChild(region);
+
+    var tdDist = document.createElement("td");
+    tdDist.textContent = d.distance.toFixed(1) + " km";
+
+    var tdMedian = document.createElement("td");
+    tdMedian.textContent = compactMoney(d.houses[0].median);
+
+    tr.appendChild(tdName);
+    tr.appendChild(tdDist);
+    tr.appendChild(tdMedian);
+    tr.appendChild(devScoreCell(d.dev_score));
+    tr.appendChild(devScoreCell(d.dev_breakdown.growth));
+    tr.appendChild(devScoreCell(d.dev_breakdown.profit, "~" + compactMoney(d.profit_dollars) + " estimated 5yr uplift"));
+    tr.appendChild(devScoreCell(d.dev_breakdown.location));
+    tr.appendChild(devScoreCell(d.dev_breakdown.affordability));
+    tr.appendChild(devScoreCell(d.dev_breakdown.turnover));
+    tr.appendChild(devScoreCell(d.resilience_score, "Market resilience — can buyers/sellers still transact in a downturn?"));
+    tr.addEventListener("click", function () { openDetail(d); });
+    return tr;
   }
 
   function renderDevTable() {
     var tbody = document.getElementById("dev-tbody");
-    var rows = SUBURBS.filter(devMatches);
+    var base = SUBURBS.filter(matchesSearchDistance);
+    var active = activeThresholdKeys();
+    var rows = base.filter(function (d) { return passesThresholds(d, active); });
 
     rows.sort(function (a, b) {
       var av = DEV_GETTERS[devSortKey](a), bv = DEV_GETTERS[devSortKey](b);
@@ -1497,73 +1543,55 @@
       return (av - bv) * devSortDir;
     });
 
-    document.getElementById("dev-count").textContent = rows.length + " of " + SUBURBS.length + " suburbs match";
-
     tbody.innerHTML = "";
-    if (rows.length === 0) {
-      var tr = document.createElement("tr");
-      tr.className = "empty-row";
-      var td = document.createElement("td");
-      td.colSpan = 10;
-      buildNoMatchMessage(td);
-      tr.appendChild(td);
-      tbody.appendChild(tr);
+
+    if (rows.length > 0) {
+      document.getElementById("dev-count").textContent = rows.length + " of " + SUBURBS.length + " suburbs match";
+      var frag = document.createDocumentFragment();
+      rows.forEach(function (d) { frag.appendChild(buildDevRow(d)); });
+      tbody.appendChild(frag);
       return;
     }
 
-    function scoreCell(value, title) {
-      var td = document.createElement("td");
-      var wrap = document.createElement("span");
-      wrap.className = "score-cell";
-      if (title) td.title = title;
-      var meter = document.createElement("span");
-      meter.className = "score-meter";
-      var fill = document.createElement("span");
-      fill.style.width = (value / 10 * 100) + "%";
-      meter.appendChild(fill);
-      var num = document.createElement("span");
-      num.className = "score-num";
-      num.textContent = value.toFixed(1);
-      wrap.appendChild(meter);
-      wrap.appendChild(num);
-      td.appendChild(wrap);
-      return td;
+    // Nothing clears every active threshold. If there's at least a base to
+    // search (right distance/search text) and at least one threshold set,
+    // fall back to the closest matches instead of an empty table - ranked
+    // by total shortfall below the thresholds, so "you still can't find
+    // any suburbs" always has an answer when one exists to give.
+    if (base.length === 0) {
+      document.getElementById("dev-count").textContent = "0 of " + SUBURBS.length + " suburbs match";
+      var trEmpty = document.createElement("tr");
+      trEmpty.className = "empty-row";
+      var tdEmpty = document.createElement("td");
+      tdEmpty.colSpan = 10;
+      tdEmpty.textContent = "No suburbs within " + devFilters.distance + " km match “" + devFilters.search + "”. Try a broader search or distance.";
+      trEmpty.appendChild(tdEmpty);
+      tbody.appendChild(trEmpty);
+      return;
     }
 
-    var frag = document.createDocumentFragment();
-    rows.forEach(function (d) {
-      var tr = document.createElement("tr");
+    if (active.length === 0) {
+      // Shouldn't happen (rows would equal base), but guard anyway.
+      document.getElementById("dev-count").textContent = "0 of " + SUBURBS.length + " suburbs match";
+      return;
+    }
 
-      var tdName = document.createElement("td");
-      tdName.className = "name";
-      var strong = document.createElement("span");
-      strong.textContent = d.name;
-      var region = document.createElement("span");
-      region.className = "region";
-      region.textContent = d.region;
-      tdName.appendChild(strong);
-      tdName.appendChild(region);
+    document.getElementById("dev-count").textContent = "0 of " + SUBURBS.length + " suburbs match exactly";
 
-      var tdDist = document.createElement("td");
-      tdDist.textContent = d.distance.toFixed(1) + " km";
+    var noteTr = document.createElement("tr");
+    noteTr.className = "empty-row";
+    var noteTd = document.createElement("td");
+    noteTd.colSpan = 10;
+    noteTd.style.textAlign = "left";
+    noteTd.style.padding = "16px 10px";
+    noteTd.appendChild(buildNoMatchExplanation(base, active));
+    noteTr.appendChild(noteTd);
+    tbody.appendChild(noteTr);
 
-      var tdMedian = document.createElement("td");
-      tdMedian.textContent = compactMoney(d.houses[0].median);
-
-      tr.appendChild(tdName);
-      tr.appendChild(tdDist);
-      tr.appendChild(tdMedian);
-      tr.appendChild(scoreCell(d.dev_score));
-      tr.appendChild(scoreCell(d.dev_breakdown.growth));
-      tr.appendChild(scoreCell(d.dev_breakdown.profit, "~" + compactMoney(d.profit_dollars) + " estimated 5yr uplift"));
-      tr.appendChild(scoreCell(d.dev_breakdown.location));
-      tr.appendChild(scoreCell(d.dev_breakdown.affordability));
-      tr.appendChild(scoreCell(d.dev_breakdown.turnover));
-      tr.appendChild(scoreCell(d.resilience_score, "Market resilience — can buyers/sellers still transact in a downturn?"));
-      tr.addEventListener("click", function () { openDetail(d); });
-      frag.appendChild(tr);
-    });
-    tbody.appendChild(frag);
+    var closest = base.slice().sort(function (a, b) { return shortfall(a, active) - shortfall(b, active); }).slice(0, 10);
+    var closestFrag = document.createDocumentFragment();
+    closest.forEach(function (d) { closestFrag.appendChild(buildDevRow(d)); });
+    tbody.appendChild(closestFrag);
   }
 
   document.querySelectorAll("#dev-table thead th").forEach(function (th) {
