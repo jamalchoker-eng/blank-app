@@ -63,13 +63,17 @@ Distance-from-CBD alone badly underprices small, low-density waterfront
 enclaves that happen to sit further out — e.g. Burraneer (~26km, on Port
 Hacking) came out priced like a generic mid-ring suburb before this was
 added, when real waterfront houses there run well above that. A hand-curated
-list of ~80 well-known Sydney Harbour / Middle Harbour / river / Pittwater /
-Port Hacking / Georges River localities (WATERFRONT_SUBURBS — real places,
-not exhaustive, not derived from any dataset) gets a price multiplier
-(1.85x houses, 1.30x units) and a turnover discount (0.55x sample size, for
-their typically smaller and lower-density dwelling stock). Still a
-placeholder, still not real sales data — just a less wrong one for suburbs
-this specific curve handles badly.
+list of ~120 well-known Sydney Harbour / Middle Harbour / river / Pittwater /
+Port Hacking / Georges River localities AND ocean-beach suburbs
+(WATERFRONT_SUBURBS — real places, not exhaustive, not derived from any
+dataset) gets a price multiplier (1.85x houses, 1.30x units) and a turnover
+discount (0.55x sample size, for their typically smaller and lower-density
+dwelling stock). The list originally missed the ocean-beach side entirely —
+ironically including several of Cronulla's satellite localities (Dolans Bay,
+Yowie Bay) while leaving Cronulla itself, Bondi, Coogee, Manly, and the rest
+of the surf coast priced like generic suburbs — fixed by adding them. Still
+a placeholder, still not real sales data — just a less wrong one for
+suburbs this specific curve handles badly.
 
 DEVELOPMENT FAVOURABILITY SCORE (0-10)
 ---------------------------------------
@@ -276,6 +280,19 @@ WATERFRONT_SUBURBS = {
     "OATLEY", "CONNELLS POINT", "BLAKEHURST", "CARSS PARK", "KYLE BAY",
     "SANS SOUCI", "SANDRINGHAM", "DOLLS POINT", "RAMSGATE BEACH",
     "BEROWRA WATERS", "DANGAR ISLAND", "ST HUBERTS ISLAND",
+    # Ocean-beach suburbs — an earlier version of this list covered harbour
+    # coves and river points but missed Sydney's actual surf beaches
+    # entirely, including Cronulla itself while keeping several of its
+    # satellite localities (Dolans Bay, Yowie Bay...) - same underpricing
+    # bug as Burraneer, just for the beach side of the ledger.
+    "BONDI BEACH", "BONDI", "NORTH BONDI", "TAMARAMA", "BRONTE", "CLOVELLY",
+    "CLOVELLY WEST", "COOGEE", "SOUTH COOGEE", "MAROUBRA", "LITTLE BAY",
+    "MALABAR", "LA PEROUSE",
+    "MANLY", "QUEENSCLIFF", "FRESHWATER", "HARBORD", "CURL CURL",
+    "NORTH CURL CURL", "DEE WHY", "DEE WHY BEACH", "COLLAROY",
+    "COLLAROY BEACH", "NARRABEEN", "NORTH NARRABEEN", "NARRABEEN PENINSULA",
+    "MONA VALE", "WARRIEWOOD", "LONG REEF",
+    "CRONULLA", "BUNDEENA", "MAIANBAR",
 }
 WATERFRONT_PRICE_MULT = {"house": 1.85, "unit": 1.30}
 WATERFRONT_SAMPLE_MULT = 0.55  # smaller, lower-turnover dwelling stock
