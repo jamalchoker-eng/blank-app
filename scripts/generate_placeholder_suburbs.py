@@ -106,6 +106,39 @@ suburb-level heuristic, not a per-project financial model — it has no idea
 what a given block of land or dwelling actually costs to acquire or build
 on, so "profit" here means directional price uplift, not a real margin.
 
+MARKET RESILIENCE SCORE (0-10)
+---------------------------------
+A second, separate 0-10 score answering a different question than the
+development score: not "is this a good upside opportunity" but "can buyers
+and sellers still transact here if conditions turn" — a rough proxy for
+whether a suburb stays liquid in a downturn rather than freezing up.
+Equally a placeholder heuristic — it has no actual recession, interest-rate,
+or macro data behind it (there has been no synthetic downturn modeled into
+the underlying price series at all), just four structural proxies computed
+from the same modeled trailing-12mo figures, each scored 0-10 and weighted:
+
+  * liquidity (40%)     — trailing-12mo sales volume (the same turnover
+                          signal as the dev score, weighted much more
+                          heavily here): the most direct evidence that
+                          buyers are actually still transacting.
+  * stability (30%)     — how narrow the suburb's own min-max price spread
+                          is relative to its median. A tighter spread is
+                          read as more owner-occupier/essential demand and
+                          less speculative pricing, which tends to hold up
+                          better when discretionary buyers retreat.
+  * depth (20%)          — the same affordability-relative-to-the-priciest-
+                          suburb proxy as the dev score, on the premise that
+                          a lower price point keeps a deeper, more essential
+                          pool of buyers able to transact through a downturn.
+  * speed (10%)          — inverse of modeled days-on-market: a suburb that
+                          historically sells faster is read as having more
+                          buyer competition/liquidity to draw on.
+
+Same caveats as the development score, doubled: this is a structural proxy
+with no actual economic-cycle data behind it, not a stress test or a real
+resilience assessment. Do not use it for actual investment decisions
+without professional advice.
+
 USAGE
 -----
     uv run python scripts/generate_placeholder_suburbs.py
@@ -403,6 +436,42 @@ def synthesize_dev_score(distance_km: float, median: int, g5: float, sample_size
     }
 
 
+def synthesize_resilience_score(median: int, min_price: int, max_price: int, sample_size: int,
+                                 dom_days: int, min_median: int, max_median: int) -> dict:
+    """See the MARKET RESILIENCE SCORE note at the top of this file — a
+    second, separate documented heuristic over four 0-10 proxy signals.
+    Not a real economic-cycle stress test."""
+    liquidity = max(0.0, min(10.0, sample_size / 80 * 10))
+
+    # Given the min/max modeling (min ~0.55-0.70x, max ~1.35-1.80x of the
+    # bucket's own median), (max-min)/median falls roughly in [0.65, 1.25];
+    # map that analytically rather than a second dataset-wide normalization.
+    spread_ratio = (max_price - min_price) / max(1, median)
+    stability = max(0.0, min(10.0, (1.3 - spread_ratio) / 0.9 * 10))
+
+    span = max(1, max_median - min_median)
+    depth = max(0.0, min(10.0, (max_median - median) / span * 10))
+
+    speed = max(0.0, min(10.0, (95 - dom_days) / (95 - 14) * 10))
+
+    weights = {"liquidity": 0.40, "stability": 0.30, "depth": 0.20, "speed": 0.10}
+    total = (
+        weights["liquidity"] * liquidity
+        + weights["stability"] * stability
+        + weights["depth"] * depth
+        + weights["speed"] * speed
+    )
+    return {
+        "score": round(max(0.0, min(10.0, total)), 1),
+        "breakdown": {
+            "liquidity": round(liquidity, 1),
+            "stability": round(stability, 1),
+            "depth": round(depth, 1),
+            "speed": round(speed, 1),
+        },
+    }
+
+
 def main():
     localities = fetch_nsw_localities()
 
@@ -439,6 +508,13 @@ def main():
         r["dev_score"] = dev["score"]
         r["dev_breakdown"] = dev["breakdown"]
         r["profit_dollars"] = round(profit_dollars)
+
+        resilience = synthesize_resilience_score(
+            house_overall["median"], house_overall["min"], house_overall["max"],
+            house_overall["sample_size"], r["houses"]["dom_days"], min_median, max_median,
+        )
+        r["resilience_score"] = resilience["score"]
+        r["resilience_breakdown"] = resilience["breakdown"]
 
     records.sort(key=lambda r: r["distance_km"])
 
