@@ -437,17 +437,20 @@ def synthesize_dev_score(distance_km: float, median: int, g5: float, sample_size
 
 
 def synthesize_resilience_score(median: int, min_price: int, max_price: int, sample_size: int,
-                                 dom_days: int, min_median: int, max_median: int) -> dict:
+                                 dom_days: int, min_median: int, max_median: int,
+                                 spread_ratio: float, min_spread: float, max_spread: float) -> dict:
     """See the MARKET RESILIENCE SCORE note at the top of this file — a
     second, separate documented heuristic over four 0-10 proxy signals.
     Not a real economic-cycle stress test."""
     liquidity = max(0.0, min(10.0, sample_size / 80 * 10))
 
-    # Given the min/max modeling (min ~0.55-0.70x, max ~1.35-1.80x of the
-    # bucket's own median), (max-min)/median falls roughly in [0.65, 1.25];
-    # map that analytically rather than a second dataset-wide normalization.
-    spread_ratio = (max_price - min_price) / max(1, median)
-    stability = max(0.0, min(10.0, (1.3 - spread_ratio) / 0.9 * 10))
+    # Min-max normalized against the dataset's actual spread-ratio range
+    # (not a fixed analytical guess — an earlier version assumed a wider
+    # range than the model actually produces, which silently capped every
+    # suburb's stability, and therefore its overall resilience score, well
+    # below 10 no matter how stable it was).
+    spread_span = max(0.001, max_spread - min_spread)
+    stability = max(0.0, min(10.0, (max_spread - spread_ratio) / spread_span * 10))
 
     span = max(1, max_median - min_median)
     depth = max(0.0, min(10.0, (max_median - median) / span * 10))
@@ -500,7 +503,16 @@ def main():
     profits = [r["houses"]["overall"]["median"] * r["houses"]["overall"]["g5"] / 100 for r in records]
     min_profit, max_profit = min(profits), max(profits)
 
-    for r, profit_dollars in zip(records, profits):
+    # Price-spread ratio ((max-min)/median) for the resilience score's
+    # stability component, normalized against its own actual dataset range
+    # rather than an assumed one (see synthesize_resilience_score).
+    spreads = [
+        (r["houses"]["overall"]["max"] - r["houses"]["overall"]["min"]) / max(1, r["houses"]["overall"]["median"])
+        for r in records
+    ]
+    min_spread, max_spread = min(spreads), max(spreads)
+
+    for r, profit_dollars, spread_ratio in zip(records, profits, spreads):
         house_overall = r["houses"]["overall"]
         dev = synthesize_dev_score(r["distance_km"], house_overall["median"], house_overall["g5"],
                                     house_overall["sample_size"], min_median, max_median,
@@ -512,6 +524,7 @@ def main():
         resilience = synthesize_resilience_score(
             house_overall["median"], house_overall["min"], house_overall["max"],
             house_overall["sample_size"], r["houses"]["dom_days"], min_median, max_median,
+            spread_ratio, min_spread, max_spread,
         )
         r["resilience_score"] = resilience["score"]
         r["resilience_breakdown"] = resilience["breakdown"]
