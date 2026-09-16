@@ -325,16 +325,25 @@ def _bucket_stats(seed: int, salt_base: int, anchor_median: float, anchor_g5: fl
     }
 
 
-def synthesize_momentum(seed: int, salt: int, g1: float) -> tuple[float, float]:
+def synthesize_momentum(seed: int, salt: int, g1: float, sample_size: int) -> tuple[float, float]:
     """Synthetic 1-month/3-month price momentum (see the SHORT-TERM
     MOMENTUM note at the top of this file), layered on the annual growth
-    trend with noise wide enough to occasionally flip sign — meant to
-    surface a recent dip or spike within an otherwise-steady 1yr trend as
-    a possible opportunity signal. Not real transaction data — there is no
+    trend with noise wide enough to swing well past the annual trend and
+    occasionally flip its sign — meant to surface a recent dip or spike
+    within an otherwise-steady 1yr trend as a possible opportunity signal.
+    Noise scales up as sample_size (sales/12mo) shrinks: a thin market's
+    median is much more exposed to which few properties happened to sell,
+    so it swings harder month to month than a liquid one — same
+    "compositional noise" effect real small-sample medians show, not
+    genuine extra volatility. Not real transaction data — there is no
     actual month-by-month price series behind this model at all."""
+    liquidity_factor = max(0.7, min(2.5, 45.0 / max(sample_size, 6)))
     monthly_trend = g1 / 12
-    g1m = max(-15.0, min(15.0, monthly_trend + (pseudo_rand(seed, salt) - 0.5) * 6.0))
-    g3m = max(-15.0, min(15.0, (g1 / 4) + (pseudo_rand(seed, salt + 1) - 0.5) * 5.0))
+    quarterly_trend = g1 / 4
+    g1m = monthly_trend + (pseudo_rand(seed, salt) - 0.5) * 22.0 * liquidity_factor
+    g3m = quarterly_trend + (pseudo_rand(seed, salt + 1) - 0.5) * 17.0 * liquidity_factor
+    g1m = max(-28.0, min(28.0, g1m))
+    g3m = max(-24.0, min(24.0, g3m))
     return round(g1m, 1), round(g3m, 1)
 
 
@@ -398,8 +407,10 @@ def synthesize_housing(name_raw: str, distance_km: float) -> dict:
         "dom_days": synthesize_dom(seed, 95, distance_km, unit_g5, is_waterfront),
     }
 
-    houses["overall"]["g1m"], houses["overall"]["g3m"] = synthesize_momentum(seed, 100, houses["overall"]["g1"])
-    units["overall"]["g1m"], units["overall"]["g3m"] = synthesize_momentum(seed, 105, units["overall"]["g1"])
+    houses["overall"]["g1m"], houses["overall"]["g3m"] = synthesize_momentum(
+        seed, 100, houses["overall"]["g1"], houses["overall"]["sample_size"])
+    units["overall"]["g1m"], units["overall"]["g3m"] = synthesize_momentum(
+        seed, 105, units["overall"]["g1"], units["overall"]["sample_size"])
 
     return {"houses": houses, "units": units}
 
