@@ -17,9 +17,27 @@ WHAT THIS DOES
    price over the trailing 12 months, and the median from ~1yr and ~5yr ago
    (each its own trailing-12-month window), to get 1yr/5yr growth for
    houses and units separately. min/max are real extremes of the same
-   purchase_price values, not a placeholder.
+   purchase_price values, not a placeholder. Also computes short-term
+   momentum: g1m (trailing 1 month vs the 1 month before that) and g3m
+   (trailing 3 months vs the 3 months before that), meant to surface a
+   recent dip or spike within an otherwise-steady 1yr/5yr trend — a
+   possible buying/selling opportunity signal distinct from the long-run
+   growth figures. See the SHORT-TERM MOMENTUM note below for the sample-
+   size trade-off this requires.
 5. Writes data/sydney_suburbs.json in a stable, simple shape a downstream UI
    (e.g. a React screener) can consume directly.
+
+SHORT-TERM MOMENTUM (g1m / g3m) - A NOISIER SIGNAL, BY NECESSITY
+--------------------------------------------------------------------
+A typical Sydney suburb sees maybe 50-150 house sales a year — a handful a
+month. Applying the same MIN_SAMPLE_SIZE=5 gate used for the 1yr/5yr medians
+to a 1-month window would return None for most suburbs most of the time, so
+g1m/g3m use a lower bar (MIN_SAMPLE_SIZE_SHORT=3). That means these two
+figures rest on very few sales even when present, and either can legitimately
+be None for a quiet suburb in a quiet month. Read them as a noisy, real,
+directional signal, not something to size a decision on the way you might
+the 1yr/5yr figures - and expect them to be null more often than not for
+smaller suburbs.
 
 NO BEDROOM COUNTS, NO DAYS-ON-MARKET
 --------------------------------------
@@ -99,6 +117,7 @@ PORTAL_BASE = "https://valuation.property.nsw.gov.au/embed/propertySalesInformat
 
 OUTPUT_PATH = Path("data/sydney_suburbs.json")
 MIN_SAMPLE_SIZE = 5  # skip a suburb/period whose median would rest on too few sales
+MIN_SAMPLE_SIZE_SHORT = 3  # lower bar for the 1mo/3mo momentum windows - see SHORT-TERM MOMENTUM note
 
 
 # ---------------------------------------------------------------------------
@@ -190,15 +209,27 @@ def _prices_in_window(sales: list[dict], start: datetime, end: datetime) -> list
     return [s["price"] for s in sales if start <= s["date"] < end]
 
 
-def _median_in_window(sales: list[dict], start: datetime, end: datetime) -> tuple[float | None, int]:
+def _median_in_window(sales: list[dict], start: datetime, end: datetime,
+                       min_sample: int = MIN_SAMPLE_SIZE) -> tuple[float | None, int]:
     """Median purchase price for sales with start <= date < end, plus the sample size."""
     prices = _prices_in_window(sales, start, end)
-    if len(prices) < MIN_SAMPLE_SIZE:
+    if len(prices) < min_sample:
         return None, len(prices)
     return statistics.median(prices), len(prices)
 
 
-def _dwelling_stats(sales: list[dict], window_now, window_1y_ago, window_5y_ago) -> dict | None:
+def _momentum(sales: list[dict], window_current, window_prior) -> float | None:
+    """% change between two adjacent short windows (e.g. this month vs last
+    month), using MIN_SAMPLE_SIZE_SHORT - see SHORT-TERM MOMENTUM note."""
+    median_current, _ = _median_in_window(sales, *window_current, min_sample=MIN_SAMPLE_SIZE_SHORT)
+    median_prior, _ = _median_in_window(sales, *window_prior, min_sample=MIN_SAMPLE_SIZE_SHORT)
+    if median_current is None or median_prior is None:
+        return None
+    return round((median_current / median_prior - 1) * 100, 1)
+
+
+def _dwelling_stats(sales: list[dict], window_now, window_1y_ago, window_5y_ago,
+                     window_1m_now, window_1m_prior, window_3m_now, window_3m_prior) -> dict | None:
     """median/g1/g5/sample_size/min/max over the trailing-12mo window.
 
     min/max are genuinely computable from this dataset (they're just the
@@ -224,11 +255,15 @@ def _dwelling_stats(sales: list[dict], window_now, window_1y_ago, window_5y_ago)
 
     g1 = round((median_now / median_1y_ago - 1) * 100, 1) if median_1y_ago else None
     g5 = round((median_now / median_5y_ago - 1) * 100, 1) if median_5y_ago else None
+    g1m = _momentum(sales, window_1m_now, window_1m_prior)
+    g3m = _momentum(sales, window_3m_now, window_3m_prior)
 
     return {
         "median": round(median_now),
         "g1": g1,
         "g5": g5,
+        "g1m": g1m,
+        "g3m": g3m,
         "sample_size": len(prices_now),
         "min": round(min(prices_now)),
         "max": round(max(prices_now)),
@@ -245,6 +280,13 @@ def aggregate_by_suburb(all_rows: list[dict]) -> list[dict]:
     window_now = (now - timedelta(days=365), now)
     window_1y_ago = (now - timedelta(days=365 * 2), now - timedelta(days=365))
     window_5y_ago = (now - timedelta(days=365 * 6), now - timedelta(days=365 * 5))
+
+    # Short-term momentum windows: trailing 1/3 months vs the 1/3 months
+    # immediately before that - see SHORT-TERM MOMENTUM note up top.
+    window_1m_now = (now - timedelta(days=30), now)
+    window_1m_prior = (now - timedelta(days=60), now - timedelta(days=30))
+    window_3m_now = (now - timedelta(days=90), now)
+    window_3m_prior = (now - timedelta(days=180), now - timedelta(days=90))
 
     # {suburb: {"house": [...], "unit": [...]}}
     by_suburb: dict[str, dict[str, list[dict]]] = {}
@@ -264,8 +306,10 @@ def aggregate_by_suburb(all_rows: list[dict]) -> list[dict]:
 
     results = []
     for suburb, by_type in by_suburb.items():
-        houses = _dwelling_stats(by_type["house"], window_now, window_1y_ago, window_5y_ago)
-        units = _dwelling_stats(by_type["unit"], window_now, window_1y_ago, window_5y_ago)
+        houses = _dwelling_stats(by_type["house"], window_now, window_1y_ago, window_5y_ago,
+                                  window_1m_now, window_1m_prior, window_3m_now, window_3m_prior)
+        units = _dwelling_stats(by_type["unit"], window_now, window_1y_ago, window_5y_ago,
+                                 window_1m_now, window_1m_prior, window_3m_now, window_3m_prior)
         if houses is None and units is None:
             continue  # neither dwelling type had enough recent sales
 

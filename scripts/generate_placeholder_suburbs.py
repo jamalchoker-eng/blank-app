@@ -325,6 +325,19 @@ def _bucket_stats(seed: int, salt_base: int, anchor_median: float, anchor_g5: fl
     }
 
 
+def synthesize_momentum(seed: int, salt: int, g1: float) -> tuple[float, float]:
+    """Synthetic 1-month/3-month price momentum (see the SHORT-TERM
+    MOMENTUM note at the top of this file), layered on the annual growth
+    trend with noise wide enough to occasionally flip sign — meant to
+    surface a recent dip or spike within an otherwise-steady 1yr trend as
+    a possible opportunity signal. Not real transaction data — there is no
+    actual month-by-month price series behind this model at all."""
+    monthly_trend = g1 / 12
+    g1m = max(-15.0, min(15.0, monthly_trend + (pseudo_rand(seed, salt) - 0.5) * 6.0))
+    g3m = max(-15.0, min(15.0, (g1 / 4) + (pseudo_rand(seed, salt + 1) - 0.5) * 5.0))
+    return round(g1m, 1), round(g3m, 1)
+
+
 def synthesize_dom(seed: int, salt: int, distance_km: float, g5: float, is_waterfront: bool) -> int:
     """Median "days on market" (illustrative — see the DAYS ON MARKET note
     at the top of this file): a base that rises gently with distance from
@@ -384,6 +397,10 @@ def synthesize_housing(name_raw: str, distance_km: float) -> dict:
         },
         "dom_days": synthesize_dom(seed, 95, distance_km, unit_g5, is_waterfront),
     }
+
+    houses["overall"]["g1m"], houses["overall"]["g3m"] = synthesize_momentum(seed, 100, houses["overall"]["g1"])
+    units["overall"]["g1m"], units["overall"]["g3m"] = synthesize_momentum(seed, 105, units["overall"]["g1"])
+
     return {"houses": houses, "units": units}
 
 
